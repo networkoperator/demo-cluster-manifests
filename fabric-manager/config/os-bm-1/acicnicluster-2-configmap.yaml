@@ -1,6 +1,6 @@
 apiVersion: v1
 data:
-  clusterprofile_overrides: "machine_group_profile_name: for-aci-cni\ncluster_input:\n
+  clusterprofile_overrides: "machine_group_profile_name: for-aci-cni-2\ncluster_input:\n
     \ aci_cni_config:\n    aci_config:\n      vmm_domain:\n        encap_type: vxlan\n
     \       mcast_range:\n            start: 225.114.1.1\n            end: 225.114.255.255\n
     \   kube_config:\n      ovs_memory_limit: 0.75Gi\n      image_pull_policy: Always\n
@@ -20,5 +20,5 @@ metadata:
     distro: kubernetes
     location: on-prem
     pod_network: aci
-  name: acicnicluster
+  name: acicnicluster-2
   namespace: netop-manager
