@@ -1,0 +1,101 @@
+apiVersion: netop.mgr/v1
+kind: MachineGroupProfile
+metadata:
+  creationTimestamp: "2022-06-01T06:34:53Z"
+  generation: 1
+  labels:
+    cluster: aci-cni
+    distro: kubernetes
+    location: on-prem
+    pod-network: aci
+  managedFields:
+  - apiVersion: netop.mgr/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:cluster: {}
+          f:distro: {}
+          f:location: {}
+          f:pod-network: {}
+      f:spec:
+        .: {}
+        f:aep: {}
+        f:l3out:
+          .: {}
+          f:external_networks: {}
+          f:name: {}
+        f:selector:
+          .: {}
+          f:matchLabels:
+            .: {}
+            f:fabric: {}
+            f:site: {}
+        f:server_count: {}
+        f:vrf:
+          .: {}
+          f:name: {}
+          f:tenant: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2022-06-01T06:34:53Z"
+  - apiVersion: netop.mgr/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        .: {}
+        f:extern_dynamic: {}
+        f:extern_static: {}
+        f:fabric_name: {}
+        f:kubeapi_vlan: {}
+        f:l3out:
+          .: {}
+          f:svi: {}
+        f:mcast_range:
+          .: {}
+          f:end: {}
+          f:start: {}
+        f:node_subnet: {}
+        f:node_svc_subnet: {}
+        f:pod_subnet: {}
+        f:service_vlan: {}
+    manager: manager
+    operation: Update
+    subresource: status
+    time: "2022-06-01T06:34:53Z"
+  name: for-aci-cni-2
+  namespace: netop-manager
+  resourceVersion: "8853564"
+  uid: 8b225ef0-d53e-4cf8-94eb-932a33eaeeed
+spec:
+  aep: bm-srvrs-aep
+  l3out:
+    external_networks:
+    - sauto_l3out-1_epg
+    name: sauto_l3out-1
+    svi: {}
+  physical_domain: {}
+  selector:
+    matchLabels:
+      fabric: on-prem-dev-infra
+      site: bldg-15-lab
+  server_count: 3
+  vrf:
+    name: sauto_l3out-1_vrf
+    tenant: common
+status:
+  extern_dynamic: 10.3.0.1/16
+  extern_static: 10.4.0.1/16
+  fabric_name: os-bm-1
+  kubeapi_vlan: 101
+  l3out:
+    svi: {}
+  mcast_range:
+    end: 225.114.255.255
+    start: 225.114.1.1
+  node_subnet: 1.100.101.1/24
+  node_svc_subnet: 10.5.0.1/16
+  pod_subnet: 10.6.0.1/16
+  service_vlan: 102
+  state: READY
