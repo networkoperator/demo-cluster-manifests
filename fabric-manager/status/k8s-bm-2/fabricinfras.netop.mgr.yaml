@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  fabricinfras.netop.mgr.yaml: |
+    "name:k8s-bm-2, ns:netop-manager, status:{\"allocated\":[{\"extern_dynamic_pools\":[\"10.4.0.1/16\"],\"machine_group_profile\":\"for-aci-cni\",\"mcast_subnet_pools\":[\"225.114.1.0/16\"],\"node_subnet_pools\":[\"1.100.101.1/24\"],\"service_vlan_pools\":[102]}],\"deployment_scripts\":[\"kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test/fabric-manager/argo/k8s-bm-2/argo_app.yaml\"]}, status_b64:eyJhbGxvY2F0ZWQiOlt7ImV4dGVybl9keW5hbWljX3Bvb2xzIjpbIjEwLjQuMC4xLzE2Il0sIm1hY2hpbmVfZ3JvdXBfcHJvZmlsZSI6ImZvci1hY2ktY25pIiwibWNhc3Rfc3VibmV0X3Bvb2xzIjpbIjIyNS4xMTQuMS4wLzE2Il0sIm5vZGVfc3VibmV0X3Bvb2xzIjpbIjEuMTAwLjEwMS4xLzI0Il0sInNlcnZpY2Vfdmxhbl9wb29scyI6WzEwMl19XSwiZGVwbG95bWVudF9zY3JpcHRzIjpbImt1YmVjdGwgYXBwbHkgLWYgaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL25ldHdvcmtvcGVyYXRvci9kZW1vLWNsdXN0ZXItbWFuaWZlc3RzL3Rlc3QvZmFicmljLW1hbmFnZXIvYXJnby9rOHMtYm0tMi9hcmdvX2FwcC55YW1sIl19"
+kind: ConfigMap
+metadata:
+  labels:
+    netop-manager: fabricinfras.netop.mgr
+  name: fabricinfras.netop.mgr
+  namespace: netop-manager
