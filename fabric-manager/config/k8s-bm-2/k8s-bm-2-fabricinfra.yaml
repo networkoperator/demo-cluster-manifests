@@ -1,58 +1,11 @@
 apiVersion: netop.mgr/v1
 kind: FabricInfra
 metadata:
-  creationTimestamp: "2022-06-01T06:31:36Z"
-  generation: 1
   labels:
     fabric: on-prem-dev-infra
     site: bldg-15-lab
-  managedFields:
-  - apiVersion: netop.mgr/v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:metadata:
-        f:labels:
-          .: {}
-          f:fabric: {}
-          f:site: {}
-      f:spec:
-        .: {}
-        f:aci:
-          .: {}
-          f:extern_dynamic_pools: {}
-          f:extern_static_pools: {}
-          f:infra_vlan: {}
-          f:kubeapi_vlan_pools: {}
-          f:mcast_subnet_pools: {}
-          f:node_subnet_pools: {}
-          f:node_svc_subnet_pools: {}
-          f:service_vlan_pools: {}
-        f:credentials:
-          .: {}
-          f:hosts: {}
-          f:login:
-            .: {}
-            f:password: {}
-            f:username: {}
-        f:fabric_type: {}
-    manager: kubectl-create
-    operation: Update
-    time: "2022-06-01T06:31:36Z"
-  - apiVersion: netop.mgr/v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:status:
-        .: {}
-        f:allocated: {}
-        f:deployment_scripts: {}
-    manager: manager
-    operation: Update
-    subresource: status
-    time: "2022-06-01T06:34:43Z"
   name: k8s-bm-2
   namespace: netop-manager
-  resourceVersion: "8853565"
-  uid: 73433376-0b4e-492d-95d3-7429fe341003
 spec:
   aci:
     extern_dynamic_pools:
@@ -84,25 +37,3 @@ spec:
       password: dummy
       username: dummy
   fabric_type: aci
-status:
-  allocated:
-  - extern_dynamic_pools:
-    - 10.4.0.1/16
-    machine_group_profile: for-aci-cni
-    mcast_subnet_pools:
-    - 225.114.1.0/16
-    node_subnet_pools:
-    - 1.100.101.1/24
-    service_vlan_pools:
-    - 102
-  - extern_dynamic_pools:
-    - 10.4.0.1/16
-    machine_group_profile: for-aci-cni-2
-    mcast_subnet_pools:
-    - 225.114.1.0/16
-    node_subnet_pools:
-    - 1.100.101.1/24
-    service_vlan_pools:
-    - 102
-  deployment_scripts:
-  - kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test/fabric-manager/argo/k8s-bm-2/argo_app.yaml
