@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  fabricinfras.netop.mgr.yaml: |
+    "name:aws, ns:netop-manager, status:{\"allocated\":[{\"machine_group_profile\":\"k8s-1.21\"}],\"deployment_scripts\":[\"kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test/fabric-manager/argo/aws/argo_app.yaml\"]}, status_b64:eyJhbGxvY2F0ZWQiOlt7Im1hY2hpbmVfZ3JvdXBfcHJvZmlsZSI6Ims4cy0xLjIxIn1dLCJkZXBsb3ltZW50X3NjcmlwdHMiOlsia3ViZWN0bCBhcHBseSAtZiBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vbmV0d29ya29wZXJhdG9yL2RlbW8tY2x1c3Rlci1tYW5pZmVzdHMvdGVzdC9mYWJyaWMtbWFuYWdlci9hcmdvL2F3cy9hcmdvX2FwcC55YW1sIl19"
+kind: ConfigMap
+metadata:
+  labels:
+    netop-manager: fabricinfras.netop.mgr
+  name: fabricinfras.netop.mgr
+  namespace: netop-manager

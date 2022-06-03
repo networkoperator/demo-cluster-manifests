@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  clusterprofiles.netop.mgr.yaml: |
+    "name:awsc1, ns:netop-manager, status:{\"deployment_scripts\":[\"kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test/workload/argo/awsc1/argo_app.yaml\",\"kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test/workload/config/awsc1/netop-manager-deployment.yaml\",\"kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test/workload/config/awsc1/installer.yaml\"],\"machine_group_profile_name\":\"k8s-1.21\"}, status_b64:eyJkZXBsb3ltZW50X3NjcmlwdHMiOlsia3ViZWN0bCBhcHBseSAtZiBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vbmV0d29ya29wZXJhdG9yL2RlbW8tY2x1c3Rlci1tYW5pZmVzdHMvdGVzdC93b3JrbG9hZC9hcmdvL2F3c2MxL2FyZ29fYXBwLnlhbWwiLCJrdWJlY3RsIGFwcGx5IC1mIGh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9uZXR3b3Jrb3BlcmF0b3IvZGVtby1jbHVzdGVyLW1hbmlmZXN0cy90ZXN0L3dvcmtsb2FkL2NvbmZpZy9hd3NjMS9uZXRvcC1tYW5hZ2VyLWRlcGxveW1lbnQueWFtbCIsImt1YmVjdGwgYXBwbHkgLWYgaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL25ldHdvcmtvcGVyYXRvci9kZW1vLWNsdXN0ZXItbWFuaWZlc3RzL3Rlc3Qvd29ya2xvYWQvY29uZmlnL2F3c2MxL2luc3RhbGxlci55YW1sIl0sIm1hY2hpbmVfZ3JvdXBfcHJvZmlsZV9uYW1lIjoiazhzLTEuMjEifQ=="
+kind: ConfigMap
+metadata:
+  labels:
+    netop-manager: clusterprofiles.netop.mgr
+  name: clusterprofiles.netop.mgr
+  namespace: netop-manager
