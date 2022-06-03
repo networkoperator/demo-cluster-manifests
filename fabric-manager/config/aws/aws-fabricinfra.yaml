@@ -1,0 +1,10 @@
+apiVersion: netop.mgr/v1
+kind: FabricInfra
+metadata:
+  labels:
+    fabric: aws
+    site: us-east-1
+  name: aws
+  namespace: netop-manager
+spec:
+  fabric_type: aws
