@@ -1588,13 +1588,4 @@ data:
       gituser="networkoperator-gittest"
       gitemail="test@cisco.com"
       sleepduration=5s
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: websocket-config
-  namespace: netop-manager-system
-data:
-  serverIP: "172.18.0.2"
-  serverPort: "8095"
 
