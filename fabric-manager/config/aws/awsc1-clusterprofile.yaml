@@ -1,81 +1,12 @@
 apiVersion: netop.mgr/v1
 kind: ClusterProfile
 metadata:
-  creationTimestamp: "2022-06-04T00:24:09Z"
-  generation: 1
-  managedFields:
-  - apiVersion: netop.mgr/v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:spec:
-        .: {}
-        f:cluster_input:
-          .: {}
-          f:profile:
-            .: {}
-            f:cni: {}
-        f:selector:
-          .: {}
-          f:matchLabels:
-            .: {}
-            f:computes: {}
-            f:distro: {}
-            f:location: {}
-            f:network-infra: {}
-            f:pod-network: {}
-    manager: kubectl-create
-    operation: Update
-    time: "2022-06-04T00:24:09Z"
-  - apiVersion: netop.mgr/v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:status:
-        .: {}
-        f:deployment_scripts: {}
-        f:machine_group_profile_name: {}
-    manager: manager
-    operation: Update
-    subresource: status
-    time: "2022-06-04T00:24:09Z"
   name: awsc1
   namespace: netop-manager
-  resourceVersion: "9484867"
-  uid: 19852fc0-519e-45a6-9c54-f34a9a1d09ce
 spec:
   cluster_input:
-    aci_cni_config:
-      aci_config:
-        vmm_domain:
-          mcast_range: {}
-      kube_config:
-        drop_log_config: {}
-        istio_config: {}
-        multus: {}
-        nodepodif_config: {}
-        operator_managed_config: {}
-        sriov_config: {}
-      logging: {}
-      net_config: {}
-      registry: {}
-    aci_config:
-      l3out:
-        svi: {}
-      physical_domain: {}
-      vrf: {}
-    calico_config:
-      bgp_config: {}
-      bgp_peer_config: {}
-      net_config: {}
-    cko_git_config: {}
-    cko_proxy_config: {}
-    cni: {}
-    lb_config: {}
-    monitoring_config: {}
-    net_config: {}
     profile:
       cni: cko-unmanaged
-    registry: {}
-    service_mesh_config: {}
   selector:
     matchLabels:
       computes: EC2
@@ -83,9 +14,3 @@ spec:
       location: ON-PREM
       network-infra: AWS
       pod-network: UNMANAGED
-status:
-  deployment_scripts:
-  - kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test/workload/argo/awsc1/argo_app.yaml
-  - kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test/workload/config/awsc1/netop-manager-deployment.yaml
-  - kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test/workload/config/awsc1/installer.yaml
-  machine_group_profile_name: k8s-1.21
