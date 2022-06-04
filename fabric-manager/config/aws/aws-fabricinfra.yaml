@@ -1,10 +1,48 @@
 apiVersion: netop.mgr/v1
 kind: FabricInfra
 metadata:
+  creationTimestamp: "2022-06-03T22:26:09Z"
+  generation: 1
   labels:
     fabric: aws
     site: us-east-1
+  managedFields:
+  - apiVersion: netop.mgr/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:fabric: {}
+          f:site: {}
+      f:spec:
+        .: {}
+        f:fabric_type: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2022-06-03T22:26:09Z"
+  - apiVersion: netop.mgr/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        .: {}
+        f:allocated: {}
+        f:deployment_scripts: {}
+    manager: manager
+    operation: Update
+    subresource: status
+    time: "2022-06-03T22:27:21Z"
   name: aws
   namespace: netop-manager
+  resourceVersion: "9466134"
+  uid: 3e0d6cd7-d860-4d34-bc26-351ad69f3097
 spec:
+  aci: {}
+  credentials:
+    login: {}
   fabric_type: aws
+status:
+  allocated:
+  - machine_group_profile: k8s-1.21
+  deployment_scripts:
+  - kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test/fabric-manager/argo/aws/argo_app.yaml
