@@ -14,28 +14,9 @@ data:
     service_vlan: 102
 kind: ConfigMap
 metadata:
-  creationTimestamp: "2022-06-01T07:48:32Z"
   labels:
     cluster: aci-cni
     fabric: on-prem-dev-infra
     site: bldg-15-lab
-  managedFields:
-  - apiVersion: v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:data:
-        .: {}
-        f:machinegroupprofile_overrides: {}
-      f:metadata:
-        f:labels:
-          .: {}
-          f:cluster: {}
-          f:fabric: {}
-          f:site: {}
-    manager: kubectl-create
-    operation: Update
-    time: "2022-06-01T07:48:32Z"
   name: for-aci-cni-2
   namespace: netop-manager
-  resourceVersion: "8865384"
-  uid: 1e3db698-803a-406b-8721-0573699cee17
