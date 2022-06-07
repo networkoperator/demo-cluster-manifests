@@ -1,0 +1,16 @@
+apiVersion: netop.mgr/v1
+kind: ClusterProfile
+metadata:
+  name: openshiftc1
+  namespace: netop-manager
+spec:
+  cluster_input:
+    profile:
+      cni: kubernetes-1.22
+  selector:
+    matchLabels:
+      computes: NOVA
+      distro: K8S-1.21
+      location: ON-PREM
+      network-infra: ACI
+      pod-network: ACI-CNI
