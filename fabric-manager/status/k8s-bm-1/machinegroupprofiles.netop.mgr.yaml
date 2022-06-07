@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  machinegroupprofiles.netop.mgr.yaml: |
+    "name:k8s-1.21, ns:netop-manager, status:{\"fabric_name\":\"k8s-bm-1\",\"l3out\":{\"svi\":{}},\"mcast_range\":{}}, status_b64:eyJmYWJyaWNfbmFtZSI6Ims4cy1ibS0xIiwibDNvdXQiOnsic3ZpIjp7fX0sIm1jYXN0X3JhbmdlIjp7fX0="
+kind: ConfigMap
+metadata:
+  labels:
+    netop-manager: machinegroupprofiles.netop.mgr
+  name: machinegroupprofiles.netop.mgr
+  namespace: netop-manager
