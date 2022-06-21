@@ -1,15 +1,57 @@
 apiVersion: netop.mgr/v1
 kind: FabricInfra
 metadata:
+  creationTimestamp: "2022-06-21T23:30:13Z"
+  generation: 2
   labels:
     fabric: on-prem-dev-infra
     site: bldg-15-lab
+  managedFields:
+  - apiVersion: netop.mgr/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:fabric: {}
+          f:site: {}
+      f:spec:
+        .: {}
+        f:aci:
+          .: {}
+          f:extern_static_pools: {}
+          f:infra_vlan: {}
+          f:kubeapi_vlan_pools: {}
+          f:mcast_subnet_pools: {}
+          f:node_svc_subnet_pools: {}
+          f:service_vlan_pools: {}
+        f:credentials:
+          .: {}
+          f:hosts: {}
+          f:login:
+            .: {}
+            f:password: {}
+            f:username: {}
+        f:fabric_type: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2022-06-21T23:30:13Z"
+  - apiVersion: netop.mgr/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        .: {}
+        f:deployment_scripts: {}
+    manager: manager
+    operation: Update
+    subresource: status
+    time: "2022-06-21T23:30:13Z"
   name: k8s-bm-1
   namespace: netop-manager
+  resourceVersion: "13421841"
+  uid: 76a73d23-ea4a-454f-8860-d521269f1e74
 spec:
   aci:
-    extern_dynamic_pools:
-    - 20.3.0.1/16
     extern_static_pools:
     - 20.4.0.1/16
     infra_vlan: 4093
@@ -17,8 +59,6 @@ spec:
     - 103
     mcast_subnet_pools:
     - 225.115.0.0/16
-    node_subnet_pools:
-    - 2.100.101.1/16
     node_svc_subnet_pools:
     - 20.5.0.1/16
     service_vlan_pools:
@@ -30,3 +70,6 @@ spec:
       password: dummy
       username: dummy
   fabric_type: aci
+status:
+  deployment_scripts:
+  - kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test/fabric-manager/argo/k8s-bm-1/argo_app.yaml
