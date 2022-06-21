@@ -1,34 +1,81 @@
 apiVersion: netop.mgr/v1
 kind: FabricInfra
 metadata:
+  creationTimestamp: "2022-06-21T21:46:37Z"
+  generation: 2
   labels:
     fabric: on-prem-dev-infra
     site: bldg-15-lab
+  managedFields:
+  - apiVersion: netop.mgr/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:fabric: {}
+          f:site: {}
+      f:spec:
+        .: {}
+        f:aci:
+          .: {}
+          f:infra_vlan: {}
+        f:credentials:
+          .: {}
+          f:hosts: {}
+          f:login:
+            .: {}
+            f:password: {}
+            f:username: {}
+        f:fabric_type: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2022-06-21T21:46:37Z"
+  - apiVersion: netop.mgr/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        .: {}
+        f:deployment_scripts: {}
+    manager: manager
+    operation: Update
+    subresource: status
+    time: "2022-06-21T21:46:50Z"
+  - apiVersion: netop.mgr/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:aci:
+          f:extern_dynamic_pools: {}
+          f:extern_static_pools: {}
+          f:kubeapi_vlan_pools: {}
+          f:mcast_subnet_pools: {}
+          f:node_subnet_pools: {}
+          f:node_svc_subnet_pools: {}
+          f:service_vlan_pools: {}
+    manager: manager
+    operation: Update
+    time: "2022-06-21T21:47:05Z"
   name: k8s-bm-2
   namespace: netop-manager
+  resourceVersion: "13401221"
+  uid: 1e98cea9-ad74-4bd2-89a2-6fba24a41865
 spec:
   aci:
     extern_dynamic_pools:
-    - 10.3.0.1/16
     - 20.3.0.1/16
     extern_static_pools:
-    - 10.4.0.1/16
     - 20.4.0.1/16
     infra_vlan: 4093
     kubeapi_vlan_pools:
-    - 101
     - 103
     mcast_subnet_pools:
-    - 225.114.0.0/16
     - 225.115.0.0/16
     node_subnet_pools:
-    - 1.100.101.1/16
     - 2.100.101.1/16
     node_svc_subnet_pools:
-    - 10.5.0.1/16
     - 20.5.0.1/16
     service_vlan_pools:
-    - 102
     - 104
   credentials:
     hosts:
@@ -37,3 +84,6 @@ spec:
       password: dummy
       username: dummy
   fabric_type: aci
+status:
+  deployment_scripts:
+  - kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test/fabric-manager/argo/k8s-bm-2/argo_app.yaml
