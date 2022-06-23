@@ -8,17 +8,26 @@ metadata:
   namespace: netop-manager
 spec:
   aci:
+    extern_dynamic_pools:
+    - 10.3.0.1/16
     extern_static_pools:
     - 20.4.0.1/16
+    - 10.4.0.1/16
     infra_vlan: 4093
     kubeapi_vlan_pools:
     - 103
+    - 101
     mcast_subnet_pools:
     - 225.115.0.0/16
+    - 225.114.0.0/16
+    node_subnet_pools:
+    - 1.100.101.1/16
     node_svc_subnet_pools:
     - 20.5.0.1/16
+    - 10.5.0.1/16
     service_vlan_pools:
     - 104
+    - 102
   credentials:
     hosts:
     - 10.30.120.140
