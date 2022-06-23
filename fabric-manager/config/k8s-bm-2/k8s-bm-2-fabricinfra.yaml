@@ -1,14 +1,79 @@
 apiVersion: netop.mgr/v1
 kind: FabricInfra
 metadata:
+  creationTimestamp: "2022-06-23T00:33:42Z"
+  generation: 3
   labels:
     fabric: on-prem-dev-infra
     site: bldg-15-lab
+  managedFields:
+  - apiVersion: netop.mgr/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:fabric: {}
+          f:site: {}
+      f:spec:
+        .: {}
+        f:aci:
+          .: {}
+          f:infra_vlan: {}
+        f:credentials:
+          .: {}
+          f:hosts: {}
+          f:login:
+            .: {}
+            f:password: {}
+            f:username: {}
+        f:fabric_type: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2022-06-23T00:33:42Z"
+  - apiVersion: netop.mgr/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        .: {}
+        f:deployment_scripts: {}
+    manager: manager
+    operation: Update
+    subresource: status
+    time: "2022-06-23T00:33:49Z"
+  - apiVersion: netop.mgr/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:aci:
+          f:extern_dynamic_pools: {}
+          f:kubeapi_vlan_pools: {}
+          f:mcast_subnet_pools: {}
+          f:node_subnet_pools: {}
+          f:node_svc_subnet_pools: {}
+          f:service_vlan_pools: {}
+    manager: manager
+    operation: Update
+    time: "2022-06-23T00:37:17Z"
   name: k8s-bm-2
   namespace: netop-manager
+  resourceVersion: "13658932"
+  uid: 6f581126-60cd-41b3-839a-af909d1fba59
 spec:
   aci:
+    extern_dynamic_pools:
+    - 10.4.0.1/16
     infra_vlan: 4093
+    kubeapi_vlan_pools:
+    - 101
+    mcast_subnet_pools:
+    - 225.114.0.0/16
+    node_subnet_pools:
+    - 1.100.101.1/16
+    node_svc_subnet_pools:
+    - 10.5.0.1/16
+    service_vlan_pools:
+    - 102
   credentials:
     hosts:
     - 10.30.120.140
@@ -16,3 +81,6 @@ spec:
       password: dummy
       username: dummy
   fabric_type: aci
+status:
+  deployment_scripts:
+  - kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test/fabric-manager/argo/k8s-bm-2/argo_app.yaml
