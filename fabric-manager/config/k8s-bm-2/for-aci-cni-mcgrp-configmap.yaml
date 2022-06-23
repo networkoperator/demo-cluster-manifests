@@ -4,28 +4,9 @@ data:
     pod_subnet: 10.6.0.1/16
 kind: ConfigMap
 metadata:
-  creationTimestamp: "2022-06-21T04:45:22Z"
   labels:
     cluster: aci-cni
     fabric: on-prem-dev-infra
     site: bldg-15-lab
-  managedFields:
-  - apiVersion: v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:data:
-        .: {}
-        f:machinegroupprofile_overrides: {}
-      f:metadata:
-        f:labels:
-          .: {}
-          f:cluster: {}
-          f:fabric: {}
-          f:site: {}
-    manager: kubectl-create
-    operation: Update
-    time: "2022-06-21T04:45:22Z"
   name: for-aci-cni
   namespace: netop-manager
-  resourceVersion: "13237434"
-  uid: 6a472aac-e9d4-4f83-8042-e20288bef6a8
