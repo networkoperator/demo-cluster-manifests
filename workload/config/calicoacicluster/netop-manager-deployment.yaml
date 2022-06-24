@@ -1485,7 +1485,13 @@ spec:
             fieldRef:
               fieldPath: metadata.namespace
         - name: SYSTEM_ID
-          value: acicnicluster
+          value: calicoacicluster
+        - name: HTTP_PROXY
+          value: http://proxy.esl.cisco.com:80
+        - name: HTTPS_PROXY
+          value: http://proxy.esl.cisco.com:80
+        - name: NO_PROXY
+          value: 10.96.0.1
         - name: SERVER_IP
           valueFrom:
             configMapKeyRef:
