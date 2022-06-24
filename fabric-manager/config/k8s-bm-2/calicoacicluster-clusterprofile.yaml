@@ -1,12 +1,12 @@
 apiVersion: netop.mgr/v1
 kind: ClusterProfile
 metadata:
-  name: acicnicluster
+  name: calicoacicluster
   namespace: netop-manager
 spec:
   cluster_input:
     profile:
-      cni: kubernetes-1.22
+      cni: cko-calico
       ingress: smm
       loadbalancer: fabric
       monitoring: prometheus
@@ -15,4 +15,4 @@ spec:
     matchLabels:
       distro: kubernetes
       location: on-prem
-      pod_network: aci
+      pod_network: calico

@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: workload/config/acicnicluster/
+    path: workload/config/calicoacicluster/
     repoURL: https://github.com/networkoperator/demo-cluster-manifests
     targetRevision: test 
   syncPolicy:
