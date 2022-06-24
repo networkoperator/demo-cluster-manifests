@@ -1,6 +1,8 @@
 apiVersion: v1
 data:
-  machinegroupprofiles.netop.mgr.yaml: ""
+  machinegroupprofiles.netop.mgr.yaml: |
+    "name:for-aci-cni, ns:netop-manager, status:null, status_b64:bnVsbA=="
+    "name:for-calico-cni, ns:netop-manager, status:null, status_b64:bnVsbA=="
 kind: ConfigMap
 metadata:
   labels:
