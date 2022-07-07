@@ -1,0 +1,47 @@
+apiVersion: v1
+data:
+  clusterprofile_overrides: "machine_group_profile_name: for-calico-cni\ncluster_input:\n
+    \ aci_cni_config:\n    aci_config:\n      vmm_domain:\n        encap_type: vxlan\n
+    \       mcast_range:\n            start: 225.115.1.1\n            end: 225.115.255.255\n
+    \   kube_config:\n      ovs_memory_limit: 0.75Gi\n      image_pull_policy: Always\n
+    \     allow_pods_external_access: True \n    logging:\n      controller_log_level:
+    debug\n      hostagent_log_level: debug\n      opflexagent_log_level: debug\n
+    \ registry:\n    image_prefix: quay.io/noirolabs\n    image_pull_secret: noiro-docker-registry-secret\n
+    \   network_operator_version: demo-test\n  calico_config:\n    net_config:\n      encapsulation:
+    None\n    bgp_peer_config:\n      remote_as_number: 650011\n      local_as_number:
+    64512\n      racks:\n        - [2.100.101.201, 2.100.101.202]\n  net_config:\n
+    \   node_subnet: 2.100.101.1/24\n    pod_subnet: 20.2.0.1/16\n    extern_dynamic:
+    20.3.0.1/16\n    cluster_svc_subnet: 10.96.0.0/12\n  service_mesh_config:\n    mesh_id:
+    bm2calico\n    network: network2\n    mesh_id: mesh1\n    role: Primary\n    kubeconfig:
+    https://github.com/networkoperator/demo-clusters/tree/kiran/calico-aci-cluster\n
+    \ monitoring_config:\n    monitoring_type: prometheus\n    remote_write_ip: 3.237.37.136
+    \n    remote_write_port: 32307\n  lb_config:\n    lb_type: metallb\n  cko_proxy_config:\n
+    \   http_proxy: http://proxy.esl.cisco.com:80\n    https_proxy: http://proxy.esl.cisco.com:80\n
+    \   no_proxy: 10.96.0.1\n"
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2022-07-07T00:19:32Z"
+  labels:
+    distro: kubernetes
+    location: on-prem
+    pod_network: calico
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:clusterprofile_overrides: {}
+      f:metadata:
+        f:labels:
+          .: {}
+          f:distro: {}
+          f:location: {}
+          f:pod_network: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2022-07-07T00:19:32Z"
+  name: calicoacicluster
+  namespace: netop-manager
+  resourceVersion: "1866"
+  uid: c72c0fc8-b091-4c49-aa2d-990681033852
