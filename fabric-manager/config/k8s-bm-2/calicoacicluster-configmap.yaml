@@ -20,28 +20,9 @@ data:
     \   no_proxy: 10.96.0.1\n"
 kind: ConfigMap
 metadata:
-  creationTimestamp: "2022-07-07T00:19:32Z"
   labels:
     distro: kubernetes
     location: on-prem
     pod_network: calico
-  managedFields:
-  - apiVersion: v1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:data:
-        .: {}
-        f:clusterprofile_overrides: {}
-      f:metadata:
-        f:labels:
-          .: {}
-          f:distro: {}
-          f:location: {}
-          f:pod_network: {}
-    manager: kubectl-create
-    operation: Update
-    time: "2022-07-07T00:19:32Z"
   name: calicoacicluster
   namespace: netop-manager
-  resourceVersion: "1866"
-  uid: c72c0fc8-b091-4c49-aa2d-990681033852
