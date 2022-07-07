@@ -15,9 +15,28 @@ data:
     prometheus\n    remote_write_ip: 1.1.1.1\n    remote_write_port: 10000\n"
 kind: ConfigMap
 metadata:
+  creationTimestamp: "2022-07-07T00:19:32Z"
   labels:
     distro: kubernetes
     location: on-prem
     pod_network: aci
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:data:
+        .: {}
+        f:clusterprofile_overrides: {}
+      f:metadata:
+        f:labels:
+          .: {}
+          f:distro: {}
+          f:location: {}
+          f:pod_network: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2022-07-07T00:19:32Z"
   name: acicnicluster
   namespace: netop-manager
+  resourceVersion: "1865"
+  uid: 4053ac0d-f21d-4d8b-9c19-cef76bc97333
