@@ -1,19 +1,101 @@
 apiVersion: netop.mgr/v1
 kind: ClusterProfile
 metadata:
+  creationTimestamp: "2022-07-07T21:50:16Z"
+  generation: 1
+  managedFields:
+  - apiVersion: netop.mgr/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        .: {}
+        f:cluster_input:
+          .: {}
+          f:profile:
+            .: {}
+            f:cni: {}
+            f:ingress: {}
+            f:loadbalancer: {}
+            f:monitoring: {}
+            f:service_mesh: {}
+        f:selector:
+          .: {}
+          f:matchLabels:
+            .: {}
+            f:cluster: {}
+            f:distro: {}
+            f:location: {}
+            f:pod-network: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2022-07-07T21:50:16Z"
+  - apiVersion: netop.mgr/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        .: {}
+        f:deployment_scripts: {}
+        f:extern_dynamic: {}
+        f:node_subnet: {}
+        f:pod_subnet: {}
+    manager: manager
+    operation: Update
+    subresource: status
+    time: "2022-07-07T21:50:16Z"
   name: acicnicluster
   namespace: netop-manager
+  resourceVersion: "209492"
+  uid: bc184853-1988-4cb5-9af3-7100465ef627
 spec:
   cluster_input:
+    aci_cni_config:
+      aci_config:
+        vmm_domain:
+          mcast_range: {}
+      kube_config:
+        drop_log_config: {}
+        istio_config: {}
+        multus: {}
+        nodepodif_config: {}
+        operator_managed_config: {}
+        sriov_config: {}
+      logging: {}
+      net_config: {}
+      registry: {}
+    aci_config:
+      l3out:
+        svi: {}
+      physical_domain: {}
+      vrf: {}
+    calico_config:
+      bgp_config: {}
+      bgp_peer_config: {}
+      net_config: {}
+    cko_git_config: {}
+    cko_proxy_config: {}
+    cni: {}
+    lb_config: {}
+    monitoring_config: {}
+    net_config: {}
     profile:
       cni: kubernetes-1.22
       ingress: smm
       loadbalancer: fabric
       monitoring: prometheus
       service_mesh: smm
+    registry: {}
+    service_mesh_config: {}
   selector:
     matchLabels:
       cluster: aci-cni
       distro: kubernetes
       location: on-prem
       pod-network: aci
+status:
+  deployment_scripts:
+  - kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test/workload/argo/acicnicluster/argo_app.yaml
+  - kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test/workload/config/acicnicluster/netop-manager-deployment.yaml
+  - kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test/workload/config/acicnicluster/installer.yaml
+  extern_dynamic: 10.3.0.1/16
+  node_subnet: 1.100.101.1/24
+  pod_subnet: 10.6.0.1/16
