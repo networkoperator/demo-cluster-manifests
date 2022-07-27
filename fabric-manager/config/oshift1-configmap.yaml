@@ -1,0 +1,58 @@
+apiVersion: v1
+data:
+  clusterprofile_overrides: |
+    cluster_input:
+      aci_cni_config:
+        aci_config:
+          aep: hypf-aep
+        aci_config:
+          vmm_domain:
+            encap_type: vxlan
+            mcast_range:
+                start: 225.114.1.1
+                end: 225.114.255.255
+            nested_inside:
+              type: vmware
+              name: hypflex-vswitch
+              installer_provisioned_lb_ip: 192.168.57.2
+              vlan_pool: ocp49-pool
+        logging:
+          controller_log_level: debug
+          hostagent_log_level: debug
+          opflexagent_log_level: debug
+        net_config:
+          extern_static: 10.4.0.1/24
+          service_vlan: 292
+          node_svc_subnet: 10.5.0.1/24
+        kube_config:
+          ovs_memory_limit: 1Gi
+          image_pull_policy: Always
+      aci_config:
+        l3out:
+          name: vishal_filip_acc_l3out
+          external_networks:
+          - vishal_filip_acc_net
+        vrf:
+          name: vishal_filip_acc_test
+          tenant: common
+      registry:
+        image_prefix: quay.io/noirolabs
+        image_pull_secret: noiro-docker-registry-secret
+        network_operator_version: cko-mvp-1
+      net_config:
+        node_subnet: 192.168.57.1/24
+        pod_subnet: 10.2.0.1/16
+        extern_dynamic: 10.3.0.1/24
+        kubeapi_vlan: 291
+      flavor: openshift-4.9-esx
+      cko_proxy_config:
+        http_proxy: http://proxy.esl.cisco.com:80
+        https_proxy: http://proxy.esl.cisco.com:80
+        no_proxy: localhost,127.0.0.1,10.30.120.125,10.30.120.120,10.30.120.20,noiro-quay.cisco.com,15.11.0.4,15.11.0.5,15.11.0.6,15.11.0.7,15.11.0.8,15.11.0.9,15.11.0.10,15.11.0.11,15.11.0.12,15.11.0.13,15.11.0.14,15.11.0.15,15.11.0.16,15.11.0.17,15.11.0.18,15.11.0.19,15.11.0.20,15.11.0.21,15.11.0.22,15.11.0.23,15.11.0.24,15.11.0.25,15.11.0.26,15.11.0.27,15.11.0.28,15.11.0.29,15.11.0.30,15.11.0.31,15.11.0.32,15.11.0.33,15.11.0.34,172.30.0.1,172.30.0.10,oauth-openshift.apps.openupi.noiro.local,console-openshift-console.apps.openupi.noiro.local,downloads-openshift-console.apps.openupi.noiro.local,1.100.1.1
+kind: ConfigMap
+metadata:
+  labels:
+    fabric: 4.2.7f
+    site: BUILDING-15-LAB
+  name: oshift1
+  namespace: netop-manager

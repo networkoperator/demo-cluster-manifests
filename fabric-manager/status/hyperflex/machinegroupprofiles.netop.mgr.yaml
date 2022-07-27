@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  machinegroupprofiles.netop.mgr.yaml: |
+    "name:for-calico-cni, ns:netop-manager, status:{\"cluster_l3out\":{\"bgp\":{\"peering\":{}},\"svi\":{}},\"extern_dynamic\":\"20.3.0.1/16\",\"fabric_name\":\"k8s-bm-2\",\"l3out\":{},\"mcast_range\":{},\"node_subnet\":\"10.6.0.1/16\",\"pod_subnet\":\"20.2.0.1/16\",\"state\":\"READY\"}, status_b64:eyJjbHVzdGVyX2wzb3V0Ijp7ImJncCI6eyJwZWVyaW5nIjp7fX0sInN2aSI6e319LCJleHRlcm5fZHluYW1pYyI6IjIwLjMuMC4xLzE2IiwiZmFicmljX25hbWUiOiJrOHMtYm0tMiIsImwzb3V0Ijp7fSwibWNhc3RfcmFuZ2UiOnt9LCJub2RlX3N1Ym5ldCI6IjEwLjYuMC4xLzE2IiwicG9kX3N1Ym5ldCI6IjIwLjIuMC4xLzE2Iiwic3RhdGUiOiJSRUFEWSJ9"
+    "name:k8s-1.21, ns:netop-manager, status:{\"cluster_l3out\":{\"bgp\":{\"peering\":{}},\"svi\":{}},\"extern_dynamic\":\"10.3.0.1/24\",\"extern_static\":\"10.4.0.1/24\",\"fabric_name\":\"hyperflex\",\"kubeapi_vlan\":291,\"l3out\":{},\"mcast_range\":{\"end\":\"225.91.255.255\",\"start\":\"225.91.0.1\"},\"node_subnet\":\"10.5.0.1/16\",\"node_svc_subnet\":\"10.2.0.1/16\",\"pod_subnet\":\"192.168.57.1/24\",\"service_vlan\":292,\"state\":\"READY\"}, status_b64:eyJjbHVzdGVyX2wzb3V0Ijp7ImJncCI6eyJwZWVyaW5nIjp7fX0sInN2aSI6e319LCJleHRlcm5fZHluYW1pYyI6IjEwLjMuMC4xLzI0IiwiZXh0ZXJuX3N0YXRpYyI6IjEwLjQuMC4xLzI0IiwiZmFicmljX25hbWUiOiJoeXBlcmZsZXgiLCJrdWJlYXBpX3ZsYW4iOjI5MSwibDNvdXQiOnt9LCJtY2FzdF9yYW5nZSI6eyJlbmQiOiIyMjUuOTEuMjU1LjI1NSIsInN0YXJ0IjoiMjI1LjkxLjAuMSJ9LCJub2RlX3N1Ym5ldCI6IjEwLjUuMC4xLzE2Iiwibm9kZV9zdmNfc3VibmV0IjoiMTAuMi4wLjEvMTYiLCJwb2Rfc3VibmV0IjoiMTkyLjE2OC41Ny4xLzI0Iiwic2VydmljZV92bGFuIjoyOTIsInN0YXRlIjoiUkVBRFkifQ=="
+kind: ConfigMap
+metadata:
+  labels:
+    netop-manager: machinegroupprofiles.netop.mgr
+  name: machinegroupprofiles.netop.mgr
+  namespace: netop-manager
