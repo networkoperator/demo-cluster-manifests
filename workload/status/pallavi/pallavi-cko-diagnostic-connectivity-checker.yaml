@@ -1,0 +1,35 @@
+apiVersion: v1
+data:
+  status: |-
+    {
+      "cStatus": {
+        "test-conn-check": "{UpdatedAt:2023-07-11 23:15:48.025441105 +0000 UTC Results:{PodToPod:Fail PodToNode:Pass PodToClusterIp:Fail PodToService:Fail PodToLbVip: PodToNodePort:Pass PodToExternal:Fail NodeToNode:Pass NodeToPod:Pass NodeToClusterIp:Pass NodeToLbVip:Pass NodeToNodePort:Pass NodeToExternal:Pass} ResultCount:{Passed:8 Failed:4 Skipped:1}}"
+      },
+      "conditions": {
+        "lastTransitionTime": "2023-07-11T23:20:09Z",
+        "message": "diagnosticops tool monitored successfully",
+        "reason": "OperatorRunning",
+        "status": "True",
+        "type": "Available"
+      },
+      "observedGeneration": 1,
+      "state": "Running"
+    }
+  status_b64: |-
+    eyAiY1N0YXR1cyI6IHsgInRlc3QtY29ubi1jaGVjayI6ICJ7VXBkYXRlZEF0OjIwMjMtMDctMTEgMjM6
+    MTU6NDguMDI1NDQxMTA1ICswMDAwIFVUQyBSZXN1bHRzOntQb2RUb1BvZDpGYWlsIFBvZFRvTm9kZTpQ
+    YXNzIFBvZFRvQ2x1c3RlcklwOkZhaWwgUG9kVG9TZXJ2aWNlOkZhaWwgUG9kVG9MYlZpcDogUG9kVG9O
+    b2RlUG9ydDpQYXNzIFBvZFRvRXh0ZXJuYWw6RmFpbCBOb2RlVG9Ob2RlOlBhc3MgTm9kZVRvUG9kOlBh
+    c3MgTm9kZVRvQ2x1c3RlcklwOlBhc3MgTm9kZVRvTGJWaXA6UGFzcyBOb2RlVG9Ob2RlUG9ydDpQYXNz
+    IE5vZGVUb0V4dGVybmFsOlBhc3N9IFJlc3VsdENvdW50OntQYXNzZWQ6OCBGYWlsZWQ6NCBTa2lwcGVk
+    OjF9fSIgfSwgImNvbmRpdGlvbnMiOiB7ICJsYXN0VHJhbnNpdGlvblRpbWUiOiAiMjAyMy0wNy0xMVQy
+    MzoyMDowOVoiLCAibWVzc2FnZSI6ICJkaWFnbm9zdGljb3BzIHRvb2wgbW9uaXRvcmVkIHN1Y2Nlc3Nm
+    dWxseSIsICJyZWFzb24iOiAiT3BlcmF0b3JSdW5uaW5nIiwgInN0YXR1cyI6ICJUcnVlIiwgInR5cGUi
+    OiAiQXZhaWxhYmxlIiB9LCAib2JzZXJ2ZWRHZW5lcmF0aW9uIjogMSwgInN0YXRlIjogIlJ1bm5pbmci
+    IH0K
+kind: ConfigMap
+metadata:
+  labels:
+    netop-manager-resource: cko-diagnostic-connectivity-checker
+  name: pallavi-cko-diagnostic-connectivity-checker
+  namespace: 

@@ -1,0 +1,74 @@
+apiVersion: netop.mgr/v1
+kind: FabricInfra
+metadata:
+  labels:
+    fabric: on-prem-dev-infra
+    site: bldg-15-lab
+  name: k8s-bm-2
+  namespace: netop-manager
+spec:
+  contexts:
+    context-1:
+      aep: bm-srvrs-aep
+      l3out:
+        external_networks:
+        - sauto_l3out-1_epg
+        name: sauto_l3out-1
+      vrf:
+        name: sauto_l3out-1_vrf
+        tenant: common
+    context-2:
+      aep: bm-srvrs-calico-aep
+      l3out:
+        external_networks:
+        - sauto_l3out-3_epg
+        name: sauto_l3out-3
+      vrf:
+        name: sauto_l3out-3_vrf
+        tenant: common
+  credentials:
+    hosts:
+    - 10.30.120.140
+    login:
+      password: noir0123
+      username: admin
+  external_subnets:
+  - 10.3.0.1/16
+  - 10.4.0.1/16
+  - 20.3.0.1/16
+  - 20.4.0.1/16
+  fabric_type: aci
+  infra_vlan: 4093
+  internal_subnets:
+  - 1.100.101.1/16
+  - 2.100.101.1/16
+  - 10.5.0.1/16
+  - 10.6.0.1/16
+  - 20.2.0.1/16
+  - 20.5.0.1/16
+  mcast_subnets:
+  - 225.114.0.0/16
+  - 225.115.0.0/16
+  topology:
+    rack:
+    - aci_pod_id: 1
+      id: 1
+      leaf:
+      - id: 101
+      - id: 102
+      node:
+      - name: k8s-node1
+      - name: k8s-node2
+    - aci_pod_id: 1
+      id: 2
+      leaf:
+      - id: 103
+      - id: 104
+      node:
+      - name: k8s-node3
+      - name: k8s-node4
+  vlans:
+  - 101
+  - 102
+  - 103
+  - 104
