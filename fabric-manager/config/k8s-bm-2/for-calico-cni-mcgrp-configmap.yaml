@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  machinegroupprofile_overrides: ""
+kind: ConfigMap
+metadata:
+  labels:
+    cluster: calico-cni
+    fabric: on-prem-dev-infra
+    site: bldg-15-lab
+  name: for-calico-cni
+  namespace: netop-manager

@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  clusterprofiles.netop.mgr.yaml: |
+    "name:oshift1, ns:netop-manager, status:{\"deployment_scripts\":[\"kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/sumit-test-1/workload/argo/oshift1/argo_app.yaml\",\"kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/sumit-test-1/workload/config/oshift1/netop-manager-deployment.yaml\",\"kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/sumit-test-1/workload/config/oshift1/installer.yaml\"],\"extern_dynamic\":\"10.3.0.1/24\",\"node_subnet\":\"192.168.57.1/24\",\"pod_subnet\":\"10.2.0.1/16\"}, status_b64:eyJkZXBsb3ltZW50X3NjcmlwdHMiOlsia3ViZWN0bCBhcHBseSAtZiBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vbmV0d29ya29wZXJhdG9yL2RlbW8tY2x1c3Rlci1tYW5pZmVzdHMvc3VtaXQtdGVzdC0xL3dvcmtsb2FkL2FyZ28vb3NoaWZ0MS9hcmdvX2FwcC55YW1sIiwia3ViZWN0bCBhcHBseSAtZiBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vbmV0d29ya29wZXJhdG9yL2RlbW8tY2x1c3Rlci1tYW5pZmVzdHMvc3VtaXQtdGVzdC0xL3dvcmtsb2FkL2NvbmZpZy9vc2hpZnQxL25ldG9wLW1hbmFnZXItZGVwbG95bWVudC55YW1sIiwia3ViZWN0bCBhcHBseSAtZiBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vbmV0d29ya29wZXJhdG9yL2RlbW8tY2x1c3Rlci1tYW5pZmVzdHMvc3VtaXQtdGVzdC0xL3dvcmtsb2FkL2NvbmZpZy9vc2hpZnQxL2luc3RhbGxlci55YW1sIl0sImV4dGVybl9keW5hbWljIjoiMTAuMy4wLjEvMjQiLCJub2RlX3N1Ym5ldCI6IjE5Mi4xNjguNTcuMS8yNCIsInBvZF9zdWJuZXQiOiIxMC4yLjAuMS8xNiJ9"
+kind: ConfigMap
+metadata:
+  labels:
+    netop-manager: clusterprofiles.netop.mgr
+  name: clusterprofiles.netop.mgr
+  namespace: netop-manager

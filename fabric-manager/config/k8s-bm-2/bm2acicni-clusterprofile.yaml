@@ -1,0 +1,22 @@
+apiVersion: netop.mgr/v1
+kind: ClusterProfile
+metadata:
+  name: bm2acicni
+  namespace: netop-manager
+spec:
+  cni: aci
+  distro:
+    flavor: kubernetes-1.24
+    platform: baremetal
+    release: "1.24"
+    type: kubernetes
+  fabricinfra:
+    Type: aci
+  monitoring: prometheus
+  selector:
+    matchLabels:
+      cluster: aci-cni
+      distro: kubernetes
+      location: on-prem
+      pod-network: aci
+  service_mesh: bm2acicni

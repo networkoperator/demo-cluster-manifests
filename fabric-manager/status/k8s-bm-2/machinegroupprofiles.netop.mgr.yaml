@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  machinegroupprofiles.netop.mgr.yaml: |
+    "name:for-aci-cni, ns:netop-manager, status:{\"cluster-fabric-mapping\":[{\"cluster\":\"bm2acicni\",\"fabric\":\"k8s-bm-2\"}]}, status_b64:eyJjbHVzdGVyLWZhYnJpYy1tYXBwaW5nIjpbeyJjbHVzdGVyIjoiYm0yYWNpY25pIiwiZmFicmljIjoiazhzLWJtLTIifV19"
+kind: ConfigMap
+metadata:
+  labels:
+    netop-manager: machinegroupprofiles.netop.mgr
+  name: machinegroupprofiles.netop.mgr
+  namespace: netop-manager

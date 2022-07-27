@@ -1,0 +1,39 @@
+apiVersion: netop.mgr/v1
+kind: FabricInfra
+metadata:
+  labels:
+    fabric: 4.2.7f
+    site: BUILDING-15-LAB
+  name: fabric14
+  namespace: netop-manager
+spec:
+  aci:
+    extern_dynamic_pools:
+    - 10.3.112.1/21
+    - 20.3.112.1/21
+    extern_static_pools:
+    - 10.4.112.1/21
+    - 20.4.112.1/21
+    infra_vlan: 4093
+    kubeapi_vlan_pools:
+    - 101
+    - 103
+    mcast_subnet_pools:
+    - 225.114.0.0/16
+    - 225.115.0.0/16
+    node_subnet_pools:
+    - 1.100.101.1/16
+    - 2.100.101.1/16
+    node_svc_subnet_pools:
+    - 10.5.112.1/21
+    - 20.5.112.1/21
+    service_vlan_pools:
+    - 102
+    - 104
+  credentials:
+    hosts:
+    - 172.28.184.140
+    login:
+      password: dummy
+      username: dummy
+  fabric_type: aci
