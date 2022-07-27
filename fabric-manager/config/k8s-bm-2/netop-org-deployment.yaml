@@ -250,10 +250,10 @@ spec:
         - name: SERVER_PORT
           value: "8095"
         - name: FABRIC_IMAGE_TAG
-          value: "server-test"
+          value: "master-test"
         - name: IN_FABRIC_MANAGER_CLUSTER
           value: "True"
-        image: quay.io/noirolabs/netop-org-manager:server-test
+        image: quay.io/noirolabs/netop-org-manager:master-test
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
@@ -1155,8 +1155,6 @@ status:
     plural: ""
   conditions: []
   storedVersions: []
-
-
 ---
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
@@ -1174,27 +1172,92 @@ spec:
     singular: fabricinfra
   scope: Namespaced
   versions:
-    - name: v1
-      schema:
-        openAPIV3Schema:
-          description: FabricInfra is the Schema for the fabricinfras API
-          properties:
-            apiVersion:
-              description: 'APIVersion defines the versioned schema of this representation
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        description: FabricInfra is the Schema for the fabricinfras API
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
               of an object. Servers should convert recognized schemas to the latest
               internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
-              type: string
-            kind:
-              description: 'Kind is a string value representing the REST resource this
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
               object represents. Servers may infer this from the endpoint the client
               submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
-              type: string
-            metadata:
-              type: object
-            spec:
-              description: FabricInfraSpec defines the desired state of FabricInfra
-              properties:
-                aci:
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: FabricInfraSpec defines the desired state of FabricInfra
+            properties:
+              aci:
+                properties:
+                  extern_dynamic_pools:
+                    items:
+                      type: string
+                    type: array
+                  extern_static_pools:
+                    items:
+                      type: string
+                    type: array
+                  infra_vlan:
+                    type: integer
+                  kubeapi_vlan_pools:
+                    items:
+                      type: integer
+                    type: array
+                  mcast_subnet_pools:
+                    items:
+                      type: string
+                    type: array
+                  node_subnet_pools:
+                    items:
+                      type: string
+                    type: array
+                  node_svc_subnet_pools:
+                    items:
+                      type: string
+                    type: array
+                  service_vlan_pools:
+                    items:
+                      type: integer
+                    type: array
+                type: object
+              aws:
+                type: string
+              credentials:
+                description: 'INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
+                  Important: Run "make" to regenerate code after modifying this file'
+                properties:
+                  hosts:
+                    items:
+                      type: string
+                    type: array
+                  login:
+                    properties:
+                      password:
+                        type: string
+                      username:
+                        type: string
+                    type: object
+                type: object
+              dcnm:
+                type: string
+              eks:
+                type: string
+              fabric_type:
+                type: string
+            type: object
+          status:
+            description: FabricInfraStatus defines the observed state of FabricInfra
+            properties:
+              allocated:
+                description: 'INSERT ADDITIONAL STATUS FIELD - define observed state
+                  of cluster Important: Run "make" to regenerate code after modifying
+                  this file'
+                items:
                   properties:
                     extern_dynamic_pools:
                       items:
@@ -1204,12 +1267,12 @@ spec:
                       items:
                         type: string
                       type: array
-                    infra_vlan:
-                      type: integer
                     kubeapi_vlan_pools:
                       items:
                         type: integer
                       type: array
+                    machine_group_profile:
+                      type: string
                     mcast_subnet_pools:
                       items:
                         type: string
@@ -1227,82 +1290,19 @@ spec:
                         type: integer
                       type: array
                   type: object
-                aws:
+                type: array
+              deployment_scripts:
+                items:
                   type: string
-                credentials:
-                  description: 'INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-                  Important: Run "make" to regenerate code after modifying this file'
-                  properties:
-                    hosts:
-                      items:
-                        type: string
-                      type: array
-                    login:
-                      properties:
-                        password:
-                          type: string
-                        username:
-                          type: string
-                      type: object
-                  type: object
-                dcnm:
-                  type: string
-                eks:
-                  type: string
-                fabric_type:
-                  type: string
-              type: object
-            status:
-              description: FabricInfraStatus defines the observed state of FabricInfra
-              properties:
-                allocated:
-                  description: 'INSERT ADDITIONAL STATUS FIELD - define observed state
-                  of cluster Important: Run "make" to regenerate code after modifying
-                  this file'
-                  items:
-                    properties:
-                      extern_dynamic_pools:
-                        items:
-                          type: string
-                        type: array
-                      extern_static_pools:
-                        items:
-                          type: string
-                        type: array
-                      kubeapi_vlan_pools:
-                        items:
-                          type: integer
-                        type: array
-                      machine_group_profile:
-                        type: string
-                      mcast_subnet_pools:
-                        items:
-                          type: string
-                        type: array
-                      node_subnet_pools:
-                        items:
-                          type: string
-                        type: array
-                      node_svc_subnet_pools:
-                        items:
-                          type: string
-                        type: array
-                      service_vlan_pools:
-                        items:
-                          type: integer
-                        type: array
-                    type: object
-                  type: array
-                deployment_scripts:
-                  items:
-                    type: string
-                  type: array
-              type: object
-          type: object
-      served: true
-      storage: true
-      subresources:
-        status: {}
+                type: array
+              ready:
+                type: boolean
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
 status:
   acceptedNames:
     kind: ""
