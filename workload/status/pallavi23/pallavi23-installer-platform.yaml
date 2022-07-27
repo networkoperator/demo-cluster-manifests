@@ -1,0 +1,38 @@
+apiVersion: v1
+data:
+  status: |-
+    {
+      "componentStatus": {
+        "argo": {
+          "lastTransitionTime": "2023-09-26T09:56:24Z",
+          "message": "cko-gitops(managed) is provisioned",
+          "reason": "InstallerProvisionedCR",
+          "status": "True",
+          "type": "Provisioned"
+        },
+        "connectivity-checker": {
+          "lastTransitionTime": "2023-09-26T09:56:26Z",
+          "message": "cko-diagnostic(managed) is provisioned",
+          "reason": "InstallerProvisionedCR",
+          "status": "True",
+          "type": "Provisioned"
+        }
+      },
+      "observedGeneration": 1,
+      "phase": "Running"
+    }
+  status_b64: |-
+    eyAiY29tcG9uZW50U3RhdHVzIjogeyAiYXJnbyI6IHsgImxhc3RUcmFuc2l0aW9uVGltZSI6ICIyMDIz
+    LTA5LTI2VDA5OjU2OjI0WiIsICJtZXNzYWdlIjogImNrby1naXRvcHMobWFuYWdlZCkgaXMgcHJvdmlz
+    aW9uZWQiLCAicmVhc29uIjogIkluc3RhbGxlclByb3Zpc2lvbmVkQ1IiLCAic3RhdHVzIjogIlRydWUi
+    LCAidHlwZSI6ICJQcm92aXNpb25lZCIgfSwgImNvbm5lY3Rpdml0eS1jaGVja2VyIjogeyAibGFzdFRy
+    YW5zaXRpb25UaW1lIjogIjIwMjMtMDktMjZUMDk6NTY6MjZaIiwgIm1lc3NhZ2UiOiAiY2tvLWRpYWdu
+    b3N0aWMobWFuYWdlZCkgaXMgcHJvdmlzaW9uZWQiLCAicmVhc29uIjogIkluc3RhbGxlclByb3Zpc2lv
+    bmVkQ1IiLCAic3RhdHVzIjogIlRydWUiLCAidHlwZSI6ICJQcm92aXNpb25lZCIgfSB9LCAib2JzZXJ2
+    ZWRHZW5lcmF0aW9uIjogMSwgInBoYXNlIjogIlJ1bm5pbmciIH0K
+kind: ConfigMap
+metadata:
+  labels:
+    netop-manager-resource: installer-platform
+  name: pallavi23-installer-platform
+  namespace: 
