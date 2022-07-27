@@ -1,0 +1,17 @@
+apiVersion: netop.mgr/v1
+kind: ClusterProfile
+metadata:
+  name: bm2calico
+  namespace: netop-manager
+spec:
+  cluster_input:
+    profile:
+      cni: cko-calico
+      loadbalancer: metallb
+      monitoring: prometheus
+      service_mesh: bm2calico
+  selector:
+    matchLabels:
+      distro: kubernetes
+      location: on-prem
+      pod_network: calico

@@ -1,0 +1,75 @@
+aci_config:
+  aep: fab20-esx
+  apic_hosts:
+  - 10.30.120.61
+  cluster_l3out:
+    bgp:
+      peering: {}
+    svi: {}
+    vrf: {}
+  l3out:
+    external_networks:
+    - ocp-bf-l3-extepg
+    name: ocp410_bf_l3out
+  physical_domain: {}
+  system_id: ocp410bf
+  vmm_domain:
+    encap_type: vxlan
+    mcast_range:
+      end: 225.10.255.255
+      start: 225.10.1.1
+    nested_inside:
+      installer_provisioned_lb_ip: 192.168.1.2
+      name: HX_vC
+      type: vmware
+  vrf:
+    name: ocp410_bf_vrf
+    tenant: common
+calico_cni_config: {}
+cko_proxy_config: {}
+cluster_profile_name: auto-ocp410bf
+cni: aci
+connectivity_checker:
+  reachability_test_enable:
+    external_url: {}
+    periodic_sync: {}
+distro:
+  flavor: openshift-4.10-esx
+  platform: baremetal
+  type: kubernetes
+gitops:
+  base64_encoded_argo_manifests: ''
+lb_config: {}
+monitoring_config: {}
+net_config:
+  cluster_svc_subnet: 10.96.0.1/12
+  extern_dynamic: 10.3.0.1/24
+  extern_static: 10.4.0.1/24
+  infra_vlan: 4093
+  kubeapi_vlan: 200
+  node_subnet: 192.168.1.1/24
+  node_svc_subnet: 10.5.0.1/24
+  pod_subnet: 10.2.0.1/16
+  service_vlan: 201
+operator_config:
+  mode: unmanaged
+  target_version: 0.9.1
+registry: {}
+service_mesh_config: {}
+topology: {}
+kube_config:
+  drop_log_config: {}
+  image_pull_policy: Always
+  istio_config: {}
+  multus: {}
+  nodepodif_config: {}
+  operator_managed_config: {}
+  ovs_memory_limit: 1Gi
+  sriov_config: {}
+logging:
+  controller_log_level: debug
+  hostagent_log_level: debug
+  opflexagent_log_level: debug
+control_cluster_websocket:
+  server_ip: 172.18.0.2
+  server_port: 8095

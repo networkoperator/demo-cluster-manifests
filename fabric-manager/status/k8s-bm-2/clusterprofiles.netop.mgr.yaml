@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  clusterprofiles.netop.mgr.yaml: |
+    "name:bm2acicni, ns:netop-manager, status:{\"deployment_scripts\":[\"kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/sumit-test-1/workload/argo/bm2acicni/argo_app.yaml\",\"kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/sumit-test-1/workload/config/bm2acicni/netop-manager-deployment.yaml\",\"kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/sumit-test-1/workload/config/bm2acicni/installer.yaml\"],\"fabricinfra\":{\"Name\":\"k8s-bm-2\"},\"machine_group_profile_name\":\"for-aci-cni\",\"ready\":true}, status_b64:eyJkZXBsb3ltZW50X3NjcmlwdHMiOlsia3ViZWN0bCBhcHBseSAtZiBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vbmV0d29ya29wZXJhdG9yL2RlbW8tY2x1c3Rlci1tYW5pZmVzdHMvc3VtaXQtdGVzdC0xL3dvcmtsb2FkL2FyZ28vYm0yYWNpY25pL2FyZ29fYXBwLnlhbWwiLCJrdWJlY3RsIGFwcGx5IC1mIGh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9uZXR3b3Jrb3BlcmF0b3IvZGVtby1jbHVzdGVyLW1hbmlmZXN0cy9zdW1pdC10ZXN0LTEvd29ya2xvYWQvY29uZmlnL2JtMmFjaWNuaS9uZXRvcC1tYW5hZ2VyLWRlcGxveW1lbnQueWFtbCIsImt1YmVjdGwgYXBwbHkgLWYgaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL25ldHdvcmtvcGVyYXRvci9kZW1vLWNsdXN0ZXItbWFuaWZlc3RzL3N1bWl0LXRlc3QtMS93b3JrbG9hZC9jb25maWcvYm0yYWNpY25pL2luc3RhbGxlci55YW1sIl0sImZhYnJpY2luZnJhIjp7Ik5hbWUiOiJrOHMtYm0tMiJ9LCJtYWNoaW5lX2dyb3VwX3Byb2ZpbGVfbmFtZSI6ImZvci1hY2ktY25pIiwicmVhZHkiOnRydWV9"
+kind: ConfigMap
+metadata:
+  labels:
+    netop-manager: clusterprofiles.netop.mgr
+  name: clusterprofiles.netop.mgr
+  namespace: netop-manager
