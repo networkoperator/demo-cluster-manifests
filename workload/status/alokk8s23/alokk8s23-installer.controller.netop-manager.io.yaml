@@ -1,0 +1,13 @@
+apiVersion: v1
+data:
+  data: name:installer-aci-cni, ns:null, status:{"componentStatus":{"cko-cni":{"lastUpdated":"202020-320-200
+    320:03:03","mode":"unmanaged","type":"cko-cni-aci"}},"observedGeneration":1,"operatorStatus":"Running"},
+    status_b64:eyJjb21wb25lbnRTdGF0dXMiOnsiY2tvLWNuaSI6eyJsYXN0VXBkYXRlZCI6IjIwMjAyMC0zMjAtMjAwIDMyMDowMzowMyIsIm1vZGUiOiJ1bm1hbmFnZWQiLCJ0eXBlIjoiY2tvLWNuaS1hY2kifX0sIm9ic2VydmVkR2VuZXJhdGlvbiI6MSwib3BlcmF0b3JTdGF0dXMiOiJSdW5uaW5nIn0=
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    netop-manager-resource: installer.controller.netop-manager.io
+    notification.notification-ctrlr.netop-manager.io: exclude
+  name: alokk8s23-installer.controller.netop-manager.io
+  namespace: netop-manager-system

@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  machinegroupprofile_overrides: ""
+kind: ConfigMap
+metadata:
+  labels:
+    fabric: 4.2.7f
+    site: BUILDING-15-LAB
+  name: k8s-1.21
+  namespace: netop-manager

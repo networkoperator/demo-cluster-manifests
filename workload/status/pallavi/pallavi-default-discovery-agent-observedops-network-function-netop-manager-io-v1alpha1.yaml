@@ -1,0 +1,14 @@
+apiVersion: notification-ctrlr.netop-types.io/v1alpha1
+kind: Notification
+metadata:
+  creationTimestamp: null
+  name: pallavi-default-discovery-agent-observedops-network-function-netop-manager-io-v1alpha1
+spec:
+  clusterName: pallavi
+  objRef:
+    apiVersion: network-function.netop-manager.io/v1alpha1
+    kind: ObservedOps
+    name: discovery-agent
+  serializedObj: '{"kind":"ObservedOps","apiVersion":"network-function.netop-manager.io/v1alpha1","metadata":{"name":"discovery-agent","creationTimestamp":null},"spec":{"cniMountPath":"/mnt/cni-conf","cniConfPath":["cni/net.d","/kubernetes/cni/net.d"],"forceReconcile":3},"status":{"cniType":"cko-cni-aci","cniVersion":"kmr2-test"}}'
+status:
+  state: ""

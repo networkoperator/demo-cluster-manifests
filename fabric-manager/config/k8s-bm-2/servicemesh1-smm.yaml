@@ -1,0 +1,9 @@
+apiVersion: netop.mgr/v1
+kind: ServiceMeshTopology
+metadata:
+  name: servicemesh1
+  namespace: netop-manager
+spec:
+  clusters:
+  - bm2calico
+  - bm2acicni
