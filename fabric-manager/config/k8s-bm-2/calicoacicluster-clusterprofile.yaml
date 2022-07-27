@@ -1,0 +1,19 @@
+apiVersion: netop.mgr/v1
+kind: ClusterProfile
+metadata:
+  name: calicoacicluster
+  namespace: netop-manager
+spec:
+  cni: aci
+  distro:
+    flavor: openshift-4.10-baremetal
+    platform: baremetal
+    type: openshift
+  fabricinfra:
+    Type: aci
+  selector:
+    matchLabels:
+      cluster: calico-cni
+      distro: kubernetes
+      location: on-prem
+      pod-network: calico

@@ -1,0 +1,14 @@
+apiVersion: netop.mgr/v1
+kind: ClusterProfile
+metadata:
+  name: oshift1
+  namespace: netop-manager
+spec:
+  cni: openshift-4.9-esx
+  selector:
+    matchLabels:
+      computes: NOVA
+      distro: K8S-1.21
+      location: ON-PREM
+      network-infra: ACI
+      pod-network: aci-cni

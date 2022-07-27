@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: netop-fabric-manager
+  namespace: argocd
+spec:
+  destination:
+    namespace: netop-manager
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: fabric-manager/config/k8s-bm-2/
+    repoURL: https://github.com/networkoperator/demo-cluster-manifests
+    targetRevision: sumit-test-1 
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: true
+    syncOptions:
+    - Replace=true
