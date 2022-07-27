@@ -1,0 +1,25 @@
+apiVersion: netop.mgr/v1
+kind: MachineGroupProfile
+metadata:
+  labels:
+    computes: BAREMETAL
+    distro: K8S-1.21
+    location: ON-PREM
+    network-infra: ACI
+    pod-network: ACI-CNI
+  name: k8s-1.21
+  namespace: netop-manager
+spec:
+  aep: sauto-aep
+  l3out:
+    external_networks:
+    - l3out_1_net
+    name: l3out-1
+  selector:
+    matchLabels:
+      fabric: 4.2.7f
+      site: BUILDING-15-LAB
+  server_count: 5
+  vrf:
+    name: l3out_1_vrf
+    tenant: common
