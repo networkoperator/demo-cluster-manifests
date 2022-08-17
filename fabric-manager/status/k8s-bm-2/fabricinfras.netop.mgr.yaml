@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
   fabricinfras.netop.mgr.yaml: |
-    "name:k8s-bm-2, ns:netop-manager, status:{\"allocated\":[{\"external_subnets\":[\"10.3.0.1/16\",\"10.4.0.1/16\"],\"internal_subnets\":[\"1.100.101.1/16\",\"2.100.101.1/16\"],\"machine_group_profile\":\"for-aci-cni\",\"mcast_subnets\":[\"225.114.0.0/16\"],\"vlans\":[101,102]}],\"deployment_scripts\":[\"kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test1/fabric-manager/argo/k8s-bm-2/argo_app.yaml\"],\"ready\":true}, status_b64:eyJhbGxvY2F0ZWQiOlt7ImV4dGVybmFsX3N1Ym5ldHMiOlsiMTAuMy4wLjEvMTYiLCIxMC40LjAuMS8xNiJdLCJpbnRlcm5hbF9zdWJuZXRzIjpbIjEuMTAwLjEwMS4xLzE2IiwiMi4xMDAuMTAxLjEvMTYiXSwibWFjaGluZV9ncm91cF9wcm9maWxlIjoiZm9yLWFjaS1jbmkiLCJtY2FzdF9zdWJuZXRzIjpbIjIyNS4xMTQuMC4wLzE2Il0sInZsYW5zIjpbMTAxLDEwMl19XSwiZGVwbG95bWVudF9zY3JpcHRzIjpbImt1YmVjdGwgYXBwbHkgLWYgaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL25ldHdvcmtvcGVyYXRvci9kZW1vLWNsdXN0ZXItbWFuaWZlc3RzL3Rlc3QxL2ZhYnJpYy1tYW5hZ2VyL2FyZ28vazhzLWJtLTIvYXJnb19hcHAueWFtbCJdLCJyZWFkeSI6dHJ1ZX0="
+    "name:k8s-bm-2, ns:netop-manager, status:{\"deployment_scripts\":[\"kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test1/fabric-manager/argo/k8s-bm-2/argo_app.yaml\"],\"ready\":true}, status_b64:eyJkZXBsb3ltZW50X3NjcmlwdHMiOlsia3ViZWN0bCBhcHBseSAtZiBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vbmV0d29ya29wZXJhdG9yL2RlbW8tY2x1c3Rlci1tYW5pZmVzdHMvdGVzdDEvZmFicmljLW1hbmFnZXIvYXJnby9rOHMtYm0tMi9hcmdvX2FwcC55YW1sIl0sInJlYWR5Ijp0cnVlfQ=="
 kind: ConfigMap
 metadata:
   labels:
