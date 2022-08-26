@@ -1,0 +1,9 @@
+apiVersion: v1
+data:
+  loadbalancerops.lb-manager.netop-manager.io.yaml: ""
+kind: ConfigMap
+metadata:
+  labels:
+    netop-manager-resource: loadbalancerops.lb-manager.netop-manager.io
+  name: bm2acicni-loadbalancerops.lb-manager.netop-manager.io
+  namespace: 
