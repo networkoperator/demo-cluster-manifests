@@ -1,6 +1,7 @@
 apiVersion: v1
 data:
-  installers.netop-manager-cntrlr.netop-manager.io.yaml: ""
+  installers.netop-manager-cntrlr.netop-manager.io.yaml: |
+    "name:sample-installer, ns:netop-manager-system, status:{\"clusterOverview\":{\"nodes\":2,\"ns\":10,\"pods\":9,\"svc\":8},\"observedGeneration\":2,\"operatorStatus\":\"Running\",\"state\":\"MonitoringNF\"}, status_b64:eyJjbHVzdGVyT3ZlcnZpZXciOnsibm9kZXMiOjIsIm5zIjoxMCwicG9kcyI6OSwic3ZjIjo4fSwib2JzZXJ2ZWRHZW5lcmF0aW9uIjoyLCJvcGVyYXRvclN0YXR1cyI6IlJ1bm5pbmciLCJzdGF0ZSI6Ik1vbml0b3JpbmdORiJ9"
 kind: ConfigMap
 metadata:
   labels:
