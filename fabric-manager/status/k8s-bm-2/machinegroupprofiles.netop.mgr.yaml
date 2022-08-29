@@ -1,6 +1,7 @@
 apiVersion: v1
 data:
-  machinegroupprofiles.netop.mgr.yaml: ""
+  machinegroupprofiles.netop.mgr.yaml: |
+    "name:for-aci-cni, ns:netop-manager, status:{\"extern_dynamic\":\"10.3.0.1/16\",\"extern_static\":\"10.4.0.1/16\",\"fabric_name\":\"k8s-bm-2\",\"kubeapi_vlan\":101,\"l3out\":{\"svi\":{}},\"mcast_range\":{\"end\":\"225.114.255.255\",\"start\":\"225.114.0.1\"},\"node_subnet\":\"2.100.101.1/16\",\"node_svc_subnet\":\"1.100.101.1/16\",\"pod_subnet\":\"10.5.0.1/16\",\"service_vlan\":102,\"state\":\"READY\"}, status_b64:eyJleHRlcm5fZHluYW1pYyI6IjEwLjMuMC4xLzE2IiwiZXh0ZXJuX3N0YXRpYyI6IjEwLjQuMC4xLzE2IiwiZmFicmljX25hbWUiOiJrOHMtYm0tMiIsImt1YmVhcGlfdmxhbiI6MTAxLCJsM291dCI6eyJzdmkiOnt9fSwibWNhc3RfcmFuZ2UiOnsiZW5kIjoiMjI1LjExNC4yNTUuMjU1Iiwic3RhcnQiOiIyMjUuMTE0LjAuMSJ9LCJub2RlX3N1Ym5ldCI6IjIuMTAwLjEwMS4xLzE2Iiwibm9kZV9zdmNfc3VibmV0IjoiMS4xMDAuMTAxLjEvMTYiLCJwb2Rfc3VibmV0IjoiMTAuNS4wLjEvMTYiLCJzZXJ2aWNlX3ZsYW4iOjEwMiwic3RhdGUiOiJSRUFEWSJ9"
 kind: ConfigMap
 metadata:
   labels:
