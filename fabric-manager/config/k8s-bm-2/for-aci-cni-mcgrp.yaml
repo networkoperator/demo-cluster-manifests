@@ -1,0 +1,24 @@
+apiVersion: netop.mgr/v1
+kind: MachineGroupProfile
+metadata:
+  labels:
+    cluster: aci-cni
+    distro: kubernetes
+    location: on-prem
+    pod-network: aci
+  name: for-aci-cni
+  namespace: netop-manager
+spec:
+  aep: bm-srvrs-aep
+  l3out:
+    external_networks:
+    - sauto_l3out-1_epg
+    name: sauto_l3out-1
+  selector:
+    matchLabels:
+      fabric: on-prem-dev-infra
+      site: bldg-15-lab
+  server_count: 3
+  vrf:
+    name: sauto_l3out-1_vrf
+    tenant: common

@@ -1,0 +1,1621 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    control-plane: netop-org-manager
+  name: netop-manager
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: netop-org-manager
+  namespace: netop-manager
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: leader-election-role
+  namespace: netop-manager
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - coordination.k8s.io
+  resources:
+  - leases
+  verbs:
+  - get
+  - list
+  - watch
+  - create
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ""
+  resources:
+  - events
+  verbs:
+  - create
+  - patch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - netop.mgr
+  resources:
+  - '*'
+  verbs:
+  - '*'
+- apiGroups:
+    - ''
+  resources:
+    - serviceaccounts
+    - serviceaccounts/token
+  verbs:
+    - '*'
+- apiGroups:
+    - apps
+  resources:
+    - deployments
+  verbs:
+    - '*'
+- apiGroups:
+    - apiextensions.k8s.io
+  resources:
+    - customresourcedefinitions
+  verbs:
+    - '*'
+- apiGroups:
+    - rbac.authorization.k8s.io
+  resources:
+    - clusterroles
+    - clusterrolebindings
+    - roles
+    - rolebindings
+  verbs:
+    - '*'
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: metrics-reader
+rules:
+- nonResourceURLs:
+  - /metrics
+  verbs:
+  - get
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: proxy-role
+rules:
+- apiGroups:
+  - authentication.k8s.io
+  resources:
+  - tokenreviews
+  verbs:
+  - create
+- apiGroups:
+  - authorization.k8s.io
+  resources:
+  - subjectaccessreviews
+  verbs:
+  - create
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: leader-election-rolebinding
+  namespace: netop-manager
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: leader-election-role
+subjects:
+- kind: ServiceAccount
+  name: netop-org-manager
+  namespace: netop-manager
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: manager-rolebinding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: manager-role
+subjects:
+- kind: ServiceAccount
+  name: netop-org-manager
+  namespace: netop-manager
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: proxy-rolebinding
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: proxy-role
+subjects:
+- kind: ServiceAccount
+  name: netop-org-manager
+  namespace: netop-manager
+---
+apiVersion: v1
+data:
+  controller_manager_config.yaml: |
+    apiVersion: controller-runtime.sigs.k8s.io/v1alpha1
+    kind: ControllerManagerConfig
+    health:
+      healthProbeBindAddress: :8083
+    metrics:
+      bindAddress: 127.0.0.1:8082
+    webhook:
+      port: 9443
+    leaderElection:
+      leaderElect: true
+      resourceName: 2edab99a.
+kind: ConfigMap
+metadata:
+  name: manager-config
+  namespace: netop-manager
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    control-plane: netop-org-manager
+  name: netop-org-manager-metrics-service
+  namespace: netop-manager
+spec:
+  ports:
+  - name: https
+    port: 8443
+    protocol: TCP
+    targetPort: https
+  selector:
+    control-plane: netop-org-manager
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    control-plane: netop-org-manager
+  name: netop-org-manager
+  namespace: netop-manager
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      control-plane: netop-org-manager
+  template:
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/default-container: manager
+      labels:
+        control-plane: netop-org-manager
+    spec:
+      containers:
+      - args:
+        - --secure-listen-address=0.0.0.0:8443
+        - --upstream=http://127.0.0.1:8082/
+        - --logtostderr=true
+        - --v=10
+        image: gcr.io/kubebuilder/kube-rbac-proxy:v0.8.0
+        name: kube-rbac-proxy
+        ports:
+        - containerPort: 8443
+          name: https
+          protocol: TCP
+      - args:
+        - --health-probe-bind-address=:8083
+        - --metrics-bind-address=127.0.0.1:8082
+        - --leader-elect
+        command:
+        - /manager
+        env:
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: HTTP_PROXY
+          value: "proxy.esl.cisco.com:80"
+        - name: HTTPS_PROXY
+          value: "proxy.esl.cisco.com:80"
+        - name: NO_PROXY
+          value: "10.96.0.1"
+        - name: SERVER_IP
+          value: "172.18.0.2"
+        - name: SERVER_PORT
+          value: "8095"
+        - name: FABRIC_IMAGE_TAG
+          value: server-test
+        image: quay.io/noirolabs/netop-org-manager:server-test
+        imagePullPolicy: Always
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8083
+          initialDelaySeconds: 15
+          periodSeconds: 20
+        name: manager
+        readinessProbe:
+          httpGet:
+            path: /readyz
+            port: 8083
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        resources:
+          limits:
+            cpu: 500m
+            memory: 128Mi
+          requests:
+            cpu: 10m
+            memory: 64Mi
+        securityContext:
+          allowPrivilegeEscalation: false
+      securityContext:
+        runAsNonRoot: true
+      hostNetwork: true
+      serviceAccountName: netop-org-manager
+      terminationGracePeriodSeconds: 10
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.7.0
+  creationTimestamp: null
+  name: clusterinfoes.netop.mgr
+spec:
+  group: netop.mgr
+  names:
+    kind: ClusterInfo
+    listKind: ClusterInfoList
+    plural: clusterinfoes
+    singular: clusterinfo
+  scope: Namespaced
+  versions:
+    - name: v1
+      schema:
+        openAPIV3Schema:
+          description: ClusterInfo is the Schema for the clusterinfoes API
+          properties:
+            apiVersion:
+              description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+              type: string
+            kind:
+              description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+              type: string
+            metadata:
+              type: object
+            spec:
+              properties:
+                cluster_input:
+                  properties:
+                    aci_cni_config:
+                      properties:
+                        aci_config:
+                          properties:
+                            aep:
+                              type: string
+                            vmm_domain:
+                              properties:
+                                encap_type:
+                                  type: string
+                                mcast_range:
+                                  properties:
+                                    end:
+                                      type: string
+                                    start:
+                                      type: string
+                                  type: object
+                              type: object
+                          type: object
+                        kube_config:
+                          properties:
+                            allow_pods_external_access:
+                              type: boolean
+                            drop_log_config:
+                              properties:
+                                enable:
+                                  type: boolean
+                              type: object
+                            image_pull_policy:
+                              type: string
+                            istio_config:
+                              properties:
+                                install_istio:
+                                  type: boolean
+                                install_profile:
+                                  type: string
+                              type: object
+                            multus:
+                              properties:
+                                disable:
+                                  type: boolean
+                              type: object
+                            nodepodif_config:
+                              properties:
+                                enable:
+                                  type: boolean
+                              type: object
+                            operator_managed_config:
+                              properties:
+                                enable_updates:
+                                  type: boolean
+                              type: object
+                            ovs_memory_limit:
+                              type: string
+                            sriov_config:
+                              properties:
+                                enable:
+                                  type: boolean
+                              type: object
+                            use_privileged_containers:
+                              type: boolean
+                          type: object
+                        logging:
+                          properties:
+                            controller_log_level:
+                              type: string
+                            hostagent_log_level:
+                              type: string
+                            opflexagent_log_level:
+                              type: string
+                          type: object
+                        net_config:
+                          properties:
+                            extern_static:
+                              type: string
+                            interface_mtu:
+                              type: integer
+                            node_svc_subnet:
+                              type: string
+                            service_vlan:
+                              type: integer
+                          type: object
+                        reboot_opflex_with_ovs:
+                          type: string
+                        registry:
+                          properties:
+                            acc_provision_operator_version:
+                              type: string
+                            aci_cni_operator_version:
+                              type: string
+                            aci_containers_controller_version:
+                              type: string
+                            aci_containers_host_version:
+                              type: string
+                            aci_containers_operator_version:
+                              type: string
+                            cnideploy_version:
+                              type: string
+                            gbp_version:
+                              type: string
+                            openvswitch_version:
+                              type: string
+                            opflex_agent_version:
+                              type: string
+                          type: object
+                        snat_operator:
+                          properties:
+                            contract_scope:
+                              type: string
+                            disable_periodic_snat_global_info_sync:
+                              type: boolean
+                            port_range:
+                              properties:
+                                end:
+                                  type: integer
+                                ports_per_node:
+                                  type: integer
+                                start:
+                                  type: integer
+                              type: object
+                          type: object
+                      type: object
+                    aci_config:
+                      properties:
+                        client_ssl:
+                          type: boolean
+                        fabric_infra:
+                          type: string
+                        l3out:
+                          properties:
+                            external_networks:
+                              items:
+                                type: string
+                              type: array
+                            name:
+                              type: string
+                            svi:
+                              properties:
+                                floating_ip:
+                                  type: string
+                                int_prof_name:
+                                  type: string
+                                mtu:
+                                  type: integer
+                                node_profile_name:
+                                  type: string
+                                secondary_ip:
+                                  type: string
+                                vlan_id:
+                                  type: integer
+                              type: object
+                          type: object
+                        physical_domain:
+                          properties:
+                            domain:
+                              type: string
+                          type: object
+                        sync_login:
+                          properties:
+                            certfile:
+                              type: string
+                            keyfile:
+                              type: string
+                          type: object
+                        system_id:
+                          type: string
+                        vrf:
+                          properties:
+                            name:
+                              type: string
+                            tenant:
+                              type: string
+                          type: object
+                      type: object
+                    calico_config:
+                      properties:
+                        bgp_config:
+                          properties:
+                            bgp_secret:
+                              type: string
+                          type: object
+                        bgp_peer_config:
+                          properties:
+                            local_as_number:
+                              type: integer
+                            racks:
+                              items:
+                                items:
+                                  type: string
+                                type: array
+                              type: array
+                            remote_as_number:
+                              type: integer
+                          type: object
+                        net_config:
+                          properties:
+                            block_size:
+                              type: integer
+                            encapsulation:
+                              type: string
+                          type: object
+                      type: object
+                    cko_git_config:
+                      properties:
+                        git_branch:
+                          type: string
+                        git_dir:
+                          type: string
+                        git_email:
+                          type: string
+                        git_repo:
+                          type: string
+                        git_token:
+                          type: string
+                        git_user:
+                          type: string
+                        sleep_duration:
+                          type: integer
+                      type: object
+                    cko_proxy_config:
+                      properties:
+                        http_proxy:
+                          type: string
+                        https_proxy:
+                          type: string
+                        no_proxy:
+                          type: string
+                      type: object
+                    cni:
+                      properties:
+                        target_version:
+                          type: string
+                      type: object
+                    flavor:
+                      type: string
+                    lb_config:
+                      properties:
+                        lb_type:
+                          type: string
+                      type: object
+                    monitoring_config:
+                      properties:
+                        monitoring_type:
+                          type: string
+                        remote_write_ip:
+                          type: string
+                        remote_write_port:
+                          type: integer
+                      type: object
+                    net_config:
+                      properties:
+                        cluster_svc_subnet:
+                          type: string
+                        extern_dynamic:
+                          type: string
+                        kubeapi_vlan:
+                          type: integer
+                        node_subnet:
+                          type: string
+                        pod_subnet:
+                          type: string
+                      type: object
+                    profile:
+                      properties:
+                        cni:
+                          type: string
+                        ingress:
+                          type: string
+                        loadbalancer:
+                          type: string
+                        monitoring:
+                          type: string
+                        service_mesh:
+                          type: string
+                      type: object
+                    registry:
+                      properties:
+                        image_prefix:
+                          type: string
+                        image_pull_secret:
+                          type: string
+                        network_operator_version:
+                          type: string
+                      type: object
+                    service_mesh_config:
+                      properties:
+                        kubeconfig:
+                          type: string
+                        mesh_id:
+                          type: string
+                        name:
+                          type: string
+                        network:
+                          type: string
+                        role:
+                          type: string
+                      type: object
+                    service_mesh_topology:
+                      items:
+                        properties:
+                          kubeconfig:
+                            type: string
+                          mesh_id:
+                            type: string
+                          name:
+                            type: string
+                          network:
+                            type: string
+                          role:
+                            type: string
+                        type: object
+                      type: array
+                  type: object
+              required:
+                - cluster_input
+              type: object
+            status:
+              description: ClusterInfoStatus defines the observed state of ClusterInfo
+              properties:
+                status:
+                  description: 'INSERT ADDITIONAL STATUS FIELD - define observed state
+                  of cluster Important: Run "make" to regenerate code after modifying
+                  this file'
+                  type: boolean
+              required:
+                - status
+              type: object
+          type: object
+      served: true
+      storage: true
+      subresources:
+        status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.7.0
+  creationTimestamp: null
+  name: clusterprofiles.netop.mgr
+spec:
+  group: netop.mgr
+  names:
+    kind: ClusterProfile
+    listKind: ClusterProfileList
+    plural: clusterprofiles
+    singular: clusterprofile
+  scope: Namespaced
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        description: ClusterProfile is the Schema for the clusterprofiles API
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: ClusterProfileSpec defines the desired state of ClusterProfile
+            properties:
+              cluster_input:
+                properties:
+                  aci_cni_config:
+                    properties:
+                      aci_config:
+                        properties:
+                          aep:
+                            type: string
+                          vmm_domain:
+                            properties:
+                              encap_type:
+                                type: string
+                              mcast_range:
+                                properties:
+                                  end:
+                                    type: string
+                                  start:
+                                    type: string
+                                type: object
+                            type: object
+                        type: object
+                      kube_config:
+                        properties:
+                          allow_pods_external_access:
+                            type: boolean
+                          drop_log_config:
+                            properties:
+                              enable:
+                                type: boolean
+                            type: object
+                          image_pull_policy:
+                            type: string
+                          istio_config:
+                            properties:
+                              install_istio:
+                                type: boolean
+                              install_profile:
+                                type: string
+                            type: object
+                          multus:
+                            properties:
+                              disable:
+                                type: boolean
+                            type: object
+                          nodepodif_config:
+                            properties:
+                              enable:
+                                type: boolean
+                            type: object
+                          operator_managed_config:
+                            properties:
+                              enable_updates:
+                                type: boolean
+                            type: object
+                          ovs_memory_limit:
+                            type: string
+                          sriov_config:
+                            properties:
+                              enable:
+                                type: boolean
+                            type: object
+                          use_privileged_containers:
+                            type: boolean
+                        type: object
+                      logging:
+                        properties:
+                          controller_log_level:
+                            type: string
+                          hostagent_log_level:
+                            type: string
+                          opflexagent_log_level:
+                            type: string
+                        type: object
+                      net_config:
+                        properties:
+                          extern_static:
+                            type: string
+                          interface_mtu:
+                            type: integer
+                          node_svc_subnet:
+                            type: string
+                          service_vlan:
+                            type: integer
+                        type: object
+                      reboot_opflex_with_ovs:
+                        type: string
+                      registry:
+                        properties:
+                          acc_provision_operator_version:
+                            type: string
+                          aci_cni_operator_version:
+                            type: string
+                          aci_containers_controller_version:
+                            type: string
+                          aci_containers_host_version:
+                            type: string
+                          aci_containers_operator_version:
+                            type: string
+                          cnideploy_version:
+                            type: string
+                          gbp_version:
+                            type: string
+                          openvswitch_version:
+                            type: string
+                          opflex_agent_version:
+                            type: string
+                        type: object
+                      snat_operator:
+                        properties:
+                          contract_scope:
+                            type: string
+                          disable_periodic_snat_global_info_sync:
+                            type: boolean
+                          port_range:
+                            properties:
+                              end:
+                                type: integer
+                              ports_per_node:
+                                type: integer
+                              start:
+                                type: integer
+                            type: object
+                        type: object
+                    type: object
+                  aci_config:
+                    properties:
+                      client_ssl:
+                        type: boolean
+                      fabric_infra:
+                        type: string
+                      l3out:
+                        properties:
+                          external_networks:
+                            items:
+                              type: string
+                            type: array
+                          name:
+                            type: string
+                          svi:
+                            properties:
+                              floating_ip:
+                                type: string
+                              int_prof_name:
+                                type: string
+                              mtu:
+                                type: integer
+                              node_profile_name:
+                                type: string
+                              secondary_ip:
+                                type: string
+                              vlan_id:
+                                type: integer
+                            type: object
+                        type: object
+                      physical_domain:
+                        properties:
+                          domain:
+                            type: string
+                        type: object
+                      sync_login:
+                        properties:
+                          certfile:
+                            type: string
+                          keyfile:
+                            type: string
+                        type: object
+                      system_id:
+                        type: string
+                      vrf:
+                        properties:
+                          name:
+                            type: string
+                          tenant:
+                            type: string
+                        type: object
+                    type: object
+                  calico_config:
+                    properties:
+                      bgp_config:
+                        properties:
+                          bgp_secret:
+                            type: string
+                        type: object
+                      bgp_peer_config:
+                        properties:
+                          local_as_number:
+                            type: integer
+                          racks:
+                            items:
+                              items:
+                                type: string
+                              type: array
+                            type: array
+                          remote_as_number:
+                            type: integer
+                        type: object
+                      net_config:
+                        properties:
+                          block_size:
+                            type: integer
+                          encapsulation:
+                            type: string
+                        type: object
+                    type: object
+                  cko_git_config:
+                    properties:
+                      git_branch:
+                        type: string
+                      git_dir:
+                        type: string
+                      git_email:
+                        type: string
+                      git_repo:
+                        type: string
+                      git_token:
+                        type: string
+                      git_user:
+                        type: string
+                      sleep_duration:
+                        type: integer
+                    type: object
+                  cko_proxy_config:
+                    properties:
+                      http_proxy:
+                        type: string
+                      https_proxy:
+                        type: string
+                      no_proxy:
+                        type: string
+                    type: object
+                  cni:
+                    properties:
+                      target_version:
+                        type: string
+                    type: object
+                  flavor:
+                    type: string
+                  lb_config:
+                    properties:
+                      lb_type:
+                        type: string
+                    type: object
+                  monitoring_config:
+                    properties:
+                      monitoring_type:
+                        type: string
+                      remote_write_ip:
+                        type: string
+                      remote_write_port:
+                        type: integer
+                    type: object
+                  net_config:
+                    properties:
+                      cluster_svc_subnet:
+                        type: string
+                      extern_dynamic:
+                        type: string
+                      kubeapi_vlan:
+                        type: integer
+                      node_subnet:
+                        type: string
+                      pod_subnet:
+                        type: string
+                    type: object
+                  registry:
+                    properties:
+                      image_prefix:
+                        type: string
+                      image_pull_secret:
+                        type: string
+                      network_operator_version:
+                        type: string
+                    type: object
+                  service_mesh_config:
+                    properties:
+                      kubeconfig:
+                        type: string
+                      mesh_id:
+                        type: string
+                      name:
+                        type: string
+                      network:
+                        type: string
+                      role:
+                        type: string
+                    type: object
+                  service_mesh_topology:
+                    items:
+                      properties:
+                        kubeconfig:
+                          type: string
+                        mesh_id:
+                          type: string
+                        name:
+                          type: string
+                        network:
+                          type: string
+                        role:
+                          type: string
+                      type: object
+                    type: array
+                type: object
+              cni:
+                type: string
+              ingress:
+                type: string
+              loadbalancer:
+                type: string
+              monitoring:
+                type: string
+              selector:
+                description: A label selector is a label query over a set of resources.
+                  The result of matchLabels and matchExpressions are ANDed. An empty
+                  label selector matches all objects. A null label selector matches
+                  no objects.
+                properties:
+                  matchExpressions:
+                    description: matchExpressions is a list of label selector requirements.
+                      The requirements are ANDed.
+                    items:
+                      description: A label selector requirement is a selector that
+                        contains values, a key, and an operator that relates the key
+                        and values.
+                      properties:
+                        key:
+                          description: key is the label key that the selector applies
+                            to.
+                          type: string
+                        operator:
+                          description: operator represents a key's relationship to
+                            a set of values. Valid operators are In, NotIn, Exists
+                            and DoesNotExist.
+                          type: string
+                        values:
+                          description: values is an array of string values. If the
+                            operator is In or NotIn, the values array must be non-empty.
+                            If the operator is Exists or DoesNotExist, the values
+                            array must be empty. This array is replaced during a strategic
+                            merge patch.
+                          items:
+                            type: string
+                          type: array
+                      required:
+                      - key
+                      - operator
+                      type: object
+                    type: array
+                  matchLabels:
+                    additionalProperties:
+                      type: string
+                    description: matchLabels is a map of {key,value} pairs. A single
+                      {key,value} in the matchLabels map is equivalent to an element
+                      of matchExpressions, whose key field is "key", the operator
+                      is "In", and the values array contains only "value". The requirements
+                      are ANDed.
+                    type: object
+                type: object
+              service_mesh:
+                type: string
+            type: object
+          status:
+            description: ClusterProfileStatus defines the observed state of ClusterProfile
+            properties:
+              cluster_svc_subnet:
+                type: string
+              deployment_scripts:
+                items:
+                  type: string
+                type: array
+              extern_dynamic:
+                type: string
+              machine_group_profile_name:
+                description: 'INSERT ADDITIONAL STATUS FIELD - define observed state
+                  of cluster Important: Run "make" to regenerate code after modifying
+                  this file'
+                type: string
+              node_subnet:
+                type: string
+              pod_subnet:
+                type: string
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.7.0
+  creationTimestamp: null
+  name: clusterstatuses.netop.mgr
+spec:
+  group: netop.mgr
+  names:
+    kind: ClusterStatus
+    listKind: ClusterStatusList
+    plural: clusterstatuses
+    singular: clusterstatus
+  scope: Namespaced
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        description: ClusterStatus is the Schema for the clusterstatuses API
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: ClusterStatusSpec defines the desired state of ClusterStatus
+            properties:
+              network_status:
+                type: string
+            type: object
+          status:
+            description: ClusterStatusStatus defines the observed state of ClusterStatus
+            properties:
+              status:
+                description: 'INSERT ADDITIONAL STATUS FIELD - define observed state
+                  of cluster Important: Run "make" to regenerate code after modifying
+                  this file'
+                type: boolean
+            required:
+            - status
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
+---
+
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.7.0
+  creationTimestamp: null
+  name: machinegroupprofiles.netop.mgr
+spec:
+  group: netop.mgr
+  names:
+    kind: MachineGroupProfile
+    listKind: MachineGroupProfileList
+    plural: machinegroupprofiles
+    singular: machinegroupprofile
+  scope: Namespaced
+  versions:
+    - name: v1
+      schema:
+        openAPIV3Schema:
+          description: MachineGroupProfile is the Schema for the machinegroupprofiles
+            API
+          properties:
+            apiVersion:
+              description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+              type: string
+            kind:
+              description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+              type: string
+            metadata:
+              type: object
+            spec:
+              description: MachineGroupProfileSpec defines the desired state of MachineGroupProfile
+              properties:
+                aep:
+                  type: string
+                l3out:
+                  properties:
+                    external_networks:
+                      items:
+                        type: string
+                      type: array
+                    name:
+                      type: string
+                    svi:
+                      properties:
+                        floating_ip:
+                          type: string
+                        int_prof_name:
+                          type: string
+                        mtu:
+                          type: integer
+                        node_profile_name:
+                          type: string
+                        secondary_ip:
+                          type: string
+                        vlan_id:
+                          type: integer
+                      type: object
+                  type: object
+                physical_domain:
+                  properties:
+                    domain:
+                      type: string
+                  type: object
+                selector:
+                  description: A label selector is a label query over a set of resources.
+                    The result of matchLabels and matchExpressions are ANDed. An empty
+                    label selector matches all objects. A null label selector matches
+                    no objects.
+                  properties:
+                    matchExpressions:
+                      description: matchExpressions is a list of label selector requirements.
+                        The requirements are ANDed.
+                      items:
+                        description: A label selector requirement is a selector that
+                          contains values, a key, and an operator that relates the key
+                          and values.
+                        properties:
+                          key:
+                            description: key is the label key that the selector applies
+                              to.
+                            type: string
+                          operator:
+                            description: operator represents a key's relationship to
+                              a set of values. Valid operators are In, NotIn, Exists
+                              and DoesNotExist.
+                            type: string
+                          values:
+                            description: values is an array of string values. If the
+                              operator is In or NotIn, the values array must be non-empty.
+                              If the operator is Exists or DoesNotExist, the values
+                              array must be empty. This array is replaced during a strategic
+                              merge patch.
+                            items:
+                              type: string
+                            type: array
+                        required:
+                          - key
+                          - operator
+                        type: object
+                      type: array
+                    matchLabels:
+                      additionalProperties:
+                        type: string
+                      description: matchLabels is a map of {key,value} pairs. A single
+                        {key,value} in the matchLabels map is equivalent to an element
+                        of matchExpressions, whose key field is "key", the operator
+                        is "In", and the values array contains only "value". The requirements
+                        are ANDed.
+                      type: object
+                  type: object
+                server_count:
+                  type: integer
+                vrf:
+                  properties:
+                    name:
+                      type: string
+                    tenant:
+                      type: string
+                  type: object
+              type: object
+            status:
+              description: MachineGroupProfileStatus defines the observed state of MachineGroupProfile
+              properties:
+                extern_dynamic:
+                  type: string
+                extern_static:
+                  type: string
+                fabric_name:
+                  description: 'INSERT ADDITIONAL STATUS FIELD - define observed state
+                  of cluster Important: Run "make" to regenerate code after modifying
+                  this file'
+                  type: string
+                kubeapi_vlan:
+                  type: integer
+                l3out:
+                  properties:
+                    external_networks:
+                      items:
+                        type: string
+                      type: array
+                    name:
+                      type: string
+                    svi:
+                      properties:
+                        floating_ip:
+                          type: string
+                        int_prof_name:
+                          type: string
+                        mtu:
+                          type: integer
+                        node_profile_name:
+                          type: string
+                        secondary_ip:
+                          type: string
+                        vlan_id:
+                          type: integer
+                      type: object
+                  type: object
+                mcast_range:
+                  properties:
+                    end:
+                      type: string
+                    start:
+                      type: string
+                  type: object
+                node_subnet:
+                  type: string
+                node_svc_subnet:
+                  type: string
+                pod_subnet:
+                  type: string
+                service_vlan:
+                  type: integer
+                state:
+                  type: string
+              type: object
+          type: object
+      served: true
+      storage: true
+      subresources:
+        status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.7.0
+  creationTimestamp: null
+  name: clusteroutputs.netop.mgr
+spec:
+  group: netop.mgr
+  names:
+    kind: ClusterOutput
+    listKind: ClusterOutputList
+    plural: clusteroutputs
+    singular: clusteroutput
+  scope: Namespaced
+  versions:
+    - name: v1
+      schema:
+        openAPIV3Schema:
+          description: ClusterOutput is the Schema for the clusteroutputs API
+          properties:
+            apiVersion:
+              description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+              type: string
+            kind:
+              description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+              type: string
+            metadata:
+              type: object
+            spec:
+              description: ClusterOutputSpec defines the desired state of ClusterOutput
+              properties:
+                cluster_output:
+                  description: 'INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
+                  Important: Run "make" to regenerate code after modifying this file'
+                  properties:
+                    artifacts:
+                      properties:
+                        deployment:
+                          type: string
+                        secret_name:
+                          type: string
+                      type: object
+                  type: object
+              required:
+                - cluster_output
+              type: object
+            status:
+              description: ClusterOutputStatus defines the observed state of ClusterOutput
+              type: object
+          type: object
+      served: true
+      storage: true
+      subresources:
+        status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.7.0
+  creationTimestamp: null
+  name: servicemeshtopologies.netop.mgr
+spec:
+  group: netop.mgr
+  names:
+    kind: ServiceMeshTopology
+    listKind: ServiceMeshTopologyList
+    plural: servicemeshtopologies
+    singular: servicemeshtopology
+  scope: Namespaced
+  versions:
+    - name: v1
+      schema:
+        openAPIV3Schema:
+          description: ServiceMeshTopology is the Schema for the servicemeshtopologies
+            API
+          properties:
+            apiVersion:
+              description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+              type: string
+            kind:
+              description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+              type: string
+            metadata:
+              type: object
+            spec:
+              description: ServiceMeshTopologySpec defines the desired state of ServiceMeshTopology
+              properties:
+                clusters:
+                  items:
+                    type: string
+                  type: array
+              required:
+                - clusters
+              type: object
+            status:
+              description: ServiceMeshTopologyStatus defines the observed state of ServiceMeshTopology
+              type: object
+          type: object
+      served: true
+      storage: true
+      subresources:
+        status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.7.0
+  creationTimestamp: null
+  name: fabricinfras.netop.mgr
+spec:
+  group: netop.mgr
+  names:
+    kind: FabricInfra
+    listKind: FabricInfraList
+    plural: fabricinfras
+    singular: fabricinfra
+  scope: Namespaced
+  versions:
+  - name: v1
+    schema:
+      openAPIV3Schema:
+        description: FabricInfra is the Schema for the fabricinfras API
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: FabricInfraSpec defines the desired state of FabricInfra
+            properties:
+              aci:
+                properties:
+                  apic:
+                    type: string
+                  external_subnets:
+                    items:
+                      type: string
+                    type: array
+                  infra_vlan:
+                    type: integer
+                  internal_subnets:
+                    items:
+                      type: string
+                    type: array
+                  leafs:
+                    type: integer
+                  mcast_subnets:
+                    items:
+                      type: string
+                    type: array
+                  spines:
+                    type: integer
+                  vlans:
+                    items:
+                      type: integer
+                    type: array
+                type: object
+              aws:
+                type: string
+              credentials:
+                description: 'INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
+                  Important: Run "make" to regenerate code after modifying this file'
+                properties:
+                  hosts:
+                    items:
+                      type: string
+                    type: array
+                  login:
+                    properties:
+                      password:
+                        type: string
+                      username:
+                        type: string
+                    type: object
+                type: object
+              dcnm:
+                type: string
+              eks:
+                type: string
+              fabric_type:
+                type: string
+            type: object
+          status:
+            description: FabricInfraStatus defines the observed state of FabricInfra
+            properties:
+              allocated:
+                description: 'INSERT ADDITIONAL STATUS FIELD - define observed state
+                  of cluster Important: Run "make" to regenerate code after modifying
+                  this file'
+                items:
+                  properties:
+                    external_subnets:
+                      items:
+                        type: string
+                      type: array
+                    internal_subnets:
+                      items:
+                        type: string
+                      type: array
+                    machine_group_profile:
+                      type: string
+                    mcast_subnets:
+                      items:
+                        type: string
+                      type: array
+                    vlans:
+                      items:
+                        type: integer
+                      type: array
+                  type: object
+                type: array
+              deployment_scripts:
+                items:
+                  type: string
+                type: array
+              ready:
+                type: boolean
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: status-config
+  namespace: netop-manager
+data:
+  cko_git_config: |-
+    git_repo: "github.com/networkoperator/demo-cluster-manifests.git"
+    git_dir: "demo-cluster-manifests"
+    git_branch: test-1
+    git_token: "Z2hwX2RwbWF2ODV4Y2NwQlJZdXhDSWNOc0hCRzQxeWViczNHNzlRUA=="
+    git_user: "networkoperator-gittest"
+    git_email: "test@cisco.com"
+    sleep_duration: 5

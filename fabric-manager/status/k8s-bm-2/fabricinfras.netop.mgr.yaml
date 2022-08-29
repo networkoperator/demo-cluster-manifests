@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  fabricinfras.netop.mgr.yaml: |
+    "name:k8s-bm-2, ns:netop-manager, status:{\"deployment_scripts\":[\"kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test-1/fabric-manager/argo/k8s-bm-2/argo_app.yaml\"],\"ready\":true}, status_b64:eyJkZXBsb3ltZW50X3NjcmlwdHMiOlsia3ViZWN0bCBhcHBseSAtZiBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vbmV0d29ya29wZXJhdG9yL2RlbW8tY2x1c3Rlci1tYW5pZmVzdHMvdGVzdC0xL2ZhYnJpYy1tYW5hZ2VyL2FyZ28vazhzLWJtLTIvYXJnb19hcHAueWFtbCJdLCJyZWFkeSI6dHJ1ZX0="
+kind: ConfigMap
+metadata:
+  labels:
+    netop-manager: fabricinfras.netop.mgr
+  name: fabricinfras.netop.mgr
+  namespace: netop-manager
