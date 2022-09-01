@@ -1,6 +1,7 @@
 apiVersion: v1
 data:
-  clusterprofiles.netop.mgr.yaml: ""
+  clusterprofiles.netop.mgr.yaml: |
+    "name:acicnicluster, ns:netop-manager, status:{\"deployment_scripts\":[\"kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test-1/workload/argo/acicnicluster/argo_app.yaml\",\"kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test-1/workload/config/acicnicluster/netop-manager-deployment.yaml\",\"kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test-1/workload/config/acicnicluster/installer.yaml\"],\"extern_dynamic\":\"10.3.0.1/16\",\"node_subnet\":\"1.100.101.1/24\",\"pod_subnet\":\"10.6.0.1/16\"}, status_b64:eyJkZXBsb3ltZW50X3NjcmlwdHMiOlsia3ViZWN0bCBhcHBseSAtZiBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vbmV0d29ya29wZXJhdG9yL2RlbW8tY2x1c3Rlci1tYW5pZmVzdHMvdGVzdC0xL3dvcmtsb2FkL2FyZ28vYWNpY25pY2x1c3Rlci9hcmdvX2FwcC55YW1sIiwia3ViZWN0bCBhcHBseSAtZiBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vbmV0d29ya29wZXJhdG9yL2RlbW8tY2x1c3Rlci1tYW5pZmVzdHMvdGVzdC0xL3dvcmtsb2FkL2NvbmZpZy9hY2ljbmljbHVzdGVyL25ldG9wLW1hbmFnZXItZGVwbG95bWVudC55YW1sIiwia3ViZWN0bCBhcHBseSAtZiBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vbmV0d29ya29wZXJhdG9yL2RlbW8tY2x1c3Rlci1tYW5pZmVzdHMvdGVzdC0xL3dvcmtsb2FkL2NvbmZpZy9hY2ljbmljbHVzdGVyL2luc3RhbGxlci55YW1sIl0sImV4dGVybl9keW5hbWljIjoiMTAuMy4wLjEvMTYiLCJub2RlX3N1Ym5ldCI6IjEuMTAwLjEwMS4xLzI0IiwicG9kX3N1Ym5ldCI6IjEwLjYuMC4xLzE2In0="
 kind: ConfigMap
 metadata:
   labels:
