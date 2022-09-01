@@ -1,0 +1,17 @@
+apiVersion: netop.mgr/v1
+kind: ClusterProfile
+metadata:
+  name: acicnicluster
+  namespace: netop-manager
+spec:
+  cni: kubernetes-1.22
+  ingress: smm
+  loadbalancer: fabric
+  monitoring: prometheus
+  selector:
+    matchLabels:
+      cluster: aci-cni
+      distro: kubernetes
+      location: on-prem
+      pod-network: aci
+  service_mesh: smm
