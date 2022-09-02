@@ -1,0 +1,23 @@
+apiVersion: netop.mgr/v1
+kind: MachineGroupProfile
+metadata:
+  labels:
+    cluster: calico-cni
+    distro: kubernetes
+    location: on-prem
+    pod-network: calico
+  name: for-calico-cni
+  namespace: netop-manager
+spec:
+  l3out:
+    external_networks:
+    - sauto_l3out-3_epg
+    name: sauto_l3out-3
+  selector:
+    matchLabels:
+      fabric: on-prem-dev-infra
+      site: bldg-15-lab
+  server_count: 3
+  vrf:
+    name: sauto_l3out-3_vrf
+    tenant: common

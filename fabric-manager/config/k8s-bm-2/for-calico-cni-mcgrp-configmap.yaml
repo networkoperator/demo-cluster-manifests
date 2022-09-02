@@ -1,0 +1,17 @@
+apiVersion: v1
+data:
+  machinegroupprofile_overrides: |
+    l3out:
+      svi:
+        floating_ip: 2.100.101.100/24
+        mtu: 9000
+        secondary_ip: 2.100.101.254/24
+        vlan_id: 14
+kind: ConfigMap
+metadata:
+  labels:
+    cluster: calico-cni
+    fabric: on-prem-dev-infra
+    site: bldg-15-lab
+  name: for-calico-cni
+  namespace: netop-manager
