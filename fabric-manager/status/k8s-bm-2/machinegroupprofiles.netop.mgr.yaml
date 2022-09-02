@@ -1,6 +1,7 @@
 apiVersion: v1
 data:
-  machinegroupprofiles.netop.mgr.yaml: ""
+  machinegroupprofiles.netop.mgr.yaml: |
+    "name:for-calico-cni, ns:netop-manager, status:{\"extern_dynamic\":\"10.3.0.1/16\",\"fabric_name\":\"k8s-bm-2\",\"l3out\":{},\"mcast_range\":{},\"node_subnet\":\"1.100.101.1/16\",\"state\":\"READY\"}, status_b64:eyJleHRlcm5fZHluYW1pYyI6IjEwLjMuMC4xLzE2IiwiZmFicmljX25hbWUiOiJrOHMtYm0tMiIsImwzb3V0Ijp7fSwibWNhc3RfcmFuZ2UiOnt9LCJub2RlX3N1Ym5ldCI6IjEuMTAwLjEwMS4xLzE2Iiwic3RhdGUiOiJSRUFEWSJ9"
 kind: ConfigMap
 metadata:
   labels:

@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
   fabricinfras.netop.mgr.yaml: |
-    "name:k8s-bm-2, ns:netop-manager, status:{\"deployment_scripts\":[\"kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test-1/fabric-manager/argo/k8s-bm-2/argo_app.yaml\"],\"ready\":true}, status_b64:eyJkZXBsb3ltZW50X3NjcmlwdHMiOlsia3ViZWN0bCBhcHBseSAtZiBodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vbmV0d29ya29wZXJhdG9yL2RlbW8tY2x1c3Rlci1tYW5pZmVzdHMvdGVzdC0xL2ZhYnJpYy1tYW5hZ2VyL2FyZ28vazhzLWJtLTIvYXJnb19hcHAueWFtbCJdLCJyZWFkeSI6dHJ1ZX0="
+    "name:k8s-bm-2, ns:netop-manager, status:{\"allocated\":[{\"external_subnets\":[\"10.3.0.1/16\"],\"internal_subnets\":[\"1.100.101.1/16\"],\"machine_group_profile\":\"for-calico-cni\"}],\"deployment_scripts\":[\"kubectl apply -f https://raw.githubusercontent.com/networkoperator/demo-cluster-manifests/test-1/fabric-manager/argo/k8s-bm-2/argo_app.yaml\"],\"ready\":true}, status_b64:eyJhbGxvY2F0ZWQiOlt7ImV4dGVybmFsX3N1Ym5ldHMiOlsiMTAuMy4wLjEvMTYiXSwiaW50ZXJuYWxfc3VibmV0cyI6WyIxLjEwMC4xMDEuMS8xNiJdLCJtYWNoaW5lX2dyb3VwX3Byb2ZpbGUiOiJmb3ItY2FsaWNvLWNuaSJ9XSwiZGVwbG95bWVudF9zY3JpcHRzIjpbImt1YmVjdGwgYXBwbHkgLWYgaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL25ldHdvcmtvcGVyYXRvci9kZW1vLWNsdXN0ZXItbWFuaWZlc3RzL3Rlc3QtMS9mYWJyaWMtbWFuYWdlci9hcmdvL2s4cy1ibS0yL2FyZ29fYXBwLnlhbWwiXSwicmVhZHkiOnRydWV9"
 kind: ConfigMap
 metadata:
   labels:
