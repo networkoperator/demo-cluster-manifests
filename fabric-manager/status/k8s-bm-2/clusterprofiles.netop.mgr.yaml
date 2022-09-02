@@ -1,6 +1,7 @@
 apiVersion: v1
 data:
-  clusterprofiles.netop.mgr.yaml: ""
+  clusterprofiles.netop.mgr.yaml: |
+    "name:calicoacicluster, ns:netop-manager, status:null, status_b64:bnVsbA=="
 kind: ConfigMap
 metadata:
   labels:
