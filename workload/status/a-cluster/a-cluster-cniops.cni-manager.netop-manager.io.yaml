@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  data: name:unmanaged, ns:netop-manager-system, status:null, status_b64:bnVsbA==
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    netop-manager-resource: cniops.cni-manager.netop-manager.io
+  name: a-cluster-cniops.cni-manager.netop-manager.io
+  namespace: netop-manager-system
