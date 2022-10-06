@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  data: name:k8s-bm-2, ns:netop-manager, status:null, status_b64:bnVsbA==
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    netop-manager-resource: fabricinfra.netop.mgr
+  name: a-cluster-fabricinfra.netop.mgr
+  namespace: netop-manager
