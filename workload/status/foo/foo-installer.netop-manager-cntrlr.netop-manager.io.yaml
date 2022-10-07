@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  data: name:installer-sample, ns:null, status:{"clusterOverview":{"nodes":1,"ns":5,"pods":10,"svc":2},"observedGeneration":1,"operatorStatus":"Running"},
+    status_b64:eyJjbHVzdGVyT3ZlcnZpZXciOnsibm9kZXMiOjEsIm5zIjo1LCJwb2RzIjoxMCwic3ZjIjoyfSwib2JzZXJ2ZWRHZW5lcmF0aW9uIjoxLCJvcGVyYXRvclN0YXR1cyI6IlJ1bm5pbmcifQ==
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    netop-manager-resource: installer.netop-manager-cntrlr.netop-manager.io
+  name: foo-installer.netop-manager-cntrlr.netop-manager.io
+  namespace: netop-manager-system
