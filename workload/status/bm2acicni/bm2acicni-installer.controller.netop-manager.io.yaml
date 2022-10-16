@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
-  data: name:installer-sample-networking, ns:null, status:{"clusterOverview":{"nodes":2,"ns":9,"pods":24,"svc":14},"observedGeneration":1,"operatorStatus":"Running"},
-    status_b64:eyJjbHVzdGVyT3ZlcnZpZXciOnsibm9kZXMiOjIsIm5zIjo5LCJwb2RzIjoyNCwic3ZjIjoxNH0sIm9ic2VydmVkR2VuZXJhdGlvbiI6MSwib3BlcmF0b3JTdGF0dXMiOiJSdW5uaW5nIn0=
+  data: name:installer-sample-networking, ns:null, status:{"clusterOverview":{"nodes":2,"ns":8,"pods":24,"svc":14},"observedGeneration":1,"operatorStatus":"Running"},
+    status_b64:eyJjbHVzdGVyT3ZlcnZpZXciOnsibm9kZXMiOjIsIm5zIjo4LCJwb2RzIjoyNCwic3ZjIjoxNH0sIm9ic2VydmVkR2VuZXJhdGlvbiI6MSwib3BlcmF0b3JTdGF0dXMiOiJSdW5uaW5nIn0=
 kind: ConfigMap
 metadata:
   creationTimestamp: null
