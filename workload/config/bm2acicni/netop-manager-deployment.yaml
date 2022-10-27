@@ -26,7 +26,7 @@ spec:
       name: Age
       type: date
     - description: State/Phase of Installer
-      jsonPath: .status.operatorStatus
+      jsonPath: .status.state
       name: Phase
       type: string
     - description: Cni Type
@@ -58,14 +58,15 @@ spec:
                   workload:
                     description: First key should be internal child api
                     properties:
+                      managedComponent:
+                        default: false
+                        type: boolean
                       options:
                         additionalProperties:
                           type: string
                         type: object
                       type:
                         type: string
-                      unmanaged:
-                        type: boolean
                       version:
                         type: string
                     required:
@@ -85,8 +86,6 @@ spec:
                 type: string
               cniVersion:
                 type: string
-              internalState:
-                type: string
               ipam:
                 type: string
               managedState:
@@ -94,7 +93,7 @@ spec:
               observedGeneration:
                 format: int64
                 type: integer
-              operatorStatus:
+              state:
                 type: string
               upgradeStatus:
                 properties:
@@ -158,14 +157,15 @@ spec:
                   workload:
                     description: First key should be internal child api
                     properties:
+                      managedComponent:
+                        default: false
+                        type: boolean
                       options:
                         additionalProperties:
                           type: string
                         type: object
                       type:
                         type: string
-                      unmanaged:
-                        type: boolean
                       version:
                         type: string
                     required:
@@ -239,14 +239,15 @@ spec:
                   workload:
                     description: First key should be internal child api
                     properties:
+                      managedComponent:
+                        default: false
+                        type: boolean
                       options:
                         additionalProperties:
                           type: string
                         type: object
                       type:
                         type: string
-                      unmanaged:
-                        type: boolean
                       version:
                         type: string
                     required:
@@ -318,7 +319,7 @@ spec:
           spec:
             description: InstallerSpec defines the desired state of Installer.
             properties:
-              networkFunctions:
+              operatorConfigs:
                 properties:
                   networking:
                     additionalProperties:
@@ -331,7 +332,7 @@ spec:
                           type: object
                         managedComponent:
                           default: false
-                          description: ManagedComponent field is ignored for platform components and must be set to true to manage networking component.
+                          description: ManagedComponent field is ignored for platform components and must be set to false to adopt networking components without managing them.
                           type: boolean
                         options:
                           additionalProperties:
@@ -355,7 +356,7 @@ spec:
                           type: object
                         managedComponent:
                           default: false
-                          description: ManagedComponent field is ignored for platform components and must be set to true to manage networking component.
+                          description: ManagedComponent field is ignored for platform components and must be set to false to adopt networking components without managing them.
                           type: boolean
                         options:
                           additionalProperties:
@@ -569,6 +570,42 @@ rules:
   - daemonsets
   - deployments
   - statefulsets
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - argoproj.io
+  resources:
+  - applications
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - argoproj.io
+  resources:
+  - applications/finalizers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - argoproj.io
+  resources:
+  - applications/status
   verbs:
   - create
   - delete
