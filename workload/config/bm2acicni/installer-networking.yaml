@@ -1,7 +1,7 @@
 apiVersion: controller.netop-manager.io/v1alpha1
 kind: Installer
 metadata:
-  name: installer-sample-networking
+  name: installer-networking
   namespace: netop-manager-system
 spec:
   operatorConfigs:
