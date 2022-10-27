@@ -1,8 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: netop-fabric-manager
-  namespace: netop-manager
+  name: netop-manager
+  namespace: netop-manager-system
 spec:
   destination:
     namespace: netop-manager
@@ -10,12 +10,12 @@ spec:
   project: default
   source:
     path: workload/config/oshift2/
-    repoURL: https://github.com/networkoperator/demo-cluster-manifests
-    targetRevision: sumit-test-1 
+    repoURL: https://github.com/networkoperator/
+    targetRevision:  
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
       allowEmpty: true
     syncOptions:
-    - Replace=true
+    - Replace=truebash-4.4
