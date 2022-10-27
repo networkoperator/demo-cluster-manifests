@@ -4,7 +4,7 @@ metadata:
   name: installer-sample-networking
   namespace: netop-manager-system
 spec:
-  networkFunctions:
+  operatorConfigs:
     networking:
       cko-cni:
         version: "5.2.3.3"
