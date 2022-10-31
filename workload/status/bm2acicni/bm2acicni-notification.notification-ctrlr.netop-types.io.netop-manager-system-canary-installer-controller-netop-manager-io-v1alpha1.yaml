@@ -1,6 +1,6 @@
 apiVersion: v1
 data:
-  data: "null"
+  data: '{"apiVersion":"notification-ctrlr.netop-types.io/v1alpha1","kind":"Notification","metadata":{"creationTimestamp":"2022-10-31T23:21:31Z","generation":1,"managedFields":[{"apiVersion":"notification-ctrlr.netop-types.io/v1alpha1","fieldsType":"FieldsV1","fieldsV1":{"f:spec":{".":{},"f:clusterName":{},"f:objRef":{},"f:serializedObj":{}},"f:status":{".":{},"f:state":{}}},"manager":"manager","operation":"Update","time":"2022-10-31T23:21:31Z"}],"name":"netop-manager-system-canary-installer-controller-netop-manager-io-v1alpha1","resourceVersion":"87008120","uid":"dcaef0a9-e67e-4d3f-a2ee-d6e7ac155d6a"},"spec":{"clusterName":"bm2acicni","objRef":{"apiVersion":"controller.netop-manager.io/v1alpha1","kind":"Installer","name":"canary","namespace":"netop-manager-system"},"serializedObj":"{\"kind\":\"Installer\",\"apiVersion\":\"controller.netop-manager.io/v1alpha1\",\"metadata\":{\"name\":\"canary\",\"namespace\":\"netop-manager-system\",\"creationTimestamp\":null},\"spec\":{\"operatorConfigs\":{}},\"status\":{}}"}}'
 kind: ConfigMap
 metadata:
   creationTimestamp: null
