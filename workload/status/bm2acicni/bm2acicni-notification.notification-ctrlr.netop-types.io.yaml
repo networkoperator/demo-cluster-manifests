@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  data: name:default-discovery-agent-observedops-network-function-netop-manager-io-v1alpha1,
+    ns:null, status:null, status_b64:bnVsbA==
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    netop-manager-resource: notification.notification-ctrlr.netop-types.io
+  name: bm2acicni-notification.notification-ctrlr.netop-types.io
+  namespace: netop-manager-system
