@@ -7,6 +7,5 @@ metadata:
   creationTimestamp: null
   labels:
     netop-manager-resource: installer.controller.netop-manager.io
-    notification.notification-ctrlr.netop-manager.io: exclude
   name: bm2acicni-installer.controller.netop-manager.io
   namespace: netop-manager-system
