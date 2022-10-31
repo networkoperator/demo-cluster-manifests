@@ -7,5 +7,6 @@ metadata:
   creationTimestamp: null
   labels:
     netop-manager-resource: notification.notification-ctrlr.netop-types.io
+    notification.notification-ctrlr.netop-manager.io: exclude
   name: bm2acicni-notification.notification-ctrlr.netop-types.ionetop-manager-system-netop-manager-manager-config-configmap-core-v1
   namespace: netop-manager-system
