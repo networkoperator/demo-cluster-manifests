@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
-  data: name:installer-calico-cni, ns:null, status:{"clusterOverview":{"nodes":3,"ns":8,"pods":25,"svc":12},"observedGeneration":1,"operatorStatus":"Running"},
-    status_b64:eyJjbHVzdGVyT3ZlcnZpZXciOnsibm9kZXMiOjMsIm5zIjo4LCJwb2RzIjoyNSwic3ZjIjoxMn0sIm9ic2VydmVkR2VuZXJhdGlvbiI6MSwib3BlcmF0b3JTdGF0dXMiOiJSdW5uaW5nIn0=
+  data: name:installer-calico-cni, ns:null, status:{"clusterOverview":{"nodes":3,"ns":8,"pods":26,"svc":12},"observedGeneration":1,"operatorStatus":"Running"},
+    status_b64:eyJjbHVzdGVyT3ZlcnZpZXciOnsibm9kZXMiOjMsIm5zIjo4LCJwb2RzIjoyNiwic3ZjIjoxMn0sIm9ic2VydmVkR2VuZXJhdGlvbiI6MSwib3BlcmF0b3JTdGF0dXMiOiJSdW5uaW5nIn0=
 kind: ConfigMap
 metadata:
   creationTimestamp: null
