@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
   data: name:netop-manager-system-netop-manager-manager-config-configmap-core-v1,
-    ns:null, status:{"state":""}, status_b64:eyJzdGF0ZSI6IiJ9
+    ns:null, status:null, status_b64:bnVsbA==
 kind: ConfigMap
 metadata:
   creationTimestamp: null
