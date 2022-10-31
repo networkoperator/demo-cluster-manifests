@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
-  data: name:cko-cni-calico, ns:null, status:{"cniType":"calico","cniVersion":"5.2.3.3","managedState":"New","observedGeneration":2,"state":"Pending","upgradeStatus":{"cniUpgradeState":"Upgrade"}},
-    status_b64:eyJjbmlUeXBlIjoiY2FsaWNvIiwiY25pVmVyc2lvbiI6IjUuMi4zLjMiLCJtYW5hZ2VkU3RhdGUiOiJOZXciLCJvYnNlcnZlZEdlbmVyYXRpb24iOjIsInN0YXRlIjoiUGVuZGluZyIsInVwZ3JhZGVTdGF0dXMiOnsiY25pVXBncmFkZVN0YXRlIjoiVXBncmFkZSJ9fQ==
+  data: name:cko-cni-calico, ns:null, status:{"cniType":"calico","cniVersion":"5.2.3.3","managedState":"New","observedGeneration":3,"state":"Pending","upgradeStatus":{"cniUpgradeState":"None"}},
+    status_b64:eyJjbmlUeXBlIjoiY2FsaWNvIiwiY25pVmVyc2lvbiI6IjUuMi4zLjMiLCJtYW5hZ2VkU3RhdGUiOiJOZXciLCJvYnNlcnZlZEdlbmVyYXRpb24iOjMsInN0YXRlIjoiUGVuZGluZyIsInVwZ3JhZGVTdGF0dXMiOnsiY25pVXBncmFkZVN0YXRlIjoiTm9uZSJ9fQ==
 kind: ConfigMap
 metadata:
   creationTimestamp: null
