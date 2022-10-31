@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
-  data: name:installer-platform, ns:null, status:{"clusterOverview":{"nodes":2,"ns":6,"pods":19,"svc":13},"observedGeneration":1,"operatorStatus":"Running"},
-    status_b64:eyJjbHVzdGVyT3ZlcnZpZXciOnsibm9kZXMiOjIsIm5zIjo2LCJwb2RzIjoxOSwic3ZjIjoxM30sIm9ic2VydmVkR2VuZXJhdGlvbiI6MSwib3BlcmF0b3JTdGF0dXMiOiJSdW5uaW5nIn0=
+  data: name:installer-platform, ns:null, status:{"clusterOverview":{"nodes":2,"ns":7,"pods":19,"svc":13},"observedGeneration":1,"operatorStatus":"Running"},
+    status_b64:eyJjbHVzdGVyT3ZlcnZpZXciOnsibm9kZXMiOjIsIm5zIjo3LCJwb2RzIjoxOSwic3ZjIjoxM30sIm9ic2VydmVkR2VuZXJhdGlvbiI6MSwib3BlcmF0b3JTdGF0dXMiOiJSdW5uaW5nIn0=
 kind: ConfigMap
 metadata:
   creationTimestamp: null
