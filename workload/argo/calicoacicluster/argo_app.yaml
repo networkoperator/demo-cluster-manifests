@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: workload/config/calicoacicluster/
-    repoURL: https://github.com/networkoperator/demo-cluster-manifests
+    repoURL: https://github.com/networkoperator/demo-cluster-manifests.git
     targetRevision: filip
     directory:
       exclude: '*.tar.gz'
