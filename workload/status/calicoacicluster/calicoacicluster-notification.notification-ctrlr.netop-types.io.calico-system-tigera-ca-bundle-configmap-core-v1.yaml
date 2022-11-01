@@ -1,0 +1,13 @@
+apiVersion: v1
+data:
+  data: '{"apiVersion":"notification-ctrlr.netop-types.io/v1alpha1","kind":"Notification","metadata":{"name":"calico-system-tigera-ca-bundle-configmap-core-v1"},"spec":{"clusterName":"calicoacicluster","objRef":{"apiVersion":"v1","kind":"ConfigMap","name":"tigera-ca-bundle","namespace":"calico-system"},"serializedObj":"{\"kind\":\"ConfigMap\",\"apiVersion\":\"v1\",\"metadata\":{\"name\":\"tigera-ca-bundle\",\"namespace\":\"calico-system\",\"creationTimestamp\":null},\"data\":{\"tigera-ca-bundle.crt\":\"#
+    certificate name: tigera-ca-private\\n-----BEGIN CERTIFICATE-----\\nMIIDKTCCAhGgAwIBAgIIa9nugGxwlyAwDQYJKoZIhvcNAQELBQAwITEfMB0GA1UE\\nAxMWdGlnZXJhLW9wZXJhdG9yLXNpZ25lcjAgFw0yMjExMDEyMDM4NDBaGA8yMTIy\\nMTAwODIwMzg0MVowITEfMB0GA1UEAxMWdGlnZXJhLW9wZXJhdG9yLXNpZ25lcjCC\\nASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANBpaShLbT17MkMCPyUIQrvH\\n1MkCtf3jY2i4nn5b5smFDg7LBKMiEk2caH/LQMvPB7cxsozHx4XjadR8vgNgHkjb\\nf9zj3k2WBCLvUz4NnMMa+Cl4WMgaeHzdLwgEu+lHtVLQOBcPHaI7bmZ94L9LPR4g\\nRPqu0JSObYKgt9IyNa5vEVTO6yc4BdklWYpDVZ1IDlaI2FsSQzAAAbE7CoBG3KB/\\nU4kz9mn69GRxHj6jKI52cqfLKZNH0aV0A+Hj3vqT0qf0Hv/ATS4rLiaz6vD+baoW\\nusOAi1S0+H+6+nzHgBNqF/1tl7c5Iiji7VUlDdHHrn+UyfKUFTZjs6iykfboHOkC\\nAwEAAaNjMGEwDgYDVR0PAQH/BAQDAgKkMA8GA1UdEwEB/wQFMAMBAf8wHQYDVR0O\\nBBYEFNrAjQkHoivo9BbQV9zqCB//cFfdMB8GA1UdIwQYMBaAFNrAjQkHoivo9BbQ\\nV9zqCB//cFfdMA0GCSqGSIb3DQEBCwUAA4IBAQAgtjQV269wCWrunI4mIC4qL1g5\\n+mpfkqCAR+U4Q4PUJbVpX6ZzWXptkIeYdn+R4ZlMwRZ1Dq2a78L249XX8DGJBVBG\\n8zo0JlrIptW6WcDLtB/qDAGyezb1hwnpN4SBuTIKWPHuiyZ3/18IjhzUSiqiT63v\\nEx36rng86p32Nb1DR660IO+zzbwKfDAPikvjvOwC8HdARRx81cCLF5y2IvwAXBpL\\ne3rCV0LqoQ/P6dk4fo5J1phBkTK1jPrkBL6Fm6sep5S54nmkbX8F6k2g/bdYoWHK\\nhUiGDefr/tFJ3+lG9IzyQYOn4RYWswSgRlETSc1/HAFf7Vsn4gdhoCba1H78\\n-----END
+    CERTIFICATE-----\\n\\n\\n\"}}"}}'
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    netop-manager-resource: notification.notification-ctrlr.netop-types.io
+    notification.notification-ctrlr.netop-manager.io: exclude
+  name: calicoacicluster-notification.notification-ctrlr.netop-types.io.calico-system-tigera-ca-bundle-configmap-core-v1
+  namespace: netop-manager-system

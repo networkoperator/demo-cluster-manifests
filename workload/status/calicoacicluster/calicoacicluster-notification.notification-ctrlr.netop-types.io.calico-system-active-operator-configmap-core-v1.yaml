@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  data: '{"apiVersion":"notification-ctrlr.netop-types.io/v1alpha1","kind":"Notification","metadata":{"name":"calico-system-active-operator-configmap-core-v1"},"spec":{"clusterName":"calicoacicluster","objRef":{"apiVersion":"v1","kind":"ConfigMap","name":"active-operator","namespace":"calico-system"},"serializedObj":"{\"kind\":\"ConfigMap\",\"apiVersion\":\"v1\",\"metadata\":{\"name\":\"active-operator\",\"namespace\":\"calico-system\",\"creationTimestamp\":null},\"data\":{\"active-namespace\":\"tigera-operator\"}}"}}'
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    netop-manager-resource: notification.notification-ctrlr.netop-types.io
+    notification.notification-ctrlr.netop-manager.io: exclude
+  name: calicoacicluster-notification.notification-ctrlr.netop-types.io.calico-system-active-operator-configmap-core-v1
+  namespace: netop-manager-system
