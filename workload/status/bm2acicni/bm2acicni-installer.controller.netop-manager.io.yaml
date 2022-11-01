@@ -1,6 +1,7 @@
 apiVersion: v1
 data:
-  data: name:installer-platform, ns:null, status:null, status_b64:bnVsbA==
+  data: name:installer-platform, ns:null, status:{"clusterOverview":{"nodes":2,"ns":5,"pods":18,"svc":13},"observedGeneration":1,"operatorStatus":"Running"},
+    status_b64:eyJjbHVzdGVyT3ZlcnZpZXciOnsibm9kZXMiOjIsIm5zIjo1LCJwb2RzIjoxOCwic3ZjIjoxM30sIm9ic2VydmVkR2VuZXJhdGlvbiI6MSwib3BlcmF0b3JTdGF0dXMiOiJSdW5uaW5nIn0=
 kind: ConfigMap
 metadata:
   creationTimestamp: null
