@@ -1,0 +1,15 @@
+apiVersion: v1
+data:
+  data: '{"apiVersion":"notification-ctrlr.netop-types.io/v1alpha1","kind":"Notification","metadata":{"name":"netop-manager-system-netop-manager-manager-config-configmap-core-v1"},"spec":{"clusterName":"calicoacicluster","objRef":{"apiVersion":"v1","kind":"ConfigMap","name":"netop-manager-manager-config","namespace":"netop-manager-system"},"serializedObj":"{\"kind\":\"ConfigMap\",\"apiVersion\":\"v1\",\"metadata\":{\"name\":\"netop-manager-manager-config\",\"namespace\":\"netop-manager-system\",\"creationTimestamp\":null},\"data\":{\"controller_manager_config.yaml\":\"apiVersion:
+    controller-runtime.sigs.k8s.io/v1alpha1\\nkind: ControllerManagerConfig\\nhealth:\\n  healthProbeBindAddress:
+    :8081\\nmetrics:\\n  bindAddress: 127.0.0.1:8080\\nwebhook:\\n  port: 9443\\nleaderElection:\\n  leaderElect:
+    true\\n  resourceName: 51681485.netop-manager.io\\n# leaderElectionReleaseOnCancel:
+    true\\n\"}}"}}'
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    netop-manager-resource: notification.notification-ctrlr.netop-types.io
+    notification.notification-ctrlr.netop-manager.io: exclude
+  name: calicoacicluster-notification.notification-ctrlr.netop-types.io.netop-manager-system-netop-manager-manager-config-configmap-core-v1
+  namespace: netop-manager-system

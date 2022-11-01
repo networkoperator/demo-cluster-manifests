@@ -1,0 +1,13 @@
+apiVersion: v1
+data:
+  data: '{"apiVersion":"notification-ctrlr.netop-types.io/v1alpha1","kind":"Notification","metadata":{"name":"netop-manager-system-kube-root-ca.crt-configmap-core-v1"},"spec":{"clusterName":"calicoacicluster","objRef":{"apiVersion":"v1","kind":"ConfigMap","name":"kube-root-ca.crt","namespace":"netop-manager-system"},"serializedObj":"{\"kind\":\"ConfigMap\",\"apiVersion\":\"v1\",\"metadata\":{\"name\":\"kube-root-ca.crt\",\"namespace\":\"netop-manager-system\",\"creationTimestamp\":null},\"data\":{\"ca.crt\":\"-----BEGIN
+    CERTIFICATE-----\\nMIIC/jCCAeagAwIBAgIBADANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwprdWJl\\ncm5ldGVzMB4XDTIyMTAyNjIzMzIxN1oXDTMyMTAyMzIzMzIxN1owFTETMBEGA1UE\\nAxMKa3ViZXJuZXRlczCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKNx\\njE00eWaCvVB6T/HQYVh3BqY6o+t7MQw51xG4qoWn1tumuNtsxEy3J55YJeDjZdVG\\n2QC9tfJIB01Brx8CQ43Quv/HndsjSmOtpOQgQ8dXoecJggIxcMZE/10Pg0v9dWyk\\nDaZdX675PIrLG5WbczH0XGK0CqiFW9sXmUppuBxIijk8rFBoNQ7ASqJE9hN2ciOX\\n0AiaFCblhA2LzUvHd9KNQ3fN7hCoL0SpZyOh0fJ7U61+NjU4xIBCRCf3NQpvl+bM\\nwAf2wtVnPcQmIA5v8eCuEy27+epTQLbL827Kw7bJIy9m1pm3ubK2ie9S+NCHpd3d\\nOYPQulJ7JQm/uRwk2+kCAwEAAaNZMFcwDgYDVR0PAQH/BAQDAgKkMA8GA1UdEwEB\\n/wQFMAMBAf8wHQYDVR0OBBYEFAcEya0jia1lFs0yx9jNabsFvOVeMBUGA1UdEQQO\\nMAyCCmt1YmVybmV0ZXMwDQYJKoZIhvcNAQELBQADggEBAIBrI9Peay+Z/o6+MyBm\\ne0dXNfk1KbOKuUs6eAesqEwOVjkpAkxhFX8W6EO+hxLx5zDU82dIoVQMk7dSYmtj\\n9gPaEUnji6Q4IlZlDECDYJaF41A7NxdoNiz/K/tIyafH+PvKhSxZVMarD+s9/vbb\\nqSsMdw+oMazcp5egePGzuIiRnm5e9XgPdzSUnRHQbk+cJbuGDYzC5YYIYOrY7V5K\\n6NhhQBGhmT7kB54Xto9fdbZ/0DDigq0w5sIyEWO2zhJFQl4kinYtayXlgGAWAQBx\\nHiILm2uYifyC/n4xSMQcvnZ7PBHV7ogFLyKHDzvzdLbehpWBjWBowi7lFiw6xK2d\\n8KA=\\n-----END
+    CERTIFICATE-----\\n\"}}"}}'
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    netop-manager-resource: notification.notification-ctrlr.netop-types.io
+    notification.notification-ctrlr.netop-manager.io: exclude
+  name: calicoacicluster-notification.notification-ctrlr.netop-types.io.netop-manager-system-kube-root-ca.crt-configmap-core-v1
+  namespace: netop-manager-system
