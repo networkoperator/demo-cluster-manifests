@@ -1,11 +1,13 @@
 apiVersion: v1
 data:
-  data: 'name:cko-cni-calico, ns:null, status:{"cniStatus":{"ipam-scan":"error: unable
-    to upgrade connection: container not found (\"calicoctl\")\n","ipam-status":"error:
-    unable to upgrade connection: container not found (\"calicoctl\")\n","version":"error:
-    unable to upgrade connection: container not found (\"calicoctl\")\n"},"cniType":"calico","cniVersion":"3.23","ipam":"error:
-    unable to upgrade connection: container not found (\"calicoctl\")\n","managedState":"New","observedGeneration":1,"state":"Running","upgradeStatus":{"cniUpgradeState":"None"}},
-    status_b64:eyJjbmlTdGF0dXMiOnsiaXBhbS1zY2FuIjoiZXJyb3I6IHVuYWJsZSB0byB1cGdyYWRlIGNvbm5lY3Rpb246IGNvbnRhaW5lciBub3QgZm91bmQgKFwiY2FsaWNvY3RsXCIpXG4iLCJpcGFtLXN0YXR1cyI6ImVycm9yOiB1bmFibGUgdG8gdXBncmFkZSBjb25uZWN0aW9uOiBjb250YWluZXIgbm90IGZvdW5kIChcImNhbGljb2N0bFwiKVxuIiwidmVyc2lvbiI6ImVycm9yOiB1bmFibGUgdG8gdXBncmFkZSBjb25uZWN0aW9uOiBjb250YWluZXIgbm90IGZvdW5kIChcImNhbGljb2N0bFwiKVxuIn0sImNuaVR5cGUiOiJjYWxpY28iLCJjbmlWZXJzaW9uIjoiMy4yMyIsImlwYW0iOiJlcnJvcjogdW5hYmxlIHRvIHVwZ3JhZGUgY29ubmVjdGlvbjogY29udGFpbmVyIG5vdCBmb3VuZCAoXCJjYWxpY29jdGxcIilcbiIsIm1hbmFnZWRTdGF0ZSI6Ik5ldyIsIm9ic2VydmVkR2VuZXJhdGlvbiI6MSwic3RhdGUiOiJSdW5uaW5nIiwidXBncmFkZVN0YXR1cyI6eyJjbmlVcGdyYWRlU3RhdGUiOiJOb25lIn19'
+  data: 'name:cko-cni-calico, ns:null, status:{"cniStatus":{"ipam-scan":"Checking
+    IPAM for inconsistencies...\n\nconnection is unauthorized: Unauthorized\ncommand
+    terminated with exit code 1\n","ipam-status":"connection is unauthorized: Unauthorized\ncommand
+    terminated with exit code 1\n","version":"Client Version:    v3.23.2\nGit commit:        a52cb86db\nUnable
+    to retrieve Cluster Version or Type: connection is unauthorized: Unauthorized\ncommand
+    terminated with exit code 1\n"},"cniType":"calico","cniVersion":"3.23","ipam":"connection
+    is unauthorized: Unauthorized\ncommand terminated with exit code 1\n","managedState":"New","observedGeneration":1,"state":"Running","upgradeStatus":{"cniUpgradeState":"None"}},
+    status_b64:eyJjbmlTdGF0dXMiOnsiaXBhbS1zY2FuIjoiQ2hlY2tpbmcgSVBBTSBmb3IgaW5jb25zaXN0ZW5jaWVzLi4uXG5cbmNvbm5lY3Rpb24gaXMgdW5hdXRob3JpemVkOiBVbmF1dGhvcml6ZWRcbmNvbW1hbmQgdGVybWluYXRlZCB3aXRoIGV4aXQgY29kZSAxXG4iLCJpcGFtLXN0YXR1cyI6ImNvbm5lY3Rpb24gaXMgdW5hdXRob3JpemVkOiBVbmF1dGhvcml6ZWRcbmNvbW1hbmQgdGVybWluYXRlZCB3aXRoIGV4aXQgY29kZSAxXG4iLCJ2ZXJzaW9uIjoiQ2xpZW50IFZlcnNpb246ICAgIHYzLjIzLjJcbkdpdCBjb21taXQ6ICAgICAgICBhNTJjYjg2ZGJcblVuYWJsZSB0byByZXRyaWV2ZSBDbHVzdGVyIFZlcnNpb24gb3IgVHlwZTogY29ubmVjdGlvbiBpcyB1bmF1dGhvcml6ZWQ6IFVuYXV0aG9yaXplZFxuY29tbWFuZCB0ZXJtaW5hdGVkIHdpdGggZXhpdCBjb2RlIDFcbiJ9LCJjbmlUeXBlIjoiY2FsaWNvIiwiY25pVmVyc2lvbiI6IjMuMjMiLCJpcGFtIjoiY29ubmVjdGlvbiBpcyB1bmF1dGhvcml6ZWQ6IFVuYXV0aG9yaXplZFxuY29tbWFuZCB0ZXJtaW5hdGVkIHdpdGggZXhpdCBjb2RlIDFcbiIsIm1hbmFnZWRTdGF0ZSI6Ik5ldyIsIm9ic2VydmVkR2VuZXJhdGlvbiI6MSwic3RhdGUiOiJSdW5uaW5nIiwidXBncmFkZVN0YXR1cyI6eyJjbmlVcGdyYWRlU3RhdGUiOiJOb25lIn19'
 kind: ConfigMap
 metadata:
   creationTimestamp: null
