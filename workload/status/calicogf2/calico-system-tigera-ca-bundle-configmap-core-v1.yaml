@@ -1,0 +1,17 @@
+apiVersion: notification-ctrlr.netop-types.io/v1alpha1
+kind: Notification
+metadata:
+  creationTimestamp: null
+  name: calico-system-tigera-ca-bundle-configmap-core-v1
+spec:
+  clusterName: calicogf2
+  objRef:
+    apiVersion: v1
+    kind: ConfigMap
+    name: tigera-ca-bundle
+    namespace: calico-system
+  serializedObj: '{"kind":"ConfigMap","apiVersion":"v1","metadata":{"name":"tigera-ca-bundle","namespace":"calico-system","creationTimestamp":null},"data":{"tigera-ca-bundle.crt":"#
+    certificate name: tigera-ca-private\n-----BEGIN CERTIFICATE-----\nMIIDKTCCAhGgAwIBAgIIIaumYT9xX8UwDQYJKoZIhvcNAQELBQAwITEfMB0GA1UE\nAxMWdGlnZXJhLW9wZXJhdG9yLXNpZ25lcjAgFw0yMjExMDcxODQ3NTBaGA8yMTIy\nMTAxNDE4NDc1MVowITEfMB0GA1UEAxMWdGlnZXJhLW9wZXJhdG9yLXNpZ25lcjCC\nASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK24noJT7DitUERiAubhjWkg\nFqM2Z6aCTe5X6vkY6UPZkQncpmeKneATtmxW4J6A/YciA4Bn6hNGd5VU+AwQ+Aol\n4thlMsSlw4hyb38CWvzjX7w16UomdyNkY0xteUA2a9mo+4rIpMsk4JsQOJ5OQkm/\npGWIHSqGudZEOq0tFrGaO4Y+vz/KMaDflTC+Q7jjcLQ5E0EKVxaPRkGec722WO2o\n8R1CkHEfsrU46BrcCUYzT9zeUqUPmvDqjhRtTpmgToTF59kOjxZ8o+K52LqPdCjG\nboqea56zy0p3xqR0JdbMWrh+DvtTPDRQMJbEYZvYtwZsIUYx6v1fYM4BkbLD6XEC\nAwEAAaNjMGEwDgYDVR0PAQH/BAQDAgKkMA8GA1UdEwEB/wQFMAMBAf8wHQYDVR0O\nBBYEFJqYbbuHEzjeJPCpv7zZEQNjS/1xMB8GA1UdIwQYMBaAFJqYbbuHEzjeJPCp\nv7zZEQNjS/1xMA0GCSqGSIb3DQEBCwUAA4IBAQCVG7N1sfKxNH2q5FbbEeloXs1w\n2qaxrKSYgx4EL6Tc4wnxDzRIgsnq85HTe3OSQC8LWvqTmRMpELQb4c5OjulqnG8Q\n/22lwUWe64paxwH3NjjY0Jfb5AkrjkkhPSrtFHWtW0IIOMI46ZUijE8YbFCiXIwS\nqU8IrNIfzpyWU8MAEnVyMOuX2jp5YVjeIGRS8YRH8pQBJbNUkNQWlxMBP6J/Aqkr\nwLeVpnTFHbaujeDFO5u9VXxW9nMrrO0XEUy0RpaH+WAvD42UzpJ9SNFkm1uYlEf7\nihSMMlQON24Jhc5xlm63XCfAUbfwjcic9YCR9iOwT9u2WkdCnQ3xNHmw8m7t\n-----END
+    CERTIFICATE-----\n\n\n"}}'
+status:
+  state: ""
