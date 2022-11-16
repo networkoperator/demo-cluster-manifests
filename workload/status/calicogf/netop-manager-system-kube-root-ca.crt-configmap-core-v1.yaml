@@ -1,0 +1,17 @@
+apiVersion: notification-ctrlr.netop-types.io/v1alpha1
+kind: Notification
+metadata:
+  creationTimestamp: null
+  name: netop-manager-system-kube-root-ca.crt-configmap-core-v1
+spec:
+  clusterName: calicogf
+  objRef:
+    apiVersion: v1
+    kind: ConfigMap
+    name: kube-root-ca.crt
+    namespace: netop-manager-system
+  serializedObj: '{"kind":"ConfigMap","apiVersion":"v1","metadata":{"name":"kube-root-ca.crt","namespace":"netop-manager-system","creationTimestamp":null},"data":{"ca.crt":"-----BEGIN
+    CERTIFICATE-----\nMIIC/jCCAeagAwIBAgIBADANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwprdWJl\ncm5ldGVzMB4XDTIyMTExNjIwMjkwMFoXDTMyMTExMzIwMjkwMFowFTETMBEGA1UE\nAxMKa3ViZXJuZXRlczCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMvn\nwcjirGutkrkplUeIGKW9wfgvW+1Z/VQ4UVyUp6im3rewThGSqZRYyNd86phyyhIi\noiMf4zC1aSrkwZOtj8Kpf+6beof3ZwHkKbEMW/cyBB8Q53glrxaNIP8AwxvWslAO\nWWs9aUzqow4bTeknpAq5DUeYoMIS52TAmVyoEyqsOjHbJMTw6zGkdKXpcgDgBS0I\n+v8UZEWl+uMlyyDtFpHDA/5QUXIOpdiXzZE39yXgAEeypmr3xu+oIg8Hzs9s0y2h\ngnRTyHlFoyzvinFDzejaRowPMF3nK2GwuIBLyix7CzwAUazYGg8+RCJLR0hOgjP/\n8O6HrU/uwL2nQ9hQEOECAwEAAaNZMFcwDgYDVR0PAQH/BAQDAgKkMA8GA1UdEwEB\n/wQFMAMBAf8wHQYDVR0OBBYEFJYIrbfpdWfSmWH850EO/FG/1t5dMBUGA1UdEQQO\nMAyCCmt1YmVybmV0ZXMwDQYJKoZIhvcNAQELBQADggEBAB/s8FgL4YsdomfLr5ia\nKWUS75r85TiETrZ443rUgG+To32UxSgA7K5GWXZ/IoAHTA6ACBEnklsRIwRmOU/p\nN7iivNldgJ4cjgRzAZkR6oM4SKghVOPOM8e5Z11BcBUuN853x/XGhs4Ym8thgl17\nzoR0aCj/6T4Qpixr9di8CMjNqF+X1Jc0oYcH6cPSVCZNGVG25GJJELWEYjOO9cC3\nm20/5g9sXSJlCvTL3aNL9Ab6uXkLl2KCONCj0/oRn47WolpCskCLJHKGfqeBo9wY\nkX1rO5/ZgMDu8/1qDWCBj/pQKFj7eZKslNJWQiZNf+ype4qHlKI3g/IQiW12+1RT\npCg=\n-----END
+    CERTIFICATE-----\n"}}'
+status:
+  state: ""

@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  data: name:cko-cni-cko-cni-calico, ns:null, status:{"cniType":"cko-cni-calico","managedState":"Unmanaged","observedGeneration":1},
+    status_b64:eyJjbmlUeXBlIjoiY2tvLWNuaS1jYWxpY28iLCJtYW5hZ2VkU3RhdGUiOiJVbm1hbmFnZWQiLCJvYnNlcnZlZEdlbmVyYXRpb24iOjF9
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    netop-manager-resource: cniops.network-function.netop-manager.io
+    notification.notification-ctrlr.netop-manager.io: exclude
+  name: calicogf-cniops.network-function.netop-manager.io
+  namespace: netop-manager-system
