@@ -9,6 +9,6 @@ spec:
     apiVersion: network-function.netop-manager.io/v1alpha1
     kind: ObservedOps
     name: discovery-agent
-  serializedObj: '{"kind":"ObservedOps","apiVersion":"network-function.netop-manager.io/v1alpha1","metadata":{"name":"discovery-agent","creationTimestamp":null},"spec":{"cniMountPath":"/mnt/cni-conf","cniConfPath":["cni/net.d","/kubernetes/cni/net.d"]},"status":{"cniType":"not-found"}}'
+  serializedObj: '{"kind":"ObservedOps","apiVersion":"network-function.netop-manager.io/v1alpha1","metadata":{"name":"discovery-agent","creationTimestamp":null},"spec":{"cniMountPath":"/mnt/cni-conf","cniConfPath":["cni/net.d","/kubernetes/cni/net.d"],"forceReconcile":1},"status":{"cniType":"not-found"}}'
 status:
   state: ""
