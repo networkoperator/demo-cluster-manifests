@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
-  data: name:installer-calico-cni, ns:null, status:{"observedGeneration":1,"operatorStatus":"Running"},
-    status_b64:eyJvYnNlcnZlZEdlbmVyYXRpb24iOjEsIm9wZXJhdG9yU3RhdHVzIjoiUnVubmluZyJ9
+  data: name:installer-calico-cni, ns:null, status:{"observedGeneration":2,"operatorStatus":"Running"},
+    status_b64:eyJvYnNlcnZlZEdlbmVyYXRpb24iOjIsIm9wZXJhdG9yU3RhdHVzIjoiUnVubmluZyJ9
 kind: ConfigMap
 metadata:
   creationTimestamp: null
