@@ -16,8 +16,8 @@ spec:
     blocks record 5 allocations.\n\nLoading all IPAM pools...\n  10.2.0.0/16\nFound
     1 active IP pools.\n\nLoading all nodes.\nFound 0 node tunnel IPs.\n\nLoading
     all workload endpoints.\nFound 5 workload IPs.\nWorkloads and nodes are using
-    5 IPs.\n\nLooking for top (up to 20) nodes by allocations...\n  calico-gf-2-node-1
-    has 2 allocations\n  calico-gf-2-node-2 has 2 allocations\n  calico-gf-2-node-3
+    5 IPs.\n\nLooking for top (up to 20) nodes by allocations...\n  calico-gf-2-node-2
+    has 2 allocations\n  calico-gf-2-node-1 has 2 allocations\n  calico-gf-2-node-3
     has 1 allocations\nNode with most allocations has 2; median is 2\n\nScanning for
     IPs that are allocated but not actually in use...\nFound 0 IPs that are allocated
     in IPAM but not actually in use.\nScanning for IPs that are in use by a workload
