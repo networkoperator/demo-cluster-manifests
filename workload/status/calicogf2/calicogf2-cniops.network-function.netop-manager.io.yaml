@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
-  data: name:cko-cni-cko-cni-calico, ns:null, status:{"cniType":"cko-cni-calico","managedState":"Unmanaged","observedGeneration":1},
-    status_b64:eyJjbmlUeXBlIjoiY2tvLWNuaS1jYWxpY28iLCJtYW5hZ2VkU3RhdGUiOiJVbm1hbmFnZWQiLCJvYnNlcnZlZEdlbmVyYXRpb24iOjF9
+  data: name:cko-cni-cko-cni-calico, ns:null, status:{"cniType":"cko-cni-calico","managedState":"Unmanaged","observedGeneration":2,"state":"Initializing","upgradeStatus":{"cniUpgradeState":"None"}},
+    status_b64:eyJjbmlUeXBlIjoiY2tvLWNuaS1jYWxpY28iLCJtYW5hZ2VkU3RhdGUiOiJVbm1hbmFnZWQiLCJvYnNlcnZlZEdlbmVyYXRpb24iOjIsInN0YXRlIjoiSW5pdGlhbGl6aW5nIiwidXBncmFkZVN0YXR1cyI6eyJjbmlVcGdyYWRlU3RhdGUiOiJOb25lIn19
 kind: ConfigMap
 metadata:
   creationTimestamp: null
