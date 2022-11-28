@@ -1,0 +1,72 @@
+apiVersion: notification-ctrlr.netop-types.io/v1alpha1
+kind: Notification
+metadata:
+  creationTimestamp: null
+  name: ocp410bf-aci-containers-system-aci-containers-config-configmap-core-v1
+spec:
+  clusterName: ocp410bf
+  objRef:
+    apiVersion: v1
+    kind: ConfigMap
+    name: aci-containers-config
+    namespace: aci-containers-system
+  serializedObj: '{"kind":"ConfigMap","apiVersion":"v1","metadata":{"name":"aci-containers-config","namespace":"aci-containers-system","creationTimestamp":null},"data":{"controller-config":"{\n    \"flavor\":
+    \"openshift-4.10-esx\",\n    \"log-level\": \"debug\",\n    \"apic-hosts\": [\n        \"10.30.120.61\"\n    ],\n    \"apic-username\":
+    \"ocp410bf\",\n    \"apic-private-key-path\": \"/usr/local/etc/aci-cert/user.key\",\n    \"aci-prefix\":
+    \"ocp410bf\",\n    \"aci-vmm-type\": \"OpenShift\",\n    \"aci-vmm-domain\": \"ocp410bf\",\n    \"aci-vmm-controller\":
+    \"ocp410bf\",\n    \"aci-policy-tenant\": \"ocp410bf\",\n    \"aci-podbd-dn\":
+    \"uni/tn-ocp410bf/BD-aci-containers-ocp410bf-pod-bd\",\n    \"aci-nodebd-dn\":
+    \"uni/tn-ocp410bf/BD-aci-containers-ocp410bf-node-bd\",\n    \"aci-service-phys-dom\":
+    \"ocp410bf-pdom\",\n    \"aci-service-encap\": \"vlan-201\",\n    \"aci-service-monitor-interval\":
+    5,\n    \"aci-pbr-tracking-non-snat\": false,\n    \"aci-vrf-tenant\": \"common\",\n    \"aci-vrf-dn\":
+    \"uni/tn-common/ctx-ocp410_bf_vrf\",\n    \"aci-l3out\": \"ocp410_bf_l3out\",\n    \"aci-ext-networks\":
+    [\n        \"ocp-bf-l3-extepg\"\n    ],\n    \"aci-vrf\": \"ocp410_bf_vrf\",\n    \"default-endpoint-group\":
+    {\n        \"policy-space\": \"ocp410bf\",\n        \"name\": \"aci-containers-ocp410bf|aci-containers-default\"\n    },\n    \"max-nodes-svc-graph\":
+    32,\n    \"namespace-default-endpoint-group\": {\n        \"aci-containers-system\":
+    {\n            \"policy-space\": \"ocp410bf\",\n            \"name\": \"aci-containers-ocp410bf|aci-containers-system\"\n        },\n        \"istio-operator\":
+    {\n            \"policy-space\": \"ocp410bf\",\n            \"name\": \"aci-containers-ocp410bf|aci-containers-istio\"\n        },\n        \"istio-system\":
+    {\n            \"policy-space\": \"ocp410bf\",\n            \"name\": \"aci-containers-ocp410bf|aci-containers-istio\"\n        },\n        \"kube-service-catalog\":
+    {\n            \"policy-space\": \"ocp410bf\",\n            \"name\": \"aci-containers-ocp410bf|aci-containers-system\"\n        },\n        \"kube-system\":
+    {\n            \"policy-space\": \"ocp410bf\",\n            \"name\": \"aci-containers-ocp410bf|aci-containers-system\"\n        },\n        \"openshift-authentication\":
+    {\n            \"policy-space\": \"ocp410bf\",\n            \"name\": \"aci-containers-ocp410bf|aci-containers-system\"\n        },\n        \"openshift-authentication-operator\":
+    {\n            \"policy-space\": \"ocp410bf\",\n            \"name\": \"aci-containers-ocp410bf|aci-containers-system\"\n        },\n        \"openshift-console\":
+    {\n            \"policy-space\": \"ocp410bf\",\n            \"name\": \"aci-containers-ocp410bf|aci-containers-system\"\n        },\n        \"openshift-dns\":
+    {\n            \"policy-space\": \"ocp410bf\",\n            \"name\": \"aci-containers-ocp410bf|aci-containers-system\"\n        },\n        \"openshift-monitoring\":
+    {\n            \"policy-space\": \"ocp410bf\",\n            \"name\": \"aci-containers-ocp410bf|aci-containers-system\"\n        },\n        \"openshift-web-console\":
+    {\n            \"policy-space\": \"ocp410bf\",\n            \"name\": \"aci-containers-ocp410bf|aci-containers-system\"\n        }        },\n    \"service-ip-pool\":
+    [\n        {\n            \"end\": \"10.3.0.254\",\n            \"start\": \"10.3.0.2\"\n        }\n    ],\n    \"extern-static\":
+    \"10.4.0.1/24\",\n    \"extern-dynamic\": \"10.3.0.1/24\",\n    \"snat-contract-scope\":
+    \"global\",\n    \"static-service-ip-pool\": [\n        {\n            \"end\":
+    \"10.4.0.254\",\n            \"start\": \"10.4.0.2\"\n        }\n    ],\n    \"pod-ip-pool\":
+    [\n        {\n            \"end\": \"10.2.255.254\",\n            \"start\": \"10.2.0.2\"\n        }\n    ],\n    \"pod-subnet-chunk-size\":
+    32,\n    \"node-service-ip-pool\": [\n        {\n            \"end\": \"10.5.0.254\",\n            \"start\":
+    \"10.5.0.2\"\n        }\n    ],\n    \"node-service-subnets\": [\n        \"10.5.0.1/24\"\n    ]\n}","host-agent-config":"{\n    \"flavor\":
+    \"openshift-4.10-esx\",\n    \"app-profile\": \"aci-containers-ocp410bf\",\n    \"opflex-mode\":
+    null,\n    \"log-level\": \"debug\",\n    \"aci-snat-namespace\": \"aci-containers-system\",\n    \"aci-vmm-type\":
+    \"OpenShift\",\n    \"aci-vmm-domain\": \"ocp410bf\",\n    \"aci-vmm-controller\":
+    \"ocp410bf\",\n    \"installer-provisioned-lb-ip\": \"192.168.1.2\",\n    \"aci-prefix\":
+    \"ocp410bf\",\n    \"aci-vrf\": \"ocp410_bf_vrf\",\n    \"aci-vrf-tenant\": \"common\",\n    \"service-vlan\":
+    201,\n    \"kubeapi-vlan\": 200,\n    \"pod-subnet\": \"10.2.0.1/16\",\n    \"node-subnet\":
+    \"192.168.1.1/24\",\n    \"encap-type\": \"vxlan\",\n    \"aci-infra-vlan\": 4093,\n    \"cni-netconfig\":
+    [\n        {\n            \"gateway\": \"10.2.0.1\",\n            \"routes\":
+    [\n                {\n                    \"dst\": \"0.0.0.0/0\",\n                    \"gw\":
+    \"10.2.0.1\"\n                }\n            ],\n            \"subnet\": \"10.2.0.0/16\"\n        }\n    ],\n    \"default-endpoint-group\":
+    {\n        \"policy-space\": \"ocp410bf\",\n        \"name\": \"aci-containers-ocp410bf|aci-containers-default\"\n    },\n    \"namespace-default-endpoint-group\":
+    {\n        \"aci-containers-system\": {\n            \"policy-space\": \"ocp410bf\",\n            \"name\":
+    \"aci-containers-ocp410bf|aci-containers-system\"\n        },\n        \"istio-operator\":
+    {\n            \"policy-space\": \"ocp410bf\",\n            \"name\": \"aci-containers-ocp410bf|aci-containers-istio\"\n        },\n        \"istio-system\":
+    {\n            \"policy-space\": \"ocp410bf\",\n            \"name\": \"aci-containers-ocp410bf|aci-containers-istio\"\n        },\n        \"kube-service-catalog\":
+    {\n            \"policy-space\": \"ocp410bf\",\n            \"name\": \"aci-containers-ocp410bf|aci-containers-system\"\n        },\n        \"kube-system\":
+    {\n            \"policy-space\": \"ocp410bf\",\n            \"name\": \"aci-containers-ocp410bf|aci-containers-system\"\n        },\n        \"openshift-authentication\":
+    {\n            \"policy-space\": \"ocp410bf\",\n            \"name\": \"aci-containers-ocp410bf|aci-containers-system\"\n        },\n        \"openshift-authentication-operator\":
+    {\n            \"policy-space\": \"ocp410bf\",\n            \"name\": \"aci-containers-ocp410bf|aci-containers-system\"\n        },\n        \"openshift-console\":
+    {\n            \"policy-space\": \"ocp410bf\",\n            \"name\": \"aci-containers-ocp410bf|aci-containers-system\"\n        },\n        \"openshift-dns\":
+    {\n            \"policy-space\": \"ocp410bf\",\n            \"name\": \"aci-containers-ocp410bf|aci-containers-system\"\n        },\n        \"openshift-monitoring\":
+    {\n            \"policy-space\": \"ocp410bf\",\n            \"name\": \"aci-containers-ocp410bf|aci-containers-system\"\n        },\n        \"openshift-web-console\":
+    {\n            \"policy-space\": \"ocp410bf\",\n            \"name\": \"aci-containers-ocp410bf|aci-containers-system\"\n        }        },\n    \"enable-drop-log\":
+    true,\n    \"enable-nodepodif\": false,\n    \"enable-ovs-hw-offload\": false\n}","opflex-agent-config":"{\n    \"log\":
+    {\n        \"level\": \"debug\"\n    },\n    \"opflex\": {\n        \"notif\"
+    : { \"enabled\" : \"false\" }\n    },\n    \"prometheus\": {\n        \"enabled\":
+    \"false\"\n    }\n}"}}'
+status:
+  state: ""
