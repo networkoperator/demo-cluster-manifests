@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: workload/config/yadhikar/
-    repoURL: https://github.com/networkoperator/demo-cluster-manifests
+    repoURL: https://github.com/networkoperator/demo-cluster-manifests.git
     targetRevision: sumit-test-1
     directory:
       exclude: '*.tar.gz'
