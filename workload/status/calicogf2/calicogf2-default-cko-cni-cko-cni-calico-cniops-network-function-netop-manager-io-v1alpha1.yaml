@@ -13,22 +13,22 @@ spec:
     IPAM for inconsistencies...\n\nLoading all IPAM blocks...\nFound 3 IPAM blocks.\n
     IPAM block 10.2.12.0/26 affinity=host:calico-gf-2-node-3:\n IPAM block 10.2.144.192/26
     affinity=host:calico-gf-2-node-1:\n IPAM block 10.2.93.0/26 affinity=host:calico-gf-2-node-2:\nIPAM
-    blocks record 5 allocations.\n\nLoading all IPAM pools...\n  10.2.0.0/16\nFound
+    blocks record 6 allocations.\n\nLoading all IPAM pools...\n  10.2.0.0/16\nFound
     1 active IP pools.\n\nLoading all nodes.\nFound 0 node tunnel IPs.\n\nLoading
-    all workload endpoints.\nFound 5 workload IPs.\nWorkloads and nodes are using
-    5 IPs.\n\nLooking for top (up to 20) nodes by allocations...\n  calico-gf-2-node-1
-    has 2 allocations\n  calico-gf-2-node-2 has 2 allocations\n  calico-gf-2-node-3
-    has 1 allocations\nNode with most allocations has 2; median is 2\n\nScanning for
+    all workload endpoints.\nFound 6 workload IPs.\nWorkloads and nodes are using
+    6 IPs.\n\nLooking for top (up to 20) nodes by allocations...\n  calico-gf-2-node-2
+    has 3 allocations\n  calico-gf-2-node-1 has 2 allocations\n  calico-gf-2-node-3
+    has 1 allocations\nNode with most allocations has 3; median is 2\n\nScanning for
     IPs that are allocated but not actually in use...\nFound 0 IPs that are allocated
     in IPAM but not actually in use.\nScanning for IPs that are in use by a workload
     or node but not allocated in IPAM...\nFound 0 in-use IPs that are not in active
     IP pools.\nFound 0 in-use IPs that are in active IP pools but have no corresponding
     IPAM allocation.\n\nCheck complete; found 0 problems.\n","ipam-status":"+----------+-------------+-----------+------------+--------------+\n|
     GROUPING |    CIDR     | IPS TOTAL | IPS IN USE |   IPS FREE   |\n+----------+-------------+-----------+------------+--------------+\n|
-    IP Pool  | 10.2.0.0/16 |     65536 | 5 (0%)     | 65531 (100%) |\n+----------+-------------+-----------+------------+--------------+\n","version":"Client
+    IP Pool  | 10.2.0.0/16 |     65536 | 6 (0%)     | 65530 (100%) |\n+----------+-------------+-----------+------------+--------------+\n","version":"Client
     Version:    v3.23.2\nGit commit:        a52cb86db\nCluster Version:   v3.23.2\nCluster
     Type:      typha,kdd,k8s,operator,bgp,kubeadm\n"},"state":"Running","managedState":"New","upgradeStatus":{"cniUpgradeState":"None"},"observedGeneration":1,"ipam":"+----------+-------------+-----------+------------+--------------+\n|
     GROUPING |    CIDR     | IPS TOTAL | IPS IN USE |   IPS FREE   |\n+----------+-------------+-----------+------------+--------------+\n|
-    IP Pool  | 10.2.0.0/16 |     65536 | 5 (0%)     | 65531 (100%) |\n+----------+-------------+-----------+------------+--------------+\n"}}'
+    IP Pool  | 10.2.0.0/16 |     65536 | 6 (0%)     | 65530 (100%) |\n+----------+-------------+-----------+------------+--------------+\n"}}'
 status:
   state: ""
