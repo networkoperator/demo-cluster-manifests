@@ -15,8 +15,8 @@ spec:
     affinity=host:calico-gf-1-node-3:\nIPAM blocks record 17 allocations.\n\nLoading
     all IPAM pools...\n  10.2.0.0/16\nFound 1 active IP pools.\n\nLoading all nodes.\nFound
     0 node tunnel IPs.\n\nLoading all workload endpoints.\nFound 17 workload IPs.\nWorkloads
-    and nodes are using 17 IPs.\n\nLooking for top (up to 20) nodes by allocations...\n  calico-gf-1-node-3
-    has 9 allocations\n  calico-gf-1-node-2 has 8 allocations\nNode with most allocations
+    and nodes are using 17 IPs.\n\nLooking for top (up to 20) nodes by allocations...\n  calico-gf-1-node-2
+    has 9 allocations\n  calico-gf-1-node-3 has 8 allocations\nNode with most allocations
     has 9; median is 8\n\nScanning for IPs that are allocated but not actually in
     use...\nFound 0 IPs that are allocated in IPAM but not actually in use.\nScanning
     for IPs that are in use by a workload or node but not allocated in IPAM...\nFound
