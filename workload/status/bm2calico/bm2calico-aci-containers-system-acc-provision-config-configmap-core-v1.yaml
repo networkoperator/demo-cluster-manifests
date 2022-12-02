@@ -33,7 +33,7 @@ spec:
     101,\n                                \"local_ip\": \"2.100.101.201\"\n                            },\n                            {\n                                \"id\":
     102,\n                                \"local_ip\": \"2.100.101.202\"\n                            }\n                        ],\n                        \"node\":
     [\n                            {\n                                \"name\": \"k8sbm2-bm-4\"\n                            },\n                            {\n                                \"name\":
-    \"k8sbm2-bm-5\"\n                            }\n                        ]\n                    }\n                ]\n        }\n    }\n
-    }"}}'
+    \"k8sbm2-bm-5\"\n                            }\n                        ]\n                    }\n                ]\n        },\n        \"flavor\":
+    \"calico-3.23.2\"\n    }\n }"}}'
 status:
   state: ""
