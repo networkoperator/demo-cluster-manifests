@@ -1,0 +1,17 @@
+apiVersion: notification-ctrlr.netop-types.io/v1alpha1
+kind: Notification
+metadata:
+  creationTimestamp: null
+  name: ocp410bf-netop-manager-system-openshift-service-ca.crt-configmap-core-v1
+spec:
+  clusterName: ocp410bf
+  objRef:
+    apiVersion: v1
+    kind: ConfigMap
+    name: openshift-service-ca.crt
+    namespace: netop-manager-system
+  serializedObj: '{"kind":"ConfigMap","apiVersion":"v1","metadata":{"name":"openshift-service-ca.crt","namespace":"netop-manager-system","creationTimestamp":null},"data":{"service-ca.crt":"-----BEGIN
+    CERTIFICATE-----\nMIIDUTCCAjmgAwIBAgIIFTK48atwncwwDQYJKoZIhvcNAQELBQAwNjE0MDIGA1UE\nAwwrb3BlbnNoaWZ0LXNlcnZpY2Utc2VydmluZy1zaWduZXJAMTY2OTk4NTgzMTAe\nFw0yMjEyMDIxMjU3MTBaFw0yNTAxMzAxMjU3MTFaMDYxNDAyBgNVBAMMK29wZW5z\naGlmdC1zZXJ2aWNlLXNlcnZpbmctc2lnbmVyQDE2Njk5ODU4MzEwggEiMA0GCSqG\nSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCq3srtG46xm3v5byaF43meWZIBnNbmqDnV\nmrxD9yz5u8+Lm41lrXUR1AhcUY7U1YdIyVBePJE8375kTwfMXK8rb4o+ITRVqR7p\ny4FHSFvxfgeWbYCmJkcbdgoPf/WIwnDLEhD6aYDnclzgoW2qI1u7UIRInVPpSYqR\nohH3e4Dptre1obXIQagLtJLWUY4tFYHuwQ4ueZ7egWesWaBKsvaJSNF3J5WejAU4\nJGvjdICTQylbgQvubVvhCf16X1x0In1/CTXh45Cp7Fyh53N2gIeansjbUbeWkokE\nPsBkyjeAKIKyhBc8Pcm2IuJLL3f7zCoydM912Wy7JDNUUEyN6v/PAgMBAAGjYzBh\nMA4GA1UdDwEB/wQEAwICpDAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBTOFnyq\n6iO4yJTVqL/dDfTt2odDXzAfBgNVHSMEGDAWgBTOFnyq6iO4yJTVqL/dDfTt2odD\nXzANBgkqhkiG9w0BAQsFAAOCAQEAn0DUOYsFRA9HYXK6AUh6wY/kJIImhcIGiyuA\nsENAvjmKb8si7TlJkJy5+s99cAZB4OPI7evw44pYrj9uiI+G1EKsMT1qMtSeEsME\nqMq556KUkKHVIwBWTBiCHW0OzHhOpoCijxRMM7KllTqx3DxdMljkPApwEHY5K6/N\n31CxEQ0OVpLn311CF/ROPEIp8CMWVR8LcDm1dP87P2IT0TDsL8VB8b80yiNpHnM3\nXs5x5A3wV4Ieu191KykhjPMXUjr+XaBGV8CB3Hn2+5uuqUvPvm/sSxi9gphyr/Kl\n8mkPUNI4U1N8de6thWgoqLuTTslGsptw5bP9d1tf93DkLYKhFA==\n-----END
+    CERTIFICATE-----\n"}}'
+status:
+  state: ""
