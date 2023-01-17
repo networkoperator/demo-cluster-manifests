@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  data: name:installer-aci-cni, ns:null, status:{"observedGeneration":1,"operatorStatus":"Running"},
+    status_b64:eyJvYnNlcnZlZEdlbmVyYXRpb24iOjEsIm9wZXJhdG9yU3RhdHVzIjoiUnVubmluZyJ9
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    netop-manager-resource: installer.controller.netop-manager.io
+    notification.notification-ctrlr.netop-manager.io: exclude
+  name: alok-installer.controller.netop-manager.io
+  namespace: netop-manager-system
