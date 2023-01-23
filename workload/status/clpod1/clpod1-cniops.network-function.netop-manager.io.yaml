@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  data: name:cko-cni-cko-cni-calico, ns:null, status:{"cniType":"cko-cni-calico","cniVersion":"3.23","managedState":"New","observedGeneration":1,"state":"Pending","upgradeStatus":{"cniUpgradeState":"None"}},
+    status_b64:eyJjbmlUeXBlIjoiY2tvLWNuaS1jYWxpY28iLCJjbmlWZXJzaW9uIjoiMy4yMyIsIm1hbmFnZWRTdGF0ZSI6Ik5ldyIsIm9ic2VydmVkR2VuZXJhdGlvbiI6MSwic3RhdGUiOiJQZW5kaW5nIiwidXBncmFkZVN0YXR1cyI6eyJjbmlVcGdyYWRlU3RhdGUiOiJOb25lIn19
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    netop-manager-resource: cniops.network-function.netop-manager.io
+    notification.notification-ctrlr.netop-manager.io: exclude
+  name: clpod1-cniops.network-function.netop-manager.io
+  namespace: netop-manager-system
