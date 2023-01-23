@@ -1,0 +1,15 @@
+apiVersion: notification-ctrlr.netop-types.io/v1alpha1
+kind: Notification
+metadata:
+  creationTimestamp: null
+  name: clpod1-calico-system-active-operator-configmap-core-v1
+spec:
+  clusterName: clpod1
+  objRef:
+    apiVersion: v1
+    kind: ConfigMap
+    name: active-operator
+    namespace: calico-system
+  serializedObj: '{"kind":"ConfigMap","apiVersion":"v1","metadata":{"name":"active-operator","namespace":"calico-system","creationTimestamp":null},"data":{"active-namespace":"tigera-operator"}}'
+status:
+  state: ""

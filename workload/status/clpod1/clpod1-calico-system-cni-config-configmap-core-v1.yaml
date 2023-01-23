@@ -1,0 +1,24 @@
+apiVersion: notification-ctrlr.netop-types.io/v1alpha1
+kind: Notification
+metadata:
+  creationTimestamp: null
+  name: clpod1-calico-system-cni-config-configmap-core-v1
+spec:
+  clusterName: clpod1
+  objRef:
+    apiVersion: v1
+    kind: ConfigMap
+    name: cni-config
+    namespace: calico-system
+  serializedObj: '{"kind":"ConfigMap","apiVersion":"v1","metadata":{"name":"cni-config","namespace":"calico-system","creationTimestamp":null},"data":{"config":"{\n  \"name\":
+    \"k8s-pod-network\",\n  \"cniVersion\": \"0.3.1\",\n  \"plugins\": [\n    {\n      \"type\":
+    \"calico\",\n      \"datastore_type\": \"kubernetes\",\n      \"mtu\": 0,\n      \"nodename_file_optional\":
+    false,\n      \"log_level\": \"Info\",\n      \"log_file_path\": \"/var/log/calico/cni/cni.log\",\n      \"ipam\":
+    { \"type\": \"calico-ipam\", \"assign_ipv4\" : \"true\", \"assign_ipv6\" : \"false\"},\n      \"container_settings\":
+    {\n          \"allow_ip_forwarding\": false\n      },\n      \"policy\": {\n          \"type\":
+    \"k8s\"\n      },\n      \"kubernetes\": {\n          \"k8s_api_root\":\"https://10.96.0.1:443\",\n          \"kubeconfig\":
+    \"__KUBECONFIG_FILEPATH__\"\n      }\n    },\n    {\n      \"type\": \"bandwidth\",\n      \"capabilities\":
+    {\"bandwidth\": true}\n    },\n    {\"type\": \"portmap\", \"snat\": true, \"capabilities\":
+    {\"portMappings\": true}}\n  ]\n}"}}'
+status:
+  state: ""
