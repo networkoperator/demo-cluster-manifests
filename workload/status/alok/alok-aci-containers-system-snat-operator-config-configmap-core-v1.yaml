@@ -1,0 +1,15 @@
+apiVersion: notification-ctrlr.netop-types.io/v1alpha1
+kind: Notification
+metadata:
+  creationTimestamp: null
+  name: alok-aci-containers-system-snat-operator-config-configmap-core-v1
+spec:
+  clusterName: alok
+  objRef:
+    apiVersion: v1
+    kind: ConfigMap
+    name: snat-operator-config
+    namespace: aci-containers-system
+  serializedObj: '{"kind":"ConfigMap","apiVersion":"v1","metadata":{"name":"snat-operator-config","namespace":"aci-containers-system","creationTimestamp":null},"data":{"end":"65000","ports-per-node":"3000","start":"5000"}}'
+status:
+  state: ""
