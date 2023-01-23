@@ -1,7 +1,21 @@
 apiVersion: v1
 data:
-  data: name:cko-cni-cko-cni-calico, ns:null, status:{"cniType":"cko-cni-calico","cniVersion":"3.23","managedState":"New","observedGeneration":1,"state":"Pending","upgradeStatus":{"cniUpgradeState":"None"}},
-    status_b64:eyJjbmlUeXBlIjoiY2tvLWNuaS1jYWxpY28iLCJjbmlWZXJzaW9uIjoiMy4yMyIsIm1hbmFnZWRTdGF0ZSI6Ik5ldyIsIm9ic2VydmVkR2VuZXJhdGlvbiI6MSwic3RhdGUiOiJQZW5kaW5nIiwidXBncmFkZVN0YXR1cyI6eyJjbmlVcGdyYWRlU3RhdGUiOiJOb25lIn19
+  data: 'name:cko-cni-cko-cni-calico, ns:null, status:{"cniStatus":{"ipam-scan":"Checking
+    IPAM for inconsistencies...\n\nLoading all IPAM blocks...\nFound 0 IPAM blocks.\nIPAM
+    blocks record 0 allocations.\n\nLoading all IPAM pools...\nFound 0 active IP pools.\n\nLoading
+    all nodes.\nFound 0 node tunnel IPs.\n\nLoading all workload endpoints.\nFound
+    0 workload IPs.\nWorkloads and nodes are using 0 IPs.\n\nLooking for top (up to
+    20) nodes by allocations...\n\nScanning for IPs that are allocated but not actually
+    in use...\nFound 0 IPs that are allocated in IPAM but not actually in use.\nScanning
+    for IPs that are in use by a workload or node but not allocated in IPAM...\nFound
+    0 in-use IPs that are not in active IP pools.\nFound 0 in-use IPs that are in
+    active IP pools but have no corresponding IPAM allocation.\n\nCheck complete;
+    found 0 problems.\n","ipam-status":"+----------+------+-----------+------------+----------+\n|
+    GROUPING | CIDR | IPS TOTAL | IPS IN USE | IPS FREE |\n+----------+------+-----------+------------+----------+\n+----------+------+-----------+------------+----------+\n","version":"Client
+    Version:    v3.23.2\nGit commit:        a52cb86db\nCluster Version:   unknown\nCluster
+    Type:      kdd\n"},"cniType":"cko-cni-calico","cniVersion":"3.23","ipam":"+----------+------+-----------+------------+----------+\n|
+    GROUPING | CIDR | IPS TOTAL | IPS IN USE | IPS FREE |\n+----------+------+-----------+------------+----------+\n+----------+------+-----------+------------+----------+\n","managedState":"New","observedGeneration":1,"state":"Running","upgradeStatus":{"cniUpgradeState":"None"}},
+    status_b64:eyJjbmlTdGF0dXMiOnsiaXBhbS1zY2FuIjoiQ2hlY2tpbmcgSVBBTSBmb3IgaW5jb25zaXN0ZW5jaWVzLi4uXG5cbkxvYWRpbmcgYWxsIElQQU0gYmxvY2tzLi4uXG5Gb3VuZCAwIElQQU0gYmxvY2tzLlxuSVBBTSBibG9ja3MgcmVjb3JkIDAgYWxsb2NhdGlvbnMuXG5cbkxvYWRpbmcgYWxsIElQQU0gcG9vbHMuLi5cbkZvdW5kIDAgYWN0aXZlIElQIHBvb2xzLlxuXG5Mb2FkaW5nIGFsbCBub2Rlcy5cbkZvdW5kIDAgbm9kZSB0dW5uZWwgSVBzLlxuXG5Mb2FkaW5nIGFsbCB3b3JrbG9hZCBlbmRwb2ludHMuXG5Gb3VuZCAwIHdvcmtsb2FkIElQcy5cbldvcmtsb2FkcyBhbmQgbm9kZXMgYXJlIHVzaW5nIDAgSVBzLlxuXG5Mb29raW5nIGZvciB0b3AgKHVwIHRvIDIwKSBub2RlcyBieSBhbGxvY2F0aW9ucy4uLlxuXG5TY2FubmluZyBmb3IgSVBzIHRoYXQgYXJlIGFsbG9jYXRlZCBidXQgbm90IGFjdHVhbGx5IGluIHVzZS4uLlxuRm91bmQgMCBJUHMgdGhhdCBhcmUgYWxsb2NhdGVkIGluIElQQU0gYnV0IG5vdCBhY3R1YWxseSBpbiB1c2UuXG5TY2FubmluZyBmb3IgSVBzIHRoYXQgYXJlIGluIHVzZSBieSBhIHdvcmtsb2FkIG9yIG5vZGUgYnV0IG5vdCBhbGxvY2F0ZWQgaW4gSVBBTS4uLlxuRm91bmQgMCBpbi11c2UgSVBzIHRoYXQgYXJlIG5vdCBpbiBhY3RpdmUgSVAgcG9vbHMuXG5Gb3VuZCAwIGluLXVzZSBJUHMgdGhhdCBhcmUgaW4gYWN0aXZlIElQIHBvb2xzIGJ1dCBoYXZlIG5vIGNvcnJlc3BvbmRpbmcgSVBBTSBhbGxvY2F0aW9uLlxuXG5DaGVjayBjb21wbGV0ZTsgZm91bmQgMCBwcm9ibGVtcy5cbiIsImlwYW0tc3RhdHVzIjoiKy0tLS0tLS0tLS0rLS0tLS0tKy0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLSstLS0tLS0tLS0tK1xufCBHUk9VUElORyB8IENJRFIgfCBJUFMgVE9UQUwgfCBJUFMgSU4gVVNFIHwgSVBTIEZSRUUgfFxuKy0tLS0tLS0tLS0rLS0tLS0tKy0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLSstLS0tLS0tLS0tK1xuKy0tLS0tLS0tLS0rLS0tLS0tKy0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLSstLS0tLS0tLS0tK1xuIiwidmVyc2lvbiI6IkNsaWVudCBWZXJzaW9uOiAgICB2My4yMy4yXG5HaXQgY29tbWl0OiAgICAgICAgYTUyY2I4NmRiXG5DbHVzdGVyIFZlcnNpb246ICAgdW5rbm93blxuQ2x1c3RlciBUeXBlOiAgICAgIGtkZFxuIn0sImNuaVR5cGUiOiJja28tY25pLWNhbGljbyIsImNuaVZlcnNpb24iOiIzLjIzIiwiaXBhbSI6IistLS0tLS0tLS0tKy0tLS0tLSstLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0rLS0tLS0tLS0tLStcbnwgR1JPVVBJTkcgfCBDSURSIHwgSVBTIFRPVEFMIHwgSVBTIElOIFVTRSB8IElQUyBGUkVFIHxcbistLS0tLS0tLS0tKy0tLS0tLSstLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0rLS0tLS0tLS0tLStcbistLS0tLS0tLS0tKy0tLS0tLSstLS0tLS0tLS0tLSstLS0tLS0tLS0tLS0rLS0tLS0tLS0tLStcbiIsIm1hbmFnZWRTdGF0ZSI6Ik5ldyIsIm9ic2VydmVkR2VuZXJhdGlvbiI6MSwic3RhdGUiOiJSdW5uaW5nIiwidXBncmFkZVN0YXR1cyI6eyJjbmlVcGdyYWRlU3RhdGUiOiJOb25lIn19'
 kind: ConfigMap
 metadata:
   creationTimestamp: null
