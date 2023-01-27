@@ -1,0 +1,17 @@
+apiVersion: notification-ctrlr.netop-types.io/v1alpha1
+kind: Notification
+metadata:
+  creationTimestamp: null
+  name: ocpgf1-aci-containers-system-openshift-service-ca.crt-configmap-core-v1
+spec:
+  clusterName: ocpgf1
+  objRef:
+    apiVersion: v1
+    kind: ConfigMap
+    name: openshift-service-ca.crt
+    namespace: aci-containers-system
+  serializedObj: '{"kind":"ConfigMap","apiVersion":"v1","metadata":{"name":"openshift-service-ca.crt","namespace":"aci-containers-system","creationTimestamp":null},"data":{"service-ca.crt":"-----BEGIN
+    CERTIFICATE-----\nMIIDUTCCAjmgAwIBAgIIL5zH3EzzX6cwDQYJKoZIhvcNAQELBQAwNjE0MDIGA1UE\nAwwrb3BlbnNoaWZ0LXNlcnZpY2Utc2VydmluZy1zaWduZXJAMTY3NDc2NzMyNjAe\nFw0yMzAxMjYyMTA4NDVaFw0yNTAzMjYyMTA4NDZaMDYxNDAyBgNVBAMMK29wZW5z\naGlmdC1zZXJ2aWNlLXNlcnZpbmctc2lnbmVyQDE2NzQ3NjczMjYwggEiMA0GCSqG\nSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCwiKYUaqAgTqR3/okNCTf93ZV058EfCd1U\nAvROsEwXsITzD2tRPFF5ARThhP0806bsefH683QhTspVo7msyFV1rnaYzlPZmdzM\n0xOSeKKlz/5Ey4/Z8pH3I1wqFrZXNEXf/LEONlryp6cwfGFVFExXk1InLZb7EkHa\nb7R0u4eidJmvG+rkbsLlByP0nD46NbHMrAz/Pc95wpfc2ooNidBYTChzB2UuWMEA\nTjNo/rkIWU58cb71cvDT9WCwpNAzRniy3ULdmyb3qLe8oUrPPDl3Z27ry8kWPkqJ\nwGjaDLvQx4u4o1/UWRwhrM+aMZQKey1IkYsuVytxDoGd6GgA/81VAgMBAAGjYzBh\nMA4GA1UdDwEB/wQEAwICpDAPBgNVHRMBAf8EBTADAQH/MB0GA1UdDgQWBBTHbK+l\nXnx2pDbuDEemy4wyR8BwfTAfBgNVHSMEGDAWgBTHbK+lXnx2pDbuDEemy4wyR8Bw\nfTANBgkqhkiG9w0BAQsFAAOCAQEAa4E3tHLpwwvkkAP+bijgA/oenG/lPPTeAiZZ\nYimCaVY+9/qAvXAWCJ8IWZA2j/OKU4L/snUVK1MAk0BD36Oahr35bfjvSBUlbhht\nQQOH6bg8i2YtzC8B9z/YUedmG3E5HJwqOZa6ENH+g5pIo0ifzT6uE91DOCNBCeKA\nj47/4QEDKEEEn31pWO+pmRMXGKDubSN1e/oAb3g2K6ncBXVMqTUelRbF+/SoPr/2\nU5pMdAkeSlE3b40L2OcBaYC7f54PfVbV/AYS4gHF3+vpnE3Pu0xAaEoQU9IIYOv4\naWZvwlhZy5TZy+eO9ifKDWDa2wgDXUXYrGRB8dPDhUVZZUmwxg==\n-----END
+    CERTIFICATE-----\n"}}'
+status:
+  state: ""

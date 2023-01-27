@@ -1,0 +1,31 @@
+apiVersion: notification-ctrlr.netop-types.io/v1alpha1
+kind: Notification
+metadata:
+  creationTimestamp: null
+  name: ocpgf1-aci-containers-system-acc-provision-config-configmap-core-v1
+spec:
+  clusterName: ocpgf1
+  objRef:
+    apiVersion: v1
+    kind: ConfigMap
+    name: acc-provision-config
+    namespace: aci-containers-system
+  serializedObj: '{"kind":"ConfigMap","apiVersion":"v1","metadata":{"name":"acc-provision-config","namespace":"aci-containers-system","creationTimestamp":null},"data":{"spec":"{\n    \"acc_provision_input\":
+    {\n        \"operator_managed_config\": {\n            \"enable_updates\": false\n        },\n        \"aci_config\":
+    {\n            \"system_id\": \"ocpgf1\",\n            \"apic_hosts\": [\n                \"172.18.0.120\"\n            ],\n            \"aep\":
+    \"infra_aaep\",\n            \"vrf\": {\n                \"name\": \"ocp_gf\",\n                \"tenant\":
+    \"common\"\n            },\n            \"vmm_domain\": {\n                \"type\":
+    \"OpenShift\",\n                \"encap_type\": \"vxlan\",\n                \"mcast_fabric\":
+    \"225.1.2.3\",\n                \"mcast_range\": {\n                    \"start\":
+    \"225.25.1.1\",\n                    \"end\": \"225.25.255.255\"\n                },\n                \"nested_inside\":
+    {\n                    \"type\": \"vmware\",\n                    \"name\": \"ACI-DMZ-VDS02\",\n                    \"installer_provisioned_lb_ip\":
+    \"192.168.1.2\"\n                }\n            },\n            \"l3out\": {\n                \"name\":
+    \"ext-rtr-l3out\",\n                \"external_networks\": [\n                    \"default\"\n                ]\n            }\n        },\n        \"registry\":
+    {\n            \"image_prefix\": \"quay.io/noirolabs\"\n        },\n        \"net_config\":
+    {\n            \"infra_vlan\": 3967,\n            \"service_vlan\": 257, \n            \"kubeapi_vlan\":
+    256,\n            \"extern_static\": \"10.4.0.1/24\",\n            \"extern_dynamic\":
+    \"10.3.0.1/24\",\n            \"node_svc_subnet\": \"10.5.0.1/24\",\n            \"node_subnet\":
+    \"192.168.1.1/24\",\n            \"pod_subnet\": \"10.2.0.1/16\"\n        }\n    }\n
+    }"}}'
+status:
+  state: ""
