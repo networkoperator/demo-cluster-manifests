@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  data: name:cko-cni-cko-cni-aci, ns:null, status:{"cniType":"cko-cni-aci","cniVersion":"5.2.3.4","managedState":"New","observedGeneration":1,"state":"Pending","upgradeStatus":{"cniUpgradeState":"None"}},
+    status_b64:eyJjbmlUeXBlIjoiY2tvLWNuaS1hY2kiLCJjbmlWZXJzaW9uIjoiNS4yLjMuNCIsIm1hbmFnZWRTdGF0ZSI6Ik5ldyIsIm9ic2VydmVkR2VuZXJhdGlvbiI6MSwic3RhdGUiOiJQZW5kaW5nIiwidXBncmFkZVN0YXR1cyI6eyJjbmlVcGdyYWRlU3RhdGUiOiJOb25lIn19
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    netop-manager-resource: cniops.network-function.netop-manager.io
+    notification.notification-ctrlr.netop-manager.io: exclude
+  name: alok-cniops.network-function.netop-manager.io
+  namespace: netop-manager-system
