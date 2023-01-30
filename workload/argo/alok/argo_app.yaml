@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: netop-manager
+  namespace: netop-manager-system
+spec:
+  destination:
+    namespace: netop-manager
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: workload/config/alok/
+    repoURL: https://github.com/networkoperator/demo-cluster-manifests
+    targetRevision: sumit-test-1
+    directory:
+      exclude: '*.tar.gz'
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: true
+    syncOptions:
+    - Replace=true
