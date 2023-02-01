@@ -1,0 +1,17 @@
+apiVersion: notification-ctrlr.netop-types.io/v1alpha1
+kind: Notification
+metadata:
+  creationTimestamp: null
+  name: alok-aci-containers-system-kube-root-ca.crt-configmap-core-v1
+spec:
+  clusterName: alok
+  objRef:
+    apiVersion: v1
+    kind: ConfigMap
+    name: kube-root-ca.crt
+    namespace: aci-containers-system
+  serializedObj: '{"kind":"ConfigMap","apiVersion":"v1","metadata":{"name":"kube-root-ca.crt","namespace":"aci-containers-system","creationTimestamp":null},"data":{"ca.crt":"-----BEGIN
+    CERTIFICATE-----\nMIIC/jCCAeagAwIBAgIBADANBgkqhkiG9w0BAQsFADAVMRMwEQYDVQQDEwprdWJl\ncm5ldGVzMB4XDTIzMDIwMTA2MzcyNloXDTMzMDEyOTA2MzcyNlowFTETMBEGA1UE\nAxMKa3ViZXJuZXRlczCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJkr\nMzgWK8K62H4MJnbObmVyjRJFI4/QGK+2+go6by8y6DdEmtIuNBNFTf7hY2IoDL3H\noPno+FQCTGDfwhEt93pUw4WHUY3hz4EjCZsAYlLf3TxYmul8eQL1oSXYMn4OqhU3\nD57A0E1Z3oNj5/IPCyMXu5hM/aORmnuqyRsDR5aK4cNqklpf8aGjAFnd+ROayYNB\n40IxaH+HviAmFRsVDyHY4Y+gLbqq8Z1TaDhD3ft2AJxD7kGkdLxbPZJBkbRlIyGH\nHanVPxHRWMFus+PPtwAZJqrN46HkkHKrkRG5nmYKQbFFYJgf2Xt2rq2NVwtMntgg\nZbWLU+zTnAC4s7fEsFUCAwEAAaNZMFcwDgYDVR0PAQH/BAQDAgKkMA8GA1UdEwEB\n/wQFMAMBAf8wHQYDVR0OBBYEFN0znqKpUV65sg82kiaekTq8wcWZMBUGA1UdEQQO\nMAyCCmt1YmVybmV0ZXMwDQYJKoZIhvcNAQELBQADggEBAENOawl/kaBp92Pwrs6a\ntXrKTDL4n9CNuueiI9sHY5p63ibfkdMwjT2td8I3ZQsfyeNr3s2R6U3gu3j9T9c5\nN6yfbABW05yqtveBIlI1zjmBUPwzgeJHxoeiCTkXT8JQ2uKT65iVmF8GOYj1Y7uW\nH1bReJkJ98/pvmASFI9h/fbkKp48d5YiMv5gGWhdwqfVyg84n9iYoVj1JnoMoRj/\nnJqI2G1v6+lhlNmYusVqbKLQ31l0eRxLgP00BuiEizK0oi+1tjRObNVaRkWSr7z9\nSLV5/qLyyhe3dlwgfmGvPWUtcBVilwLpx6C0d9VfRq6w8A8IKf+3XmIZsGJv4f3A\nbwA=\n-----END
+    CERTIFICATE-----\n"}}'
+status:
+  state: ""
