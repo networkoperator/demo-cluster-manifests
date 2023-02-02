@@ -1,0 +1,15 @@
+apiVersion: notification-ctrlr.netop-types.io/v1alpha1
+kind: Notification
+metadata:
+  creationTimestamp: null
+  name: ocp410bf-aci-containers-system-openshift-service-ca.crt-configmap-core-v1
+spec:
+  clusterName: ocp410bf
+  objRef:
+    apiVersion: v1
+    kind: ConfigMap
+    name: openshift-service-ca.crt
+    namespace: aci-containers-system
+  serializedObj: '{"kind":"ConfigMap","apiVersion":"v1","metadata":{"name":"openshift-service-ca.crt","namespace":"aci-containers-system","creationTimestamp":null},"data":{"service-ca.crt":""}}'
+status:
+  state: ""
