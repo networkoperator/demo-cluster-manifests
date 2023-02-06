@@ -1,0 +1,14 @@
+apiVersion: notification-ctrlr.netop-types.io/v1alpha1
+kind: Notification
+metadata:
+  creationTimestamp: null
+  name: bm2calico-default-discovery-agent-observedops-network-function-netop-manager-io-v1alpha1
+spec:
+  clusterName: bm2calico
+  objRef:
+    apiVersion: network-function.netop-manager.io/v1alpha1
+    kind: ObservedOps
+    name: discovery-agent
+  serializedObj: '{"kind":"ObservedOps","apiVersion":"network-function.netop-manager.io/v1alpha1","metadata":{"name":"discovery-agent","creationTimestamp":null},"spec":{"cniMountPath":"/mnt/cni-conf","cniConfPath":["cni/net.d","/kubernetes/cni/net.d"],"forceReconcile":9},"status":{"cniType":"cko-cni-calico","cniVersion":"v3.23.2"}}'
+status:
+  state: ""

@@ -1,0 +1,38 @@
+apiVersion: notification-ctrlr.netop-types.io/v1alpha1
+kind: Notification
+metadata:
+  creationTimestamp: null
+  name: bm2calico-aci-containers-system-acc-provision-config-configmap-core-v1
+spec:
+  clusterName: bm2calico
+  objRef:
+    apiVersion: v1
+    kind: ConfigMap
+    name: acc-provision-config
+    namespace: aci-containers-system
+  serializedObj: '{"kind":"ConfigMap","apiVersion":"v1","metadata":{"name":"acc-provision-config","namespace":"aci-containers-system","creationTimestamp":null},"data":{"spec":"{\n    \"acc_provision_input\":
+    {\n        \"operator_managed_config\": {\n            \"enable_updates\": false\n        },\n        \"aci_config\":
+    {\n            \"system_id\": \"bm2calico-vlan-13\",\n            \"apic_hosts\":
+    [\n                \"10.30.120.140\"\n            ],\n            \"vrf\": {\n                \"name\":
+    \"bm2calico_vrf\",\n                \"tenant\": \"bm2calico\"\n            },\n            \"cluster_l3out\":
+    {\n                \"aep\": \"bm-srvrs-calico-aep\",\n                \"bgp\":
+    {\n                    \"peering\": {\n                        \"aci_as_number\":
+    2,\n                        \"remote_as_number\": 64512\n                    }\n                },\n                \"name\":
+    \"bm2calico-vlan-13\",\n                \"svi\": {\n                    \"floating_ip\":
+    \"2.100.101.100/24\",\n                    \"mtu\": 9000,\n                    \"secondary_ip\":
+    \"2.100.101.254/24\",\n                    \"type\": \"floating\",\n                    \"vlan_id\":
+    13\n                }\n            },\n            \"l3out\": {\n                \"name\":
+    \"test_l3out\",\n                \"external_networks\": [\n                    \"test_default\"\n                ]\n            }\n        },\n        \"net_config\":
+    {\n            \"extern_dynamic\": \"20.3.0.0/16\",\n            \"node_subnet\":
+    \"2.100.101.1/24\",\n            \"pod_subnet\": \"20.2.0.2/16\",\n            \"cluster_svc_subnet\":
+    \"10.96.0.0/12\"\n        },\n        \"calico_config\": {\n            \"net_config\":
+    {\n                    \"encapsulation\": \"None\"\n                }\n        },\n        \"topology\":
+    {\n            \"rack\": [\n                    {\n                        \"aci_pod_id\":
+    1,\n                        \"id\": 1,\n                        \"leaf\": [\n                            {\n                                \"id\":
+    101,\n                                \"local_ip\": \"2.100.101.201\"\n                            },\n                            {\n                                \"id\":
+    102,\n                                \"local_ip\": \"2.100.101.202\"\n                            }\n                        ],\n                        \"node\":
+    [\n                            {\n                                \"name\": \"k8sbm2-bm-4\"\n                            },\n                            {\n                                \"name\":
+    \"k8sbm2-bm-5\"\n                            }\n                        ]\n                    }\n                ]\n        },\n        \"flavor\":
+    \"calico-3.23.2\"\n    }\n }"}}'
+status:
+  state: ""
