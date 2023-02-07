@@ -34,4 +34,3 @@ spec:
     [\n                            {\n                                \"name\": \"k8sbm2-bm-4\"\n                            },\n                            {\n                                \"name\":
     \"k8sbm2-bm-5\"\n                            }\n                        ]\n                    }\n                ]\n        },\n        \"flavor\":
     \"calico-3.23.2\"\n    }\n }"}}'
-status: {}

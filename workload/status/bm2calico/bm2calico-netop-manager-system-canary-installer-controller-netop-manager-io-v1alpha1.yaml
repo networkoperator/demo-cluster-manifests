@@ -11,4 +11,3 @@ spec:
     name: canary
     namespace: netop-manager-system
   serializedObj: '{"kind":"Installer","apiVersion":"controller.netop-manager.io/v1alpha1","metadata":{"name":"canary","namespace":"netop-manager-system","creationTimestamp":null},"spec":{"operatorConfigs":{}},"status":{}}'
-status: {}
