@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     path: workload/config/bm2calico/
-    repoURL: https://github.com/networkoperator/demo-cluster-manifests
+    repoURL: https://github.com/networkoperator/demo-cluster-manifests.git
     targetRevision: notif_test
     directory:
       exclude: '*.tar.gz'
