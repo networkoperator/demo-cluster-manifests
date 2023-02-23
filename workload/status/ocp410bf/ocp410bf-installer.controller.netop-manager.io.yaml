@@ -1,7 +1,8 @@
 apiVersion: v1
 data:
-  data: name:installer-aci-cni, ns:null, status:{"observedGeneration":2,"operatorStatus":"Pending"},
-    status_b64:eyJvYnNlcnZlZEdlbmVyYXRpb24iOjIsIm9wZXJhdG9yU3RhdHVzIjoiUGVuZGluZyJ9
+  data: name:installer-aci-cni, ns:null, status:{"componentStatus":{"cko-cni":{"lastUpdated":"232323-223-230
+    223:02:02","mode":"managed","type":"cko-cni-aci"}},"observedGeneration":2,"operatorStatus":"Running"},
+    status_b64:eyJjb21wb25lbnRTdGF0dXMiOnsiY2tvLWNuaSI6eyJsYXN0VXBkYXRlZCI6IjIzMjMyMy0yMjMtMjMwIDIyMzowMjowMiIsIm1vZGUiOiJtYW5hZ2VkIiwidHlwZSI6ImNrby1jbmktYWNpIn19LCJvYnNlcnZlZEdlbmVyYXRpb24iOjIsIm9wZXJhdG9yU3RhdHVzIjoiUnVubmluZyJ9
 kind: ConfigMap
 metadata:
   creationTimestamp: null
