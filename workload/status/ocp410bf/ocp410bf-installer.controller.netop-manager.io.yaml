@@ -9,5 +9,5 @@ metadata:
   labels:
     netop-manager-resource: installer.controller.netop-manager.io
     notification.notification-ctrlr.netop-manager.io: exclude
-  name: alok-installer.controller.netop-manager.io
+  name: ocp410bf-installer.controller.netop-manager.io
   namespace: netop-manager-system

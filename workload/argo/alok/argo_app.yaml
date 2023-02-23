@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: workload/config/alokk8s/
+    path: workload/config/alok/
     repoURL: https://github.com/networkoperator/demo-cluster-manifests
     targetRevision: sumit-test-1
     directory:
