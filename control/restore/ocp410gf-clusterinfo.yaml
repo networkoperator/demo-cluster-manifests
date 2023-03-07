@@ -1,7 +1,7 @@
 apiVersion: netop.mgr/v1alpha1
 kind: ClusterInfo
 metadata:
-  creationTimestamp: "2023-02-23T11:22:07Z"
+  creationTimestamp: "2023-02-27T09:52:28Z"
   finalizers:
   - netop.mgr/finalizer
   generation: 2
@@ -15,14 +15,14 @@ metadata:
           v:"netop.mgr/finalizer": {}
     manager: ansible-operator
     operation: Update
-    time: "2023-02-23T11:22:07Z"
+    time: "2023-02-27T09:52:28Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
       f:metadata:
         f:ownerReferences:
           .: {}
-          k:{"uid":"47f53a88-124c-4ef1-a55d-3ac4882f4a23"}: {}
+          k:{"uid":"2d9c4f19-0382-4177-9ec8-c1716fecea59"}: {}
       f:spec:
         .: {}
         f:config_overrides:
@@ -39,26 +39,16 @@ metadata:
                   .: {}
                   f:end: {}
                   f:start: {}
-                f:nested_inside:
-                  .: {}
-                  f:installer_provisioned_lb_ip: {}
-                  f:name: {}
-                  f:type: {}
+                f:nested_inside: {}
             f:kube_config:
               .: {}
               f:drop_log_config: {}
-              f:image_pull_policy: {}
               f:istio_config: {}
               f:multus: {}
               f:nodepodif_config: {}
               f:operator_managed_config: {}
-              f:ovs_memory_limit: {}
               f:sriov_config: {}
-            f:logging:
-              .: {}
-              f:controller_log_level: {}
-              f:hostagent_log_level: {}
-              f:opflexagent_log_level: {}
+            f:logging: {}
             f:net_config:
               .: {}
               f:extern_static: {}
@@ -83,25 +73,14 @@ metadata:
               f:name: {}
               f:tenant: {}
           f:calico_cni_config: {}
-          f:cko_proxy_config:
-            .: {}
-            f:http_proxy: {}
-            f:https_proxy: {}
-            f:no_proxy: {}
+          f:cko_proxy_config: {}
           f:cni: {}
           f:connectivity_checker:
             .: {}
-            f:error_pods_reporting_enable: {}
             f:reachability_test_enable:
               .: {}
-              f:external_url:
-                .: {}
-                f:url: {}
-              f:periodic_sync:
-                .: {}
-                f:enable_updates: {}
-                f:interval: {}
-            f:reachability_tests: {}
+              f:external_url: {}
+              f:periodic_sync: {}
           f:context:
             .: {}
             f:aep: {}
@@ -117,7 +96,6 @@ metadata:
             .: {}
             f:flavor: {}
             f:platform: {}
-            f:release: {}
             f:type: {}
           f:fabricinfra:
             .: {}
@@ -139,15 +117,12 @@ metadata:
             f:mode: {}
             f:target_version: {}
           f:profile: {}
-          f:registry:
-            .: {}
-            f:image_prefix: {}
-            f:network_operator_version: {}
+          f:registry: {}
           f:service_mesh_config: {}
           f:topology: {}
     manager: manager
     operation: Update
-    time: "2023-02-23T11:22:07Z"
+    time: "2023-02-27T09:52:28Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -157,7 +132,7 @@ metadata:
             f:system_id: {}
     manager: OpenAPI-Generator
     operation: Update
-    time: "2023-02-23T11:22:14Z"
+    time: "2023-02-27T09:52:35Z"
   name: ocp410gf
   namespace: netop-manager
   ownerReferences:
@@ -166,9 +141,9 @@ metadata:
     controller: true
     kind: ClusterProfile
     name: ocp410gf
-    uid: 47f53a88-124c-4ef1-a55d-3ac4882f4a23
-  resourceVersion: "1850"
-  uid: c43d9118-1fdc-4256-bfd1-c05a66789b4f
+    uid: 2d9c4f19-0382-4177-9ec8-c1716fecea59
+  resourceVersion: "1727"
+  uid: 4b41060c-088a-4484-8145-e059defdc727
 spec:
   config_overrides:
     aci_cni_config:
@@ -178,27 +153,19 @@ spec:
           encap_type: vxlan
           mcast_range:
             end: 225.20.255.255
-            start: 225.20.1.1
-          nested_inside:
-            installer_provisioned_lb_ip: 192.168.2.2
-            name: HX_VC
-            type: vmware
+            start: 225.20.0.1
+          nested_inside: {}
       kube_config:
         drop_log_config: {}
-        image_pull_policy: Always
         istio_config: {}
         multus: {}
         nodepodif_config: {}
         operator_managed_config: {}
-        ovs_memory_limit: 1Gi
         sriov_config: {}
-      logging:
-        controller_log_level: debug
-        hostagent_log_level: debug
-        opflexagent_log_level: debug
+      logging: {}
       net_config:
         extern_static: 10.4.0.1/24
-        node_svc_subnet: 10.5.0.1/24
+        node_svc_subnet: 192.168.2.1/24
         service_vlan: 203
       registry: {}
     aci_config:
@@ -212,6 +179,52 @@ spec:
         - ocp-gf-l3-extepg
         name: ocp410_gf_l3out
       physical_domain: {}
+      system_id: ocp410gf
+      vrf:
+        name: ocp410_gf_vrf
+        tenant: common
+    calico_cni_config: {}
+    cko_proxy_config: {}
+    cni: aci
+    connectivity_checker:
+      reachability_test_enable:
+        external_url: {}
+        periodic_sync: {}
+    context:
+      aep: fab20-esx
+      l3out:
+        external_networks:
+        - ocp-gf-l3-extepg
+        name: ocp410_gf_l3out
+      vrf:
+        name: ocp410_gf_vrf
+        tenant: common
+    distro:
+      flavor: kubernetes-1.24
+      platform: baremetal
+      type: kubernetes
+    fabricinfra:
+      name: ocp410gf
+    gitops:
+      base64_encoded_argo_manifests: ""
+    lb_config: {}
+    monitoring_config: {}
+    net_config:
+      cluster_svc_subnet: 10.96.0.0/12
+      extern_dynamic: 10.3.0.1/24
+      kubeapi_vlan: 202
+      node_subnet: 10.5.0.1/16
+      pod_subnet: 10.2.0.1/16
+    operator_config:
+      mode: managed
+      target_version: 0.9.0
+    profile: {}
+    registry: {}
+    service_mesh_config: {}
+    topology: {}
+status:
+  status: false
+ysical_domain: {}
       system_id: ocp410gf
       vrf:
         name: ocp410_gf_vrf
