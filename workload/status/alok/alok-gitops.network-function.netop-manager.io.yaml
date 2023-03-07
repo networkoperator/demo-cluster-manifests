@@ -1,0 +1,14 @@
+apiVersion: v1
+data:
+  data: name:cko-gitops-argo, ns:null, status:{"gStatus":{"argocd-server":"{\"observedGeneration\":1,\"unavailableReplicas\":1,\"conditions\":[{\"type\":\"Progressing\",\"status\":\"True\",\"lastUpdateTime\":\"2023-03-07T12:01:57Z\",\"lastTransitionTime\":\"2023-03-07T12:01:57Z\",\"reason\":\"NewReplicaSetCreated\",\"message\":\"Created
+    new replica set \\\"argocd-server-576cfb678d\\\"\"},{\"type\":\"Available\",\"status\":\"False\",\"lastUpdateTime\":\"2023-03-07T12:01:57Z\",\"lastTransitionTime\":\"2023-03-07T12:01:57Z\",\"reason\":\"MinimumReplicasUnavailable\",\"message\":\"Deployment
+    does not have minimum availability.\"}]}"},"gType":"cko-g-argo","observedGeneration":1,"state":"Running"},
+    status_b64:eyJnU3RhdHVzIjp7ImFyZ29jZC1zZXJ2ZXIiOiJ7XCJvYnNlcnZlZEdlbmVyYXRpb25cIjoxLFwidW5hdmFpbGFibGVSZXBsaWNhc1wiOjEsXCJjb25kaXRpb25zXCI6W3tcInR5cGVcIjpcIlByb2dyZXNzaW5nXCIsXCJzdGF0dXNcIjpcIlRydWVcIixcImxhc3RVcGRhdGVUaW1lXCI6XCIyMDIzLTAzLTA3VDEyOjAxOjU3WlwiLFwibGFzdFRyYW5zaXRpb25UaW1lXCI6XCIyMDIzLTAzLTA3VDEyOjAxOjU3WlwiLFwicmVhc29uXCI6XCJOZXdSZXBsaWNhU2V0Q3JlYXRlZFwiLFwibWVzc2FnZVwiOlwiQ3JlYXRlZCBuZXcgcmVwbGljYSBzZXQgXFxcImFyZ29jZC1zZXJ2ZXItNTc2Y2ZiNjc4ZFxcXCJcIn0se1widHlwZVwiOlwiQXZhaWxhYmxlXCIsXCJzdGF0dXNcIjpcIkZhbHNlXCIsXCJsYXN0VXBkYXRlVGltZVwiOlwiMjAyMy0wMy0wN1QxMjowMTo1N1pcIixcImxhc3RUcmFuc2l0aW9uVGltZVwiOlwiMjAyMy0wMy0wN1QxMjowMTo1N1pcIixcInJlYXNvblwiOlwiTWluaW11bVJlcGxpY2FzVW5hdmFpbGFibGVcIixcIm1lc3NhZ2VcIjpcIkRlcGxveW1lbnQgZG9lcyBub3QgaGF2ZSBtaW5pbXVtIGF2YWlsYWJpbGl0eS5cIn1dfSJ9LCJnVHlwZSI6ImNrby1nLWFyZ28iLCJvYnNlcnZlZEdlbmVyYXRpb24iOjEsInN0YXRlIjoiUnVubmluZyJ9
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    netop-manager-resource: gitops.network-function.netop-manager.io
+    notification.notification-ctrlr.netop-manager.io: exclude
+  name: alok-gitops.network-function.netop-manager.io
+  namespace: netop-manager-system
