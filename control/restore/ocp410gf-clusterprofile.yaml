@@ -3,8 +3,8 @@ kind: ClusterProfile
 metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
-      {"apiVersion":"netop.mgr/v1alpha1","kind":"ClusterProfile","metadata":{"annotations":{},"name":"ocp410gf","namespace":"netop-manager"},"spec":{"cni":"aci"}}
-  creationTimestamp: "2023-02-27T09:52:22Z"
+      {"apiVersion":"netop.mgr/v1alpha1","kind":"ClusterProfile","metadata":{"annotations":{},"name":"ocp410gf","namespace":"netop-manager"},"spec":{"cluster_group_profile_selector":{"matchLabels":{"computes":"NOVA","distro":"K8S-1.21","location":"ON-PREM","network-infra":"ACI","pod-network":"aci-cni"}},"cluster_name":"ocp410gf","cluster_network_profile_selector":{"matchLabels":{"fabric":"4.2.7f","site":"BUILDING-15-LAB"}},"config_overrides":{"connectivity_checker":{"error_pods_reporting_enable":true,"reachability_test_enable":{"external_url":{"url":"google.com"},"periodic_sync":{"enable_updates":true,"interval":120}},"reachability_tests":["pod_to_pod","pod_to_node","pod_to_clusterIP","pod_to_service","pod_to_LB_VIP","pod_to_NodePort","pod_to_External","node_to_node","node_to_pod","node_to_clusterIP","node_to_LB_VIP"]}}}}
+  creationTimestamp: "2023-02-23T11:22:07Z"
   finalizers:
   - clusterprofile.netop.mgr/finalizer
   generation: 2
@@ -18,10 +18,27 @@ metadata:
           f:kubectl.kubernetes.io/last-applied-configuration: {}
       f:spec:
         .: {}
-        f:cni: {}
+        f:cluster_group_profile_selector: {}
+        f:cluster_name: {}
+        f:cluster_network_profile_selector: {}
+        f:config_overrides:
+          .: {}
+          f:connectivity_checker:
+            .: {}
+            f:error_pods_reporting_enable: {}
+            f:reachability_test_enable:
+              .: {}
+              f:external_url:
+                .: {}
+                f:url: {}
+              f:periodic_sync:
+                .: {}
+                f:enable_updates: {}
+                f:interval: {}
+            f:reachability_tests: {}
     manager: kubectl-client-side-apply
     operation: Update
-    time: "2023-02-27T09:52:22Z"
+    time: "2023-02-23T11:22:07Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -31,7 +48,6 @@ metadata:
           v:"clusterprofile.netop.mgr/finalizer": {}
       f:spec:
         f:config_overrides:
-          .: {}
           f:aci_cni_config:
             .: {}
             f:aci_config:
@@ -64,12 +80,6 @@ metadata:
             f:vrf: {}
           f:calico_cni_config: {}
           f:cko_proxy_config: {}
-          f:connectivity_checker:
-            .: {}
-            f:reachability_test_enable:
-              .: {}
-              f:external_url: {}
-              f:periodic_sync: {}
           f:gitops:
             .: {}
             f:base64_encoded_argo_manifests: {}
@@ -85,7 +95,7 @@ metadata:
           f:mode: {}
     manager: manager
     operation: Update
-    time: "2023-02-27T09:52:22Z"
+    time: "2023-02-23T11:22:07Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -101,7 +111,7 @@ metadata:
           f:node_svc_subnet: {}
           f:pod_subnet: {}
         f:calico_cni_config: {}
-        f:cluster_group_profile_name: {}
+        f:cluster_network_profile_name: {}
         f:context:
           .: {}
           f:aep: {}
@@ -129,13 +139,24 @@ metadata:
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-02-27T09:52:28Z"
+    time: "2023-02-23T11:22:07Z"
   name: ocp410gf
   namespace: netop-manager
-  resourceVersion: "1712"
-  uid: 2d9c4f19-0382-4177-9ec8-c1716fecea59
+  resourceVersion: "1835"
+  uid: 47f53a88-124c-4ef1-a55d-3ac4882f4a23
 spec:
-  cni: aci
+  cluster_group_profile_selector:
+    matchLabels:
+      computes: NOVA
+      distro: K8S-1.21
+      location: ON-PREM
+      network-infra: ACI
+      pod-network: aci-cni
+  cluster_name: ocp410gf
+  cluster_network_profile_selector:
+    matchLabels:
+      fabric: 4.2.7f
+      site: BUILDING-15-LAB
   config_overrides:
     aci_cni_config:
       aci_config:
@@ -164,9 +185,25 @@ spec:
     calico_cni_config: {}
     cko_proxy_config: {}
     connectivity_checker:
+      error_pods_reporting_enable: true
       reachability_test_enable:
-        external_url: {}
-        periodic_sync: {}
+        external_url:
+          url: google.com
+        periodic_sync:
+          enable_updates: true
+          interval: 120
+      reachability_tests:
+      - pod_to_pod
+      - pod_to_node
+      - pod_to_clusterIP
+      - pod_to_service
+      - pod_to_LB_VIP
+      - pod_to_NodePort
+      - pod_to_External
+      - node_to_node
+      - node_to_pod
+      - node_to_clusterIP
+      - node_to_LB_VIP
     gitops:
       base64_encoded_argo_manifests: ""
     lb_config: {}
@@ -184,11 +221,11 @@ status:
     cluster_svc_subnet: 10.96.0.0/12
     extern_dynamic: 10.3.0.1/24
     extern_static: 10.4.0.1/24
-    node_subnet: 10.5.0.1/16
-    node_svc_subnet: 192.168.2.1/24
+    node_subnet: 192.168.2.1/24
+    node_svc_subnet: 10.5.0.1/24
     pod_subnet: 10.2.0.1/16
   calico_cni_config: {}
-  cluster_group_profile_name: default-cluster-group-profile-aci
+  cluster_network_profile_name: ocp410gf
   context:
     aep: fab20-esx
     l3out:
