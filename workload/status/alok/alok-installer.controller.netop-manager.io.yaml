@@ -1,9 +1,8 @@
 apiVersion: v1
 data:
-  data: name:installer-platform, ns:null, status:{"componentStatus":{"cko-diagnostic":{"lastUpdated":"141414-314-140
-    314:03:03","mode":"managed","type":"connectivity-checker"},"cko-gitops":{"lastUpdated":"141414-314-140
-    314:03:03","mode":"managed","type":"argo"}},"observedGeneration":1,"operatorStatus":"Running"},
-    status_b64:eyJjb21wb25lbnRTdGF0dXMiOnsiY2tvLWRpYWdub3N0aWMiOnsibGFzdFVwZGF0ZWQiOiIxNDE0MTQtMzE0LTE0MCAzMTQ6MDM6MDMiLCJtb2RlIjoibWFuYWdlZCIsInR5cGUiOiJjb25uZWN0aXZpdHktY2hlY2tlciJ9LCJja28tZ2l0b3BzIjp7Imxhc3RVcGRhdGVkIjoiMTQxNDE0LTMxNC0xNDAgMzE0OjAzOjAzIiwibW9kZSI6Im1hbmFnZWQiLCJ0eXBlIjoiYXJnbyJ9fSwib2JzZXJ2ZWRHZW5lcmF0aW9uIjoxLCJvcGVyYXRvclN0YXR1cyI6IlJ1bm5pbmcifQ==
+  data: name:installer-aci-cni, ns:null, status:{"componentStatus":{"cko-cni":{"lastUpdated":"141414-314-140
+    314:03:03","mode":"unmanaged","type":"cko-cni-aci"}},"observedGeneration":1,"operatorStatus":"Running"},
+    status_b64:eyJjb21wb25lbnRTdGF0dXMiOnsiY2tvLWNuaSI6eyJsYXN0VXBkYXRlZCI6IjE0MTQxNC0zMTQtMTQwIDMxNDowMzowMyIsIm1vZGUiOiJ1bm1hbmFnZWQiLCJ0eXBlIjoiY2tvLWNuaS1hY2kifX0sIm9ic2VydmVkR2VuZXJhdGlvbiI6MSwib3BlcmF0b3JTdGF0dXMiOiJSdW5uaW5nIn0=
 kind: ConfigMap
 metadata:
   creationTimestamp: null
