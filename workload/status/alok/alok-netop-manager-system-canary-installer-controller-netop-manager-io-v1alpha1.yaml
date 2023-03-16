@@ -1,17 +1,15 @@
-{
-  "apiVersion": "notification-ctrlr.netop-types.io/v1alpha1",
-  "kind": "Notification",
-  "metadata": {
-    "name": "alok-netop-manager-system-canary-installer-controller-netop-manager-io-v1alpha1"
-  },
-  "spec": {
-    "clusterName": "alok",
-    "objRef": {
-      "apiVersion": "controller.netop-manager.io/v1alpha1",
-      "kind": "Installer",
-      "name": "canary",
-      "namespace": "netop-manager-system"
-    },
-    "serializedObj": "{\"kind\":\"Installer\",\"apiVersion\":\"controller.netop-manager.io/v1alpha1\",\"metadata\":{\"name\":\"canary\",\"namespace\":\"netop-manager-system\",\"creationTimestamp\":null},\"spec\":{\"operatorConfigs\":{}},\"status\":{}}"
-  }
-}
+apiVersion: notification-ctrlr.netop-types.io/v1alpha1
+kind: Notification
+metadata:
+  creationTimestamp: null
+  name: alok-netop-manager-system-canary-installer-controller-netop-manager-io-v1alpha1
+spec:
+  clusterName: alok
+  objRef:
+    apiVersion: controller.netop-manager.io/v1alpha1
+    kind: Installer
+    name: canary
+    namespace: netop-manager-system
+  serializedObj: '{"kind":"Installer","apiVersion":"controller.netop-manager.io/v1alpha1","metadata":{"name":"canary","namespace":"netop-manager-system","creationTimestamp":null},"spec":{"operatorConfigs":{}},"status":{}}'
+status:
+  state: Created
