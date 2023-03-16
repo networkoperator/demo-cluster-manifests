@@ -132,9 +132,18 @@ metadata:
     operation: Update
     subresource: status
     time: "2023-03-16T10:23:59Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:cluster_info_error: {}
+    manager: OpenAPI-Generator
+    operation: Update
+    subresource: status
+    time: "2023-03-16T10:24:24Z"
   name: alok
   namespace: netop-manager
-  resourceVersion: "2952"
+  resourceVersion: "3003"
   uid: 30c469e6-8640-49e3-9179-b3acb8ef506b
 spec:
   cluster_group_profile_selector:
@@ -198,6 +207,7 @@ status:
     pod_subnet: 10.2.0.1/16
   calico_cni_config: {}
   cluster_group_profile_name: alok-clustergroup
+  cluster_info_error: No error in provisioning
   context:
     aep: hypf-aep
     l3out:

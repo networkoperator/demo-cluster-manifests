@@ -2,8 +2,20 @@ apiVersion: netop.mgr/v1alpha1
 kind: ClusterInfo
 metadata:
   creationTimestamp: "2023-03-16T10:23:59Z"
-  generation: 1
+  finalizers:
+  - netop.mgr/finalizer
+  generation: 2
   managedFields:
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:finalizers:
+          .: {}
+          v:"netop.mgr/finalizer": {}
+    manager: ansible-operator
+    operation: Update
+    time: "2023-03-16T10:23:59Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -121,6 +133,16 @@ metadata:
     manager: manager
     operation: Update
     time: "2023-03-16T10:23:59Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:config_overrides:
+          f:aci_config:
+            f:system_id: {}
+    manager: OpenAPI-Generator
+    operation: Update
+    time: "2023-03-16T10:24:09Z"
   name: alok
   namespace: netop-manager
   ownerReferences:
@@ -130,7 +152,7 @@ metadata:
     kind: ClusterProfile
     name: alok
     uid: 30c469e6-8640-49e3-9179-b3acb8ef506b
-  resourceVersion: "2951"
+  resourceVersion: "2973"
   uid: adc8ef9b-cb81-4caf-bbbc-7b2ac769db37
 spec:
   config_overrides:
@@ -167,6 +189,7 @@ spec:
         - k8s22_net
         name: k8s22
       physical_domain: {}
+      system_id: alok
       vrf:
         name: k8s22_vrf
         tenant: common
