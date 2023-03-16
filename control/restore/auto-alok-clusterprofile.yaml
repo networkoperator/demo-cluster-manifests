@@ -6,7 +6,7 @@ metadata:
   creationTimestamp: "2023-03-16T11:11:27Z"
   finalizers:
   - clusterprofile.netop.mgr/finalizer
-  generation: 3
+  generation: 4
   labels:
     autodetect-cluster.notification-controller.netop.mgr: alok
   managedFields:
@@ -98,17 +98,22 @@ metadata:
     fieldsType: FieldsV1
     fieldsV1:
       f:spec:
+        f:config_overrides:
+          f:aci_cni_config:
+            f:target_version: {}
         f:operator_config:
           f:mode: {}
     manager: kubectl-edit
     operation: Update
-    time: "2023-03-16T11:47:00Z"
+    time: "2023-03-16T12:04:12Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
       f:status:
         .: {}
-        f:aci_cni_config: {}
+        f:aci_cni_config:
+          .: {}
+          f:version: {}
         f:assigned_subnets:
           .: {}
           f:cluster_svc_subnet: {}
@@ -145,10 +150,10 @@ metadata:
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-03-16T11:47:00Z"
+    time: "2023-03-16T12:04:12Z"
   name: auto-alok
   namespace: netop-manager
-  resourceVersion: "6117"
+  resourceVersion: "8099"
   uid: de2412f3-19ec-45d6-b96c-86a9c68b2803
 spec:
   cluster_name: alok
@@ -172,6 +177,7 @@ spec:
       logging: {}
       net_config: {}
       registry: {}
+      target_version: 5.2.3.5
     aci_config:
       cluster_l3out:
         bgp:
@@ -200,7 +206,8 @@ spec:
   operator_config:
     mode: unmanaged
 status:
-  aci_cni_config: {}
+  aci_cni_config:
+    version: 5.2.3.5
   assigned_subnets:
     cluster_svc_subnet: 10.96.0.0/12
     extern_dynamic: 10.3.0.1/24
