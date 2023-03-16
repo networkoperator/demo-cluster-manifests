@@ -1,28 +1,16 @@
 apiVersion: netop.mgr/v1alpha1
 kind: ClusterInfo
 metadata:
-  creationTimestamp: "2023-03-07T10:16:58Z"
-  finalizers:
-  - netop.mgr/finalizer
-  generation: 3
+  creationTimestamp: "2023-03-16T10:23:59Z"
+  generation: 1
   managedFields:
-  - apiVersion: netop.mgr/v1alpha1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:metadata:
-        f:finalizers:
-          .: {}
-          v:"netop.mgr/finalizer": {}
-    manager: ansible-operator
-    operation: Update
-    time: "2023-03-07T10:16:58Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
       f:metadata:
         f:ownerReferences:
           .: {}
-          k:{"uid":"73e17709-bfc3-432d-8b28-488f1d0b25ee"}: {}
+          k:{"uid":"30c469e6-8640-49e3-9179-b3acb8ef506b"}: {}
       f:spec:
         .: {}
         f:config_overrides:
@@ -34,35 +22,27 @@ metadata:
               f:aep: {}
               f:vmm_domain:
                 .: {}
-                f:mcast_range: {}
+                f:encap_type: {}
+                f:mcast_range:
+                  .: {}
+                  f:end: {}
+                  f:start: {}
                 f:nested_inside: {}
             f:kube_config:
               .: {}
               f:drop_log_config: {}
-              f:image_pull_policy: {}
               f:istio_config: {}
               f:multus: {}
               f:nodepodif_config: {}
               f:operator_managed_config: {}
-              f:ovs_memory_limit: {}
               f:sriov_config: {}
-            f:logging:
-              .: {}
-              f:controller_log_level: {}
-              f:hostagent_log_level: {}
-              f:opflexagent_log_level: {}
+            f:logging: {}
             f:net_config:
               .: {}
               f:extern_static: {}
               f:node_svc_subnet: {}
               f:service_vlan: {}
-            f:registry:
-              .: {}
-              f:aci_containers_controller_version: {}
-              f:aci_containers_host_version: {}
-              f:cnideploy_version: {}
-              f:openvswitch_version: {}
-              f:opflex_agent_version: {}
+            f:registry: {}
           f:aci_config:
             .: {}
             f:cluster_l3out:
@@ -71,25 +51,33 @@ metadata:
                 .: {}
                 f:peering: {}
               f:svi: {}
+              f:vrf: {}
             f:l3out:
               .: {}
               f:external_networks: {}
               f:name: {}
             f:physical_domain: {}
-            f:system_id: {}
             f:vrf:
               .: {}
               f:name: {}
               f:tenant: {}
           f:calico_cni_config: {}
           f:cko_proxy_config: {}
+          f:cluster_profile_name: {}
           f:cni: {}
           f:connectivity_checker:
             .: {}
+            f:error_pods_reporting_enable: {}
             f:reachability_test_enable:
               .: {}
-              f:external_url: {}
-              f:periodic_sync: {}
+              f:external_url:
+                .: {}
+                f:url: {}
+              f:periodic_sync:
+                .: {}
+                f:enable_updates: {}
+                f:interval: {}
+            f:reachability_tests: {}
           f:context:
             .: {}
             f:aep: {}
@@ -105,11 +93,11 @@ metadata:
             .: {}
             f:flavor: {}
             f:platform: {}
+            f:release: {}
             f:type: {}
           f:fabricinfra:
             .: {}
             f:name: {}
-            f:type: {}
           f:gitops:
             .: {}
             f:base64_encoded_argo_manifests: {}
@@ -132,7 +120,7 @@ metadata:
           f:topology: {}
     manager: manager
     operation: Update
-    time: "2023-03-07T10:21:56Z"
+    time: "2023-03-16T10:23:59Z"
   name: alok
   namespace: netop-manager
   ownerReferences:
@@ -140,41 +128,34 @@ metadata:
     blockOwnerDeletion: true
     controller: true
     kind: ClusterProfile
-    name: auto-alok
-    uid: 73e17709-bfc3-432d-8b28-488f1d0b25ee
-  resourceVersion: "2575"
-  uid: 8f847988-7015-4158-93b4-396b716ce93a
+    name: alok
+    uid: 30c469e6-8640-49e3-9179-b3acb8ef506b
+  resourceVersion: "2951"
+  uid: adc8ef9b-cb81-4caf-bbbc-7b2ac769db37
 spec:
   config_overrides:
     aci_cni_config:
       aci_config:
         aep: hypf-aep
         vmm_domain:
-          mcast_range: {}
+          encap_type: vxlan
+          mcast_range:
+            end: 225.32.255.255
+            start: 225.32.0.1
           nested_inside: {}
       kube_config:
         drop_log_config: {}
-        image_pull_policy: Always
         istio_config: {}
         multus: {}
         nodepodif_config: {}
         operator_managed_config: {}
-        ovs_memory_limit: 1Gi
         sriov_config: {}
-      logging:
-        controller_log_level: debug
-        hostagent_log_level: debug
-        opflexagent_log_level: debug
+      logging: {}
       net_config:
         extern_static: 10.4.0.1/24
-        node_svc_subnet: 10.5.0.1/24
+        node_svc_subnet: 192.168.22.1/24
         service_vlan: 44
-      registry:
-        aci_containers_controller_version: kmr2-test
-        aci_containers_host_version: kmr2-test
-        cnideploy_version: kmr2-test
-        openvswitch_version: kmr2-test
-        opflex_agent_version: kmr2-test
+      registry: {}
     aci_config:
       cluster_l3out:
         bgp:
@@ -186,17 +167,33 @@ spec:
         - k8s22_net
         name: k8s22
       physical_domain: {}
-      system_id: alok
       vrf:
         name: k8s22_vrf
         tenant: common
     calico_cni_config: {}
     cko_proxy_config: {}
+    cluster_profile_name: alok
     cni: aci
     connectivity_checker:
+      error_pods_reporting_enable: true
       reachability_test_enable:
-        external_url: {}
-        periodic_sync: {}
+        external_url:
+          url: google.com
+        periodic_sync:
+          enable_updates: true
+          interval: 120
+      reachability_tests:
+      - pod_to_pod
+      - pod_to_node
+      - pod_to_clusterIP
+      - pod_to_service
+      - pod_to_LB_VIP
+      - pod_to_NodePort
+      - pod_to_External
+      - node_to_node
+      - node_to_pod
+      - node_to_clusterIP
+      - node_to_LB_VIP
     context:
       aep: hypf-aep
       l3out:
@@ -207,12 +204,12 @@ spec:
         name: k8s22_vrf
         tenant: common
     distro:
-      flavor: kubernetes-1.23
-      platform: baremetal
+      flavor: kubernetes-1.24
+      platform: esx
+      release: "1.24"
       type: kubernetes
     fabricinfra:
-      name: alok
-      type: aci
+      name: alok-fabric
     gitops:
       base64_encoded_argo_manifests: ""
     lb_config: {}
@@ -221,11 +218,11 @@ spec:
       cluster_svc_subnet: 10.96.0.0/12
       extern_dynamic: 10.3.0.1/24
       kubeapi_vlan: 43
-      node_subnet: 192.168.22.1/24
+      node_subnet: 10.5.0.0/16
       pod_subnet: 10.2.0.1/16
     operator_config:
-      mode: unmanaged
-      target_version: 0.9.0
+      mode: managed
+      target_version: 0.9.1
     profile: {}
     registry: {}
     service_mesh_config: {}
