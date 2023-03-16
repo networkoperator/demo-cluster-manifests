@@ -1,0 +1,156 @@
+apiVersion: netop.mgr/v1alpha1
+kind: FabricInfra
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"netop.mgr/v1alpha1","kind":"FabricInfra","metadata":{"annotations":{},"labels":{"fabric":"aci-fab-02","site":"az02"},"name":"alok-fabric","namespace":"netop-manager"},"spec":{"contexts":{"context-1":{"aep":"hypf-aep","l3out":{"external_networks":["k8s22_net"],"name":"k8s22"},"vrf":{"name":"k8s22_vrf","tenant":"common"}}},"credentials":{"hosts":["10.30.120.180"],"secretRef":{"name":"apic-credentials"}},"external_subnets":["10.3.0.1/24","10.4.0.1/24"],"fabric_type":"aci","infra_vlan":3901,"internal_subnets":["10.5.0.0/16","192.168.22.1/24"],"mcast_subnets":["225.32.0.0/16"],"vlans":[43,44]}}
+  creationTimestamp: "2023-03-16T10:22:28Z"
+  finalizers:
+  - fabricinfra.netop.mgr/finalizer
+  generation: 2
+  labels:
+    fabric: aci-fab-02
+    site: az02
+  managedFields:
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:labels:
+          .: {}
+          f:fabric: {}
+          f:site: {}
+      f:spec:
+        .: {}
+        f:contexts:
+          .: {}
+          f:context-1:
+            .: {}
+            f:aep: {}
+            f:l3out:
+              .: {}
+              f:external_networks: {}
+              f:name: {}
+            f:vrf:
+              .: {}
+              f:name: {}
+              f:tenant: {}
+        f:credentials:
+          .: {}
+          f:hosts: {}
+          f:secretRef:
+            .: {}
+            f:name: {}
+        f:external_subnets: {}
+        f:fabric_type: {}
+        f:infra_vlan: {}
+        f:internal_subnets: {}
+        f:mcast_subnets: {}
+        f:vlans: {}
+    manager: kubectl-client-side-apply
+    operation: Update
+    time: "2023-03-16T10:22:28Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:finalizers:
+          .: {}
+          v:"fabricinfra.netop.mgr/finalizer": {}
+      f:spec:
+        f:bgp: {}
+        f:topology: {}
+    manager: manager
+    operation: Update
+    time: "2023-03-16T10:22:28Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        .: {}
+        f:available:
+          .: {}
+          f:contexts:
+            .: {}
+            f:context-1:
+              .: {}
+              f:aep: {}
+              f:l3out:
+                .: {}
+                f:external_networks: {}
+                f:name: {}
+              f:vrf:
+                .: {}
+                f:name: {}
+                f:tenant: {}
+          f:external_subnets: {}
+          f:internal_subnets: {}
+          f:mcast_subnets: {}
+          f:vlans: {}
+        f:ready: {}
+    manager: manager
+    operation: Update
+    subresource: status
+    time: "2023-03-16T10:22:29Z"
+  name: alok-fabric
+  namespace: netop-manager
+  resourceVersion: "2707"
+  uid: a7af06ec-bd5c-4880-adf0-8ff8e1870cb3
+spec:
+  bgp: {}
+  contexts:
+    context-1:
+      aep: hypf-aep
+      l3out:
+        external_networks:
+        - k8s22_net
+        name: k8s22
+      vrf:
+        name: k8s22_vrf
+        tenant: common
+  credentials:
+    hosts:
+    - 10.30.120.180
+    secretRef:
+      name: apic-credentials
+  external_subnets:
+  - 10.3.0.1/24
+  - 10.4.0.1/24
+  fabric_type: aci
+  infra_vlan: 3901
+  internal_subnets:
+  - 10.5.0.0/16
+  - 192.168.22.1/24
+  mcast_subnets:
+  - 225.32.0.0/16
+  topology: {}
+  vlans:
+  - 43
+  - 44
+status:
+  available:
+    contexts:
+      context-1:
+        aep: hypf-aep
+        l3out:
+          external_networks:
+          - k8s22_net
+          name: k8s22
+        vrf:
+          name: k8s22_vrf
+          tenant: common
+    external_subnets:
+    - 10.3.0.1/24
+    - 10.4.0.1/24
+    internal_subnets:
+    - 10.5.0.0/16
+    - 192.168.22.1/24
+    mcast_subnets:
+    - 225.32.0.0/16
+    vlans:
+    - 43
+    - 44
+  ready: true
