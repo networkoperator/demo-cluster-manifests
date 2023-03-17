@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
   installer-platform.yaml: |
-    "name:installer-platform, ns:null, status:{\"componentStatus\":{\"cko-diagnostic\":{\"lastUpdated\":\"171717-317-170 317:03:03\",\"mode\":\"managed\",\"type\":\"connectivity-checker\"},\"cko-gitops\":{\"lastUpdated\":\"171717-317-170 317:03:03\",\"mode\":\"managed\",\"type\":\"argo\"}},\"observedGeneration\":1,\"operatorStatus\":\"Running\"}, status_b64:eyJjb21wb25lbnRTdGF0dXMiOnsiY2tvLWRpYWdub3N0aWMiOnsibGFzdFVwZGF0ZWQiOiIxNzE3MTctMzE3LTE3MCAzMTc6MDM6MDMiLCJtb2RlIjoibWFuYWdlZCIsInR5cGUiOiJjb25uZWN0aXZpdHktY2hlY2tlciJ9LCJja28tZ2l0b3BzIjp7Imxhc3RVcGRhdGVkIjoiMTcxNzE3LTMxNy0xNzAgMzE3OjAzOjAzIiwibW9kZSI6Im1hbmFnZWQiLCJ0eXBlIjoiYXJnbyJ9fSwib2JzZXJ2ZWRHZW5lcmF0aW9uIjoxLCJvcGVyYXRvclN0YXR1cyI6IlJ1bm5pbmcifQ=="
+    "name:installer-platform, ns:null, status:{\"componentStatus\":{\"cko-diagnostic\":{\"lastUpdated\":\"171717-317-170 317:03:03\",\"mode\":\"managed\",\"type\":\"connectivity-checker\"},\"cko-gitops\":{\"lastUpdated\":\"171717-317-170 317:03:03\",\"mode\":\"managed\",\"type\":\"argo\"}},\"observedGeneration\":2,\"operatorStatus\":\"Running\"}, status_b64:eyJjb21wb25lbnRTdGF0dXMiOnsiY2tvLWRpYWdub3N0aWMiOnsibGFzdFVwZGF0ZWQiOiIxNzE3MTctMzE3LTE3MCAzMTc6MDM6MDMiLCJtb2RlIjoibWFuYWdlZCIsInR5cGUiOiJjb25uZWN0aXZpdHktY2hlY2tlciJ9LCJja28tZ2l0b3BzIjp7Imxhc3RVcGRhdGVkIjoiMTcxNzE3LTMxNy0xNzAgMzE3OjAzOjAzIiwibW9kZSI6Im1hbmFnZWQiLCJ0eXBlIjoiYXJnbyJ9fSwib2JzZXJ2ZWRHZW5lcmF0aW9uIjoyLCJvcGVyYXRvclN0YXR1cyI6IlJ1bm5pbmcifQ=="
 kind: ConfigMap
 metadata:
   labels:
