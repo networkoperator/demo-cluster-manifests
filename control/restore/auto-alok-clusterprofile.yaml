@@ -6,7 +6,7 @@ metadata:
   creationTimestamp: "2023-03-16T11:11:27Z"
   finalizers:
   - clusterprofile.netop.mgr/finalizer
-  generation: 5
+  generation: 6
   labels:
     autodetect-cluster.notification-controller.netop.mgr: alok
   managedFields:
@@ -105,7 +105,7 @@ metadata:
           f:mode: {}
     manager: kubectl-edit
     operation: Update
-    time: "2023-03-16T12:09:28Z"
+    time: "2023-03-17T07:06:51Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -150,10 +150,10 @@ metadata:
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-03-16T12:09:28Z"
+    time: "2023-03-17T07:06:52Z"
   name: auto-alok
   namespace: netop-manager
-  resourceVersion: "8724"
+  resourceVersion: "140055"
   uid: de2412f3-19ec-45d6-b96c-86a9c68b2803
 spec:
   cluster_name: alok
@@ -204,7 +204,7 @@ spec:
     flavor: kubernetes-1.23
   fabricinfra: {}
   operator_config:
-    mode: unmanaged
+    mode: managed
 status:
   aci_cni_config:
     version: 5.2.3.4
@@ -232,7 +232,7 @@ status:
     name: alok-fabric
   node_vlan: 43
   operator_config:
-    mode: unmanaged
+    mode: managed
     version: 0.9.0
   ready: true
   vlans:

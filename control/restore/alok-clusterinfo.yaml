@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: "2023-03-16T11:11:27Z"
   finalizers:
   - netop.mgr/finalizer
-  generation: 5
+  generation: 6
   managedFields:
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
@@ -136,7 +136,7 @@ metadata:
           f:topology: {}
     manager: manager
     operation: Update
-    time: "2023-03-16T12:09:28Z"
+    time: "2023-03-17T07:06:52Z"
   name: alok
   namespace: netop-manager
   ownerReferences:
@@ -146,7 +146,7 @@ metadata:
     kind: ClusterProfile
     name: auto-alok
     uid: de2412f3-19ec-45d6-b96c-86a9c68b2803
-  resourceVersion: "8723"
+  resourceVersion: "140054"
   uid: 94f518f5-66d9-4d3b-8100-7f6473768e19
 spec:
   config_overrides:
@@ -231,7 +231,7 @@ spec:
       node_subnet: 192.168.22.1/24
       pod_subnet: 10.2.0.1/16
     operator_config:
-      mode: unmanaged
+      mode: managed
       target_version: 0.9.0
     profile: {}
     registry: {}
