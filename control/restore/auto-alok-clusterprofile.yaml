@@ -88,15 +88,6 @@ metadata:
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
-      f:status:
-        f:cluster_info_error: {}
-    manager: OpenAPI-Generator
-    operation: Update
-    subresource: status
-    time: "2023-03-16T11:11:52Z"
-  - apiVersion: netop.mgr/v1alpha1
-    fieldsType: FieldsV1
-    fieldsV1:
       f:spec:
         f:config_overrides:
           f:aci_cni_config:
@@ -151,9 +142,18 @@ metadata:
     operation: Update
     subresource: status
     time: "2023-03-17T07:14:12Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:cluster_info_error: {}
+    manager: OpenAPI-Generator
+    operation: Update
+    subresource: status
+    time: "2023-03-17T07:14:25Z"
   name: auto-alok
   namespace: netop-manager
-  resourceVersion: "140905"
+  resourceVersion: "140927"
   uid: de2412f3-19ec-45d6-b96c-86a9c68b2803
 spec:
   cluster_name: alok
@@ -216,7 +216,9 @@ status:
     node_svc_subnet: 10.5.0.1/24
     pod_subnet: 10.2.0.1/16
   calico_cni_config: {}
-  cluster_info_error: No error in provisioning
+  cluster_info_error: |-
+    ERR:  Invalid configuration for aci_containers_operator_version: Missing option
+    ERR:  Please fix configuration and retry.
   cluster_network_profile_name: auto-alok
   context:
     aep: hypf-aep
