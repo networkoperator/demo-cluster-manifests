@@ -3,7 +3,7 @@ kind: ClusterNetworkProfile
 metadata:
   annotations:
     notification-controller.netop.mgr/created: "true"
-  creationTimestamp: "2023-03-17T09:17:39Z"
+  creationTimestamp: "2023-03-16T11:11:27Z"
   generation: 1
   labels:
     autodetect-cluster.notification-controller.netop.mgr: alok
@@ -92,6 +92,7 @@ metadata:
           f:distro: {}
           f:fabricinfra:
             .: {}
+            f:context: {}
             f:name: {}
             f:type: {}
           f:gitops:
@@ -114,7 +115,7 @@ metadata:
           f:topology: {}
     manager: manager
     operation: Update
-    time: "2023-03-17T09:17:39Z"
+    time: "2023-03-16T11:11:27Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -124,11 +125,11 @@ metadata:
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-03-17T09:17:39Z"
+    time: "2023-03-16T11:11:27Z"
   name: auto-alok
   namespace: netop-manager
-  resourceVersion: "1501"
-  uid: 1f0c8d76-f66e-47b5-907f-5ad59ce33f86
+  resourceVersion: "2018"
+  uid: dc4be7a4-bde8-4e50-8c9c-5447ca70c544
 spec:
   config_overrides:
     aci_cni_config:
@@ -186,7 +187,8 @@ spec:
       vrf: {}
     distro: {}
     fabricinfra:
-      name: alokk8s23-fabric
+      context: context-1
+      name: alok-fabric
       type: aci
     gitops:
       base64_encoded_argo_manifests: ""
