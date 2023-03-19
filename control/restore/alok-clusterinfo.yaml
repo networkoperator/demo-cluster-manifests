@@ -1,28 +1,18 @@
 apiVersion: netop.mgr/v1alpha1
 kind: ClusterInfo
 metadata:
-  creationTimestamp: "2023-03-16T11:11:27Z"
+  creationTimestamp: "2023-03-17T09:17:43Z"
   finalizers:
   - netop.mgr/finalizer
-  generation: 7
+  generation: 1
   managedFields:
-  - apiVersion: netop.mgr/v1alpha1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:metadata:
-        f:finalizers:
-          .: {}
-          v:"netop.mgr/finalizer": {}
-    manager: ansible-operator
-    operation: Update
-    time: "2023-03-16T11:11:27Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
       f:metadata:
         f:ownerReferences:
           .: {}
-          k:{"uid":"de2412f3-19ec-45d6-b96c-86a9c68b2803"}: {}
+          k:{"uid":"bb865f0d-3da5-40ea-9700-6f174565d20d"}: {}
       f:spec:
         .: {}
         f:config_overrides:
@@ -63,7 +53,6 @@ metadata:
               f:cnideploy_version: {}
               f:openvswitch_version: {}
               f:opflex_agent_version: {}
-            f:target_version: {}
           f:aci_config:
             .: {}
             f:cluster_l3out:
@@ -111,7 +100,6 @@ metadata:
             f:type: {}
           f:fabricinfra:
             .: {}
-            f:context: {}
             f:name: {}
             f:type: {}
           f:gitops:
@@ -136,7 +124,17 @@ metadata:
           f:topology: {}
     manager: manager
     operation: Update
-    time: "2023-03-17T07:14:12Z"
+    time: "2023-03-17T09:17:43Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:finalizers:
+          .: {}
+          v:"netop.mgr/finalizer": {}
+    manager: ansible-operator
+    operation: Update
+    time: "2023-03-17T09:17:44Z"
   name: alok
   namespace: netop-manager
   ownerReferences:
@@ -145,9 +143,9 @@ metadata:
     controller: true
     kind: ClusterProfile
     name: auto-alok
-    uid: de2412f3-19ec-45d6-b96c-86a9c68b2803
-  resourceVersion: "140904"
-  uid: 94f518f5-66d9-4d3b-8100-7f6473768e19
+    uid: bb865f0d-3da5-40ea-9700-6f174565d20d
+  resourceVersion: "1528"
+  uid: 85aac5eb-98df-4df6-a5bd-98541d52284c
 spec:
   config_overrides:
     aci_cni_config:
@@ -179,7 +177,6 @@ spec:
         cnideploy_version: kmr2-test
         openvswitch_version: kmr2-test
         opflex_agent_version: kmr2-test
-      target_version: 5.2.3.5
     aci_config:
       cluster_l3out:
         bgp:
@@ -217,8 +214,7 @@ spec:
       platform: baremetal
       type: kubernetes
     fabricinfra:
-      context: context-1
-      name: alok-fabric
+      name: alokk8s23-fabric
       type: aci
     gitops:
       base64_encoded_argo_manifests: ""
@@ -231,7 +227,7 @@ spec:
       node_subnet: 192.168.22.1/24
       pod_subnet: 10.2.0.1/16
     operator_config:
-      mode: managed
+      mode: unmanaged
       target_version: 0.9.0
     profile: {}
     registry: {}
