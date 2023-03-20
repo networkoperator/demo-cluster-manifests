@@ -1,9 +1,11 @@
 apiVersion: netop.mgr/v1alpha1
-kind: ClusterNetworkProfile
+kind: ClusterProfile
 metadata:
   annotations:
     notification-controller.netop.mgr/created: "true"
   creationTimestamp: "2023-03-20T09:15:02Z"
+  finalizers:
+  - clusterprofile.netop.mgr/finalizer
   generation: 1
   labels:
     autodetect-cluster.notification-controller.netop.mgr: alokk8s23
@@ -15,18 +17,23 @@ metadata:
         f:annotations:
           .: {}
           f:notification-controller.netop.mgr/created: {}
+        f:finalizers:
+          .: {}
+          v:"clusterprofile.netop.mgr/finalizer": {}
         f:labels:
           .: {}
           f:autodetect-cluster.notification-controller.netop.mgr: {}
       f:spec:
         .: {}
+        f:cluster_name: {}
+        f:cluster_network_profile_selector: {}
+        f:cni: {}
         f:config_overrides:
           .: {}
           f:aci_cni_config:
             .: {}
             f:aci_config:
               .: {}
-              f:aep: {}
               f:vmm_domain:
                 .: {}
                 f:mcast_range: {}
@@ -34,30 +41,14 @@ metadata:
             f:kube_config:
               .: {}
               f:drop_log_config: {}
-              f:image_pull_policy: {}
               f:istio_config: {}
               f:multus: {}
               f:nodepodif_config: {}
               f:operator_managed_config: {}
-              f:ovs_memory_limit: {}
               f:sriov_config: {}
-            f:logging:
-              .: {}
-              f:controller_log_level: {}
-              f:hostagent_log_level: {}
-              f:opflexagent_log_level: {}
-            f:net_config:
-              .: {}
-              f:extern_static: {}
-              f:node_svc_subnet: {}
-              f:service_vlan: {}
-            f:registry:
-              .: {}
-              f:aci_containers_controller_version: {}
-              f:aci_containers_host_version: {}
-              f:cnideploy_version: {}
-              f:openvswitch_version: {}
-              f:opflex_agent_version: {}
+            f:logging: {}
+            f:net_config: {}
+            f:registry: {}
           f:aci_config:
             .: {}
             f:cluster_l3out:
@@ -67,16 +58,9 @@ metadata:
                 f:peering: {}
               f:svi: {}
               f:vrf: {}
-            f:l3out:
-              .: {}
-              f:external_networks: {}
-              f:name: {}
+            f:l3out: {}
             f:physical_domain: {}
-            f:system_id: {}
-            f:vrf:
-              .: {}
-              f:name: {}
-              f:tenant: {}
+            f:vrf: {}
           f:calico_cni_config: {}
           f:cko_proxy_config: {}
           f:connectivity_checker:
@@ -85,34 +69,21 @@ metadata:
               .: {}
               f:external_url: {}
               f:periodic_sync: {}
-          f:context:
-            .: {}
-            f:l3out: {}
-            f:vrf: {}
-          f:distro: {}
-          f:fabricinfra:
-            .: {}
-            f:context: {}
-            f:name: {}
-            f:type: {}
           f:gitops:
             .: {}
             f:base64_encoded_argo_manifests: {}
           f:lb_config: {}
           f:monitoring_config: {}
-          f:net_config:
-            .: {}
-            f:extern_dynamic: {}
-            f:kubeapi_vlan: {}
-            f:node_subnet: {}
-            f:pod_subnet: {}
-          f:operator_config:
-            .: {}
-            f:mode: {}
-          f:profile: {}
+          f:net_config: {}
           f:registry: {}
           f:service_mesh_config: {}
-          f:topology: {}
+        f:distro:
+          .: {}
+          f:flavor: {}
+        f:fabricinfra: {}
+        f:operator_config:
+          .: {}
+          f:mode: {}
     manager: manager
     operation: Update
     time: "2023-03-20T09:15:02Z"
@@ -121,89 +92,128 @@ metadata:
     fieldsV1:
       f:status:
         .: {}
+        f:aci_cni_config: {}
+        f:assigned_subnets:
+          .: {}
+          f:cluster_svc_subnet: {}
+          f:extern_dynamic: {}
+          f:extern_static: {}
+          f:node_subnet: {}
+          f:node_svc_subnet: {}
+          f:pod_subnet: {}
+        f:calico_cni_config: {}
+        f:cluster_network_profile_name: {}
+        f:context:
+          .: {}
+          f:aep: {}
+          f:l3out:
+            .: {}
+            f:external_networks: {}
+            f:name: {}
+          f:vrf:
+            .: {}
+            f:name: {}
+            f:tenant: {}
+        f:fabricinfra:
+          .: {}
+          f:context: {}
+          f:name: {}
+        f:node_vlan: {}
+        f:operator_config:
+          .: {}
+          f:mode: {}
+          f:version: {}
         f:ready: {}
+        f:vlans: {}
+        f:workload_cluster_manifest_locations: {}
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-03-20T09:15:02Z"
+    time: "2023-03-20T09:15:03Z"
   name: auto-alokk8s23
   namespace: netop-manager
-  resourceVersion: "2681"
-  uid: fa5f9381-dcb7-4875-aefa-f2ceb279040d
+  resourceVersion: "2690"
+  uid: 3af8b827-a281-42aa-95ea-145897ace54a
 spec:
+  cluster_name: alokk8s23
+  cluster_network_profile_selector:
+    matchLabels:
+      autodetect-cluster.notification-controller.netop.mgr: alokk8s23
+  cni: aci
   config_overrides:
     aci_cni_config:
       aci_config:
-        aep: hypf-aep
         vmm_domain:
           mcast_range: {}
           nested_inside: {}
       kube_config:
         drop_log_config: {}
-        image_pull_policy: Always
         istio_config: {}
         multus: {}
         nodepodif_config: {}
         operator_managed_config: {}
-        ovs_memory_limit: 1Gi
         sriov_config: {}
-      logging:
-        controller_log_level: debug
-        hostagent_log_level: debug
-        opflexagent_log_level: debug
-      net_config:
-        extern_static: 10.4.0.1/24
-        node_svc_subnet: 10.5.0.1/24
-        service_vlan: 46
-      registry:
-        aci_containers_controller_version: kmr2-test
-        aci_containers_host_version: kmr2-test
-        cnideploy_version: kmr2-test
-        openvswitch_version: kmr2-test
-        opflex_agent_version: kmr2-test
+      logging: {}
+      net_config: {}
+      registry: {}
     aci_config:
       cluster_l3out:
         bgp:
           peering: {}
         svi: {}
         vrf: {}
-      l3out:
-        external_networks:
-        - k8s23_net
-        name: k8s23
+      l3out: {}
       physical_domain: {}
-      system_id: alok_k8s23
-      vrf:
-        name: k8s23_vrf
-        tenant: common
+      vrf: {}
     calico_cni_config: {}
     cko_proxy_config: {}
     connectivity_checker:
       reachability_test_enable:
         external_url: {}
         periodic_sync: {}
-    context:
-      l3out: {}
-      vrf: {}
-    distro: {}
-    fabricinfra:
-      context: context-1
-      name: alokk8s23-fabric
-      type: aci
     gitops:
       base64_encoded_argo_manifests: ""
     lb_config: {}
     monitoring_config: {}
-    net_config:
-      extern_dynamic: 10.3.0.1/24
-      kubeapi_vlan: 45
-      node_subnet: 192.168.23.1/24
-      pod_subnet: 10.2.0.1/16
-    operator_config:
-      mode: managed
-    profile: {}
+    net_config: {}
     registry: {}
     service_mesh_config: {}
-    topology: {}
+  distro:
+    flavor: kubernetes-1.23
+  fabricinfra: {}
+  operator_config:
+    mode: unmanaged
 status:
+  aci_cni_config: {}
+  assigned_subnets:
+    cluster_svc_subnet: 10.96.0.0/12
+    extern_dynamic: 10.3.0.1/24
+    extern_static: 10.4.0.1/24
+    node_subnet: 192.168.23.1/24
+    node_svc_subnet: 10.5.0.1/24
+    pod_subnet: 10.2.0.1/16
+  calico_cni_config: {}
+  cluster_network_profile_name: auto-alokk8s23
+  context:
+    aep: hypf-aep
+    l3out:
+      external_networks:
+      - k8s23_net
+      name: k8s23
+    vrf:
+      name: k8s23_vrf
+      tenant: common
+  fabricinfra:
+    context: context-1
+    name: alokk8s23-fabric
+  node_vlan: 45
+  operator_config:
+    mode: unmanaged
+    version: 0.9.0
   ready: true
+  vlans:
+  - 45
+  - 46
+  workload_cluster_manifest_locations:
+  - 'argo: https://github.com/networkoperator/demo-cluster-manifests/tree/sumit-test-1/workload/argo/alokk8s23'
+  - 'operator: https://github.com/networkoperator/demo-cluster-manifests/tree/sumit-test-1/workload/config/alokk8s23'
