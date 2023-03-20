@@ -3,10 +3,10 @@ kind: ClusterProfile
 metadata:
   annotations:
     notification-controller.netop.mgr/created: "true"
-  creationTimestamp: "2023-03-16T11:11:27Z"
+  creationTimestamp: "2023-03-17T09:17:41Z"
   finalizers:
   - clusterprofile.netop.mgr/finalizer
-  generation: 7
+  generation: 1
   labels:
     autodetect-cluster.notification-controller.netop.mgr: alok
   managedFields:
@@ -81,30 +81,18 @@ metadata:
           .: {}
           f:flavor: {}
         f:fabricinfra: {}
-        f:operator_config: {}
+        f:operator_config:
+          .: {}
+          f:mode: {}
     manager: manager
     operation: Update
-    time: "2023-03-16T11:11:27Z"
-  - apiVersion: netop.mgr/v1alpha1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:spec:
-        f:config_overrides:
-          f:aci_cni_config:
-            f:target_version: {}
-        f:operator_config:
-          f:mode: {}
-    manager: kubectl-edit
-    operation: Update
-    time: "2023-03-17T07:14:12Z"
+    time: "2023-03-17T09:17:42Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
       f:status:
         .: {}
-        f:aci_cni_config:
-          .: {}
-          f:version: {}
+        f:aci_cni_config: {}
         f:assigned_subnets:
           .: {}
           f:cluster_svc_subnet: {}
@@ -141,7 +129,7 @@ metadata:
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-03-17T07:14:12Z"
+    time: "2023-03-17T09:17:44Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -150,11 +138,11 @@ metadata:
     manager: OpenAPI-Generator
     operation: Update
     subresource: status
-    time: "2023-03-17T07:14:25Z"
+    time: "2023-03-17T09:18:03Z"
   name: auto-alok
   namespace: netop-manager
-  resourceVersion: "140927"
-  uid: de2412f3-19ec-45d6-b96c-86a9c68b2803
+  resourceVersion: "1591"
+  uid: bb865f0d-3da5-40ea-9700-6f174565d20d
 spec:
   cluster_name: alok
   cluster_network_profile_selector:
@@ -177,7 +165,6 @@ spec:
       logging: {}
       net_config: {}
       registry: {}
-      target_version: 5.2.3.5
     aci_config:
       cluster_l3out:
         bgp:
@@ -204,10 +191,9 @@ spec:
     flavor: kubernetes-1.23
   fabricinfra: {}
   operator_config:
-    mode: managed
+    mode: unmanaged
 status:
-  aci_cni_config:
-    version: 5.2.3.5
+  aci_cni_config: {}
   assigned_subnets:
     cluster_svc_subnet: 10.96.0.0/12
     extern_dynamic: 10.3.0.1/24
@@ -216,9 +202,7 @@ status:
     node_svc_subnet: 10.5.0.1/24
     pod_subnet: 10.2.0.1/16
   calico_cni_config: {}
-  cluster_info_error: |-
-    ERR:  Invalid configuration for aci_containers_operator_version: Missing option
-    ERR:  Please fix configuration and retry.
+  cluster_info_error: No error in provisioning
   cluster_network_profile_name: auto-alok
   context:
     aep: hypf-aep
@@ -230,11 +214,11 @@ status:
       name: k8s22_vrf
       tenant: common
   fabricinfra:
-    context: context-1
-    name: alok-fabric
+    context: auto-alok
+    name: alokk8s23-fabric
   node_vlan: 43
   operator_config:
-    mode: managed
+    mode: unmanaged
     version: 0.9.0
   ready: true
   vlans:
