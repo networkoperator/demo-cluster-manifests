@@ -4,7 +4,7 @@ metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
       {"apiVersion":"netop.mgr/v1alpha1","kind":"ClusterGroupProfile","metadata":{"annotations":{},"labels":{"cni":"aci","distro":"openshift","environment":"prod","location":"az02","platform":"esx"},"name":"ocp410gf-clustergroupprofile","namespace":"netop-manager"},"spec":{"config_overrides":{"cni":"aci","connectivity_checker":{"error_pods_reporting_enable":true,"reachability_test_enable":{"external_url":{"url":"google.com"},"periodic_sync":{"enable_updates":true,"interval":120}},"reachability_tests":["pod_to_pod","pod_to_node","pod_to_clusterIP","pod_to_service","pod_to_LB_VIP","pod_to_NodePort","pod_to_External","node_to_node","node_to_pod","node_to_clusterIP","node_to_LB_VIP"]},"distro":{"platform":"esx","release":"4.10","type":"openshift"},"operator_config":{"target_version":"0.9.1"}},"selector":{"matchLabels":{"fabric":"aci-fab-02","site":"az02"}}}}
-  creationTimestamp: "2023-03-21T09:28:52Z"
+  creationTimestamp: "2023-03-21T09:41:47Z"
   generation: 1
   labels:
     cni: aci
@@ -57,24 +57,23 @@ metadata:
         f:selector: {}
     manager: kubectl-client-side-apply
     operation: Update
-    time: "2023-03-21T09:28:52Z"
+    time: "2023-03-21T09:41:47Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
       f:status:
         .: {}
-        f:cluster-fabric-mapping: {}
         f:mode: {}
         f:state: {}
         f:target_version: {}
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-03-21T09:29:05Z"
+    time: "2023-03-21T09:41:47Z"
   name: ocp410gf-clustergroupprofile
   namespace: netop-manager
-  resourceVersion: "1393"
-  uid: 9d960c66-b874-48d9-ae17-69b2e0813a5b
+  resourceVersion: "1746"
+  uid: c7f08aeb-1584-4119-b98d-04bc9273eb26
 spec:
   config_overrides:
     aci_cni_config:
@@ -149,9 +148,6 @@ spec:
       fabric: aci-fab-02
       site: az02
 status:
-  cluster-fabric-mapping:
-  - cluster: ocp410gf-clusterprofile
-    fabric: ocp410gf
   mode: managed
   state: true
   target_version: 0.9.1
