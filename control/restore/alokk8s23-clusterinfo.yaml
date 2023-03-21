@@ -2,7 +2,9 @@ apiVersion: netop.mgr/v1alpha1
 kind: ClusterInfo
 metadata:
   creationTimestamp: "2023-03-21T05:48:17Z"
-  generation: 1
+  finalizers:
+  - netop.mgr/finalizer
+  generation: 2
   managedFields:
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
@@ -65,7 +67,6 @@ metadata:
               f:external_networks: {}
               f:name: {}
             f:physical_domain: {}
-            f:system_id: {}
             f:vrf:
               .: {}
               f:name: {}
@@ -123,6 +124,26 @@ metadata:
     manager: manager
     operation: Update
     time: "2023-03-21T05:48:17Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:finalizers:
+          .: {}
+          v:"netop.mgr/finalizer": {}
+    manager: ansible-operator
+    operation: Update
+    time: "2023-03-21T05:48:19Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:config_overrides:
+          f:aci_config:
+            f:system_id: {}
+    manager: OpenAPI-Generator
+    operation: Update
+    time: "2023-03-21T05:48:29Z"
   name: alokk8s23
   namespace: netop-manager
   ownerReferences:
@@ -132,7 +153,7 @@ metadata:
     kind: ClusterProfile
     name: auto-alokk8s23
     uid: b6cbea2b-dd2e-4607-b9fc-e0d0d176440c
-  resourceVersion: "1706"
+  resourceVersion: "1742"
   uid: d21829b2-1c8e-4f6f-8b94-324ed0141fd6
 spec:
   config_overrides:
@@ -176,7 +197,7 @@ spec:
         - k8s23_net
         name: k8s23
       physical_domain: {}
-      system_id: alok_k8s23
+      system_id: alokk8s23
       vrf:
         name: k8s23_vrf
         tenant: common
