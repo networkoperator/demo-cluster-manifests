@@ -1,0 +1,181 @@
+apiVersion: netop.mgr/v1alpha1
+kind: FabricInfra
+metadata:
+  creationTimestamp: "2023-03-21T05:47:36Z"
+  finalizers:
+  - fabricinfra.netop.mgr/finalizer
+  generation: 1
+  labels:
+    cisco_app: cisco_21_03_2023_01_47_34_583511_BH310X
+    fabric: on-prem-dev-infra
+    purpose: testing
+    site: bldg-15-lab
+  managedFields:
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:cisco_app: {}
+          f:fabric: {}
+          f:purpose: {}
+          f:site: {}
+      f:spec:
+        .: {}
+        f:bgp:
+          .: {}
+          f:aci_as_number: {}
+          f:remote_as_numbers: {}
+        f:contexts:
+          .: {}
+          f:context-1:
+            .: {}
+            f:aep: {}
+            f:l3out:
+              .: {}
+              f:external_networks: {}
+              f:name: {}
+            f:vrf:
+              .: {}
+              f:name: {}
+              f:tenant: {}
+        f:credentials:
+          .: {}
+          f:hosts: {}
+          f:secretRef:
+            .: {}
+            f:name: {}
+        f:external_subnets: {}
+        f:fabric_type: {}
+        f:infra_vlan: {}
+        f:internal_subnets: {}
+        f:mcast_subnets: {}
+        f:topology:
+          .: {}
+          f:rack: {}
+        f:vlans: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2023-03-21T05:47:36Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:finalizers:
+          .: {}
+          v:"fabricinfra.netop.mgr/finalizer": {}
+    manager: manager
+    operation: Update
+    time: "2023-03-21T05:47:36Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        .: {}
+        f:available:
+          .: {}
+          f:contexts:
+            .: {}
+            f:context-1:
+              .: {}
+              f:aep: {}
+              f:l3out:
+                .: {}
+                f:external_networks: {}
+                f:name: {}
+              f:vrf:
+                .: {}
+                f:name: {}
+                f:tenant: {}
+          f:external_subnets: {}
+          f:internal_subnets: {}
+          f:mcast_subnets: {}
+          f:remote_as_numbers: {}
+          f:vlans: {}
+        f:ready: {}
+    manager: manager
+    operation: Update
+    subresource: status
+    time: "2023-03-21T05:47:37Z"
+  name: alok
+  namespace: netop-manager
+  resourceVersion: "1621"
+  uid: 4b210f39-7790-4f49-84f7-0e75be0525d4
+spec:
+  bgp:
+    aci_as_number: 2
+    remote_as_numbers:
+    - 64512
+  contexts:
+    context-1:
+      aep: hypf-aep
+      l3out:
+        external_networks:
+        - k8s22_net
+        name: k8s22
+      vrf:
+        name: k8s22_vrf
+        tenant: common
+  credentials:
+    hosts:
+    - 10.30.120.180
+    secretRef:
+      name: apic-credentials
+  external_subnets:
+  - 10.3.0.1/24
+  - 10.4.0.1/24
+  fabric_type: aci
+  infra_vlan: 3901
+  internal_subnets:
+  - 10.5.0.1/16
+  - 192.168.22.1/24
+  mcast_subnets:
+  - 225.32.0.0/16
+  topology:
+    rack:
+    - aci_pod_id: 1
+      id: 1
+      leaf:
+      - id: 101
+      - id: 102
+      node:
+      - name: k8s-node1
+      - name: k8s-node2
+    - aci_pod_id: 1
+      id: 2
+      leaf:
+      - id: 103
+      - id: 104
+      node:
+      - name: k8s-node3
+      - name: k8s-node4
+  vlans:
+  - 43
+  - 44
+status:
+  available:
+    contexts:
+      context-1:
+        aep: hypf-aep
+        l3out:
+          external_networks:
+          - k8s22_net
+          name: k8s22
+        vrf:
+          name: k8s22_vrf
+          tenant: common
+    external_subnets:
+    - 10.3.0.1/24
+    - 10.4.0.1/24
+    internal_subnets:
+    - 10.5.0.1/16
+    - 192.168.22.1/24
+    mcast_subnets:
+    - 225.32.0.0/16
+    remote_as_numbers:
+    - 64512
+    vlans:
+    - 43
+    - 44
+  ready: true
