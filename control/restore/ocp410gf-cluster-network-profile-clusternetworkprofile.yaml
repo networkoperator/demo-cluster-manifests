@@ -1,0 +1,223 @@
+apiVersion: netop.mgr/v1alpha1
+kind: ClusterNetworkProfile
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"netop.mgr/v1alpha1","kind":"ClusterNetworkProfile","metadata":{"annotations":{},"labels":{"cni":"aci","distro":"openshift","environment":"dev","netProfile":"ocp-dev-001","platform":"esx"},"name":"ocp410gf-cluster-network-profile","namespace":"netop-manager"},"spec":{"config_overrides":{"aci_cni_config":{"aci_config":{"aep":"fab20-esx","vmm_domain":{"encap_type":"vxlan","mcast_range":{"end":"225.20.255.255","start":"225.20.1.1"},"nested_inside":{"installer_provisioned_lb_ip":"192.168.57.2","name":"HX_vC","type":"vmware"}}},"kube_config":{"image_pull_policy":"Always","opflex_agent_prometheus":false,"ovs_memory_limit":"1Gi"},"logging":{"controller_log_level":"debug","hostagent_log_level":"debug","opflexagent_log_level":"debug"},"net_config":{"extern_static":"10.4.0.1/24","node_svc_subnet":"10.5.0.1/24","service_vlan":203},"registry":{"acc_provision_operator_version":"kmr2-test","aci_containers_controller_version":"kmr2-test","aci_containers_host_version":"kmr2-test","aci_containers_operator_version":"kmr2-test","cnideploy_version":"kmr2-test","openvswitch_version":"kmr2-test","opflex_agent_version":"kmr2-test"}},"aci_config":{"l3out":{"external_networks":["ocp-gf-l3-extepg"],"name":"ocp410_gf_l3out"},"vrf":{"name":"ocp410_gf_vrf","tenant":"common"}},"cko_proxy_config":{"http_proxy":"http://proxy.esl.cisco.com:80","https_proxy":"http://proxy.esl.cisco.com:80","no_proxy":"localhost,127.0.0.1,10.30.120.125,10.30.120.120,10.30.120.20,noiro-quay.cisco.com,15.11.0.4,15.11.0.5,15.11.0.6,15.11.0.7,15.11.0.8,15.11.0.9,15.11.0.10,15.11.0.11,15.11.0.12,15.11.0.13,15.11.0.14,15.11.0.15,15.11.0.16,15.11.0.17,15.11.0.18,15.11.0.19,15.11.0.20,15.11.0.21,15.11.0.22,15.11.0.23,15.11.0.24,15.11.0.25,15.11.0.26,15.11.0.27,15.11.0.28,15.11.0.29,15.11.0.30,15.11.0.31,15.11.0.32,15.11.0.33,15.11.0.34,172.30.0.1,172.30.0.10,oauth-openshift.apps.openupi.noiro.local,console-openshift-console.apps.openupi.noiro.local,downloads-openshift-console.apps.openupi.noiro.local,1.100.1.1,.netop-manager-system"},"cni":"aci","distro":{"flavor":"openshift-4.10-esx","platform":"esx","release":"4.10","type":"openshift"},"fabricinfra":{"name":"ocp410gf"},"net_config":{"extern_dynamic":"10.3.0.1/24","kubeapi_vlan":202,"node_subnet":"10.5.0.1/24","pod_subnet":"10.2.0.1/16"},"operator_config":{"target_version":"0.9.1"},"registry":{"image_prefix":"quay.io/noirolabs","network_operator_version":"cko-mvp-1-test"}}}}
+  creationTimestamp: "2023-03-21T09:15:53Z"
+  generation: 1
+  labels:
+    cni: aci
+    distro: openshift
+    environment: dev
+    netProfile: ocp-dev-001
+    platform: esx
+  managedFields:
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:labels:
+          .: {}
+          f:cni: {}
+          f:distro: {}
+          f:environment: {}
+          f:netProfile: {}
+          f:platform: {}
+      f:spec:
+        .: {}
+        f:config_overrides:
+          .: {}
+          f:aci_cni_config:
+            .: {}
+            f:aci_config:
+              .: {}
+              f:aep: {}
+              f:vmm_domain:
+                .: {}
+                f:encap_type: {}
+                f:mcast_range:
+                  .: {}
+                  f:end: {}
+                  f:start: {}
+                f:nested_inside:
+                  .: {}
+                  f:installer_provisioned_lb_ip: {}
+                  f:name: {}
+                  f:type: {}
+            f:kube_config:
+              .: {}
+              f:image_pull_policy: {}
+              f:opflex_agent_prometheus: {}
+              f:ovs_memory_limit: {}
+            f:logging:
+              .: {}
+              f:controller_log_level: {}
+              f:hostagent_log_level: {}
+              f:opflexagent_log_level: {}
+            f:net_config:
+              .: {}
+              f:extern_static: {}
+              f:node_svc_subnet: {}
+              f:service_vlan: {}
+            f:registry:
+              .: {}
+              f:acc_provision_operator_version: {}
+              f:aci_containers_controller_version: {}
+              f:aci_containers_host_version: {}
+              f:aci_containers_operator_version: {}
+              f:cnideploy_version: {}
+              f:openvswitch_version: {}
+              f:opflex_agent_version: {}
+          f:aci_config:
+            .: {}
+            f:l3out:
+              .: {}
+              f:external_networks: {}
+              f:name: {}
+            f:vrf:
+              .: {}
+              f:name: {}
+              f:tenant: {}
+          f:cko_proxy_config:
+            .: {}
+            f:http_proxy: {}
+            f:https_proxy: {}
+            f:no_proxy: {}
+          f:cni: {}
+          f:distro:
+            .: {}
+            f:flavor: {}
+            f:platform: {}
+            f:release: {}
+            f:type: {}
+          f:fabricinfra:
+            .: {}
+            f:name: {}
+          f:net_config:
+            .: {}
+            f:extern_dynamic: {}
+            f:kubeapi_vlan: {}
+            f:node_subnet: {}
+            f:pod_subnet: {}
+          f:operator_config:
+            .: {}
+            f:mode: {}
+            f:target_version: {}
+          f:registry:
+            .: {}
+            f:image_prefix: {}
+            f:network_operator_version: {}
+    manager: kubectl-client-side-apply
+    operation: Update
+    time: "2023-03-21T09:15:53Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        .: {}
+        f:ready: {}
+    manager: manager
+    operation: Update
+    subresource: status
+    time: "2023-03-21T09:15:53Z"
+  name: ocp410gf-cluster-network-profile
+  namespace: netop-manager
+  resourceVersion: "1648"
+  uid: e45f21f5-744c-4302-ac23-9a0da2761b33
+spec:
+  config_overrides:
+    aci_cni_config:
+      aci_config:
+        aep: fab20-esx
+        vmm_domain:
+          encap_type: vxlan
+          mcast_range:
+            end: 225.20.255.255
+            start: 225.20.1.1
+          nested_inside:
+            installer_provisioned_lb_ip: 192.168.57.2
+            name: HX_vC
+            type: vmware
+      kube_config:
+        drop_log_config: {}
+        image_pull_policy: Always
+        istio_config: {}
+        multus: {}
+        nodepodif_config: {}
+        operator_managed_config: {}
+        ovs_memory_limit: 1Gi
+        sriov_config: {}
+      logging:
+        controller_log_level: debug
+        hostagent_log_level: debug
+        opflexagent_log_level: debug
+      net_config:
+        extern_static: 10.4.0.1/24
+        node_svc_subnet: 10.5.0.1/24
+        service_vlan: 203
+      registry:
+        acc_provision_operator_version: kmr2-test
+        aci_containers_controller_version: kmr2-test
+        aci_containers_host_version: kmr2-test
+        aci_containers_operator_version: kmr2-test
+        cnideploy_version: kmr2-test
+        openvswitch_version: kmr2-test
+        opflex_agent_version: kmr2-test
+    aci_config:
+      cluster_l3out:
+        bgp:
+          peering: {}
+        svi: {}
+        vrf: {}
+      l3out:
+        external_networks:
+        - ocp-gf-l3-extepg
+        name: ocp410_gf_l3out
+      physical_domain: {}
+      vrf:
+        name: ocp410_gf_vrf
+        tenant: common
+    calico_cni_config: {}
+    cko_proxy_config:
+      http_proxy: http://proxy.esl.cisco.com:80
+      https_proxy: http://proxy.esl.cisco.com:80
+      no_proxy: localhost,127.0.0.1,10.30.120.125,10.30.120.120,10.30.120.20,noiro-quay.cisco.com,15.11.0.4,15.11.0.5,15.11.0.6,15.11.0.7,15.11.0.8,15.11.0.9,15.11.0.10,15.11.0.11,15.11.0.12,15.11.0.13,15.11.0.14,15.11.0.15,15.11.0.16,15.11.0.17,15.11.0.18,15.11.0.19,15.11.0.20,15.11.0.21,15.11.0.22,15.11.0.23,15.11.0.24,15.11.0.25,15.11.0.26,15.11.0.27,15.11.0.28,15.11.0.29,15.11.0.30,15.11.0.31,15.11.0.32,15.11.0.33,15.11.0.34,172.30.0.1,172.30.0.10,oauth-openshift.apps.openupi.noiro.local,console-openshift-console.apps.openupi.noiro.local,downloads-openshift-console.apps.openupi.noiro.local,1.100.1.1,.netop-manager-system
+    cni: aci
+    connectivity_checker:
+      reachability_test_enable:
+        external_url: {}
+        periodic_sync: {}
+    context:
+      l3out: {}
+      vrf: {}
+    distro:
+      flavor: openshift-4.10-esx
+      platform: esx
+      release: "4.10"
+      type: openshift
+    fabricinfra:
+      name: ocp410gf
+    gitops:
+      base64_encoded_argo_manifests: ""
+    lb_config: {}
+    monitoring_config: {}
+    net_config:
+      extern_dynamic: 10.3.0.1/24
+      kubeapi_vlan: 202
+      node_subnet: 10.5.0.1/24
+      pod_subnet: 10.2.0.1/16
+    operator_config:
+      mode: managed
+      target_version: 0.9.1
+    profile: {}
+    registry:
+      image_prefix: quay.io/noirolabs
+      network_operator_version: cko-mvp-1-test
+    service_mesh_config: {}
+    topology: {}
+status:
+  ready: true
