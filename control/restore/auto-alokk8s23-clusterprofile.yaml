@@ -3,7 +3,7 @@ kind: ClusterProfile
 metadata:
   annotations:
     notification-controller.netop.mgr/created: "true"
-  creationTimestamp: "2023-03-21T05:48:15Z"
+  creationTimestamp: "2023-03-20T09:15:02Z"
   finalizers:
   - clusterprofile.netop.mgr/finalizer
   generation: 1
@@ -86,7 +86,7 @@ metadata:
           f:mode: {}
     manager: manager
     operation: Update
-    time: "2023-03-21T05:48:16Z"
+    time: "2023-03-20T09:15:02Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -129,7 +129,7 @@ metadata:
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-03-21T05:48:19Z"
+    time: "2023-03-20T09:15:03Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -138,11 +138,11 @@ metadata:
     manager: OpenAPI-Generator
     operation: Update
     subresource: status
-    time: "2023-03-21T05:48:41Z"
+    time: "2023-03-20T09:15:25Z"
   name: auto-alokk8s23
   namespace: netop-manager
-  resourceVersion: "1766"
-  uid: b6cbea2b-dd2e-4607-b9fc-e0d0d176440c
+  resourceVersion: "2763"
+  uid: 3af8b827-a281-42aa-95ea-145897ace54a
 spec:
   cluster_name: alokk8s23
   cluster_network_profile_selector:
@@ -214,8 +214,8 @@ status:
       name: k8s23_vrf
       tenant: common
   fabricinfra:
-    context: auto-alokk8s23
-    name: alok
+    context: context-1
+    name: alokk8s23-fabric
   node_vlan: 45
   operator_config:
     mode: unmanaged
