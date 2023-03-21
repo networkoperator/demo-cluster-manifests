@@ -1,7 +1,7 @@
 apiVersion: netop.mgr/v1alpha1
 kind: ClusterInfo
 metadata:
-  creationTimestamp: "2023-03-21T09:29:05Z"
+  creationTimestamp: "2023-02-23T11:22:07Z"
   finalizers:
   - netop.mgr/finalizer
   generation: 2
@@ -15,14 +15,14 @@ metadata:
           v:"netop.mgr/finalizer": {}
     manager: ansible-operator
     operation: Update
-    time: "2023-03-21T09:29:05Z"
+    time: "2023-02-23T11:22:07Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
       f:metadata:
         f:ownerReferences:
           .: {}
-          k:{"uid":"62cf602c-d5f9-4c00-a7fb-94a89e996e65"}: {}
+          k:{"uid":"47f53a88-124c-4ef1-a55d-3ac4882f4a23"}: {}
       f:spec:
         .: {}
         f:config_overrides:
@@ -39,16 +39,26 @@ metadata:
                   .: {}
                   f:end: {}
                   f:start: {}
-                f:nested_inside: {}
+                f:nested_inside:
+                  .: {}
+                  f:installer_provisioned_lb_ip: {}
+                  f:name: {}
+                  f:type: {}
             f:kube_config:
               .: {}
               f:drop_log_config: {}
+              f:image_pull_policy: {}
               f:istio_config: {}
               f:multus: {}
               f:nodepodif_config: {}
               f:operator_managed_config: {}
+              f:ovs_memory_limit: {}
               f:sriov_config: {}
-            f:logging: {}
+            f:logging:
+              .: {}
+              f:controller_log_level: {}
+              f:hostagent_log_level: {}
+              f:opflexagent_log_level: {}
             f:net_config:
               .: {}
               f:extern_static: {}
@@ -63,7 +73,6 @@ metadata:
                 .: {}
                 f:peering: {}
               f:svi: {}
-              f:vrf: {}
             f:l3out:
               .: {}
               f:external_networks: {}
@@ -74,8 +83,11 @@ metadata:
               f:name: {}
               f:tenant: {}
           f:calico_cni_config: {}
-          f:cko_proxy_config: {}
-          f:cluster_profile_name: {}
+          f:cko_proxy_config:
+            .: {}
+            f:http_proxy: {}
+            f:https_proxy: {}
+            f:no_proxy: {}
           f:cni: {}
           f:connectivity_checker:
             .: {}
@@ -127,12 +139,15 @@ metadata:
             f:mode: {}
             f:target_version: {}
           f:profile: {}
-          f:registry: {}
+          f:registry:
+            .: {}
+            f:image_prefix: {}
+            f:network_operator_version: {}
           f:service_mesh_config: {}
           f:topology: {}
     manager: manager
     operation: Update
-    time: "2023-03-21T09:29:05Z"
+    time: "2023-02-23T11:22:07Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -142,7 +157,7 @@ metadata:
             f:system_id: {}
     manager: OpenAPI-Generator
     operation: Update
-    time: "2023-03-21T09:29:11Z"
+    time: "2023-02-23T11:22:14Z"
   name: ocp410gf
   namespace: netop-manager
   ownerReferences:
@@ -150,10 +165,10 @@ metadata:
     blockOwnerDeletion: true
     controller: true
     kind: ClusterProfile
-    name: ocp410gf-clusterprofile
-    uid: 62cf602c-d5f9-4c00-a7fb-94a89e996e65
-  resourceVersion: "1421"
-  uid: 450dcbfc-9db6-461b-a897-638f3b813f92
+    name: ocp410gf
+    uid: 47f53a88-124c-4ef1-a55d-3ac4882f4a23
+  resourceVersion: "1850"
+  uid: c43d9118-1fdc-4256-bfd1-c05a66789b4f
 spec:
   config_overrides:
     aci_cni_config:
@@ -163,19 +178,27 @@ spec:
           encap_type: vxlan
           mcast_range:
             end: 225.20.255.255
-            start: 225.20.0.1
-          nested_inside: {}
+            start: 225.20.1.1
+          nested_inside:
+            installer_provisioned_lb_ip: 192.168.2.2
+            name: HX_VC
+            type: vmware
       kube_config:
         drop_log_config: {}
+        image_pull_policy: Always
         istio_config: {}
         multus: {}
         nodepodif_config: {}
         operator_managed_config: {}
+        ovs_memory_limit: 1Gi
         sriov_config: {}
-      logging: {}
+      logging:
+        controller_log_level: debug
+        hostagent_log_level: debug
+        opflexagent_log_level: debug
       net_config:
         extern_static: 10.4.0.1/24
-        node_svc_subnet: 192.168.2.1/24
+        node_svc_subnet: 10.5.0.1/24
         service_vlan: 203
       registry: {}
     aci_config:
@@ -194,8 +217,10 @@ spec:
         name: ocp410_gf_vrf
         tenant: common
     calico_cni_config: {}
-    cko_proxy_config: {}
-    cluster_profile_name: ocp410gf-clusterprofile
+    cko_proxy_config:
+      http_proxy: http://proxy.esl.cisco.com:80
+      https_proxy: http://proxy.esl.cisco.com:80
+      no_proxy: localhost,127.0.0.1,10.30.120.125,10.30.120.120,10.30.120.20,noiro-quay.cisco.com,15.11.0.4,15.11.0.5,15.11.0.6,15.11.0.7,15.11.0.8,15.11.0.9,15.11.0.10,15.11.0.11,15.11.0.12,15.11.0.13,15.11.0.14,15.11.0.15,15.11.0.16,15.11.0.17,15.11.0.18,15.11.0.19,15.11.0.20,15.11.0.21,15.11.0.22,15.11.0.23,15.11.0.24,15.11.0.25,15.11.0.26,15.11.0.27,15.11.0.28,15.11.0.29,15.11.0.30,15.11.0.31,15.11.0.32,15.11.0.33,15.11.0.34,172.30.0.1,172.30.0.10,oauth-openshift.apps.openupi.noiro.local,console-openshift-console.apps.openupi.noiro.local,downloads-openshift-console.apps.openupi.noiro.local,1.100.1.1
     cni: aci
     connectivity_checker:
       error_pods_reporting_enable: true
@@ -227,9 +252,9 @@ spec:
         name: ocp410_gf_vrf
         tenant: common
     distro:
-      flavor: openshift-4.10-esx
+      flavor: openshift-4.9-esx
       platform: esx
-      release: "4.10"
+      release: "4.9"
       type: openshift
     fabricinfra:
       name: ocp410gf
@@ -241,13 +266,15 @@ spec:
       cluster_svc_subnet: 10.96.0.0/12
       extern_dynamic: 10.3.0.1/24
       kubeapi_vlan: 202
-      node_subnet: 10.5.0.1/24
+      node_subnet: 192.168.2.1/24
       pod_subnet: 10.2.0.1/16
     operator_config:
       mode: managed
-      target_version: 0.9.1
+      target_version: 0.9.0
     profile: {}
-    registry: {}
+    registry:
+      image_prefix: quay.io/cko
+      network_operator_version: 0.9.1.d04f56f
     service_mesh_config: {}
     topology: {}
 status:
