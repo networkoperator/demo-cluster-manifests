@@ -4,7 +4,7 @@ metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
       {"apiVersion":"netop.mgr/v1alpha1","kind":"FabricInfra","metadata":{"annotations":{},"labels":{"fabric":"aci-fab-02","site":"az02"},"name":"ocp410gf","namespace":"netop-manager"},"spec":{"contexts":{"context-1":{"aep":"fab20-esx","l3out":{"external_networks":["ocp-gf-l3-extepg"],"name":"ocp410_gf_l3out"},"vrf":{"name":"ocp410_gf_vrf","tenant":"common"}}},"credentials":{"hosts":["10.30.120.61"],"secretRef":{"name":"apic-credentials"}},"external_subnets":["10.3.0.1/24","10.4.0.1/24"],"fabric_type":"aci","infra_vlan":4093,"internal_subnets":["10.5.0.1/24","192.168.2.1/24"],"mcast_subnets":["225.20.0.0/16"],"vlans":[202,203]}}
-  creationTimestamp: "2023-03-21T09:15:34Z"
+  creationTimestamp: "2023-03-21T09:28:37Z"
   finalizers:
   - fabricinfra.netop.mgr/finalizer
   generation: 2
@@ -52,7 +52,7 @@ metadata:
         f:vlans: {}
     manager: kubectl-client-side-apply
     operation: Update
-    time: "2023-03-21T09:15:34Z"
+    time: "2023-03-21T09:28:37Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -65,23 +65,40 @@ metadata:
         f:topology: {}
     manager: manager
     operation: Update
-    time: "2023-03-21T09:15:34Z"
+    time: "2023-03-21T09:28:37Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
       f:status:
         .: {}
-        f:allocated: {}
-        f:available: {}
+        f:available:
+          .: {}
+          f:contexts:
+            .: {}
+            f:context-1:
+              .: {}
+              f:aep: {}
+              f:l3out:
+                .: {}
+                f:external_networks: {}
+                f:name: {}
+              f:vrf:
+                .: {}
+                f:name: {}
+                f:tenant: {}
+          f:external_subnets: {}
+          f:internal_subnets: {}
+          f:mcast_subnets: {}
+          f:vlans: {}
         f:ready: {}
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-03-21T09:16:19Z"
+    time: "2023-03-21T09:28:38Z"
   name: ocp410gf
   namespace: netop-manager
-  resourceVersion: "1704"
-  uid: 7b670d0c-b091-45ad-bd93-39d7c3533043
+  resourceVersion: "1242"
+  uid: 1187c947-f6cd-49e8-950b-666e7b367f52
 spec:
   bgp: {}
   contexts:
@@ -114,18 +131,17 @@ spec:
   - 202
   - 203
 status:
-  allocated:
-  - cluster_group_profile: ocp410gf-clustergroupprofile
-    cluster_profile: ocp410gf-clusterprofile
-    context:
-      aep: fab20-esx
-      l3out:
-        external_networks:
-        - ocp-gf-l3-extepg
-        name: ocp410_gf_l3out
-      vrf:
-        name: ocp410_gf_vrf
-        tenant: common
+  available:
+    contexts:
+      context-1:
+        aep: fab20-esx
+        l3out:
+          external_networks:
+          - ocp-gf-l3-extepg
+          name: ocp410_gf_l3out
+        vrf:
+          name: ocp410_gf_vrf
+          tenant: common
     external_subnets:
     - 10.3.0.1/24
     - 10.4.0.1/24
@@ -137,5 +153,4 @@ status:
     vlans:
     - 202
     - 203
-  available: {}
   ready: true
