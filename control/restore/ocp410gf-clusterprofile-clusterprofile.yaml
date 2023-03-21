@@ -132,9 +132,18 @@ metadata:
     operation: Update
     subresource: status
     time: "2023-03-21T09:29:05Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:cluster_info_error: {}
+    manager: OpenAPI-Generator
+    operation: Update
+    subresource: status
+    time: "2023-03-21T09:29:17Z"
   name: ocp410gf-clusterprofile
   namespace: netop-manager
-  resourceVersion: "1400"
+  resourceVersion: "1443"
   uid: 62cf602c-d5f9-4c00-a7fb-94a89e996e65
 spec:
   cluster_group_profile_selector:
@@ -198,6 +207,9 @@ status:
     pod_subnet: 10.2.0.1/16
   calico_cni_config: {}
   cluster_group_profile_name: ocp410gf-clustergroupprofile
+  cluster_info_error: |-
+    ERR:  Invalid configuration for aci_config/vmm_domain/nested_inside/installer_provisioned_lb_ip: Missing option
+    ERR:  Please fix configuration and retry.
   context:
     aep: fab20-esx
     l3out:
