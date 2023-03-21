@@ -2,8 +2,20 @@ apiVersion: netop.mgr/v1alpha1
 kind: ClusterInfo
 metadata:
   creationTimestamp: "2023-03-21T09:47:22Z"
-  generation: 1
+  finalizers:
+  - netop.mgr/finalizer
+  generation: 2
   managedFields:
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:finalizers:
+          .: {}
+          v:"netop.mgr/finalizer": {}
+    manager: ansible-operator
+    operation: Update
+    time: "2023-03-21T09:47:22Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -121,6 +133,16 @@ metadata:
     manager: manager
     operation: Update
     time: "2023-03-21T09:47:22Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:config_overrides:
+          f:aci_config:
+            f:system_id: {}
+    manager: OpenAPI-Generator
+    operation: Update
+    time: "2023-03-21T09:47:28Z"
   name: ocp410gf
   namespace: netop-manager
   ownerReferences:
@@ -130,7 +152,7 @@ metadata:
     kind: ClusterProfile
     name: ocp410gf-clusterprofile
     uid: d67dcd0b-fe07-4ccb-b8d8-f0f501ea4217
-  resourceVersion: "1501"
+  resourceVersion: "1516"
   uid: 9cc19815-ffe1-4a5f-bbe4-499a6a7b5cee
 spec:
   config_overrides:
@@ -167,6 +189,7 @@ spec:
         - ocp-gf-l3-extepg
         name: ocp410_gf_l3out
       physical_domain: {}
+      system_id: ocp410gf
       vrf:
         name: ocp410_gf_vrf
         tenant: common
