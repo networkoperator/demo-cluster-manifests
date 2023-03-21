@@ -4,7 +4,7 @@ metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
       {"apiVersion":"netop.mgr/v1alpha1","kind":"ClusterProfile","metadata":{"annotations":{},"name":"ocp410gf-clusterprofile","namespace":"netop-manager"},"spec":{"cluster_group_profile_selector":{"matchLabels":{"cni":"aci","distro":"openshift","environment":"prod","location":"az02","platform":"esx"}},"cluster_name":"ocp410gf"}}
-  creationTimestamp: "2023-03-17T09:54:56Z"
+  creationTimestamp: "2023-03-21T09:16:14Z"
   finalizers:
   - clusterprofile.netop.mgr/finalizer
   generation: 2
@@ -22,7 +22,7 @@ metadata:
         f:cluster_name: {}
     manager: kubectl-client-side-apply
     operation: Update
-    time: "2023-03-17T09:54:56Z"
+    time: "2023-03-21T09:16:14Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -87,7 +87,7 @@ metadata:
           f:mode: {}
     manager: manager
     operation: Update
-    time: "2023-03-17T09:54:56Z"
+    time: "2023-03-21T09:16:14Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -131,20 +131,11 @@ metadata:
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-03-17T09:55:01Z"
-  - apiVersion: netop.mgr/v1alpha1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:status:
-        f:cluster_info_error: {}
-    manager: OpenAPI-Generator
-    operation: Update
-    subresource: status
-    time: "2023-03-17T09:55:13Z"
+    time: "2023-03-21T09:16:19Z"
   name: ocp410gf-clusterprofile
   namespace: netop-manager
-  resourceVersion: "2617"
-  uid: 6d4c172f-c86d-4c6c-93a2-b735703d7dc8
+  resourceVersion: "1706"
+  uid: b048ae23-3669-41a9-8c1e-f10dcb760193
 spec:
   cluster_group_profile_selector:
     matchLabels:
@@ -207,9 +198,6 @@ status:
     pod_subnet: 10.2.0.1/16
   calico_cni_config: {}
   cluster_group_profile_name: ocp410gf-clustergroupprofile
-  cluster_info_error: |-
-    ERR:  Invalid configuration for aci_config/vmm_domain/nested_inside/installer_provisioned_lb_ip: Missing option
-    ERR:  Please fix configuration and retry.
   context:
     aep: fab20-esx
     l3out:

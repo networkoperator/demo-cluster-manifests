@@ -1,10 +1,10 @@
 apiVersion: netop.mgr/v1alpha1
 kind: ClusterInfo
 metadata:
-  creationTimestamp: "2023-02-27T09:52:28Z"
+  creationTimestamp: "2023-03-21T09:16:19Z"
   finalizers:
   - netop.mgr/finalizer
-  generation: 2
+  generation: 1
   managedFields:
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
@@ -15,14 +15,14 @@ metadata:
           v:"netop.mgr/finalizer": {}
     manager: ansible-operator
     operation: Update
-    time: "2023-02-27T09:52:28Z"
+    time: "2023-03-21T09:16:19Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
       f:metadata:
         f:ownerReferences:
           .: {}
-          k:{"uid":"2d9c4f19-0382-4177-9ec8-c1716fecea59"}: {}
+          k:{"uid":"b048ae23-3669-41a9-8c1e-f10dcb760193"}: {}
       f:spec:
         .: {}
         f:config_overrides:
@@ -63,6 +63,7 @@ metadata:
                 .: {}
                 f:peering: {}
               f:svi: {}
+              f:vrf: {}
             f:l3out:
               .: {}
               f:external_networks: {}
@@ -74,13 +75,21 @@ metadata:
               f:tenant: {}
           f:calico_cni_config: {}
           f:cko_proxy_config: {}
+          f:cluster_profile_name: {}
           f:cni: {}
           f:connectivity_checker:
             .: {}
+            f:error_pods_reporting_enable: {}
             f:reachability_test_enable:
               .: {}
-              f:external_url: {}
-              f:periodic_sync: {}
+              f:external_url:
+                .: {}
+                f:url: {}
+              f:periodic_sync:
+                .: {}
+                f:enable_updates: {}
+                f:interval: {}
+            f:reachability_tests: {}
           f:context:
             .: {}
             f:aep: {}
@@ -96,6 +105,7 @@ metadata:
             .: {}
             f:flavor: {}
             f:platform: {}
+            f:release: {}
             f:type: {}
           f:fabricinfra:
             .: {}
@@ -122,17 +132,7 @@ metadata:
           f:topology: {}
     manager: manager
     operation: Update
-    time: "2023-02-27T09:52:28Z"
-  - apiVersion: netop.mgr/v1alpha1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:spec:
-        f:config_overrides:
-          f:aci_config:
-            f:system_id: {}
-    manager: OpenAPI-Generator
-    operation: Update
-    time: "2023-02-27T09:52:35Z"
+    time: "2023-03-21T09:16:19Z"
   name: ocp410gf
   namespace: netop-manager
   ownerReferences:
@@ -140,10 +140,10 @@ metadata:
     blockOwnerDeletion: true
     controller: true
     kind: ClusterProfile
-    name: ocp410gf
-    uid: 2d9c4f19-0382-4177-9ec8-c1716fecea59
-  resourceVersion: "1727"
-  uid: 4b41060c-088a-4484-8145-e059defdc727
+    name: ocp410gf-clusterprofile
+    uid: b048ae23-3669-41a9-8c1e-f10dcb760193
+  resourceVersion: "1707"
+  uid: c78cd924-e815-477a-8d2e-a65be4518965
 spec:
   config_overrides:
     aci_cni_config:
@@ -179,17 +179,33 @@ spec:
         - ocp-gf-l3-extepg
         name: ocp410_gf_l3out
       physical_domain: {}
-      system_id: ocp410gf
       vrf:
         name: ocp410_gf_vrf
         tenant: common
     calico_cni_config: {}
     cko_proxy_config: {}
+    cluster_profile_name: ocp410gf-clusterprofile
     cni: aci
     connectivity_checker:
+      error_pods_reporting_enable: true
       reachability_test_enable:
-        external_url: {}
-        periodic_sync: {}
+        external_url:
+          url: google.com
+        periodic_sync:
+          enable_updates: true
+          interval: 120
+      reachability_tests:
+      - pod_to_pod
+      - pod_to_node
+      - pod_to_clusterIP
+      - pod_to_service
+      - pod_to_LB_VIP
+      - pod_to_NodePort
+      - pod_to_External
+      - node_to_node
+      - node_to_pod
+      - node_to_clusterIP
+      - node_to_LB_VIP
     context:
       aep: fab20-esx
       l3out:
@@ -200,9 +216,10 @@ spec:
         name: ocp410_gf_vrf
         tenant: common
     distro:
-      flavor: kubernetes-1.24
-      platform: baremetal
-      type: kubernetes
+      flavor: openshift-4.10-esx
+      platform: esx
+      release: "4.10"
+      type: openshift
     fabricinfra:
       name: ocp410gf
     gitops:
@@ -213,11 +230,11 @@ spec:
       cluster_svc_subnet: 10.96.0.0/12
       extern_dynamic: 10.3.0.1/24
       kubeapi_vlan: 202
-      node_subnet: 10.5.0.1/16
+      node_subnet: 10.5.0.1/24
       pod_subnet: 10.2.0.1/16
     operator_config:
       mode: managed
-      target_version: 0.9.0
+      target_version: 0.9.1
     profile: {}
     registry: {}
     service_mesh_config: {}
