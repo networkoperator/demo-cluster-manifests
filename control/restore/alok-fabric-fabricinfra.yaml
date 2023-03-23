@@ -4,7 +4,7 @@ metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
       {"apiVersion":"netop.mgr/v1alpha1","kind":"FabricInfra","metadata":{"annotations":{},"labels":{"fabric":"aci-fab-02","site":"az02"},"name":"alok-fabric","namespace":"netop-manager"},"spec":{"contexts":{"context-1":{"aep":"hypf-aep","l3out":{"external_networks":["k8s23_net"],"name":"k8s23"},"vrf":{"name":"k8s23_vrf","tenant":"common"}},"context-2":{"aep":"fab20-esx","l3out":{"external_networks":["k8s22_net"],"name":"k8s22"},"vrf":{"name":"k8s22_vrf","tenant":"common"}}},"credentials":{"hosts":["10.30.120.180"],"secretRef":{"name":"apic-credentials"}},"external_subnets":["10.3.0.1/24","10.4.0.1/24"],"fabric_type":"aci","infra_vlan":3901,"internal_subnets":["10.5.0.1/24","192.168.23.1/24","192.168.22.1/24"],"mcast_subnets":["225.33.0.0/16","225.32.0.0/16"],"vlans":[45,46,43,44]}}
-  creationTimestamp: "2023-03-20T10:11:49Z"
+  creationTimestamp: "2023-03-23T10:56:54Z"
   finalizers:
   - fabricinfra.netop.mgr/finalizer
   generation: 2
@@ -63,7 +63,7 @@ metadata:
         f:vlans: {}
     manager: kubectl-client-side-apply
     operation: Update
-    time: "2023-03-20T10:11:49Z"
+    time: "2023-03-23T10:56:54Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -76,7 +76,7 @@ metadata:
         f:topology: {}
     manager: manager
     operation: Update
-    time: "2023-03-20T10:11:49Z"
+    time: "2023-03-23T10:56:54Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -116,11 +116,11 @@ metadata:
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-03-20T10:11:50Z"
+    time: "2023-03-23T10:56:55Z"
   name: alok-fabric
   namespace: netop-manager
-  resourceVersion: "1533"
-  uid: 5a6fa7f5-6fb6-4837-81bf-b28ce87c9487
+  resourceVersion: "343290"
+  uid: 20423dd2-af48-4c3d-8f54-572d928e927d
 spec:
   bgp: {}
   contexts:
