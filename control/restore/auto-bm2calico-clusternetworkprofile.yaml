@@ -1,0 +1,205 @@
+apiVersion: netop.mgr/v1alpha1
+kind: ClusterNetworkProfile
+metadata:
+  annotations:
+    notification-controller.netop.mgr/created: "true"
+  creationTimestamp: "2023-02-18T02:46:46Z"
+  generation: 1
+  labels:
+    autodetect-cluster.notification-controller.netop.mgr: bm2calico
+  managedFields:
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:notification-controller.netop.mgr/created: {}
+        f:labels:
+          .: {}
+          f:autodetect-cluster.notification-controller.netop.mgr: {}
+      f:spec:
+        .: {}
+        f:config_overrides:
+          .: {}
+          f:aci_cni_config:
+            .: {}
+            f:aci_config:
+              .: {}
+              f:vmm_domain:
+                .: {}
+                f:mcast_range: {}
+                f:nested_inside: {}
+            f:kube_config:
+              .: {}
+              f:drop_log_config: {}
+              f:istio_config: {}
+              f:multus: {}
+              f:nodepodif_config: {}
+              f:operator_managed_config: {}
+              f:sriov_config: {}
+            f:logging: {}
+            f:net_config: {}
+            f:registry: {}
+          f:aci_config:
+            .: {}
+            f:cluster_l3out:
+              .: {}
+              f:aep: {}
+              f:bgp:
+                .: {}
+                f:peering:
+                  .: {}
+                  f:aci_as_number: {}
+                  f:remote_as_number: {}
+              f:svi:
+                .: {}
+                f:floating_ip: {}
+                f:mtu: {}
+                f:secondary_ip: {}
+                f:vlan_id: {}
+              f:vrf: {}
+            f:l3out:
+              .: {}
+              f:external_networks: {}
+              f:name: {}
+            f:physical_domain: {}
+            f:system_id: {}
+            f:vrf:
+              .: {}
+              f:name: {}
+              f:tenant: {}
+          f:calico_cni_config: {}
+          f:cko_proxy_config: {}
+          f:connectivity_checker:
+            .: {}
+            f:reachability_test_enable:
+              .: {}
+              f:external_url: {}
+              f:periodic_sync: {}
+          f:context:
+            .: {}
+            f:l3out: {}
+            f:vrf: {}
+          f:distro: {}
+          f:fabricinfra:
+            .: {}
+            f:name: {}
+            f:type: {}
+          f:gitops:
+            .: {}
+            f:base64_encoded_argo_manifests: {}
+          f:lb_config: {}
+          f:monitoring_config: {}
+          f:net_config:
+            .: {}
+            f:cluster_svc_subnet: {}
+            f:extern_dynamic: {}
+            f:node_subnet: {}
+            f:pod_subnet: {}
+          f:operator_config:
+            .: {}
+            f:mode: {}
+          f:profile: {}
+          f:registry: {}
+          f:service_mesh_config: {}
+          f:topology:
+            .: {}
+            f:rack: {}
+    manager: manager
+    operation: Update
+    time: "2023-02-18T02:46:46Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        .: {}
+        f:ready: {}
+    manager: manager
+    operation: Update
+    subresource: status
+    time: "2023-02-18T02:46:46Z"
+  name: auto-bm2calico
+  namespace: netop-manager
+  resourceVersion: "8333729"
+  uid: f4e1b637-7566-4bf7-9ea0-841969e72f72
+spec:
+  config_overrides:
+    aci_cni_config:
+      aci_config:
+        vmm_domain:
+          mcast_range: {}
+          nested_inside: {}
+      kube_config:
+        drop_log_config: {}
+        istio_config: {}
+        multus: {}
+        nodepodif_config: {}
+        operator_managed_config: {}
+        sriov_config: {}
+      logging: {}
+      net_config: {}
+      registry: {}
+    aci_config:
+      cluster_l3out:
+        aep: bm-srvrs-calico-aep
+        bgp:
+          peering:
+            aci_as_number: 2
+            remote_as_number: 64512
+        svi:
+          floating_ip: 2.100.101.100/24
+          mtu: 9000
+          secondary_ip: 2.100.101.254/24
+          vlan_id: 13
+        vrf: {}
+      l3out:
+        external_networks:
+        - test_default
+        name: test_l3out
+      physical_domain: {}
+      system_id: bm2calico-vlan-13
+      vrf:
+        name: bm2calico_vrf
+        tenant: bm2calico
+    calico_cni_config: {}
+    cko_proxy_config: {}
+    connectivity_checker:
+      reachability_test_enable:
+        external_url: {}
+        periodic_sync: {}
+    context:
+      l3out: {}
+      vrf: {}
+    distro: {}
+    fabricinfra:
+      name: k8s-bm-2
+      type: aci
+    gitops:
+      base64_encoded_argo_manifests: ""
+    lb_config: {}
+    monitoring_config: {}
+    net_config:
+      cluster_svc_subnet: 10.96.0.0/12
+      extern_dynamic: 20.3.0.0/16
+      node_subnet: 2.100.101.1/24
+      pod_subnet: 20.2.0.2/16
+    operator_config:
+      mode: managed
+    profile: {}
+    registry: {}
+    service_mesh_config: {}
+    topology:
+      rack:
+      - aci_pod_id: 1
+        id: 1
+        leaf:
+        - id: 101
+          local_ip: 2.100.101.201
+        - id: 102
+          local_ip: 2.100.101.202
+        node:
+        - name: k8sbm2-bm-4
+        - name: k8sbm2-bm-5
+status:
+  ready: true
