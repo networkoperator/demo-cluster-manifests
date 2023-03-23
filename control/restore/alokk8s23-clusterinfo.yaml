@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: "2023-03-23T10:57:19Z"
   finalizers:
   - netop.mgr/finalizer
-  generation: 1
+  generation: 2
   managedFields:
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
@@ -133,6 +133,16 @@ metadata:
     manager: manager
     operation: Update
     time: "2023-03-23T10:57:19Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:config_overrides:
+          f:aci_config:
+            f:system_id: {}
+    manager: OpenAPI-Generator
+    operation: Update
+    time: "2023-03-23T10:57:25Z"
   name: alokk8s23
   namespace: netop-manager
   ownerReferences:
@@ -142,7 +152,7 @@ metadata:
     kind: ClusterProfile
     name: k8s-prod-002
     uid: 4af4e011-28c2-4491-9854-c13fc0efcf30
-  resourceVersion: "343363"
+  resourceVersion: "343377"
   uid: 1d47208e-1cdc-49f1-8ff9-06df4d13aa90
 spec:
   config_overrides:
@@ -179,6 +189,7 @@ spec:
         - k8s23_net
         name: k8s23
       physical_domain: {}
+      system_id: alokk8s23
       vrf:
         name: k8s23_vrf
         tenant: common

@@ -132,9 +132,18 @@ metadata:
     operation: Update
     subresource: status
     time: "2023-03-23T10:57:19Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:cluster_info_error: {}
+    manager: OpenAPI-Generator
+    operation: Update
+    subresource: status
+    time: "2023-03-23T10:57:31Z"
   name: k8s-prod-002
   namespace: netop-manager
-  resourceVersion: "343362"
+  resourceVersion: "343391"
   uid: 4af4e011-28c2-4491-9854-c13fc0efcf30
 spec:
   cluster_group_profile_selector:
@@ -198,6 +207,14 @@ status:
     pod_subnet: 10.2.0.1/16
   calico_cni_config: {}
   cluster_group_profile_name: k8s-prod-acicni-az02
+  cluster_info_error: "ERR:  Error in getting /api/node/class/firmwareCtrlrRunning.json:
+    APIC REST Error: {'attributes': {'code': '403', 'text': 'Need a valid webtoken
+    cookie (named APIC-Cookie) or a signed request with signature in the cookie APIC-Request-Signature
+    for all REST API requests'}}: \nERR:  Error in getting /api/node/class/firmwareCtrlrRunning.json:
+    APIC REST Error: {'attributes': {'code': '403', 'text': 'Need a valid webtoken
+    cookie (named APIC-Cookie) or a signed request with signature in the cookie APIC-Request-Signature
+    for all REST API requests'}}: \nERR:  AttributeError: 'NoneType' object has no
+    attribute 'apic_version'"
   context:
     aep: hypf-aep
     l3out:
