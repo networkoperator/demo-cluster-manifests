@@ -4,7 +4,7 @@ metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
       {"apiVersion":"netop.mgr/v1alpha1","kind":"ClusterProfile","metadata":{"annotations":{},"name":"k8s-prod-002","namespace":"netop-manager"},"spec":{"cluster_group_profile_selector":{"matchLabels":{"cni":"aci","distro":"kubernetes","environment":"prod","location":"az02","platform":"esx"}},"cluster_name":"alokk8s23"}}
-  creationTimestamp: "2023-03-20T10:13:50Z"
+  creationTimestamp: "2023-03-23T10:57:13Z"
   finalizers:
   - clusterprofile.netop.mgr/finalizer
   generation: 3
@@ -46,6 +46,7 @@ metadata:
                 .: {}
                 f:peering: {}
               f:svi: {}
+              f:vrf: {}
             f:l3out: {}
             f:physical_domain: {}
             f:vrf: {}
@@ -72,7 +73,7 @@ metadata:
           f:mode: {}
     manager: manager
     operation: Update
-    time: "2023-03-20T10:13:51Z"
+    time: "2023-03-23T10:57:13Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -86,7 +87,7 @@ metadata:
         f:cluster_name: {}
     manager: kubectl-client-side-apply
     operation: Update
-    time: "2023-03-20T10:13:55Z"
+    time: "2023-03-23T10:57:17Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -130,11 +131,11 @@ metadata:
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-03-20T10:13:56Z"
+    time: "2023-03-23T10:57:19Z"
   name: k8s-prod-002
   namespace: netop-manager
-  resourceVersion: "1814"
-  uid: ab9372e4-1409-4b67-ad0e-680a62215d80
+  resourceVersion: "343362"
+  uid: 4af4e011-28c2-4491-9854-c13fc0efcf30
 spec:
   cluster_group_profile_selector:
     matchLabels:

@@ -82,21 +82,11 @@ metadata:
     fieldsV1:
       f:status:
         .: {}
+        f:allocated: {}
         f:available:
           .: {}
           f:contexts:
             .: {}
-            f:context-1:
-              .: {}
-              f:aep: {}
-              f:l3out:
-                .: {}
-                f:external_networks: {}
-                f:name: {}
-              f:vrf:
-                .: {}
-                f:name: {}
-                f:tenant: {}
             f:context-2:
               .: {}
               f:aep: {}
@@ -108,7 +98,6 @@ metadata:
                 .: {}
                 f:name: {}
                 f:tenant: {}
-          f:external_subnets: {}
           f:internal_subnets: {}
           f:mcast_subnets: {}
           f:vlans: {}
@@ -116,10 +105,10 @@ metadata:
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-03-23T10:56:55Z"
+    time: "2023-03-23T10:57:19Z"
   name: alok-fabric
   namespace: netop-manager
-  resourceVersion: "343290"
+  resourceVersion: "343360"
   uid: 20423dd2-af48-4c3d-8f54-572d928e927d
 spec:
   bgp: {}
@@ -166,17 +155,31 @@ spec:
   - 43
   - 44
 status:
+  allocated:
+  - cluster_group_profile: k8s-prod-acicni-az02
+    cluster_profile: k8s-prod-002
+    context:
+      aep: hypf-aep
+      l3out:
+        external_networks:
+        - k8s23_net
+        name: k8s23
+      vrf:
+        name: k8s23_vrf
+        tenant: common
+    external_subnets:
+    - 10.3.0.1/24
+    - 10.4.0.1/24
+    internal_subnets:
+    - 10.5.0.1/24
+    - 192.168.23.1/24
+    mcast_subnets:
+    - 225.33.0.0/16
+    vlans:
+    - 45
+    - 46
   available:
     contexts:
-      context-1:
-        aep: hypf-aep
-        l3out:
-          external_networks:
-          - k8s23_net
-          name: k8s23
-        vrf:
-          name: k8s23_vrf
-          tenant: common
       context-2:
         aep: fab20-esx
         l3out:
@@ -186,19 +189,11 @@ status:
         vrf:
           name: k8s22_vrf
           tenant: common
-    external_subnets:
-    - 10.3.0.1/24
-    - 10.4.0.1/24
     internal_subnets:
-    - 10.5.0.1/24
-    - 192.168.23.1/24
     - 192.168.22.1/24
     mcast_subnets:
-    - 225.33.0.0/16
     - 225.32.0.0/16
     vlans:
-    - 45
-    - 46
     - 43
     - 44
   ready: true
