@@ -1,0 +1,259 @@
+apiVersion: netop.mgr/v1alpha1
+kind: FabricInfra
+metadata:
+  creationTimestamp: "2023-02-18T02:46:11Z"
+  finalizers:
+  - fabricinfra.netop.mgr/finalizer
+  generation: 1
+  labels:
+    fabric: on-prem-dev-infra
+    site: bldg-15-lab
+  managedFields:
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:labels:
+          .: {}
+          f:fabric: {}
+          f:site: {}
+      f:spec:
+        .: {}
+        f:bgp:
+          .: {}
+          f:aci_as_number: {}
+          f:remote_as_numbers: {}
+        f:contexts:
+          .: {}
+          f:context-1:
+            .: {}
+            f:aep: {}
+            f:l3out:
+              .: {}
+              f:external_networks: {}
+              f:name: {}
+            f:vrf:
+              .: {}
+              f:name: {}
+              f:tenant: {}
+          f:context-2:
+            .: {}
+            f:aep: {}
+            f:l3out:
+              .: {}
+              f:external_networks: {}
+              f:name: {}
+            f:vrf:
+              .: {}
+              f:name: {}
+              f:tenant: {}
+        f:credentials:
+          .: {}
+          f:hosts: {}
+          f:secretRef:
+            .: {}
+            f:name: {}
+        f:external_subnets: {}
+        f:fabric_type: {}
+        f:infra_vlan: {}
+        f:internal_subnets: {}
+        f:mcast_subnets: {}
+        f:pod_subnets: {}
+        f:topology:
+          .: {}
+          f:rack: {}
+        f:vlans: {}
+    manager: kubectl-create
+    operation: Update
+    time: "2023-02-18T02:46:11Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:finalizers:
+          .: {}
+          v:"fabricinfra.netop.mgr/finalizer": {}
+    manager: manager
+    operation: Update
+    time: "2023-02-18T02:46:11Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        .: {}
+        f:allocated: {}
+        f:available:
+          .: {}
+          f:contexts:
+            .: {}
+            f:context-1:
+              .: {}
+              f:aep: {}
+              f:l3out:
+                .: {}
+                f:external_networks: {}
+                f:name: {}
+              f:vrf:
+                .: {}
+                f:name: {}
+                f:tenant: {}
+            f:context-2:
+              .: {}
+              f:aep: {}
+              f:l3out:
+                .: {}
+                f:external_networks: {}
+                f:name: {}
+              f:vrf:
+                .: {}
+                f:name: {}
+                f:tenant: {}
+          f:external_subnets: {}
+          f:internal_subnets: {}
+          f:mcast_subnets: {}
+          f:pod_subnets: {}
+          f:vlans: {}
+        f:ready: {}
+    manager: manager
+    operation: Update
+    subresource: status
+    time: "2023-02-18T02:46:46Z"
+  name: k8s-bm-2
+  namespace: netop-manager
+  resourceVersion: "8333732"
+  uid: e4042dd2-706a-457f-8e60-c3cd006b3843
+spec:
+  bgp:
+    aci_as_number: 2
+    remote_as_numbers:
+    - 64512
+  contexts:
+    context-1:
+      aep: bm-srvrs-aep
+      l3out:
+        external_networks:
+        - sauto_l3out-1_epg
+        name: sauto_l3out-1
+      vrf:
+        name: sauto_l3out-1_vrf
+        tenant: common
+    context-2:
+      aep: bm-srvrs-calico-aep
+      l3out:
+        external_networks:
+        - sauto_l3out-3_epg
+        name: sauto_l3out-3
+      vrf:
+        name: sauto_l3out-3_vrf
+        tenant: common
+  credentials:
+    hosts:
+    - 10.30.120.140
+    secretRef:
+      name: apic-credentials
+  external_subnets:
+  - 10.3.0.1/16
+  - 10.4.0.1/16
+  - 20.3.0.1/16
+  - 20.4.0.1/16
+  fabric_type: aci
+  infra_vlan: 4093
+  internal_subnets:
+  - 1.100.101.1/16
+  - 2.100.101.1/16
+  - 10.5.0.1/16
+  - 10.6.0.1/16
+  - 20.2.0.1/16
+  - 20.5.0.1/16
+  mcast_subnets:
+  - 225.114.0.0/16
+  - 225.115.0.0/16
+  pod_subnets:
+  - 10.7.0.1/16
+  - 10.8.0.1/16
+  topology:
+    rack:
+    - aci_pod_id: 1
+      id: 1
+      leaf:
+      - id: 101
+      - id: 102
+      node:
+      - name: k8s-node1
+      - name: k8s-node2
+    - aci_pod_id: 1
+      id: 2
+      leaf:
+      - id: 103
+      - id: 104
+      node:
+      - name: k8s-node3
+      - name: k8s-node4
+  vlans:
+  - 101
+  - 102
+  - 103
+  - 104
+status:
+  allocated:
+  - cluster_profile: auto-bm2calico
+    context:
+      l3out:
+        external_networks:
+        - test_default
+        name: test_l3out
+      vrf:
+        name: bm2calico_vrf
+        tenant: bm2calico
+    external_subnets:
+    - 20.3.0.0/16
+    internal_subnets:
+    - 2.100.101.1/24
+    remote_as_numbers:
+    - 64512
+    vlans:
+    - 13
+  available:
+    contexts:
+      context-1:
+        aep: bm-srvrs-aep
+        l3out:
+          external_networks:
+          - sauto_l3out-1_epg
+          name: sauto_l3out-1
+        vrf:
+          name: sauto_l3out-1_vrf
+          tenant: common
+      context-2:
+        aep: bm-srvrs-calico-aep
+        l3out:
+          external_networks:
+          - sauto_l3out-3_epg
+          name: sauto_l3out-3
+        vrf:
+          name: sauto_l3out-3_vrf
+          tenant: common
+    external_subnets:
+    - 10.3.0.1/16
+    - 10.4.0.1/16
+    - 20.3.0.1/16
+    - 20.4.0.1/16
+    internal_subnets:
+    - 1.100.101.1/16
+    - 2.100.101.1/16
+    - 10.5.0.1/16
+    - 10.6.0.1/16
+    - 20.2.0.1/16
+    - 20.5.0.1/16
+    mcast_subnets:
+    - 225.114.0.0/16
+    - 225.115.0.0/16
+    pod_subnets:
+    - 10.7.0.1/16
+    - 10.8.0.1/16
+    vlans:
+    - 101
+    - 102
+    - 103
+    - 104
+  ready: true
