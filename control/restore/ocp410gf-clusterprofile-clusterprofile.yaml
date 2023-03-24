@@ -4,7 +4,7 @@ metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
       {"apiVersion":"netop.mgr/v1alpha1","kind":"ClusterProfile","metadata":{"annotations":{},"name":"ocp410gf-clusterprofile","namespace":"netop-manager"},"spec":{"cluster_group_profile_selector":{"matchLabels":{"cni":"aci","distro":"openshift","environment":"prod","location":"az02","platform":"esx"}},"cluster_name":"ocp410gf"}}
-  creationTimestamp: "2023-03-21T09:47:17Z"
+  creationTimestamp: "2023-03-24T09:57:03Z"
   finalizers:
   - clusterprofile.netop.mgr/finalizer
   generation: 2
@@ -22,7 +22,7 @@ metadata:
         f:cluster_name: {}
     manager: kubectl-client-side-apply
     operation: Update
-    time: "2023-03-21T09:47:17Z"
+    time: "2023-03-24T09:57:03Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -87,7 +87,7 @@ metadata:
           f:mode: {}
     manager: manager
     operation: Update
-    time: "2023-03-21T09:47:17Z"
+    time: "2023-03-24T09:57:03Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -131,7 +131,7 @@ metadata:
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-03-21T09:47:22Z"
+    time: "2023-03-24T09:57:08Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -140,11 +140,11 @@ metadata:
     manager: OpenAPI-Generator
     operation: Update
     subresource: status
-    time: "2023-03-21T09:47:34Z"
+    time: "2023-03-24T09:57:21Z"
   name: ocp410gf-clusterprofile
   namespace: netop-manager
-  resourceVersion: "1534"
-  uid: d67dcd0b-fe07-4ccb-b8d8-f0f501ea4217
+  resourceVersion: "1727"
+  uid: 7c7fae1a-1b02-4589-a288-999abc69a877
 spec:
   cluster_group_profile_selector:
     matchLabels:

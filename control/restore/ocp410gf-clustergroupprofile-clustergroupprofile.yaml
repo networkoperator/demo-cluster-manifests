@@ -4,7 +4,7 @@ metadata:
   annotations:
     kubectl.kubernetes.io/last-applied-configuration: |
       {"apiVersion":"netop.mgr/v1alpha1","kind":"ClusterGroupProfile","metadata":{"annotations":{},"labels":{"cni":"aci","distro":"openshift","environment":"prod","location":"az02","platform":"esx"},"name":"ocp410gf-clustergroupprofile","namespace":"netop-manager"},"spec":{"config_overrides":{"cni":"aci","connectivity_checker":{"error_pods_reporting_enable":true,"reachability_test_enable":{"external_url":{"url":"google.com"},"periodic_sync":{"enable_updates":true,"interval":120}},"reachability_tests":["pod_to_pod","pod_to_node","pod_to_clusterIP","pod_to_service","pod_to_LB_VIP","pod_to_NodePort","pod_to_External","node_to_node","node_to_pod","node_to_clusterIP","node_to_LB_VIP"]},"distro":{"platform":"esx","release":"4.10","type":"openshift"},"operator_config":{"target_version":"0.9.1"}},"selector":{"matchLabels":{"fabric":"aci-fab-02","site":"az02"}}}}
-  creationTimestamp: "2023-03-21T09:47:09Z"
+  creationTimestamp: "2023-03-24T09:56:50Z"
   generation: 1
   labels:
     cni: aci
@@ -57,7 +57,7 @@ metadata:
         f:selector: {}
     manager: kubectl-client-side-apply
     operation: Update
-    time: "2023-03-21T09:47:09Z"
+    time: "2023-03-24T09:56:50Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -70,11 +70,11 @@ metadata:
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-03-21T09:47:22Z"
+    time: "2023-03-24T09:57:08Z"
   name: ocp410gf-clustergroupprofile
   namespace: netop-manager
-  resourceVersion: "1498"
-  uid: dc3983a8-0fba-4884-b05d-edca82d675a9
+  resourceVersion: "1689"
+  uid: a8110dc4-7bfe-4668-a851-6fded0247552
 spec:
   config_overrides:
     aci_cni_config:
