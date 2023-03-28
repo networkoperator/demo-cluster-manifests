@@ -1,11 +1,11 @@
 apiVersion: v1
 data:
   data: 'name:cko-diagnostic-connectivity-checker, ns:null, status:{"gStatus":{"test-conn-check":"{UpdatedAt:2023-03-28
-    07:43:31.782127132 +0000 UTC Results:{PodToPod:Pass PodToNode:Pass PodToClusterIp:Pass
+    07:48:43.279094222 +0000 UTC Results:{PodToPod:Pass PodToNode:Pass PodToClusterIp:Pass
     PodToService:Pass PodToLbVip:Fail PodToNodePort:Pass PodToExternal:Pass NodeToNode:Pass
     NodeToPod:Pass NodeToClusterIp:Pass NodeToLbVip:Pass NodeToNodePort: NodeToExternal:}
     ResultCount:{Passed:10 Failed:1 Skipped:2}}"},"observedGeneration":2,"state":"Running","type":"connectivityChecker"},
-    status_b64:eyJnU3RhdHVzIjp7InRlc3QtY29ubi1jaGVjayI6IntVcGRhdGVkQXQ6MjAyMy0wMy0yOCAwNzo0MzozMS43ODIxMjcxMzIgKzAwMDAgVVRDIFJlc3VsdHM6e1BvZFRvUG9kOlBhc3MgUG9kVG9Ob2RlOlBhc3MgUG9kVG9DbHVzdGVySXA6UGFzcyBQb2RUb1NlcnZpY2U6UGFzcyBQb2RUb0xiVmlwOkZhaWwgUG9kVG9Ob2RlUG9ydDpQYXNzIFBvZFRvRXh0ZXJuYWw6UGFzcyBOb2RlVG9Ob2RlOlBhc3MgTm9kZVRvUG9kOlBhc3MgTm9kZVRvQ2x1c3RlcklwOlBhc3MgTm9kZVRvTGJWaXA6UGFzcyBOb2RlVG9Ob2RlUG9ydDogTm9kZVRvRXh0ZXJuYWw6fSBSZXN1bHRDb3VudDp7UGFzc2VkOjEwIEZhaWxlZDoxIFNraXBwZWQ6Mn19In0sIm9ic2VydmVkR2VuZXJhdGlvbiI6Miwic3RhdGUiOiJSdW5uaW5nIiwidHlwZSI6ImNvbm5lY3Rpdml0eUNoZWNrZXIifQ=='
+    status_b64:eyJnU3RhdHVzIjp7InRlc3QtY29ubi1jaGVjayI6IntVcGRhdGVkQXQ6MjAyMy0wMy0yOCAwNzo0ODo0My4yNzkwOTQyMjIgKzAwMDAgVVRDIFJlc3VsdHM6e1BvZFRvUG9kOlBhc3MgUG9kVG9Ob2RlOlBhc3MgUG9kVG9DbHVzdGVySXA6UGFzcyBQb2RUb1NlcnZpY2U6UGFzcyBQb2RUb0xiVmlwOkZhaWwgUG9kVG9Ob2RlUG9ydDpQYXNzIFBvZFRvRXh0ZXJuYWw6UGFzcyBOb2RlVG9Ob2RlOlBhc3MgTm9kZVRvUG9kOlBhc3MgTm9kZVRvQ2x1c3RlcklwOlBhc3MgTm9kZVRvTGJWaXA6UGFzcyBOb2RlVG9Ob2RlUG9ydDogTm9kZVRvRXh0ZXJuYWw6fSBSZXN1bHRDb3VudDp7UGFzc2VkOjEwIEZhaWxlZDoxIFNraXBwZWQ6Mn19In0sIm9ic2VydmVkR2VuZXJhdGlvbiI6Miwic3RhdGUiOiJSdW5uaW5nIiwidHlwZSI6ImNvbm5lY3Rpdml0eUNoZWNrZXIifQ=='
 kind: ConfigMap
 metadata:
   creationTimestamp: null
