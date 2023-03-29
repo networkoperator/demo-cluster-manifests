@@ -1,8 +1,8 @@
 apiVersion: v1
 data:
-  data: name:installer-aci-cni, ns:null, status:{"componentStatus":{"cko-cni":{"lastUpdated":"282828-328-280
-    328:03:03","mode":"managed","type":"cko-cni-aci"}},"observedGeneration":3,"operatorStatus":"Running"},
-    status_b64:eyJjb21wb25lbnRTdGF0dXMiOnsiY2tvLWNuaSI6eyJsYXN0VXBkYXRlZCI6IjI4MjgyOC0zMjgtMjgwIDMyODowMzowMyIsIm1vZGUiOiJtYW5hZ2VkIiwidHlwZSI6ImNrby1jbmktYWNpIn19LCJvYnNlcnZlZEdlbmVyYXRpb24iOjMsIm9wZXJhdG9yU3RhdHVzIjoiUnVubmluZyJ9
+  data: name:installer-aci-cni, ns:null, status:{"componentStatus":{"cko-cni":{"lastUpdated":"292929-329-290
+    329:03:03","mode":"managed","type":"cko-cni-aci"}},"observedGeneration":4,"operatorStatus":"Running"},
+    status_b64:eyJjb21wb25lbnRTdGF0dXMiOnsiY2tvLWNuaSI6eyJsYXN0VXBkYXRlZCI6IjI5MjkyOS0zMjktMjkwIDMyOTowMzowMyIsIm1vZGUiOiJtYW5hZ2VkIiwidHlwZSI6ImNrby1jbmktYWNpIn19LCJvYnNlcnZlZEdlbmVyYXRpb24iOjQsIm9wZXJhdG9yU3RhdHVzIjoiUnVubmluZyJ9
 kind: ConfigMap
 metadata:
   creationTimestamp: null
