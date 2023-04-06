@@ -1,0 +1,114 @@
+apiVersion: netop.mgr/v1alpha1
+kind: ClusterGroupProfile
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"netop.mgr/v1alpha1","kind":"ClusterGroupProfile","metadata":{"annotations":{},"labels":{"computes":"NOVA","distro":"K8S-1.21","location":"ON-PREM","network-infra":"ACI","pod-network":"aci-cni"},"name":"ocp410gf","namespace":"netop-manager"},"spec":{"config_overrides":{"cni":"aci","distro":{"platform":"esx","release":"4.10","type":"openshift"}},"selector":{"matchLabels":{"fabric":"4.2.7f","site":"BUILDING-15-LAB"}}}}
+  creationTimestamp: "2023-04-06T10:37:53Z"
+  generation: 1
+  labels:
+    computes: NOVA
+    distro: K8S-1.21
+    location: ON-PREM
+    network-infra: ACI
+    pod-network: aci-cni
+  managedFields:
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:labels:
+          .: {}
+          f:computes: {}
+          f:distro: {}
+          f:location: {}
+          f:network-infra: {}
+          f:pod-network: {}
+      f:spec:
+        .: {}
+        f:config_overrides:
+          .: {}
+          f:cni: {}
+          f:distro:
+            .: {}
+            f:platform: {}
+            f:release: {}
+            f:type: {}
+        f:selector: {}
+    manager: kubectl-client-side-apply
+    operation: Update
+    time: "2023-04-06T10:37:53Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        .: {}
+        f:state: {}
+    manager: manager
+    operation: Update
+    subresource: status
+    time: "2023-04-06T10:37:53Z"
+  name: ocp410gf
+  namespace: netop-manager
+  resourceVersion: "8772"
+  uid: 356f9517-c491-4d35-9811-1466729eb4b4
+spec:
+  config_overrides:
+    aci_cni_config:
+      aci_config:
+        vmm_domain:
+          mcast_range: {}
+          nested_inside: {}
+      kube_config:
+        drop_log_config: {}
+        istio_config: {}
+        multus: {}
+        nodepodif_config: {}
+        operator_managed_config: {}
+        sriov_config: {}
+      logging: {}
+      net_config: {}
+      registry: {}
+    aci_config:
+      cluster_l3out:
+        bgp:
+          peering: {}
+        svi: {}
+        vrf: {}
+      l3out: {}
+      physical_domain: {}
+      vrf: {}
+    calico_cni_config: {}
+    cko_proxy_config: {}
+    cni: aci
+    connectivity_checker:
+      reachability_test_enable:
+        external_url: {}
+        periodic_sync: {}
+    context:
+      l3out: {}
+      vrf: {}
+    distro:
+      platform: esx
+      release: "4.10"
+      type: openshift
+    fabricinfra: {}
+    gitops:
+      base64_encoded_argo_manifests: ""
+    lb_config: {}
+    monitoring_config: {}
+    net_config: {}
+    operator_config: {}
+    profile: {}
+    registry: {}
+    service_mesh_config: {}
+    topology: {}
+  selector:
+    matchLabels:
+      fabric: 4.2.7f
+      site: BUILDING-15-LAB
+status:
+  state: true
