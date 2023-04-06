@@ -1,0 +1,226 @@
+apiVersion: netop.mgr/v1alpha1
+kind: ClusterNetworkProfile
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"netop.mgr/v1alpha1","kind":"ClusterNetworkProfile","metadata":{"annotations":{},"labels":{"distro":"kubernetes","location":"on-prem","pod-network":"aci"},"name":"ocp410gf","namespace":"netop-manager"},"spec":{"config_overrides":{"aci_cni_config":{"aci_config":{"aep":"fab20-esx","vmm_domain":{"encap_type":"vxlan","mcast_range":{"end":"225.20.255.255","start":"225.20.1.1"}}},"kube_config":{"image_pull_policy":"Always","opflex_agent_prometheus":false,"ovs_memory_limit":"0.75Gi"},"logging":{"controller_log_level":"debug","hostagent_log_level":"debug","opflexagent_log_level":"debug"},"net_config":{"extern_static":"10.4.0.1/24","node_svc_subnet":"10.5.0.1/24","service_vlan":203},"registry":{"acc_provision_operator_version":"kmr2-test","aci_containers_controller_version":"kmr2-test","aci_containers_host_version":"kmr2-test","aci_containers_operator_version":"kmr2-test","cnideploy_version":"kmr2-test","openvswitch_version":"kmr2-test","opflex_agent_version":"kmr2-test"}},"aci_config":{"l3out":{"external_networks":["ocp-gf-l3-extepg"],"name":"ocp410_gf_l3out"},"vrf":{"name":"ocp410_gf_vrf","tenant":"common"}},"cko_proxy_config":{"http_proxy":"http://proxy.esl.cisco.com:80","https_proxy":"http://proxy.esl.cisco.com:80"},"cni":"aci","connectivity_checker":{"error_pods_reporting_enable":true,"reachability_test_enable":{"external_url":{"url":"google.com"},"periodic_sync":{"enable_updates":true,"interval":120}},"reachability_tests":["pod_to_pod","pod_to_node","pod_to_clusterIP","pod_to_service","pod_to_LB_VIP","pod_to_NodePort","pod_to_External","node_to_node","node_to_pod","node_to_clusterIP","node_to_LB_VIP"]},"fabricinfra":{"name":"ocp410gf"},"net_config":{"cluster_svc_subnet":"10.5.0.1/24","extern_dynamic":"10.3.0.1/24","kubeapi_vlan":202,"node_subnet":"192.168.2.1/24","pod_subnet":"10.2.0.1/16"},"registry":{"image_prefix":"quay.io/noirolabs","image_pull_secret":"noiro-docker-registry-secret","network_operator_version":"cko-mvp-1"}}}}
+  creationTimestamp: "2023-04-06T10:46:18Z"
+  generation: 1
+  labels:
+    distro: kubernetes
+    location: on-prem
+    pod-network: aci
+  managedFields:
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:labels:
+          .: {}
+          f:distro: {}
+          f:location: {}
+          f:pod-network: {}
+      f:spec:
+        .: {}
+        f:config_overrides:
+          .: {}
+          f:aci_cni_config:
+            .: {}
+            f:aci_config:
+              .: {}
+              f:aep: {}
+              f:vmm_domain:
+                .: {}
+                f:encap_type: {}
+                f:mcast_range:
+                  .: {}
+                  f:end: {}
+                  f:start: {}
+            f:kube_config:
+              .: {}
+              f:image_pull_policy: {}
+              f:opflex_agent_prometheus: {}
+              f:ovs_memory_limit: {}
+            f:logging:
+              .: {}
+              f:controller_log_level: {}
+              f:hostagent_log_level: {}
+              f:opflexagent_log_level: {}
+            f:net_config:
+              .: {}
+              f:extern_static: {}
+              f:node_svc_subnet: {}
+              f:service_vlan: {}
+            f:registry:
+              .: {}
+              f:acc_provision_operator_version: {}
+              f:aci_containers_controller_version: {}
+              f:aci_containers_host_version: {}
+              f:aci_containers_operator_version: {}
+              f:cnideploy_version: {}
+              f:openvswitch_version: {}
+              f:opflex_agent_version: {}
+          f:aci_config:
+            .: {}
+            f:l3out:
+              .: {}
+              f:external_networks: {}
+              f:name: {}
+            f:vrf:
+              .: {}
+              f:name: {}
+              f:tenant: {}
+          f:cko_proxy_config:
+            .: {}
+            f:http_proxy: {}
+            f:https_proxy: {}
+          f:cni: {}
+          f:connectivity_checker:
+            .: {}
+            f:error_pods_reporting_enable: {}
+            f:reachability_test_enable:
+              .: {}
+              f:external_url:
+                .: {}
+                f:url: {}
+              f:periodic_sync:
+                .: {}
+                f:enable_updates: {}
+                f:interval: {}
+            f:reachability_tests: {}
+          f:fabricinfra:
+            .: {}
+            f:name: {}
+          f:net_config:
+            .: {}
+            f:cluster_svc_subnet: {}
+            f:extern_dynamic: {}
+            f:kubeapi_vlan: {}
+            f:node_subnet: {}
+            f:pod_subnet: {}
+          f:registry:
+            .: {}
+            f:image_prefix: {}
+            f:image_pull_secret: {}
+            f:network_operator_version: {}
+    manager: kubectl-client-side-apply
+    operation: Update
+    time: "2023-04-06T10:46:18Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        .: {}
+        f:ready: {}
+    manager: manager
+    operation: Update
+    subresource: status
+    time: "2023-04-06T10:46:18Z"
+  name: ocp410gf
+  namespace: netop-manager
+  resourceVersion: "9719"
+  uid: 2925b86a-ff72-411c-9dce-47b074604062
+spec:
+  config_overrides:
+    aci_cni_config:
+      aci_config:
+        aep: fab20-esx
+        vmm_domain:
+          encap_type: vxlan
+          mcast_range:
+            end: 225.20.255.255
+            start: 225.20.1.1
+          nested_inside: {}
+      kube_config:
+        drop_log_config: {}
+        image_pull_policy: Always
+        istio_config: {}
+        multus: {}
+        nodepodif_config: {}
+        operator_managed_config: {}
+        ovs_memory_limit: 0.75Gi
+        sriov_config: {}
+      logging:
+        controller_log_level: debug
+        hostagent_log_level: debug
+        opflexagent_log_level: debug
+      net_config:
+        extern_static: 10.4.0.1/24
+        node_svc_subnet: 10.5.0.1/24
+        service_vlan: 203
+      registry:
+        acc_provision_operator_version: kmr2-test
+        aci_containers_controller_version: kmr2-test
+        aci_containers_host_version: kmr2-test
+        aci_containers_operator_version: kmr2-test
+        cnideploy_version: kmr2-test
+        openvswitch_version: kmr2-test
+        opflex_agent_version: kmr2-test
+    aci_config:
+      cluster_l3out:
+        bgp:
+          peering: {}
+        svi: {}
+        vrf: {}
+      l3out:
+        external_networks:
+        - ocp-gf-l3-extepg
+        name: ocp410_gf_l3out
+      physical_domain: {}
+      vrf:
+        name: ocp410_gf_vrf
+        tenant: common
+    calico_cni_config: {}
+    cko_proxy_config:
+      http_proxy: http://proxy.esl.cisco.com:80
+      https_proxy: http://proxy.esl.cisco.com:80
+    cni: aci
+    connectivity_checker:
+      error_pods_reporting_enable: true
+      reachability_test_enable:
+        external_url:
+          url: google.com
+        periodic_sync:
+          enable_updates: true
+          interval: 120
+      reachability_tests:
+      - pod_to_pod
+      - pod_to_node
+      - pod_to_clusterIP
+      - pod_to_service
+      - pod_to_LB_VIP
+      - pod_to_NodePort
+      - pod_to_External
+      - node_to_node
+      - node_to_pod
+      - node_to_clusterIP
+      - node_to_LB_VIP
+    context:
+      l3out: {}
+      vrf: {}
+    distro: {}
+    fabricinfra:
+      name: ocp410gf
+    gitops:
+      base64_encoded_argo_manifests: ""
+    lb_config: {}
+    monitoring_config: {}
+    net_config:
+      cluster_svc_subnet: 10.5.0.1/24
+      extern_dynamic: 10.3.0.1/24
+      kubeapi_vlan: 202
+      node_subnet: 192.168.2.1/24
+      pod_subnet: 10.2.0.1/16
+    operator_config: {}
+    profile: {}
+    registry:
+      image_prefix: quay.io/noirolabs
+      image_pull_secret: noiro-docker-registry-secret
+      network_operator_version: cko-mvp-1
+    service_mesh_config: {}
+    topology: {}
+status:
+  ready: true
