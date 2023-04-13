@@ -1,6 +1,7 @@
 apiVersion: v1
 data:
-  data: name:cko-cni-cko-cni-aci, ns:null, status:null, status_b64:bnVsbA==
+  data: name:cko-cni-cko-cni-aci, ns:null, status:{"cniType":"cko-cni-aci","cniVersion":"5.2.3.4","observedGeneration":1,"state":"Pending","upgradeStatus":{"cniUpgradeState":"None"}},
+    status_b64:eyJjbmlUeXBlIjoiY2tvLWNuaS1hY2kiLCJjbmlWZXJzaW9uIjoiNS4yLjMuNCIsIm9ic2VydmVkR2VuZXJhdGlvbiI6MSwic3RhdGUiOiJQZW5kaW5nIiwidXBncmFkZVN0YXR1cyI6eyJjbmlVcGdyYWRlU3RhdGUiOiJOb25lIn19
 kind: ConfigMap
 metadata:
   creationTimestamp: null
