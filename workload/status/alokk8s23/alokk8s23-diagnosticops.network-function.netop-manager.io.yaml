@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  data: name:cko-diagnostic-connectivity-checker, ns:null, status:{"observedGeneration":1,"state":"Failed","type":"connectivityChecker"},
+    status_b64:eyJvYnNlcnZlZEdlbmVyYXRpb24iOjEsInN0YXRlIjoiRmFpbGVkIiwidHlwZSI6ImNvbm5lY3Rpdml0eUNoZWNrZXIifQ==
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    netop-manager-resource: diagnosticops.network-function.netop-manager.io
+    notification.notification-ctrlr.netop-manager.io: exclude
+  name: alokk8s23-diagnosticops.network-function.netop-manager.io
+  namespace: netop-manager-system

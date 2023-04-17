@@ -1,0 +1,14 @@
+apiVersion: v1
+data:
+  data: name:cko-gitops-argo, ns:null, status:{"gStatus":{"argocd-server":"{\"observedGeneration\":1,\"replicas\":1,\"updatedReplicas\":1,\"unavailableReplicas\":1,\"conditions\":[{\"type\":\"Available\",\"status\":\"False\",\"lastUpdateTime\":\"2023-03-20T10:16:53Z\",\"lastTransitionTime\":\"2023-03-20T10:16:53Z\",\"reason\":\"MinimumReplicasUnavailable\",\"message\":\"Deployment
+    does not have minimum availability.\"},{\"type\":\"Progressing\",\"status\":\"False\",\"lastUpdateTime\":\"2023-03-20T10:26:54Z\",\"lastTransitionTime\":\"2023-03-20T10:26:54Z\",\"reason\":\"ProgressDeadlineExceeded\",\"message\":\"ReplicaSet
+    \\\"argocd-server-576cfb678d\\\" has timed out progressing.\"}]}"},"gType":"cko-g-argo","observedGeneration":1,"state":"Running"},
+    status_b64:eyJnU3RhdHVzIjp7ImFyZ29jZC1zZXJ2ZXIiOiJ7XCJvYnNlcnZlZEdlbmVyYXRpb25cIjoxLFwicmVwbGljYXNcIjoxLFwidXBkYXRlZFJlcGxpY2FzXCI6MSxcInVuYXZhaWxhYmxlUmVwbGljYXNcIjoxLFwiY29uZGl0aW9uc1wiOlt7XCJ0eXBlXCI6XCJBdmFpbGFibGVcIixcInN0YXR1c1wiOlwiRmFsc2VcIixcImxhc3RVcGRhdGVUaW1lXCI6XCIyMDIzLTAzLTIwVDEwOjE2OjUzWlwiLFwibGFzdFRyYW5zaXRpb25UaW1lXCI6XCIyMDIzLTAzLTIwVDEwOjE2OjUzWlwiLFwicmVhc29uXCI6XCJNaW5pbXVtUmVwbGljYXNVbmF2YWlsYWJsZVwiLFwibWVzc2FnZVwiOlwiRGVwbG95bWVudCBkb2VzIG5vdCBoYXZlIG1pbmltdW0gYXZhaWxhYmlsaXR5LlwifSx7XCJ0eXBlXCI6XCJQcm9ncmVzc2luZ1wiLFwic3RhdHVzXCI6XCJGYWxzZVwiLFwibGFzdFVwZGF0ZVRpbWVcIjpcIjIwMjMtMDMtMjBUMTA6MjY6NTRaXCIsXCJsYXN0VHJhbnNpdGlvblRpbWVcIjpcIjIwMjMtMDMtMjBUMTA6MjY6NTRaXCIsXCJyZWFzb25cIjpcIlByb2dyZXNzRGVhZGxpbmVFeGNlZWRlZFwiLFwibWVzc2FnZVwiOlwiUmVwbGljYVNldCBcXFwiYXJnb2NkLXNlcnZlci01NzZjZmI2NzhkXFxcIiBoYXMgdGltZWQgb3V0IHByb2dyZXNzaW5nLlwifV19In0sImdUeXBlIjoiY2tvLWctYXJnbyIsIm9ic2VydmVkR2VuZXJhdGlvbiI6MSwic3RhdGUiOiJSdW5uaW5nIn0=
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    netop-manager-resource: gitops.network-function.netop-manager.io
+    notification.notification-ctrlr.netop-manager.io: exclude
+  name: alokk8s23-gitops.network-function.netop-manager.io
+  namespace: netop-manager-system
