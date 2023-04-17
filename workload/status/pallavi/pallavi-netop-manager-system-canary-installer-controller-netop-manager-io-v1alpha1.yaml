@@ -1,0 +1,15 @@
+apiVersion: notification-ctrlr.netop-types.io/v1alpha1
+kind: Notification
+metadata:
+  creationTimestamp: null
+  name: pallavi-netop-manager-system-canary-installer-controller-netop-manager-io-v1alpha1
+spec:
+  clusterName: pallavi
+  objRef:
+    apiVersion: controller.netop-manager.io/v1alpha1
+    kind: Installer
+    name: canary
+    namespace: netop-manager-system
+  serializedObj: '{"kind":"Installer","apiVersion":"controller.netop-manager.io/v1alpha1","metadata":{"name":"canary","namespace":"netop-manager-system","creationTimestamp":null},"spec":{"operatorConfigs":{}},"status":{}}'
+status:
+  state: ""
