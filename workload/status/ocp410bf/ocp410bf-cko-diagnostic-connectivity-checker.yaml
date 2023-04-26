@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  cko-diagnostic-connectivity-checker.yaml: |
+    "name:cko-diagnostic-connectivity-checker, ns:null, status:{\"conditions\":{\"lastTransitionTime\":\"2023-06-08T14:47:45Z\",\"message\":\"failed to monitor connectivity checker: <nil>\",\"reason\":\"FailedMonitoringOperator\",\"status\":\"True\",\"type\":\"Degraded\"},\"observedGeneration\":1,\"state\":\"Failed\"}, status_b64:eyJjb25kaXRpb25zIjp7Imxhc3RUcmFuc2l0aW9uVGltZSI6IjIwMjMtMDYtMDhUMTQ6NDc6NDVaIiwibWVzc2FnZSI6ImZhaWxlZCB0byBtb25pdG9yIGNvbm5lY3Rpdml0eSBjaGVja2VyOiA8bmlsPiIsInJlYXNvbiI6IkZhaWxlZE1vbml0b3JpbmdPcGVyYXRvciIsInN0YXR1cyI6IlRydWUiLCJ0eXBlIjoiRGVncmFkZWQifSwib2JzZXJ2ZWRHZW5lcmF0aW9uIjoxLCJzdGF0ZSI6IkZhaWxlZCJ9"
+kind: ConfigMap
+metadata:
+  labels:
+    netop-manager-resource: cko-diagnostic-connectivity-checker
+  name: ocp410bf-cko-diagnostic-connectivity-checker
+  namespace: 
