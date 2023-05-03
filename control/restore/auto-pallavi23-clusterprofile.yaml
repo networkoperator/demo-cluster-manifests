@@ -130,9 +130,18 @@ metadata:
     operation: Update
     subresource: status
     time: "2023-05-03T09:47:45Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:cluster_info_error: {}
+    manager: OpenAPI-Generator
+    operation: Update
+    subresource: status
+    time: "2023-05-03T09:48:04Z"
   name: auto-pallavi23
   namespace: netop-manager
-  resourceVersion: "5461"
+  resourceVersion: "5499"
   uid: 11718d5c-cb41-40c9-a488-1a07c372c61e
 spec:
   cluster_name: pallavi23
@@ -193,6 +202,7 @@ status:
     node_svc_subnet: 10.5.0.1/24
     pod_subnet: 10.2.0.1/16
   calico_cni_config: {}
+  cluster_info_error: No error in provisioning
   cluster_network_profile_name: auto-pallavi23
   context:
     aep: hypf-aep

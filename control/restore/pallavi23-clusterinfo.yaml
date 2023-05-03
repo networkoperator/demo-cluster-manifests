@@ -2,8 +2,20 @@ apiVersion: netop.mgr/v1alpha1
 kind: ClusterInfo
 metadata:
   creationTimestamp: "2023-05-03T09:47:45Z"
+  finalizers:
+  - netop.mgr/finalizer
   generation: 1
   managedFields:
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:finalizers:
+          .: {}
+          v:"netop.mgr/finalizer": {}
+    manager: ansible-operator
+    operation: Update
+    time: "2023-05-03T09:47:45Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -133,7 +145,7 @@ metadata:
     kind: ClusterProfile
     name: auto-pallavi23
     uid: 11718d5c-cb41-40c9-a488-1a07c372c61e
-  resourceVersion: "5460"
+  resourceVersion: "5462"
   uid: 24a27438-c4bd-40ac-a4d4-6bde153b4835
 spec:
   config_overrides:

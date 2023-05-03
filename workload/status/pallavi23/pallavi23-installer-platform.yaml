@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  installer-platform.yaml: |
+    "name:installer-platform, ns:null, status:{\"componentStatus\":{\"cko-diagnostic\":{\"lastUpdated\":\"3033-53-30 53:05:05\",\"mode\":\"managed\",\"type\":\"connectivity-checker\"},\"cko-gitops\":{\"lastUpdated\":\"3033-53-30 53:05:05\",\"mode\":\"managed\",\"type\":\"argo\"}},\"observedGeneration\":1,\"operatorStatus\":\"Running\"}, status_b64:eyJjb21wb25lbnRTdGF0dXMiOnsiY2tvLWRpYWdub3N0aWMiOnsibGFzdFVwZGF0ZWQiOiIzMDMzLTUzLTMwIDUzOjA1OjA1IiwibW9kZSI6Im1hbmFnZWQiLCJ0eXBlIjoiY29ubmVjdGl2aXR5LWNoZWNrZXIifSwiY2tvLWdpdG9wcyI6eyJsYXN0VXBkYXRlZCI6IjMwMzMtNTMtMzAgNTM6MDU6MDUiLCJtb2RlIjoibWFuYWdlZCIsInR5cGUiOiJhcmdvIn19LCJvYnNlcnZlZEdlbmVyYXRpb24iOjEsIm9wZXJhdG9yU3RhdHVzIjoiUnVubmluZyJ9"
+kind: ConfigMap
+metadata:
+  labels:
+    netop-manager-resource: installer-platform
+  name: pallavi23-installer-platform
+  namespace: 

@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  installer-aci-cni.yaml: |
+    "name:installer-aci-cni, ns:null, status:{\"componentStatus\":{\"cko-cni\":{\"lastUpdated\":\"3033-53-30 53:05:05\",\"mode\":\"unmanaged\",\"type\":\"cko-cni-aci\"}},\"observedGeneration\":1,\"operatorStatus\":\"Running\"}, status_b64:eyJjb21wb25lbnRTdGF0dXMiOnsiY2tvLWNuaSI6eyJsYXN0VXBkYXRlZCI6IjMwMzMtNTMtMzAgNTM6MDU6MDUiLCJtb2RlIjoidW5tYW5hZ2VkIiwidHlwZSI6ImNrby1jbmktYWNpIn19LCJvYnNlcnZlZEdlbmVyYXRpb24iOjEsIm9wZXJhdG9yU3RhdHVzIjoiUnVubmluZyJ9"
+kind: ConfigMap
+metadata:
+  labels:
+    netop-manager-resource: installer-aci-cni
+  name: pallavi23-installer-aci-cni
+  namespace: 
