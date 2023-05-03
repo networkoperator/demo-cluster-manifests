@@ -79,14 +79,15 @@ metadata:
           f:internal_subnets: {}
           f:mcast_subnets: {}
           f:remote_as_numbers: {}
+        f:discovered_infra_vlan: {}
         f:ready: {}
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-05-03T09:47:45Z"
+    time: "2023-05-03T09:57:45Z"
   name: pallavi23
   namespace: netop-manager
-  resourceVersion: "5459"
+  resourceVersion: "6662"
   uid: d035e190-eb63-4b08-8749-824fdca0836e
 spec:
   bgp:
@@ -167,4 +168,5 @@ status:
     - 225.33.0.0/16
     remote_as_numbers:
     - 64512
+  discovered_infra_vlan: 3901
   ready: true
