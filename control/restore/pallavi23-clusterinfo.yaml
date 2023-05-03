@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: "2023-05-03T09:47:45Z"
   finalizers:
   - netop.mgr/finalizer
-  generation: 1
+  generation: 2
   managedFields:
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
@@ -135,7 +135,7 @@ metadata:
           f:topology: {}
     manager: manager
     operation: Update
-    time: "2023-05-03T09:47:45Z"
+    time: "2023-05-03T09:57:29Z"
   name: pallavi23
   namespace: netop-manager
   ownerReferences:
@@ -145,7 +145,7 @@ metadata:
     kind: ClusterProfile
     name: auto-pallavi23
     uid: 11718d5c-cb41-40c9-a488-1a07c372c61e
-  resourceVersion: "5462"
+  resourceVersion: "6626"
   uid: 24a27438-c4bd-40ac-a4d4-6bde153b4835
 spec:
   config_overrides:
@@ -229,7 +229,7 @@ spec:
       node_subnet: 192.168.23.1/24
       pod_subnet: 10.2.0.1/16
     operator_config:
-      mode: unmanaged
+      mode: managed
       target_version: 0.9.1
     profile: {}
     registry: {}

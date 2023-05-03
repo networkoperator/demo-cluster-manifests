@@ -6,7 +6,7 @@ metadata:
   creationTimestamp: "2023-05-03T09:47:45Z"
   finalizers:
   - clusterprofile.netop.mgr/finalizer
-  generation: 1
+  generation: 2
   labels:
     autodetect-cluster.notification-controller.netop.mgr: pallavi23
   managedFields:
@@ -81,12 +81,28 @@ metadata:
           .: {}
           f:flavor: {}
         f:fabricinfra: {}
-        f:operator_config:
-          .: {}
-          f:mode: {}
+        f:operator_config: {}
     manager: manager
     operation: Update
     time: "2023-05-03T09:47:45Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:cluster_info_error: {}
+    manager: OpenAPI-Generator
+    operation: Update
+    subresource: status
+    time: "2023-05-03T09:48:04Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:operator_config:
+          f:mode: {}
+    manager: kubectl-edit
+    operation: Update
+    time: "2023-05-03T09:57:29Z"
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
@@ -122,26 +138,16 @@ metadata:
         f:operator_config:
           .: {}
           f:mode: {}
-          f:version: {}
         f:ready: {}
         f:vlans: {}
         f:workload_cluster_manifest_locations: {}
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-05-03T09:47:45Z"
-  - apiVersion: netop.mgr/v1alpha1
-    fieldsType: FieldsV1
-    fieldsV1:
-      f:status:
-        f:cluster_info_error: {}
-    manager: OpenAPI-Generator
-    operation: Update
-    subresource: status
-    time: "2023-05-03T09:48:04Z"
+    time: "2023-05-03T09:57:29Z"
   name: auto-pallavi23
   namespace: netop-manager
-  resourceVersion: "5499"
+  resourceVersion: "6627"
   uid: 11718d5c-cb41-40c9-a488-1a07c372c61e
 spec:
   cluster_name: pallavi23
@@ -191,7 +197,7 @@ spec:
     flavor: kubernetes-1.23
   fabricinfra: {}
   operator_config:
-    mode: unmanaged
+    mode: managed
 status:
   aci_cni_config: {}
   assigned_subnets:
@@ -218,8 +224,7 @@ status:
     name: pallavi23
   node_vlan: 45
   operator_config:
-    mode: unmanaged
-    version: 0.9.1
+    mode: managed
   ready: true
   vlans:
   - 45
