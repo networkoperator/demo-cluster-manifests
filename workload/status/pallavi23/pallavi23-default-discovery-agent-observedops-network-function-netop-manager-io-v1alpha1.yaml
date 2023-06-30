@@ -11,6 +11,6 @@
       "kind": "ObservedOps",
       "name": "discovery-agent"
     },
-    "serializedObj": "{\"kind\":\"ObservedOps\",\"apiVersion\":\"network-function.netop-manager.io/v1alpha1\",\"metadata\":{\"name\":\"discovery-agent\",\"creationTimestamp\":null},\"spec\":{\"forceReconcile\":787},\"status\":{\"cniType\":\"not-found\",\"cniVersion\":\"not-found\"}}"
+    "serializedObj": "{\"kind\":\"ObservedOps\",\"apiVersion\":\"network-function.netop-manager.io/v1alpha1\",\"metadata\":{\"name\":\"discovery-agent\",\"creationTimestamp\":null},\"spec\":{\"forceReconcile\":788},\"status\":{\"cniType\":\"not-found\",\"cniVersion\":\"not-found\"}}"
   }
 }
