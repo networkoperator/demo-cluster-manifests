@@ -1,7 +1,10 @@
 apiVersion: v1
 data:
-  installer-aci-cni.yaml: |
-    "name:installer-aci-cni, ns:null, status:{\"observedGeneration\":1}, status_b64:eyJvYnNlcnZlZEdlbmVyYXRpb24iOjF9"
+  status: |-
+    {
+      "observedGeneration": 1
+    }
+  status_b64: eyAib2JzZXJ2ZWRHZW5lcmF0aW9uIjogMSB9Cg==
 kind: ConfigMap
 metadata:
   labels:

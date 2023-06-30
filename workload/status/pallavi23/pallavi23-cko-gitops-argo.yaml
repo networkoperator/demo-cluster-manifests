@@ -1,7 +1,11 @@
 apiVersion: v1
 data:
-  cko-gitops-argo.yaml: |
-    "name:cko-gitops-argo, ns:null, status:{\"observedGeneration\":1,\"state\":\"Running\"}, status_b64:eyJvYnNlcnZlZEdlbmVyYXRpb24iOjEsInN0YXRlIjoiUnVubmluZyJ9"
+  status: |-
+    {
+      "observedGeneration": 1,
+      "state": "Running"
+    }
+  status_b64: eyAib2JzZXJ2ZWRHZW5lcmF0aW9uIjogMSwgInN0YXRlIjogIlJ1bm5pbmciIH0K
 kind: ConfigMap
 metadata:
   labels:
