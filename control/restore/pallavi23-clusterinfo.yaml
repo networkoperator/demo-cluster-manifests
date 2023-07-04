@@ -4,7 +4,7 @@ metadata:
   creationTimestamp: "2023-07-04T11:05:42Z"
   finalizers:
   - netop.mgr/finalizer
-  generation: 1
+  generation: 2
   managedFields:
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
@@ -125,6 +125,16 @@ metadata:
     manager: manager
     operation: Update
     time: "2023-07-04T11:05:42Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:spec:
+        f:config_overrides:
+          f:aci_config:
+            f:system_id: {}
+    manager: OpenAPI-Generator
+    operation: Update
+    time: "2023-07-04T11:05:53Z"
   name: pallavi23
   namespace: netop-manager
   ownerReferences:
@@ -134,7 +144,7 @@ metadata:
     kind: ClusterProfile
     name: pallavi23
     uid: e197df50-1022-40b0-a67c-b11252015e3a
-  resourceVersion: "8163"
+  resourceVersion: "8217"
   uid: 0e8c2816-3712-4907-8edf-4dced349e70a
 spec:
   config_overrides:
@@ -171,6 +181,7 @@ spec:
         - k8s23_net
         name: k8s23
       physical_domain: {}
+      system_id: pallavi23
       vrf:
         name: k8s23_vrf
         tenant: common

@@ -73,14 +73,15 @@ metadata:
         .: {}
         f:allocated: {}
         f:available: {}
+        f:discovered_infra_vlan: {}
         f:ready: {}
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-07-04T11:05:42Z"
+    time: "2023-07-04T11:06:04Z"
   name: pallavi23
   namespace: netop-manager
-  resourceVersion: "8161"
+  resourceVersion: "8288"
   uid: fa644048-ba54-4e0b-8423-f902fc35edab
 spec:
   bgp: {}
@@ -138,4 +139,5 @@ status:
     - 45
     - 46
   available: {}
+  discovered_infra_vlan: 3901
   ready: true
