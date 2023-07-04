@@ -71,33 +71,16 @@ metadata:
     fieldsV1:
       f:status:
         .: {}
-        f:available:
-          .: {}
-          f:contexts:
-            .: {}
-            f:context-1:
-              .: {}
-              f:aep: {}
-              f:l3out:
-                .: {}
-                f:external_networks: {}
-                f:name: {}
-              f:vrf:
-                .: {}
-                f:name: {}
-                f:tenant: {}
-          f:external_subnets: {}
-          f:internal_subnets: {}
-          f:mcast_subnets: {}
-          f:vlans: {}
+        f:allocated: {}
+        f:available: {}
         f:ready: {}
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-07-04T10:53:02Z"
+    time: "2023-07-04T11:05:42Z"
   name: pallavi23
   namespace: netop-manager
-  resourceVersion: "6222"
+  resourceVersion: "8161"
   uid: fa644048-ba54-4e0b-8423-f902fc35edab
 spec:
   bgp: {}
@@ -131,17 +114,18 @@ spec:
   - 45
   - 46
 status:
-  available:
-    contexts:
-      context-1:
-        aep: hypf-aep
-        l3out:
-          external_networks:
-          - k8s23_net
-          name: k8s23
-        vrf:
-          name: k8s23_vrf
-          tenant: common
+  allocated:
+  - cluster_group_profile: default-cluster-group-profile-aci
+    cluster_profile: pallavi23
+    context:
+      aep: hypf-aep
+      l3out:
+        external_networks:
+        - k8s23_net
+        name: k8s23
+      vrf:
+        name: k8s23_vrf
+        tenant: common
     external_subnets:
     - 10.3.0.1/24
     - 10.4.0.1/24
@@ -153,4 +137,5 @@ status:
     vlans:
     - 45
     - 46
+  available: {}
   ready: true
