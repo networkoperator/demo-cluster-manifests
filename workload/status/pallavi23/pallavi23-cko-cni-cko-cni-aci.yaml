@@ -6,14 +6,14 @@ data:
       "cniVersion": "5.2.3.4",
       "managedState": "New",
       "observedGeneration": 1,
-      "state": "Pending",
+      "state": "Running",
       "upgradeStatus": {
         "cniUpgradeState": "None"
       }
     }
   status_b64: |-
     eyAiY25pVHlwZSI6ICJja28tY25pLWFjaSIsICJjbmlWZXJzaW9uIjogIjUuMi4zLjQiLCAibWFuYWdl
-    ZFN0YXRlIjogIk5ldyIsICJvYnNlcnZlZEdlbmVyYXRpb24iOiAxLCAic3RhdGUiOiAiUGVuZGluZyIs
+    ZFN0YXRlIjogIk5ldyIsICJvYnNlcnZlZEdlbmVyYXRpb24iOiAxLCAic3RhdGUiOiAiUnVubmluZyIs
     ICJ1cGdyYWRlU3RhdHVzIjogeyAiY25pVXBncmFkZVN0YXRlIjogIk5vbmUiIH0gfQo=
 kind: ConfigMap
 metadata:
