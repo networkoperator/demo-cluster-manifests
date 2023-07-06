@@ -131,9 +131,18 @@ metadata:
     operation: Update
     subresource: status
     time: "2023-07-06T11:22:26Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:cluster_info_error: {}
+    manager: OpenAPI-Generator
+    operation: Update
+    subresource: status
+    time: "2023-07-06T11:23:02Z"
   name: pallavi23
   namespace: netop-manager
-  resourceVersion: "3010"
+  resourceVersion: "3104"
   uid: 522f6795-4c48-40ad-9e3d-ebe139fab239
 spec:
   cni: aci
@@ -190,6 +199,7 @@ status:
     pod_subnet: 10.2.0.1/16
   calico_cni_config: {}
   cluster_group_profile_name: default-cluster-group-profile-aci
+  cluster_info_error: No error in provisioning
   context:
     aep: hypf-aep
     l3out:
