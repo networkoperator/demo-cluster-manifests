@@ -1,0 +1,28 @@
+apiVersion: v1
+data:
+  status: |-
+    {
+      "componentStatus": {
+        "cko-cni-aci": {
+          "lastTransitionTime": "2023-07-06T12:07:41Z",
+          "message": "cko-cni(managed) is provisioned",
+          "reason": "InstallerProvisionedCR",
+          "status": "True",
+          "type": "Provisioned"
+        }
+      },
+      "observedGeneration": 1,
+      "phase": "Running"
+    }
+  status_b64: |-
+    eyAiY29tcG9uZW50U3RhdHVzIjogeyAiY2tvLWNuaS1hY2kiOiB7ICJsYXN0VHJhbnNpdGlvblRpbWUi
+    OiAiMjAyMy0wNy0wNlQxMjowNzo0MVoiLCAibWVzc2FnZSI6ICJja28tY25pKG1hbmFnZWQpIGlzIHBy
+    b3Zpc2lvbmVkIiwgInJlYXNvbiI6ICJJbnN0YWxsZXJQcm92aXNpb25lZENSIiwgInN0YXR1cyI6ICJU
+    cnVlIiwgInR5cGUiOiAiUHJvdmlzaW9uZWQiIH0gfSwgIm9ic2VydmVkR2VuZXJhdGlvbiI6IDEsICJw
+    aGFzZSI6ICJSdW5uaW5nIiB9Cg==
+kind: ConfigMap
+metadata:
+  labels:
+    netop-manager-resource: installer-aci-cni
+  name: pallavi23-installer-aci-cni
+  namespace: 

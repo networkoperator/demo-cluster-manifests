@@ -1,0 +1,17 @@
+{
+  "apiVersion": "notification-ctrlr.netop-types.io/v1alpha1",
+  "kind": "Notification",
+  "metadata": {
+    "name": "pallavi23-aci-containers-system-acc-provision-config-configmap-core-v1"
+  },
+  "spec": {
+    "clusterName": "pallavi23",
+    "objRef": {
+      "apiVersion": "v1",
+      "kind": "ConfigMap",
+      "name": "acc-provision-config",
+      "namespace": "aci-containers-system"
+    },
+    "serializedObj": "{\"kind\":\"ConfigMap\",\"apiVersion\":\"v1\",\"metadata\":{\"name\":\"acc-provision-config\",\"namespace\":\"aci-containers-system\",\"creationTimestamp\":null},\"data\":{\"spec\":\"{\\n \\\"acc_provision_input\\\": {\\n \\\"operator_managed_config\\\": {\\n \\\"enable_updates\\\": false\\n },\\n \\\"aci_config\\\": {\\n \\\"system_id\\\": \\\"pallavi23\\\",\\n \\\"apic_hosts\\\": [\\n \\\"10.30.120.180\\\"\\n ],\\n \\\"aep\\\": \\\"hypf-aep\\\",\\n \\\"vrf\\\": {\\n \\\"name\\\": \\\"k8s23_vrf\\\",\\n \\\"tenant\\\": \\\"common\\\"\\n },\\n \\\"cluster_l3out\\\": {\\n \\\"bgp\\\": {\\n \\\"peering\\\": {}\\n },\\n \\\"svi\\\": {},\\n \\\"vrf\\\": {}\\n },\\n \\\"vmm_domain\\\": {\\n \\\"type\\\": \\\"Kubernetes\\\",\\n \\\"encap_type\\\": \\\"vxlan\\\",\\n \\\"mcast_fabric\\\": \\\"225.1.2.3\\\",\\n \\\"mcast_range\\\": {\\n \\\"start\\\": \\\"225.33.0.1\\\",\\n \\\"end\\\": \\\"225.33.255.255\\\"\\n }\\n },\\n \\\"l3out\\\": {\\n \\\"name\\\": \\\"k8s23\\\",\\n \\\"external_networks\\\": [\\n \\\"k8s23_net\\\"\\n ]\\n }\\n },\\n \\\"kube_config\\\": {\\n \\\"drop_log_config\\\": {}, \\n \\\"istio_config\\\": {}, \\n \\\"multus\\\": {}, \\n \\\"nodepodif_config\\\": {}, \\n \\\"operator_managed_config\\\": {}, \\n \\\"sriov_config\\\": {}\\n\\n },\\n \\\"net_config\\\": {\\n \\\"infra_vlan\\\": 3901,\\n \\\"service_vlan\\\": 46, \\n \\\"kubeapi_vlan\\\": 45,\\n \\\"extern_static\\\": [\\\"10.4.0.1/24\\\"],\\n \\\"extern_dynamic\\\": [\\\"10.3.0.1/24\\\"],\\n \\\"node_svc_subnet\\\": \\\"192.168.23.1/24\\\",\\n \\\"node_subnet\\\": [\\n \\\"10.5.0.1/24\\\"\\n ],\\n \\\"pod_subnet\\\": [\\n \\\"10.2.0.1/16\\\"\\n ],\\n \\\"cluster_svc_subnet\\\": \\\"10.96.0.1/12\\\"\\n }\\n }\\n }\"}}"
+  }
+}
