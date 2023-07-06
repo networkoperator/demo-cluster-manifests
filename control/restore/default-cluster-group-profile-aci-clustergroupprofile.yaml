@@ -1,0 +1,91 @@
+apiVersion: netop.mgr/v1alpha1
+kind: ClusterGroupProfile
+metadata:
+  annotations:
+    helm.sh/hook: post-install
+  creationTimestamp: "2023-07-06T11:15:35Z"
+  generation: 1
+  managedFields:
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:helm.sh/hook: {}
+      f:spec:
+        .: {}
+        f:config_overrides:
+          .: {}
+          f:cni: {}
+    manager: helm
+    operation: Update
+    time: "2023-07-06T11:15:35Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        .: {}
+        f:cluster-fabric-mapping: {}
+        f:state: {}
+    manager: manager
+    operation: Update
+    subresource: status
+    time: "2023-07-06T11:22:26Z"
+  name: default-cluster-group-profile-aci
+  namespace: netop-manager
+  resourceVersion: "3005"
+  uid: 3431d51a-5345-4025-8cec-be2377886997
+spec:
+  config_overrides:
+    aci_cni_config:
+      aci_config:
+        vmm_domain:
+          mcast_range: {}
+          nested_inside: {}
+      kube_config:
+        drop_log_config: {}
+        istio_config: {}
+        multus: {}
+        nodepodif_config: {}
+        operator_managed_config: {}
+        sriov_config: {}
+      logging: {}
+      net_config: {}
+      registry: {}
+    aci_config:
+      cluster_l3out:
+        bgp:
+          peering: {}
+        svi: {}
+        vrf: {}
+      l3out: {}
+      physical_domain: {}
+      vrf: {}
+    calico_cni_config: {}
+    cko_proxy_config: {}
+    cni: aci
+    connectivity_checker:
+      reachability_test_enable:
+        external_url: {}
+        periodic_sync: {}
+    context:
+      l3out: {}
+      vrf: {}
+    distro: {}
+    fabricinfra: {}
+    gitops:
+      base64_encoded_argo_manifests: ""
+    lb_config: {}
+    monitoring_config: {}
+    net_config: {}
+    operator_config: {}
+    profile: {}
+    registry: {}
+    service_mesh_config: {}
+    topology: {}
+status:
+  cluster-fabric-mapping:
+  - cluster: pallavi23
+    fabric: pallavi23
+  state: true
