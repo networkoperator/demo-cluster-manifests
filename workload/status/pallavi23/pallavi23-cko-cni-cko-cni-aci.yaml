@@ -6,7 +6,7 @@ data:
         "config": "{\"uplink-iface\":\"eth0\",\"vxlan-iface\":\"eth0.3901\",\"vxlan-anycast-ip\":\"10.0.0.32\",\"opflex-peer-ip\":\"10.0.0.30\",\"uplink mac_adress\":\"00:50:56:97:40:1a\",\"default-endpoint-group\":{\"policy-space\":\"pallavi23\",\"name\":\"aci-containers-pallavi23|aci-containers-default\"},\"default-qospolicy-group\":{},\"namespace-default-endpoint-group\":{\"aci-containers-system\":{\"policy-space\":\"pallavi23\",\"name\":\"aci-containers-pallavi23|aci-containers-system\"},\"istio-operator\":{\"policy-space\":\"pallavi23\",\"name\":\"aci-containers-pallavi23|aci-containers-istio\"},\"istio-system\":{\"policy-space\":\"pallavi23\",\"name\":\"aci-containers-pallavi23|aci-containers-istio\"},\"kube-system\":{\"policy-space\":\"pallavi23\",\"name\":\"aci-containers-pallavi23|aci-containers-system\"}},\"log-level\":\"info\",\"node-name\":\"k8s23-node-3.local.lan\",\"status-port\":8090,\"grpc-port\":19999,\"cni-metadata-dir\":\"/usr/local/var/lib/aci-containers/\",\"cni-network\":\"k8s-pod-network\",\"opflex-config-path\":\"/usr/local/etc/opflex-agent-ovs/base-conf.d\",\"opflex-endpoint-dir\":\"/usr/local/var/lib/opflex-agent-ovs/endpoints/\",\"opflex-service-dir\":\"/usr/local/var/lib/opflex-agent-ovs/services/\",\"opflex-snat-dir\":\"/usr/local/var/lib/opflex-agent-ovs/snats/\",\"opflex-fault-dir\":\"/usr/local/var/lib/opflex-agent-ovs/faults/\",\"opflex-flowid-cache-dir\":\"/usr/local/var/lib/opflex-agent-ovs/ids/\",\"opflex-mcast-file\":\"/usr/local/var/lib/opflex-agent-ovs/mcast/opflex-groups.json\",\"opflex-server-config-file\":\"/usr/local/var/lib/opflex-server/config.json\",\"packet-event-notification-socket\":\"/usr/local/var/run/aci-containers-packet-event-notification.sock\",\"opflex-drop-log-config-dir\":\"/usr/local/var/lib/opflex-agent-ovs/droplog\",\"opflex-drop-log-remote-ip\":\"192.168.1.2\",\"ovs-db-sock\":\"/usr/local/var/run/openvswitch/db.sock\",\"ep-rpc-sock\":\"/usr/local/var/run/aci-containers-ep-rpc.sock\",\"aci-prefix\":\"pallavi23\",\"aci-infra-vlan\":3901,\"service-vlan\":46,\"encap-type\":\"vxlan\",\"int-bridge-name\":\"br-int\",\"access-bridge-name\":\"br-access\",\"interface-mtu\":1700,\"interface-mtu-headroom\":100,\"cni-netconfig\":[{\"subnet\":\"10.2.0.0/16\",\"gateway\":\"10.2.0.1\",\"routes\":[{\"dst\":\"0.0.0.0/0\",\"gw\":\"10.2.0.1\"}]}],\"aci-vmm-type\":\"Kubernetes\",\"aci-vmm-domain\":\"pallavi23\",\"aci-vmm-controller\":\"pallavi23\",\"aci-vrf\":\"k8s23_vrf\",\"aci-vrf-tenant\":\"common\",\"zone\":8191,\"aci-snat-namespace\":\"aci-containers-system\",\"enable-drop-log\":true,\"drop-log-access-iface\":\"gen2\",\"drop-log-int-iface\":\"gen1\",\"drop-log-expiry\":10,\"drop-log-repeat-intvl\":2,\"flavor\":\"kubernetes-1.24\"}\n",
         "endpoints": "[]\n",
         "ipam": "{\"pod-ips\":{}}\n",
-        "services": "[{\"uuid\":\"0990d9ed-1793-493e-8080-40771ee75bc2\",\"domain-policy-space\":\"common\",\"domain-name\":\"k8s23_vrf\",\"service-mode\":\"loadbalancer\",\"service-type\":\"clusterIp\",\"service-mapping\":[{\"service-ip\":\"10.96.0.1\",\"service-proto\":\"tcp\",\"service-port\":443,\"next-hop-ips\":[\"192.168.23.2\"],\"next-hop-port\":6443,\"conntrack-enabled\":true,\"session-affinity\":{\"client-ip\":{\"timeout-seconds\":1}}}],\"attributes\":{\"component\":\"apiserver\",\"name\":\"kubernetes\",\"namespace\":\"default\",\"provider\":\"kubernetes\",\"service-name\":\"default_kubernetes\"}},{\"uuid\":\"3623be37-f300-477f-8681-010f381175eb\",\"domain-policy-space\":\"common\",\"domain-name\":\"k8s23_vrf\",\"service-mode\":\"loadbalancer\",\"service-type\":\"clusterIp\",\"service-mapping\":[{\"service-ip\":\"10.99.142.198\",\"service-proto\":\"tcp\",\"service-port\":8443,\"next-hop-ips\":[\"192.168.23.4\"],\"next-hop-port\":8443,\"conntrack-enabled\":true,\"session-affinity\":{\"client-ip\":{\"timeout-seconds\":1}}}],\"attributes\":{\"control-plane\":\"controller-manager\",\"name\":\"netop-manager-controller-manager-metrics-service\",\"namespace\":\"netop-manager-system\",\"service-name\":\"netop-manager-system_netop-manager-controller-manager-metrics-service\"}}]\n",
+        "services": "[{\"uuid\":\"3623be37-f300-477f-8681-010f381175eb\",\"domain-policy-space\":\"common\",\"domain-name\":\"k8s23_vrf\",\"service-mode\":\"loadbalancer\",\"service-type\":\"clusterIp\",\"service-mapping\":[{\"service-ip\":\"10.99.142.198\",\"service-proto\":\"tcp\",\"service-port\":8443,\"next-hop-ips\":[\"192.168.23.4\"],\"next-hop-port\":8443,\"conntrack-enabled\":true,\"session-affinity\":{\"client-ip\":{\"timeout-seconds\":1}}}],\"attributes\":{\"control-plane\":\"controller-manager\",\"name\":\"netop-manager-controller-manager-metrics-service\",\"namespace\":\"netop-manager-system\",\"service-name\":\"netop-manager-system_netop-manager-controller-manager-metrics-service\"}},{\"uuid\":\"0990d9ed-1793-493e-8080-40771ee75bc2\",\"domain-policy-space\":\"common\",\"domain-name\":\"k8s23_vrf\",\"service-mode\":\"loadbalancer\",\"service-type\":\"clusterIp\",\"service-mapping\":[{\"service-ip\":\"10.96.0.1\",\"service-proto\":\"tcp\",\"service-port\":443,\"next-hop-ips\":[\"192.168.23.2\"],\"next-hop-port\":6443,\"conntrack-enabled\":true,\"session-affinity\":{\"client-ip\":{\"timeout-seconds\":1}}}],\"attributes\":{\"component\":\"apiserver\",\"name\":\"kubernetes\",\"namespace\":\"default\",\"provider\":\"kubernetes\",\"service-name\":\"default_kubernetes\"}}]\n",
         "status": "{\"services\":2,\"pod-ips\":{}}\n"
       },
       "cniType": "cko-cni-aci",
@@ -66,28 +66,28 @@ data:
     cnVlLFwiZHJvcC1sb2ctYWNjZXNzLWlmYWNlXCI6XCJnZW4yXCIsXCJkcm9wLWxvZy1pbnQtaWZhY2Vc
     IjpcImdlbjFcIixcImRyb3AtbG9nLWV4cGlyeVwiOjEwLFwiZHJvcC1sb2ctcmVwZWF0LWludHZsXCI6
     MixcImZsYXZvclwiOlwia3ViZXJuZXRlcy0xLjI0XCJ9XG4iLCAiZW5kcG9pbnRzIjogIltdXG4iLCAi
-    aXBhbSI6ICJ7XCJwb2QtaXBzXCI6e319XG4iLCAic2VydmljZXMiOiAiW3tcInV1aWRcIjpcIjA5OTBk
-    OWVkLTE3OTMtNDkzZS04MDgwLTQwNzcxZWU3NWJjMlwiLFwiZG9tYWluLXBvbGljeS1zcGFjZVwiOlwi
+    aXBhbSI6ICJ7XCJwb2QtaXBzXCI6e319XG4iLCAic2VydmljZXMiOiAiW3tcInV1aWRcIjpcIjM2MjNi
+    ZTM3LWYzMDAtNDc3Zi04NjgxLTAxMGYzODExNzVlYlwiLFwiZG9tYWluLXBvbGljeS1zcGFjZVwiOlwi
     Y29tbW9uXCIsXCJkb21haW4tbmFtZVwiOlwiazhzMjNfdnJmXCIsXCJzZXJ2aWNlLW1vZGVcIjpcImxv
     YWRiYWxhbmNlclwiLFwic2VydmljZS10eXBlXCI6XCJjbHVzdGVySXBcIixcInNlcnZpY2UtbWFwcGlu
-    Z1wiOlt7XCJzZXJ2aWNlLWlwXCI6XCIxMC45Ni4wLjFcIixcInNlcnZpY2UtcHJvdG9cIjpcInRjcFwi
-    LFwic2VydmljZS1wb3J0XCI6NDQzLFwibmV4dC1ob3AtaXBzXCI6W1wiMTkyLjE2OC4yMy4yXCJdLFwi
-    bmV4dC1ob3AtcG9ydFwiOjY0NDMsXCJjb25udHJhY2stZW5hYmxlZFwiOnRydWUsXCJzZXNzaW9uLWFm
-    ZmluaXR5XCI6e1wiY2xpZW50LWlwXCI6e1widGltZW91dC1zZWNvbmRzXCI6MX19fV0sXCJhdHRyaWJ1
-    dGVzXCI6e1wiY29tcG9uZW50XCI6XCJhcGlzZXJ2ZXJcIixcIm5hbWVcIjpcImt1YmVybmV0ZXNcIixc
-    Im5hbWVzcGFjZVwiOlwiZGVmYXVsdFwiLFwicHJvdmlkZXJcIjpcImt1YmVybmV0ZXNcIixcInNlcnZp
-    Y2UtbmFtZVwiOlwiZGVmYXVsdF9rdWJlcm5ldGVzXCJ9fSx7XCJ1dWlkXCI6XCIzNjIzYmUzNy1mMzAw
-    LTQ3N2YtODY4MS0wMTBmMzgxMTc1ZWJcIixcImRvbWFpbi1wb2xpY3ktc3BhY2VcIjpcImNvbW1vblwi
-    LFwiZG9tYWluLW5hbWVcIjpcIms4czIzX3ZyZlwiLFwic2VydmljZS1tb2RlXCI6XCJsb2FkYmFsYW5j
-    ZXJcIixcInNlcnZpY2UtdHlwZVwiOlwiY2x1c3RlcklwXCIsXCJzZXJ2aWNlLW1hcHBpbmdcIjpbe1wi
-    c2VydmljZS1pcFwiOlwiMTAuOTkuMTQyLjE5OFwiLFwic2VydmljZS1wcm90b1wiOlwidGNwXCIsXCJz
-    ZXJ2aWNlLXBvcnRcIjo4NDQzLFwibmV4dC1ob3AtaXBzXCI6W1wiMTkyLjE2OC4yMy40XCJdLFwibmV4
-    dC1ob3AtcG9ydFwiOjg0NDMsXCJjb25udHJhY2stZW5hYmxlZFwiOnRydWUsXCJzZXNzaW9uLWFmZmlu
-    aXR5XCI6e1wiY2xpZW50LWlwXCI6e1widGltZW91dC1zZWNvbmRzXCI6MX19fV0sXCJhdHRyaWJ1dGVz
-    XCI6e1wiY29udHJvbC1wbGFuZVwiOlwiY29udHJvbGxlci1tYW5hZ2VyXCIsXCJuYW1lXCI6XCJuZXRv
-    cC1tYW5hZ2VyLWNvbnRyb2xsZXItbWFuYWdlci1tZXRyaWNzLXNlcnZpY2VcIixcIm5hbWVzcGFjZVwi
-    OlwibmV0b3AtbWFuYWdlci1zeXN0ZW1cIixcInNlcnZpY2UtbmFtZVwiOlwibmV0b3AtbWFuYWdlci1z
-    eXN0ZW1fbmV0b3AtbWFuYWdlci1jb250cm9sbGVyLW1hbmFnZXItbWV0cmljcy1zZXJ2aWNlXCJ9fV1c
+    Z1wiOlt7XCJzZXJ2aWNlLWlwXCI6XCIxMC45OS4xNDIuMTk4XCIsXCJzZXJ2aWNlLXByb3RvXCI6XCJ0
+    Y3BcIixcInNlcnZpY2UtcG9ydFwiOjg0NDMsXCJuZXh0LWhvcC1pcHNcIjpbXCIxOTIuMTY4LjIzLjRc
+    Il0sXCJuZXh0LWhvcC1wb3J0XCI6ODQ0MyxcImNvbm50cmFjay1lbmFibGVkXCI6dHJ1ZSxcInNlc3Np
+    b24tYWZmaW5pdHlcIjp7XCJjbGllbnQtaXBcIjp7XCJ0aW1lb3V0LXNlY29uZHNcIjoxfX19XSxcImF0
+    dHJpYnV0ZXNcIjp7XCJjb250cm9sLXBsYW5lXCI6XCJjb250cm9sbGVyLW1hbmFnZXJcIixcIm5hbWVc
+    IjpcIm5ldG9wLW1hbmFnZXItY29udHJvbGxlci1tYW5hZ2VyLW1ldHJpY3Mtc2VydmljZVwiLFwibmFt
+    ZXNwYWNlXCI6XCJuZXRvcC1tYW5hZ2VyLXN5c3RlbVwiLFwic2VydmljZS1uYW1lXCI6XCJuZXRvcC1t
+    YW5hZ2VyLXN5c3RlbV9uZXRvcC1tYW5hZ2VyLWNvbnRyb2xsZXItbWFuYWdlci1tZXRyaWNzLXNlcnZp
+    Y2VcIn19LHtcInV1aWRcIjpcIjA5OTBkOWVkLTE3OTMtNDkzZS04MDgwLTQwNzcxZWU3NWJjMlwiLFwi
+    ZG9tYWluLXBvbGljeS1zcGFjZVwiOlwiY29tbW9uXCIsXCJkb21haW4tbmFtZVwiOlwiazhzMjNfdnJm
+    XCIsXCJzZXJ2aWNlLW1vZGVcIjpcImxvYWRiYWxhbmNlclwiLFwic2VydmljZS10eXBlXCI6XCJjbHVz
+    dGVySXBcIixcInNlcnZpY2UtbWFwcGluZ1wiOlt7XCJzZXJ2aWNlLWlwXCI6XCIxMC45Ni4wLjFcIixc
+    InNlcnZpY2UtcHJvdG9cIjpcInRjcFwiLFwic2VydmljZS1wb3J0XCI6NDQzLFwibmV4dC1ob3AtaXBz
+    XCI6W1wiMTkyLjE2OC4yMy4yXCJdLFwibmV4dC1ob3AtcG9ydFwiOjY0NDMsXCJjb25udHJhY2stZW5h
+    YmxlZFwiOnRydWUsXCJzZXNzaW9uLWFmZmluaXR5XCI6e1wiY2xpZW50LWlwXCI6e1widGltZW91dC1z
+    ZWNvbmRzXCI6MX19fV0sXCJhdHRyaWJ1dGVzXCI6e1wiY29tcG9uZW50XCI6XCJhcGlzZXJ2ZXJcIixc
+    Im5hbWVcIjpcImt1YmVybmV0ZXNcIixcIm5hbWVzcGFjZVwiOlwiZGVmYXVsdFwiLFwicHJvdmlkZXJc
+    IjpcImt1YmVybmV0ZXNcIixcInNlcnZpY2UtbmFtZVwiOlwiZGVmYXVsdF9rdWJlcm5ldGVzXCJ9fV1c
     biIsICJzdGF0dXMiOiAie1wic2VydmljZXNcIjoyLFwicG9kLWlwc1wiOnt9fVxuIiB9LCAiY25pVHlw
     ZSI6ICJja28tY25pLWFjaSIsICJjbmlWZXJzaW9uIjogIjUuMi4zLjQiLCAiaXBhbSI6ICJ7XCJwb2Qt
     aXBzXCI6e319XG4iLCAibWFuYWdlZFN0YXRlIjogIk5ldyIsICJvYnNlcnZlZEdlbmVyYXRpb24iOiAx
