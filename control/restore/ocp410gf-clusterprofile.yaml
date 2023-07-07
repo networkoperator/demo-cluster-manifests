@@ -131,9 +131,18 @@ metadata:
     operation: Update
     subresource: status
     time: "2023-07-07T08:33:46Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:cluster_info_error: {}
+    manager: OpenAPI-Generator
+    operation: Update
+    subresource: status
+    time: "2023-07-07T08:34:01Z"
   name: ocp410gf
   namespace: netop-manager
-  resourceVersion: "12441"
+  resourceVersion: "12501"
   uid: c5a2159c-7ccb-434a-8953-343a33003eda
 spec:
   cni: aci
@@ -190,6 +199,10 @@ status:
     pod_subnet: 10.2.0.1/16
   calico_cni_config: {}
   cluster_group_profile_name: default-cluster-group-profile-aci
+  cluster_info_error: 'ERR:  Error in provisioning /api/mo/uni/tn-ocp410gf.json: APIC
+    REST Error: {''attributes'': {''code'': ''100'', ''text'': ''Validation failed:
+    Vlan ranges for an EPg cannot overlap Dn0=uni/tn-ocp410gf/ap-aci-containers-ocp410gf/epg-aci-containers-nodes,
+    ''}}'
   context:
     aep: fab20-esx
     l3out:
