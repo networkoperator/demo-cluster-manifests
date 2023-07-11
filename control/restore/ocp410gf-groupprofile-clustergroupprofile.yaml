@@ -63,16 +63,17 @@ metadata:
     fieldsV1:
       f:status:
         .: {}
+        f:cluster-fabric-mapping: {}
         f:mode: {}
         f:state: {}
         f:target_version: {}
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-07-11T09:59:19Z"
+    time: "2023-07-11T10:03:12Z"
   name: ocp410gf-groupprofile
   namespace: netop-manager
-  resourceVersion: "10560"
+  resourceVersion: "11024"
   uid: 9d61f8b3-9d0a-4e1b-abb3-d2c3fe71d523
 spec:
   config_overrides:
@@ -148,6 +149,9 @@ spec:
       fabric: aci-fab-02
       site: az02
 status:
+  cluster-fabric-mapping:
+  - cluster: ocp410gf-clusterprofile
+    fabric: ocp410gf
   mode: managed
   state: true
   target_version: 0.9.1
