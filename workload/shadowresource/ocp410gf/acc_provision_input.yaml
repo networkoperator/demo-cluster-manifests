@@ -19,7 +19,6 @@ aci_config:
       end: 225.20.255.255
       start: 225.20.0.1
     nested_inside:
-      elag_name: Fab20_ELAG
       installer_provisioned_lb_ip: 192.168.2.2
       name: HX-vC
       type: vmware
@@ -27,29 +26,16 @@ aci_config:
     name: ocp410_gf_vrf
     tenant: common
 calico_cni_config: {}
-cko_proxy_config: {}
+cko_proxy_config:
+  http_proxy: http://proxy.myorg.com:80
+  https_proxy: http://proxy.myorg.com:80
+  no_proxy: localhost,127.0.0.1
 cluster_profile_name: ocp410gf-clusterprofile
 cni: aci
 connectivity_checker:
-  error_pods_reporting_enable: true
   reachability_test_enable:
-    external_url:
-      url: google.com
-    periodic_sync:
-      enable_updates: true
-      interval: 120
-  reachability_tests:
-  - pod_to_pod
-  - pod_to_node
-  - pod_to_clusterIP
-  - pod_to_service
-  - pod_to_LB_VIP
-  - pod_to_NodePort
-  - pod_to_External
-  - node_to_node
-  - node_to_pod
-  - node_to_clusterIP
-  - node_to_LB_VIP
+    external_url: {}
+    periodic_sync: {}
 distro:
   flavor: openshift-4.10-esx
   platform: esx
@@ -65,24 +51,38 @@ net_config:
   extern_static: 10.4.0.1/24
   infra_vlan: 4093
   kubeapi_vlan: 202
-  node_subnet: 10.5.0.1/24
+  node_subnet: 192.168.2.1/24
   node_svc_subnet: 192.168.2.1/24
   pod_subnet: 10.2.0.1/16
   service_vlan: 203
 operator_config:
   mode: managed
   target_version: 0.9.1
-registry: {}
+registry:
+  acc_provision_operator_version: 5.2.3.6.1d150da
+  aci_containers_controller_version: 5.2.3.6.1d150da
+  aci_containers_host_version: 5.2.3.6.1d150da
+  aci_containers_operator_version: 5.2.3.6.1d150da
+  cnideploy_version: 5.2.3.6.1d150da
+  image_prefix: quay.io/cko
+  network_operator_version: 0.9.1.d04f56f
+  openvswitch_version: 5.2.3.6.1d150da
+  opflex_agent_version: 5.2.3.6.1d150da
 service_mesh_config: {}
 topology: {}
 kube_config:
   drop_log_config: {}
+  image_pull_policy: Always
   istio_config: {}
   multus: {}
   nodepodif_config: {}
   operator_managed_config: {}
+  ovs_memory_limit: 1Gi
   sriov_config: {}
-logging: {}
+logging:
+  controller_log_level: debug
+  hostagent_log_level: debug
+  opflexagent_log_level: debug
 control_cluster_websocket:
   server_ip: 172.18.0.2
   server_port: 8095

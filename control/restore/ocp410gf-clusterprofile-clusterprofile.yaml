@@ -131,9 +131,18 @@ metadata:
     operation: Update
     subresource: status
     time: "2023-07-11T11:08:15Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:cluster_info_error: {}
+    manager: OpenAPI-Generator
+    operation: Update
+    subresource: status
+    time: "2023-07-11T11:08:28Z"
   name: ocp410gf-clusterprofile
   namespace: netop-manager
-  resourceVersion: "18883"
+  resourceVersion: "18910"
   uid: 33773a51-8c97-472b-a483-96a5ef9f478e
 spec:
   cluster_name: ocp410gf
@@ -196,6 +205,7 @@ status:
     node_svc_subnet: 192.168.2.1/24
     pod_subnet: 10.2.0.1/16
   calico_cni_config: {}
+  cluster_info_error: 'ERR:  overlapping subnets found in configuration input file'
   cluster_network_profile_name: ocp410gf-networkprofile
   context:
     aep: fab20-esx
