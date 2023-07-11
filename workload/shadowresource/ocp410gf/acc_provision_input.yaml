@@ -18,7 +18,11 @@ aci_config:
     mcast_range:
       end: 225.20.255.255
       start: 225.20.0.1
-    nested_inside: {}
+    nested_inside:
+      elag_name: Fab20_ELAG
+      installer_provisioned_lb_ip: 192.168.2.2
+      name: HX-vC
+      type: vmware
   vrf:
     name: ocp410_gf_vrf
     tenant: common
@@ -61,8 +65,8 @@ net_config:
   extern_static: 10.4.0.1/24
   infra_vlan: 4093
   kubeapi_vlan: 202
-  node_subnet: 10.5.0.1/24
-  node_svc_subnet: 192.168.2.1/24
+  node_subnet: 192.168.2.1/24
+  node_svc_subnet: 10.5.0.1/24
   pod_subnet: 10.2.0.1/16
   service_vlan: 203
 operator_config:
