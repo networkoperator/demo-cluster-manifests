@@ -7,7 +7,7 @@ metadata:
   creationTimestamp: "2023-07-11T10:13:11Z"
   finalizers:
   - fabricinfra.netop.mgr/finalizer
-  generation: 2
+  generation: 3
   labels:
     fabric: aci-fab-02
     site: az02
@@ -47,7 +47,6 @@ metadata:
         f:external_subnets: {}
         f:fabric_type: {}
         f:infra_vlan: {}
-        f:internal_subnets: {}
         f:mcast_subnets: {}
         f:vlans: {}
     manager: kubectl-client-side-apply
@@ -69,35 +68,26 @@ metadata:
   - apiVersion: netop.mgr/v1alpha1
     fieldsType: FieldsV1
     fieldsV1:
+      f:spec:
+        f:internal_subnets: {}
+    manager: kubectl-edit
+    operation: Update
+    time: "2023-07-11T10:35:25Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
       f:status:
         .: {}
-        f:available:
-          .: {}
-          f:contexts:
-            .: {}
-            f:context-1:
-              .: {}
-              f:aep: {}
-              f:l3out:
-                .: {}
-                f:external_networks: {}
-                f:name: {}
-              f:vrf:
-                .: {}
-                f:name: {}
-                f:tenant: {}
-          f:external_subnets: {}
-          f:internal_subnets: {}
-          f:mcast_subnets: {}
-          f:vlans: {}
+        f:allocated: {}
+        f:available: {}
         f:ready: {}
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-07-11T10:33:56Z"
+    time: "2023-07-11T10:35:37Z"
   name: ocp410gf
   namespace: netop-manager
-  resourceVersion: "14760"
+  resourceVersion: "14972"
   uid: 7df6267f-e352-4257-9b15-9afe8f6ee6b0
 spec:
   bgp: {}
@@ -122,8 +112,8 @@ spec:
   fabric_type: aci
   infra_vlan: 4093
   internal_subnets:
-  - 192.168.2.1/24
   - 10.5.0.1/24
+  - 192.168.2.1/24
   mcast_subnets:
   - 225.20.0.0/16
   topology: {}
@@ -131,17 +121,18 @@ spec:
   - 202
   - 203
 status:
-  available:
-    contexts:
-      context-1:
-        aep: fab20-esx
-        l3out:
-          external_networks:
-          - ocp-gf-l3-extepg
-          name: ocp410_gf_l3out
-        vrf:
-          name: ocp410_gf_vrf
-          tenant: common
+  allocated:
+  - cluster_group_profile: ocp410gf-groupprofile
+    cluster_profile: ocp410gf-clusterprofile
+    context:
+      aep: fab20-esx
+      l3out:
+        external_networks:
+        - ocp-gf-l3-extepg
+        name: ocp410_gf_l3out
+      vrf:
+        name: ocp410_gf_vrf
+        tenant: common
     external_subnets:
     - 10.3.0.1/24
     - 10.4.0.1/24
@@ -153,4 +144,5 @@ status:
     vlans:
     - 202
     - 203
+  available: {}
   ready: true
