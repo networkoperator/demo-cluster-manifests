@@ -71,33 +71,18 @@ metadata:
     fieldsV1:
       f:status:
         .: {}
+        f:allocated: {}
         f:available:
           .: {}
-          f:contexts:
-            .: {}
-            f:context-1:
-              .: {}
-              f:aep: {}
-              f:l3out:
-                .: {}
-                f:external_networks: {}
-                f:name: {}
-              f:vrf:
-                .: {}
-                f:name: {}
-                f:tenant: {}
-          f:external_subnets: {}
           f:internal_subnets: {}
-          f:mcast_subnets: {}
-          f:vlans: {}
         f:ready: {}
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-07-12T07:30:20Z"
+    time: "2023-07-12T07:30:50Z"
   name: ocp410gf
   namespace: netop-manager
-  resourceVersion: "162911"
+  resourceVersion: "162980"
   uid: cf96b01b-6648-491a-986d-9fc21069980c
 spec:
   bgp: {}
@@ -131,26 +116,29 @@ spec:
   - 202
   - 203
 status:
-  available:
-    contexts:
-      context-1:
-        aep: fab20-esx
-        l3out:
-          external_networks:
-          - ocp-gf-l3-extepg
-          name: ocp410_gf_l3out
-        vrf:
-          name: ocp410_gf_vrf
-          tenant: common
+  allocated:
+  - cluster_profile: ocp410gf
+    context:
+      aep: fab20-esx
+      l3out:
+        external_networks:
+        - ocp-gf-l3-extepg
+        name: ocp410_gf_l3out
+      vrf:
+        name: ocp410_gf_vrf
+        tenant: common
     external_subnets:
     - 10.3.0.1/24
     - 10.4.0.1/24
     internal_subnets:
-    - 10.5.0.1/16
     - 192.168.2.1/24
+    - 10.5.0.1/24
     mcast_subnets:
     - 225.20.0.0/16
     vlans:
     - 202
     - 203
+  available:
+    internal_subnets:
+    - 10.5.0.1/16
   ready: true
