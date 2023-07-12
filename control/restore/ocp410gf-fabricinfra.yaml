@@ -75,14 +75,15 @@ metadata:
         f:available:
           .: {}
           f:internal_subnets: {}
+        f:discovered_infra_vlan: {}
         f:ready: {}
     manager: manager
     operation: Update
     subresource: status
-    time: "2023-07-12T08:16:56Z"
+    time: "2023-07-12T08:17:16Z"
   name: ocp410gf
   namespace: netop-manager
-  resourceVersion: "168435"
+  resourceVersion: "168481"
   uid: cf96b01b-6648-491a-986d-9fc21069980c
 spec:
   bgp: {}
@@ -141,4 +142,5 @@ status:
   available:
     internal_subnets:
     - 10.5.0.1/16
+  discovered_infra_vlan: 4093
   ready: true
