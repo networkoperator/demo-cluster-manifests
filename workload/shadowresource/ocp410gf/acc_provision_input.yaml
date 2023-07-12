@@ -17,7 +17,7 @@ aci_config:
     encap_type: vxlan
     mcast_range:
       end: 225.20.255.255
-      start: 225.20.0.1
+      start: 225.20.1.1
     nested_inside:
       installer_provisioned_lb_ip: 192.168.2.2
       name: HX-vC
@@ -30,7 +30,7 @@ cko_proxy_config:
   http_proxy: http://proxy.myorg.com:80
   https_proxy: http://proxy.myorg.com:80
   no_proxy: localhost,127.0.0.1
-cluster_profile_name: ocp410gf-clusterprofile
+cluster_profile_name: ocp410gf
 cni: aci
 connectivity_checker:
   reachability_test_enable:
@@ -52,22 +52,22 @@ net_config:
   infra_vlan: 4093
   kubeapi_vlan: 202
   node_subnet: 192.168.2.1/24
-  node_svc_subnet: 192.168.2.1/24
+  node_svc_subnet: 10.5.0.1/24
   pod_subnet: 10.2.0.1/16
   service_vlan: 203
 operator_config:
   mode: managed
   target_version: 0.9.1
 registry:
-  acc_provision_operator_version: 5.2.3.6.1d150da
-  aci_containers_controller_version: 5.2.3.6.1d150da
-  aci_containers_host_version: 5.2.3.6.1d150da
-  aci_containers_operator_version: 5.2.3.6.1d150da
-  cnideploy_version: 5.2.3.6.1d150da
+  acc_provision_operator_version: kmr2-test
+  aci_containers_controller_version: kmr2-test
+  aci_containers_host_version: kmr2-test
+  aci_containers_operator_version: kmr2-test
+  cnideploy_version: kmr2-test
   image_prefix: quay.io/cko
   network_operator_version: 0.9.1.d04f56f
-  openvswitch_version: 5.2.3.6.1d150da
-  opflex_agent_version: 5.2.3.6.1d150da
+  openvswitch_version: kmr2-test
+  opflex_agent_version: kmr2-test
 service_mesh_config: {}
 topology: {}
 kube_config:
