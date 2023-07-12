@@ -140,10 +140,10 @@ metadata:
     manager: OpenAPI-Generator
     operation: Update
     subresource: status
-    time: "2023-07-12T08:17:19Z"
+    time: "2023-07-12T18:30:28Z"
   name: ocp410gf
   namespace: netop-manager
-  resourceVersion: "168489"
+  resourceVersion: "240732"
   uid: 74ddb2fe-3611-4c22-8d1e-5a5674d403ff
 spec:
   cluster_name: ocp410gf
@@ -206,7 +206,7 @@ status:
     node_svc_subnet: 10.5.0.1/24
     pod_subnet: 10.2.0.1/16
   calico_cni_config: {}
-  cluster_info_error: No error in provisioning
+  cluster_info_error: 'ERR:  TypeError: ''NoneType'' object is not subscriptable'
   cluster_network_profile_name: ocp410gf
   context:
     aep: fab20-esx
