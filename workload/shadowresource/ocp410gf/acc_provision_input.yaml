@@ -19,6 +19,7 @@ aci_config:
       end: 225.20.255.255
       start: 225.20.1.1
     nested_inside:
+      elag_name: Fab20_ELAG
       installer_provisioned_lb_ip: 192.168.2.2
       name: HX-vC
       type: vmware
