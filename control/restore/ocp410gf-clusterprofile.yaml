@@ -132,9 +132,18 @@ metadata:
     operation: Update
     subresource: status
     time: "2023-07-13T11:53:05Z"
+  - apiVersion: netop.mgr/v1alpha1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:cluster_info_error: {}
+    manager: OpenAPI-Generator
+    operation: Update
+    subresource: status
+    time: "2023-07-13T11:53:29Z"
   name: ocp410gf
   namespace: netop-manager
-  resourceVersion: "364381"
+  resourceVersion: "364438"
   uid: 23fdbb87-fa03-464a-88d7-042c3a750767
 spec:
   cluster_name: ocp410gf
@@ -197,6 +206,7 @@ status:
     node_svc_subnet: 10.5.0.1/24
     pod_subnet: 10.2.0.1/16
   calico_cni_config: {}
+  cluster_info_error: No error in provisioning
   cluster_network_profile_name: ocp410gf
   context:
     aep: fab20-esx
