@@ -1,0 +1,87 @@
+aci_config:
+  aep: hypf-aep
+  apic_hosts:
+  - 10.30.120.180
+  cluster_l3out:
+    bgp:
+      peering: {}
+    svi: {}
+    vrf: {}
+  l3out:
+    external_networks:
+    - k8s23_net
+    name: k8s23
+  physical_domain: {}
+  system_id: pallavi23
+  vmm_domain:
+    encap_type: vxlan
+    mcast_range:
+      end: 225.33.255.255
+      start: 225.33.1.1
+    nested_inside:
+      name: hypflex-vswitch
+      type: vmware
+  vrf:
+    name: k8s23_vrf
+    tenant: common
+calico_cni_config: {}
+cko_proxy_config:
+  http_proxy: http://proxy.esl.cisco.com:80
+  https_proxy: http://proxy.esl.cisco.com:80
+  no_proxy: localhost,127.0.0.1
+cluster_profile_name: pallavi23
+cni: aci
+connectivity_checker:
+  reachability_test_enable:
+    external_url: {}
+    periodic_sync: {}
+distro:
+  flavor: kubernetes-1.24
+  platform: esx
+  release: '1.24'
+  type: kubernetes
+gitops:
+  base64_encoded_argo_manifests: ''
+lb_config: {}
+monitoring_config: {}
+net_config:
+  cluster_svc_subnet: 10.96.0.1/12
+  extern_dynamic: 10.3.0.1/24
+  extern_static: 10.4.0.1/24
+  infra_vlan: 3901
+  kubeapi_vlan: 45
+  node_subnet: 192.168.23.1/24
+  node_svc_subnet: 10.5.0.1/24
+  pod_subnet: 10.2.0.1/16
+  service_vlan: 46
+operator_config:
+  mode: managed
+  target_version: 0.9.1
+registry:
+  acc_provision_operator_version: kmr2-test
+  aci_containers_controller_version: kmr2-test
+  aci_containers_host_version: kmr2-test
+  aci_containers_operator_version: kmr2-test
+  cnideploy_version: kmr2-test
+  image_prefix: quay.io/cko
+  network_operator_version: 0.9.1.d04f56f
+  openvswitch_version: kmr2-test
+  opflex_agent_version: kmr2-test
+service_mesh_config: {}
+topology: {}
+kube_config:
+  drop_log_config: {}
+  image_pull_policy: Always
+  istio_config: {}
+  multus: {}
+  nodepodif_config: {}
+  operator_managed_config: {}
+  ovs_memory_limit: 1Gi
+  sriov_config: {}
+logging:
+  controller_log_level: debug
+  hostagent_log_level: debug
+  opflexagent_log_level: debug
+control_cluster_websocket:
+  server_ip: 172.18.0.2
+  server_port: 8095
