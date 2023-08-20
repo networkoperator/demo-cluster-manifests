@@ -6,8 +6,8 @@ data:
         "config": "{\"uplink-iface\":\"eth0\",\"vxlan-iface\":\"eth0.3901\",\"vxlan-anycast-ip\":\"10.0.0.32\",\"opflex-peer-ip\":\"10.0.0.30\",\"uplink mac_adress\":\"00:50:56:97:7b:a6\",\"default-endpoint-group\":{\"policy-space\":\"pallavi\",\"name\":\"aci-containers-pallavi|aci-containers-default\"},\"default-qospolicy-group\":{},\"namespace-default-endpoint-group\":{\"aci-containers-system\":{\"policy-space\":\"pallavi\",\"name\":\"aci-containers-pallavi|aci-containers-system\"},\"istio-operator\":{\"policy-space\":\"pallavi\",\"name\":\"aci-containers-pallavi|aci-containers-istio\"},\"istio-system\":{\"policy-space\":\"pallavi\",\"name\":\"aci-containers-pallavi|aci-containers-istio\"},\"kube-system\":{\"policy-space\":\"pallavi\",\"name\":\"aci-containers-pallavi|aci-containers-system\"}},\"log-level\":\"debug\",\"node-name\":\"k8s22-node-1.local.lan\",\"status-port\":8090,\"grpc-port\":19999,\"cni-metadata-dir\":\"/usr/local/var/lib/aci-containers/\",\"cni-network\":\"k8s-pod-network\",\"opflex-config-path\":\"/usr/local/etc/opflex-agent-ovs/base-conf.d\",\"opflex-endpoint-dir\":\"/usr/local/var/lib/opflex-agent-ovs/endpoints/\",\"opflex-service-dir\":\"/usr/local/var/lib/opflex-agent-ovs/services/\",\"opflex-snat-dir\":\"/usr/local/var/lib/opflex-agent-ovs/snats/\",\"opflex-fault-dir\":\"/usr/local/var/lib/opflex-agent-ovs/faults/\",\"opflex-flowid-cache-dir\":\"/usr/local/var/lib/opflex-agent-ovs/ids/\",\"opflex-mcast-file\":\"/usr/local/var/lib/opflex-agent-ovs/mcast/opflex-groups.json\",\"opflex-server-config-file\":\"/usr/local/var/lib/opflex-server/config.json\",\"packet-event-notification-socket\":\"/usr/local/var/run/aci-containers-packet-event-notification.sock\",\"opflex-drop-log-config-dir\":\"/usr/local/var/lib/opflex-agent-ovs/droplog\",\"opflex-drop-log-remote-ip\":\"192.168.1.2\",\"ovs-db-sock\":\"/usr/local/var/run/openvswitch/db.sock\",\"ep-rpc-sock\":\"/usr/local/var/run/aci-containers-ep-rpc.sock\",\"aci-prefix\":\"pallavi\",\"aci-infra-vlan\":3901,\"service-vlan\":44,\"encap-type\":\"vxlan\",\"int-bridge-name\":\"br-int\",\"access-bridge-name\":\"br-access\",\"interface-mtu\":1700,\"interface-mtu-headroom\":100,\"cni-netconfig\":[{\"subnet\":\"10.2.0.0/16\",\"gateway\":\"10.2.0.1\",\"routes\":[{\"dst\":\"0.0.0.0/0\",\"gw\":\"10.2.0.1\"}]}],\"aci-vmm-type\":\"Kubernetes\",\"aci-vmm-domain\":\"pallavi\",\"aci-vmm-controller\":\"pallavi\",\"aci-vrf\":\"k8s22_vrf\",\"aci-vrf-tenant\":\"common\",\"zone\":8191,\"aci-snat-namespace\":\"aci-containers-system\",\"enable-drop-log\":true,\"drop-log-access-iface\":\"gen2\",\"drop-log-int-iface\":\"gen1\",\"drop-log-expiry\":10,\"drop-log-repeat-intvl\":2,\"flavor\":\"kubernetes-1.24\"}\n",
         "endpoints": "[]\n",
         "ipam": "{\"pod-ips\":{\"V4\":[{\"start\":\"10.2.0.130\",\"end\":\"10.2.0.161\"}]}}\n",
-        "services": "[{\"uuid\":\"67d3135c-1d79-4723-a71f-9529911fbd89\",\"domain-policy-space\":\"common\",\"domain-name\":\"k8s22_vrf\",\"service-mode\":\"loadbalancer\",\"service-type\":\"clusterIp\",\"service-mapping\":[{\"service-ip\":\"10.96.0.1\",\"service-proto\":\"tcp\",\"service-port\":443,\"next-hop-ips\":[\"192.168.22.2\"],\"next-hop-port\":6443,\"conntrack-enabled\":true,\"session-affinity\":{\"client-ip\":{\"timeout-seconds\":1}}}],\"attributes\":{\"component\":\"apiserver\",\"name\":\"kubernetes\",\"namespace\":\"default\",\"provider\":\"kubernetes\",\"service-name\":\"default_kubernetes\"}},{\"uuid\":\"2767a96d-97ea-424a-926d-e71945e22fbe\",\"domain-policy-space\":\"common\",\"domain-name\":\"k8s22_vrf\",\"service-mode\":\"loadbalancer\",\"service-type\":\"clusterIp\",\"service-mapping\":[{\"service-ip\":\"10.96.0.10\",\"service-proto\":\"udp\",\"service-port\":53,\"next-hop-ips\":[\"10.2.0.68\",\"10.2.0.47\"],\"next-hop-port\":53,\"conntrack-enabled\":true,\"session-affinity\":{\"client-ip\":{\"timeout-seconds\":1}}},{\"service-ip\":\"10.96.0.10\",\"service-proto\":\"tcp\",\"service-port\":53,\"next-hop-ips\":[\"10.2.0.68\",\"10.2.0.47\"],\"next-hop-port\":53,\"conntrack-enabled\":true,\"session-affinity\":{\"client-ip\":{\"timeout-seconds\":1}}},{\"service-ip\":\"10.96.0.10\",\"service-proto\":\"tcp\",\"service-port\":9153,\"next-hop-ips\":[\"10.2.0.68\",\"10.2.0.47\"],\"next-hop-port\":9153,\"conntrack-enabled\":true,\"session-affinity\":{\"client-ip\":{\"timeout-seconds\":1}}}],\"attributes\":{\"k8s-app\":\"kube-dns\",\"kubernetes.io/cluster-service\":\"true\",\"kubernetes.io/name\":\"CoreDNS\",\"name\":\"kube-dns\",\"namespace\":\"kube-system\",\"service-name\":\"kube-system_kube-dns\"}},{\"uuid\":\"cc4ef823-1504-419d-a380-c231b3ed7879\",\"domain-policy-space\":\"common\",\"domain-name\":\"k8s22_vrf\",\"service-mode\":\"loadbalancer\",\"service-type\":\"clusterIp\",\"service-mapping\":[{\"service-ip\":\"10.109.199.157\",\"service-proto\":\"tcp\",\"service-port\":8443,\"next-hop-ips\":[\"192.168.22.2\"],\"next-hop-port\":8443,\"conntrack-enabled\":true,\"session-affinity\":{\"client-ip\":{\"timeout-seconds\":1}}}],\"attributes\":{\"control-plane\":\"controller-manager\",\"name\":\"netop-manager-controller-manager-metrics-service\",\"namespace\":\"netop-manager-system\",\"service-name\":\"netop-manager-system_netop-manager-controller-manager-metrics-service\"}}]\n",
-        "status": "{\"services\":3,\"pod-ips\":{\"V4\":[{\"start\":\"10.2.0.130\",\"end\":\"10.2.0.161\"}]}}\n"
+        "services": "[{\"uuid\":\"cc4ef823-1504-419d-a380-c231b3ed7879\",\"domain-policy-space\":\"common\",\"domain-name\":\"k8s22_vrf\",\"service-mode\":\"loadbalancer\",\"service-type\":\"clusterIp\",\"service-mapping\":[{\"service-ip\":\"10.109.199.157\",\"service-proto\":\"tcp\",\"service-port\":8443,\"next-hop-ips\":[\"192.168.22.2\"],\"next-hop-port\":8443,\"conntrack-enabled\":true,\"session-affinity\":{\"client-ip\":{\"timeout-seconds\":1}}}],\"attributes\":{\"control-plane\":\"controller-manager\",\"name\":\"netop-manager-controller-manager-metrics-service\",\"namespace\":\"netop-manager-system\",\"service-name\":\"netop-manager-system_netop-manager-controller-manager-metrics-service\"}},{\"uuid\":\"fccc5054-6691-4659-a170-d6e6b2f90aed\",\"domain-policy-space\":\"common\",\"domain-name\":\"k8s22_vrf\",\"service-mode\":\"loadbalancer\",\"service-type\":\"clusterIp\",\"service-mapping\":[{\"service-ip\":\"10.110.254.244\",\"service-proto\":\"tcp\",\"service-port\":9995,\"next-hop-ips\":[\"10.2.0.8\",\"10.2.0.67\",\"10.2.0.104\"],\"next-hop-port\":8080,\"conntrack-enabled\":true,\"session-affinity\":{\"client-ip\":{\"timeout-seconds\":1}}}],\"attributes\":{\"name\":\"nginx-svc-cip\",\"namespace\":\"nettools\",\"service-name\":\"nettools_nginx-svc-cip\",\"test-nginx-svc\":\"nginx-svc-cip\"}},{\"uuid\":\"8755c921-ab41-458e-9c04-2dbed2db802e\",\"domain-policy-space\":\"common\",\"domain-name\":\"k8s22_vrf\",\"service-mode\":\"loadbalancer\",\"service-type\":\"loadBalancer\",\"service-mapping\":[{\"service-ip\":\"10.109.151.226\",\"service-proto\":\"tcp\",\"service-port\":9995,\"next-hop-ips\":[\"10.2.0.8\",\"10.2.0.67\",\"10.2.0.104\"],\"next-hop-port\":8080,\"conntrack-enabled\":true,\"node-port\":30212,\"session-affinity\":{\"client-ip\":{\"timeout-seconds\":1}}}],\"attributes\":{\"name\":\"nginx-svc-lb\",\"namespace\":\"nettools\",\"service-name\":\"nettools_nginx-svc-lb\",\"test-nginx-svc\":\"nginx-svc-lb\"}},{\"uuid\":\"48f17622-d662-4eae-8f41-759413b4fb7d\",\"domain-policy-space\":\"common\",\"domain-name\":\"k8s22_vrf\",\"service-mode\":\"loadbalancer\",\"service-type\":\"nodePort\",\"service-mapping\":[{\"service-ip\":\"10.109.162.186\",\"service-proto\":\"tcp\",\"service-port\":9995,\"next-hop-ips\":[\"10.2.0.8\",\"10.2.0.67\",\"10.2.0.104\"],\"next-hop-port\":8080,\"conntrack-enabled\":true,\"node-port\":30977,\"session-affinity\":{\"client-ip\":{\"timeout-seconds\":1}}}],\"attributes\":{\"name\":\"nginx-svc-nodeport\",\"namespace\":\"nettools\",\"service-name\":\"nettools_nginx-svc-nodeport\",\"test-nginx-svc\":\"nginx-svc-np\"}},{\"uuid\":\"67d3135c-1d79-4723-a71f-9529911fbd89\",\"domain-policy-space\":\"common\",\"domain-name\":\"k8s22_vrf\",\"service-mode\":\"loadbalancer\",\"service-type\":\"clusterIp\",\"service-mapping\":[{\"service-ip\":\"10.96.0.1\",\"service-proto\":\"tcp\",\"service-port\":443,\"next-hop-ips\":[\"192.168.22.2\"],\"next-hop-port\":6443,\"conntrack-enabled\":true,\"session-affinity\":{\"client-ip\":{\"timeout-seconds\":1}}}],\"attributes\":{\"component\":\"apiserver\",\"name\":\"kubernetes\",\"namespace\":\"default\",\"provider\":\"kubernetes\",\"service-name\":\"default_kubernetes\"}},{\"uuid\":\"2767a96d-97ea-424a-926d-e71945e22fbe\",\"domain-policy-space\":\"common\",\"domain-name\":\"k8s22_vrf\",\"service-mode\":\"loadbalancer\",\"service-type\":\"clusterIp\",\"service-mapping\":[{\"service-ip\":\"10.96.0.10\",\"service-proto\":\"udp\",\"service-port\":53,\"next-hop-ips\":[\"10.2.0.68\",\"10.2.0.47\"],\"next-hop-port\":53,\"conntrack-enabled\":true,\"session-affinity\":{\"client-ip\":{\"timeout-seconds\":1}}},{\"service-ip\":\"10.96.0.10\",\"service-proto\":\"tcp\",\"service-port\":53,\"next-hop-ips\":[\"10.2.0.68\",\"10.2.0.47\"],\"next-hop-port\":53,\"conntrack-enabled\":true,\"session-affinity\":{\"client-ip\":{\"timeout-seconds\":1}}},{\"service-ip\":\"10.96.0.10\",\"service-proto\":\"tcp\",\"service-port\":9153,\"next-hop-ips\":[\"10.2.0.68\",\"10.2.0.47\"],\"next-hop-port\":9153,\"conntrack-enabled\":true,\"session-affinity\":{\"client-ip\":{\"timeout-seconds\":1}}}],\"attributes\":{\"k8s-app\":\"kube-dns\",\"kubernetes.io/cluster-service\":\"true\",\"kubernetes.io/name\":\"CoreDNS\",\"name\":\"kube-dns\",\"namespace\":\"kube-system\",\"service-name\":\"kube-system_kube-dns\"}}]\n",
+        "status": "{\"services\":6,\"pod-ips\":{\"V4\":[{\"start\":\"10.2.0.130\",\"end\":\"10.2.0.161\"}]}}\n"
       },
       "cniType": "cko-cni-aci",
       "cniVersion": "5.2.3.4",
@@ -66,53 +66,84 @@ data:
     aXJ5XCI6MTAsXCJkcm9wLWxvZy1yZXBlYXQtaW50dmxcIjoyLFwiZmxhdm9yXCI6XCJrdWJlcm5ldGVz
     LTEuMjRcIn1cbiIsICJlbmRwb2ludHMiOiAiW11cbiIsICJpcGFtIjogIntcInBvZC1pcHNcIjp7XCJW
     NFwiOlt7XCJzdGFydFwiOlwiMTAuMi4wLjEzMFwiLFwiZW5kXCI6XCIxMC4yLjAuMTYxXCJ9XX19XG4i
-    LCAic2VydmljZXMiOiAiW3tcInV1aWRcIjpcIjY3ZDMxMzVjLTFkNzktNDcyMy1hNzFmLTk1Mjk5MTFm
-    YmQ4OVwiLFwiZG9tYWluLXBvbGljeS1zcGFjZVwiOlwiY29tbW9uXCIsXCJkb21haW4tbmFtZVwiOlwi
+    LCAic2VydmljZXMiOiAiW3tcInV1aWRcIjpcImNjNGVmODIzLTE1MDQtNDE5ZC1hMzgwLWMyMzFiM2Vk
+    Nzg3OVwiLFwiZG9tYWluLXBvbGljeS1zcGFjZVwiOlwiY29tbW9uXCIsXCJkb21haW4tbmFtZVwiOlwi
     azhzMjJfdnJmXCIsXCJzZXJ2aWNlLW1vZGVcIjpcImxvYWRiYWxhbmNlclwiLFwic2VydmljZS10eXBl
-    XCI6XCJjbHVzdGVySXBcIixcInNlcnZpY2UtbWFwcGluZ1wiOlt7XCJzZXJ2aWNlLWlwXCI6XCIxMC45
-    Ni4wLjFcIixcInNlcnZpY2UtcHJvdG9cIjpcInRjcFwiLFwic2VydmljZS1wb3J0XCI6NDQzLFwibmV4
-    dC1ob3AtaXBzXCI6W1wiMTkyLjE2OC4yMi4yXCJdLFwibmV4dC1ob3AtcG9ydFwiOjY0NDMsXCJjb25u
-    dHJhY2stZW5hYmxlZFwiOnRydWUsXCJzZXNzaW9uLWFmZmluaXR5XCI6e1wiY2xpZW50LWlwXCI6e1wi
-    dGltZW91dC1zZWNvbmRzXCI6MX19fV0sXCJhdHRyaWJ1dGVzXCI6e1wiY29tcG9uZW50XCI6XCJhcGlz
-    ZXJ2ZXJcIixcIm5hbWVcIjpcImt1YmVybmV0ZXNcIixcIm5hbWVzcGFjZVwiOlwiZGVmYXVsdFwiLFwi
-    cHJvdmlkZXJcIjpcImt1YmVybmV0ZXNcIixcInNlcnZpY2UtbmFtZVwiOlwiZGVmYXVsdF9rdWJlcm5l
-    dGVzXCJ9fSx7XCJ1dWlkXCI6XCIyNzY3YTk2ZC05N2VhLTQyNGEtOTI2ZC1lNzE5NDVlMjJmYmVcIixc
-    ImRvbWFpbi1wb2xpY3ktc3BhY2VcIjpcImNvbW1vblwiLFwiZG9tYWluLW5hbWVcIjpcIms4czIyX3Zy
-    ZlwiLFwic2VydmljZS1tb2RlXCI6XCJsb2FkYmFsYW5jZXJcIixcInNlcnZpY2UtdHlwZVwiOlwiY2x1
-    c3RlcklwXCIsXCJzZXJ2aWNlLW1hcHBpbmdcIjpbe1wic2VydmljZS1pcFwiOlwiMTAuOTYuMC4xMFwi
-    LFwic2VydmljZS1wcm90b1wiOlwidWRwXCIsXCJzZXJ2aWNlLXBvcnRcIjo1MyxcIm5leHQtaG9wLWlw
-    c1wiOltcIjEwLjIuMC42OFwiLFwiMTAuMi4wLjQ3XCJdLFwibmV4dC1ob3AtcG9ydFwiOjUzLFwiY29u
-    bnRyYWNrLWVuYWJsZWRcIjp0cnVlLFwic2Vzc2lvbi1hZmZpbml0eVwiOntcImNsaWVudC1pcFwiOntc
-    InRpbWVvdXQtc2Vjb25kc1wiOjF9fX0se1wic2VydmljZS1pcFwiOlwiMTAuOTYuMC4xMFwiLFwic2Vy
-    dmljZS1wcm90b1wiOlwidGNwXCIsXCJzZXJ2aWNlLXBvcnRcIjo1MyxcIm5leHQtaG9wLWlwc1wiOltc
-    IjEwLjIuMC42OFwiLFwiMTAuMi4wLjQ3XCJdLFwibmV4dC1ob3AtcG9ydFwiOjUzLFwiY29ubnRyYWNr
-    LWVuYWJsZWRcIjp0cnVlLFwic2Vzc2lvbi1hZmZpbml0eVwiOntcImNsaWVudC1pcFwiOntcInRpbWVv
-    dXQtc2Vjb25kc1wiOjF9fX0se1wic2VydmljZS1pcFwiOlwiMTAuOTYuMC4xMFwiLFwic2VydmljZS1w
-    cm90b1wiOlwidGNwXCIsXCJzZXJ2aWNlLXBvcnRcIjo5MTUzLFwibmV4dC1ob3AtaXBzXCI6W1wiMTAu
-    Mi4wLjY4XCIsXCIxMC4yLjAuNDdcIl0sXCJuZXh0LWhvcC1wb3J0XCI6OTE1MyxcImNvbm50cmFjay1l
-    bmFibGVkXCI6dHJ1ZSxcInNlc3Npb24tYWZmaW5pdHlcIjp7XCJjbGllbnQtaXBcIjp7XCJ0aW1lb3V0
-    LXNlY29uZHNcIjoxfX19XSxcImF0dHJpYnV0ZXNcIjp7XCJrOHMtYXBwXCI6XCJrdWJlLWRuc1wiLFwi
-    a3ViZXJuZXRlcy5pby9jbHVzdGVyLXNlcnZpY2VcIjpcInRydWVcIixcImt1YmVybmV0ZXMuaW8vbmFt
-    ZVwiOlwiQ29yZUROU1wiLFwibmFtZVwiOlwia3ViZS1kbnNcIixcIm5hbWVzcGFjZVwiOlwia3ViZS1z
-    eXN0ZW1cIixcInNlcnZpY2UtbmFtZVwiOlwia3ViZS1zeXN0ZW1fa3ViZS1kbnNcIn19LHtcInV1aWRc
-    IjpcImNjNGVmODIzLTE1MDQtNDE5ZC1hMzgwLWMyMzFiM2VkNzg3OVwiLFwiZG9tYWluLXBvbGljeS1z
-    cGFjZVwiOlwiY29tbW9uXCIsXCJkb21haW4tbmFtZVwiOlwiazhzMjJfdnJmXCIsXCJzZXJ2aWNlLW1v
-    ZGVcIjpcImxvYWRiYWxhbmNlclwiLFwic2VydmljZS10eXBlXCI6XCJjbHVzdGVySXBcIixcInNlcnZp
-    Y2UtbWFwcGluZ1wiOlt7XCJzZXJ2aWNlLWlwXCI6XCIxMC4xMDkuMTk5LjE1N1wiLFwic2VydmljZS1w
-    cm90b1wiOlwidGNwXCIsXCJzZXJ2aWNlLXBvcnRcIjo4NDQzLFwibmV4dC1ob3AtaXBzXCI6W1wiMTky
-    LjE2OC4yMi4yXCJdLFwibmV4dC1ob3AtcG9ydFwiOjg0NDMsXCJjb25udHJhY2stZW5hYmxlZFwiOnRy
+    XCI6XCJjbHVzdGVySXBcIixcInNlcnZpY2UtbWFwcGluZ1wiOlt7XCJzZXJ2aWNlLWlwXCI6XCIxMC4x
+    MDkuMTk5LjE1N1wiLFwic2VydmljZS1wcm90b1wiOlwidGNwXCIsXCJzZXJ2aWNlLXBvcnRcIjo4NDQz
+    LFwibmV4dC1ob3AtaXBzXCI6W1wiMTkyLjE2OC4yMi4yXCJdLFwibmV4dC1ob3AtcG9ydFwiOjg0NDMs
+    XCJjb25udHJhY2stZW5hYmxlZFwiOnRydWUsXCJzZXNzaW9uLWFmZmluaXR5XCI6e1wiY2xpZW50LWlw
+    XCI6e1widGltZW91dC1zZWNvbmRzXCI6MX19fV0sXCJhdHRyaWJ1dGVzXCI6e1wiY29udHJvbC1wbGFu
+    ZVwiOlwiY29udHJvbGxlci1tYW5hZ2VyXCIsXCJuYW1lXCI6XCJuZXRvcC1tYW5hZ2VyLWNvbnRyb2xs
+    ZXItbWFuYWdlci1tZXRyaWNzLXNlcnZpY2VcIixcIm5hbWVzcGFjZVwiOlwibmV0b3AtbWFuYWdlci1z
+    eXN0ZW1cIixcInNlcnZpY2UtbmFtZVwiOlwibmV0b3AtbWFuYWdlci1zeXN0ZW1fbmV0b3AtbWFuYWdl
+    ci1jb250cm9sbGVyLW1hbmFnZXItbWV0cmljcy1zZXJ2aWNlXCJ9fSx7XCJ1dWlkXCI6XCJmY2NjNTA1
+    NC02NjkxLTQ2NTktYTE3MC1kNmU2YjJmOTBhZWRcIixcImRvbWFpbi1wb2xpY3ktc3BhY2VcIjpcImNv
+    bW1vblwiLFwiZG9tYWluLW5hbWVcIjpcIms4czIyX3ZyZlwiLFwic2VydmljZS1tb2RlXCI6XCJsb2Fk
+    YmFsYW5jZXJcIixcInNlcnZpY2UtdHlwZVwiOlwiY2x1c3RlcklwXCIsXCJzZXJ2aWNlLW1hcHBpbmdc
+    Ijpbe1wic2VydmljZS1pcFwiOlwiMTAuMTEwLjI1NC4yNDRcIixcInNlcnZpY2UtcHJvdG9cIjpcInRj
+    cFwiLFwic2VydmljZS1wb3J0XCI6OTk5NSxcIm5leHQtaG9wLWlwc1wiOltcIjEwLjIuMC44XCIsXCIx
+    MC4yLjAuNjdcIixcIjEwLjIuMC4xMDRcIl0sXCJuZXh0LWhvcC1wb3J0XCI6ODA4MCxcImNvbm50cmFj
+    ay1lbmFibGVkXCI6dHJ1ZSxcInNlc3Npb24tYWZmaW5pdHlcIjp7XCJjbGllbnQtaXBcIjp7XCJ0aW1l
+    b3V0LXNlY29uZHNcIjoxfX19XSxcImF0dHJpYnV0ZXNcIjp7XCJuYW1lXCI6XCJuZ2lueC1zdmMtY2lw
+    XCIsXCJuYW1lc3BhY2VcIjpcIm5ldHRvb2xzXCIsXCJzZXJ2aWNlLW5hbWVcIjpcIm5ldHRvb2xzX25n
+    aW54LXN2Yy1jaXBcIixcInRlc3Qtbmdpbngtc3ZjXCI6XCJuZ2lueC1zdmMtY2lwXCJ9fSx7XCJ1dWlk
+    XCI6XCI4NzU1YzkyMS1hYjQxLTQ1OGUtOWMwNC0yZGJlZDJkYjgwMmVcIixcImRvbWFpbi1wb2xpY3kt
+    c3BhY2VcIjpcImNvbW1vblwiLFwiZG9tYWluLW5hbWVcIjpcIms4czIyX3ZyZlwiLFwic2VydmljZS1t
+    b2RlXCI6XCJsb2FkYmFsYW5jZXJcIixcInNlcnZpY2UtdHlwZVwiOlwibG9hZEJhbGFuY2VyXCIsXCJz
+    ZXJ2aWNlLW1hcHBpbmdcIjpbe1wic2VydmljZS1pcFwiOlwiMTAuMTA5LjE1MS4yMjZcIixcInNlcnZp
+    Y2UtcHJvdG9cIjpcInRjcFwiLFwic2VydmljZS1wb3J0XCI6OTk5NSxcIm5leHQtaG9wLWlwc1wiOltc
+    IjEwLjIuMC44XCIsXCIxMC4yLjAuNjdcIixcIjEwLjIuMC4xMDRcIl0sXCJuZXh0LWhvcC1wb3J0XCI6
+    ODA4MCxcImNvbm50cmFjay1lbmFibGVkXCI6dHJ1ZSxcIm5vZGUtcG9ydFwiOjMwMjEyLFwic2Vzc2lv
+    bi1hZmZpbml0eVwiOntcImNsaWVudC1pcFwiOntcInRpbWVvdXQtc2Vjb25kc1wiOjF9fX1dLFwiYXR0
+    cmlidXRlc1wiOntcIm5hbWVcIjpcIm5naW54LXN2Yy1sYlwiLFwibmFtZXNwYWNlXCI6XCJuZXR0b29s
+    c1wiLFwic2VydmljZS1uYW1lXCI6XCJuZXR0b29sc19uZ2lueC1zdmMtbGJcIixcInRlc3Qtbmdpbngt
+    c3ZjXCI6XCJuZ2lueC1zdmMtbGJcIn19LHtcInV1aWRcIjpcIjQ4ZjE3NjIyLWQ2NjItNGVhZS04ZjQx
+    LTc1OTQxM2I0ZmI3ZFwiLFwiZG9tYWluLXBvbGljeS1zcGFjZVwiOlwiY29tbW9uXCIsXCJkb21haW4t
+    bmFtZVwiOlwiazhzMjJfdnJmXCIsXCJzZXJ2aWNlLW1vZGVcIjpcImxvYWRiYWxhbmNlclwiLFwic2Vy
+    dmljZS10eXBlXCI6XCJub2RlUG9ydFwiLFwic2VydmljZS1tYXBwaW5nXCI6W3tcInNlcnZpY2UtaXBc
+    IjpcIjEwLjEwOS4xNjIuMTg2XCIsXCJzZXJ2aWNlLXByb3RvXCI6XCJ0Y3BcIixcInNlcnZpY2UtcG9y
+    dFwiOjk5OTUsXCJuZXh0LWhvcC1pcHNcIjpbXCIxMC4yLjAuOFwiLFwiMTAuMi4wLjY3XCIsXCIxMC4y
+    LjAuMTA0XCJdLFwibmV4dC1ob3AtcG9ydFwiOjgwODAsXCJjb25udHJhY2stZW5hYmxlZFwiOnRydWUs
+    XCJub2RlLXBvcnRcIjozMDk3NyxcInNlc3Npb24tYWZmaW5pdHlcIjp7XCJjbGllbnQtaXBcIjp7XCJ0
+    aW1lb3V0LXNlY29uZHNcIjoxfX19XSxcImF0dHJpYnV0ZXNcIjp7XCJuYW1lXCI6XCJuZ2lueC1zdmMt
+    bm9kZXBvcnRcIixcIm5hbWVzcGFjZVwiOlwibmV0dG9vbHNcIixcInNlcnZpY2UtbmFtZVwiOlwibmV0
+    dG9vbHNfbmdpbngtc3ZjLW5vZGVwb3J0XCIsXCJ0ZXN0LW5naW54LXN2Y1wiOlwibmdpbngtc3ZjLW5w
+    XCJ9fSx7XCJ1dWlkXCI6XCI2N2QzMTM1Yy0xZDc5LTQ3MjMtYTcxZi05NTI5OTExZmJkODlcIixcImRv
+    bWFpbi1wb2xpY3ktc3BhY2VcIjpcImNvbW1vblwiLFwiZG9tYWluLW5hbWVcIjpcIms4czIyX3ZyZlwi
+    LFwic2VydmljZS1tb2RlXCI6XCJsb2FkYmFsYW5jZXJcIixcInNlcnZpY2UtdHlwZVwiOlwiY2x1c3Rl
+    cklwXCIsXCJzZXJ2aWNlLW1hcHBpbmdcIjpbe1wic2VydmljZS1pcFwiOlwiMTAuOTYuMC4xXCIsXCJz
+    ZXJ2aWNlLXByb3RvXCI6XCJ0Y3BcIixcInNlcnZpY2UtcG9ydFwiOjQ0MyxcIm5leHQtaG9wLWlwc1wi
+    OltcIjE5Mi4xNjguMjIuMlwiXSxcIm5leHQtaG9wLXBvcnRcIjo2NDQzLFwiY29ubnRyYWNrLWVuYWJs
+    ZWRcIjp0cnVlLFwic2Vzc2lvbi1hZmZpbml0eVwiOntcImNsaWVudC1pcFwiOntcInRpbWVvdXQtc2Vj
+    b25kc1wiOjF9fX1dLFwiYXR0cmlidXRlc1wiOntcImNvbXBvbmVudFwiOlwiYXBpc2VydmVyXCIsXCJu
+    YW1lXCI6XCJrdWJlcm5ldGVzXCIsXCJuYW1lc3BhY2VcIjpcImRlZmF1bHRcIixcInByb3ZpZGVyXCI6
+    XCJrdWJlcm5ldGVzXCIsXCJzZXJ2aWNlLW5hbWVcIjpcImRlZmF1bHRfa3ViZXJuZXRlc1wifX0se1wi
+    dXVpZFwiOlwiMjc2N2E5NmQtOTdlYS00MjRhLTkyNmQtZTcxOTQ1ZTIyZmJlXCIsXCJkb21haW4tcG9s
+    aWN5LXNwYWNlXCI6XCJjb21tb25cIixcImRvbWFpbi1uYW1lXCI6XCJrOHMyMl92cmZcIixcInNlcnZp
+    Y2UtbW9kZVwiOlwibG9hZGJhbGFuY2VyXCIsXCJzZXJ2aWNlLXR5cGVcIjpcImNsdXN0ZXJJcFwiLFwi
+    c2VydmljZS1tYXBwaW5nXCI6W3tcInNlcnZpY2UtaXBcIjpcIjEwLjk2LjAuMTBcIixcInNlcnZpY2Ut
+    cHJvdG9cIjpcInVkcFwiLFwic2VydmljZS1wb3J0XCI6NTMsXCJuZXh0LWhvcC1pcHNcIjpbXCIxMC4y
+    LjAuNjhcIixcIjEwLjIuMC40N1wiXSxcIm5leHQtaG9wLXBvcnRcIjo1MyxcImNvbm50cmFjay1lbmFi
+    bGVkXCI6dHJ1ZSxcInNlc3Npb24tYWZmaW5pdHlcIjp7XCJjbGllbnQtaXBcIjp7XCJ0aW1lb3V0LXNl
+    Y29uZHNcIjoxfX19LHtcInNlcnZpY2UtaXBcIjpcIjEwLjk2LjAuMTBcIixcInNlcnZpY2UtcHJvdG9c
+    IjpcInRjcFwiLFwic2VydmljZS1wb3J0XCI6NTMsXCJuZXh0LWhvcC1pcHNcIjpbXCIxMC4yLjAuNjhc
+    IixcIjEwLjIuMC40N1wiXSxcIm5leHQtaG9wLXBvcnRcIjo1MyxcImNvbm50cmFjay1lbmFibGVkXCI6
+    dHJ1ZSxcInNlc3Npb24tYWZmaW5pdHlcIjp7XCJjbGllbnQtaXBcIjp7XCJ0aW1lb3V0LXNlY29uZHNc
+    IjoxfX19LHtcInNlcnZpY2UtaXBcIjpcIjEwLjk2LjAuMTBcIixcInNlcnZpY2UtcHJvdG9cIjpcInRj
+    cFwiLFwic2VydmljZS1wb3J0XCI6OTE1MyxcIm5leHQtaG9wLWlwc1wiOltcIjEwLjIuMC42OFwiLFwi
+    MTAuMi4wLjQ3XCJdLFwibmV4dC1ob3AtcG9ydFwiOjkxNTMsXCJjb25udHJhY2stZW5hYmxlZFwiOnRy
     dWUsXCJzZXNzaW9uLWFmZmluaXR5XCI6e1wiY2xpZW50LWlwXCI6e1widGltZW91dC1zZWNvbmRzXCI6
-    MX19fV0sXCJhdHRyaWJ1dGVzXCI6e1wiY29udHJvbC1wbGFuZVwiOlwiY29udHJvbGxlci1tYW5hZ2Vy
-    XCIsXCJuYW1lXCI6XCJuZXRvcC1tYW5hZ2VyLWNvbnRyb2xsZXItbWFuYWdlci1tZXRyaWNzLXNlcnZp
-    Y2VcIixcIm5hbWVzcGFjZVwiOlwibmV0b3AtbWFuYWdlci1zeXN0ZW1cIixcInNlcnZpY2UtbmFtZVwi
-    OlwibmV0b3AtbWFuYWdlci1zeXN0ZW1fbmV0b3AtbWFuYWdlci1jb250cm9sbGVyLW1hbmFnZXItbWV0
-    cmljcy1zZXJ2aWNlXCJ9fV1cbiIsICJzdGF0dXMiOiAie1wic2VydmljZXNcIjozLFwicG9kLWlwc1wi
-    OntcIlY0XCI6W3tcInN0YXJ0XCI6XCIxMC4yLjAuMTMwXCIsXCJlbmRcIjpcIjEwLjIuMC4xNjFcIn1d
-    fX1cbiIgfSwgImNuaVR5cGUiOiAiY2tvLWNuaS1hY2kiLCAiY25pVmVyc2lvbiI6ICI1LjIuMy40Iiwg
-    ImlwYW0iOiAie1wicG9kLWlwc1wiOntcIlY0XCI6W3tcInN0YXJ0XCI6XCIxMC4yLjAuMTMwXCIsXCJl
-    bmRcIjpcIjEwLjIuMC4xNjFcIn1dfX1cbiIsICJvYnNlcnZlZEdlbmVyYXRpb24iOiAxLCAic3RhdGUi
-    OiAiUnVubmluZyIsICJ1cGdyYWRlU3RhdHVzIjogeyAiY25pVXBncmFkZVN0YXRlIjogIk5vbmUiIH0g
-    fQo=
+    MX19fV0sXCJhdHRyaWJ1dGVzXCI6e1wiazhzLWFwcFwiOlwia3ViZS1kbnNcIixcImt1YmVybmV0ZXMu
+    aW8vY2x1c3Rlci1zZXJ2aWNlXCI6XCJ0cnVlXCIsXCJrdWJlcm5ldGVzLmlvL25hbWVcIjpcIkNvcmVE
+    TlNcIixcIm5hbWVcIjpcImt1YmUtZG5zXCIsXCJuYW1lc3BhY2VcIjpcImt1YmUtc3lzdGVtXCIsXCJz
+    ZXJ2aWNlLW5hbWVcIjpcImt1YmUtc3lzdGVtX2t1YmUtZG5zXCJ9fV1cbiIsICJzdGF0dXMiOiAie1wi
+    c2VydmljZXNcIjo2LFwicG9kLWlwc1wiOntcIlY0XCI6W3tcInN0YXJ0XCI6XCIxMC4yLjAuMTMwXCIs
+    XCJlbmRcIjpcIjEwLjIuMC4xNjFcIn1dfX1cbiIgfSwgImNuaVR5cGUiOiAiY2tvLWNuaS1hY2kiLCAi
+    Y25pVmVyc2lvbiI6ICI1LjIuMy40IiwgImlwYW0iOiAie1wicG9kLWlwc1wiOntcIlY0XCI6W3tcInN0
+    YXJ0XCI6XCIxMC4yLjAuMTMwXCIsXCJlbmRcIjpcIjEwLjIuMC4xNjFcIn1dfX1cbiIsICJvYnNlcnZl
+    ZEdlbmVyYXRpb24iOiAxLCAic3RhdGUiOiAiUnVubmluZyIsICJ1cGdyYWRlU3RhdHVzIjogeyAiY25p
+    VXBncmFkZVN0YXRlIjogIk5vbmUiIH0gfQo=
 kind: ConfigMap
 metadata:
   labels:
