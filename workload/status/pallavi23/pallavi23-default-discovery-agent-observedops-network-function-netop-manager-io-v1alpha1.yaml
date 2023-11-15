@@ -11,6 +11,6 @@
       "kind": "ObservedOps",
       "name": "discovery-agent"
     },
-    "serializedObj": "{\"kind\":\"ObservedOps\",\"apiVersion\":\"network-function.netop-manager.io/v1alpha1\",\"metadata\":{\"name\":\"discovery-agent\",\"creationTimestamp\":null},\"spec\":{\"validCniTypes\":[\"multus\",\"calico\",\"opflex-agent-cni\",\"aws-cni\",\"ovn-k8s-cni-overlay\",\"netop-cni\"],\"validCniMountPaths\":{\"/mnt/delegate-cni\":[\"multus/cni/net.d/\"],\"/mnt/system-cni\":[\"cni/net.d\",\"/kubernetes/cni/net.d\"]},\"forceReconcile\":1062},\"status\":{\"cniType\":\"cko-cni-aci\",\"cniVersion\":\"not-found\"}}"
+    "serializedObj": "{\"kind\":\"ObservedOps\",\"apiVersion\":\"network-function.netop-manager.io/v1alpha1\",\"metadata\":{\"name\":\"discovery-agent\",\"creationTimestamp\":null},\"spec\":{\"validCniTypes\":[\"multus\",\"calico\",\"opflex-agent-cni\",\"aws-cni\",\"ovn-k8s-cni-overlay\",\"netop-cni\"],\"validCniMountPaths\":{\"/mnt/delegate-cni\":[\"multus/cni/net.d/\"],\"/mnt/system-cni\":[\"cni/net.d\",\"/kubernetes/cni/net.d\"]},\"forceReconcile\":1063},\"status\":{\"cniType\":\"cko-cni-aci\",\"cniVersion\":\"not-found\"}}"
   }
 }
