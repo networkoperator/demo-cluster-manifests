@@ -3,10 +3,10 @@ data:
   status: |-
     {
       "cStatus": {
-        "argocd-server": "{\"observedGeneration\":1,\"replicas\":1,\"updatedReplicas\":1,\"readyReplicas\":1,\"availableReplicas\":1,\"conditions\":[{\"type\":\"Progressing\",\"status\":\"True\",\"lastUpdateTime\":\"2023-09-26T09:57:06Z\",\"lastTransitionTime\":\"2023-09-26T09:56:36Z\",\"reason\":\"NewReplicaSetAvailable\",\"message\":\"ReplicaSet \\\"argocd-server-576cfb678d\\\" has successfully progressed.\"},{\"type\":\"Available\",\"status\":\"True\",\"lastUpdateTime\":\"2023-11-15T18:45:23Z\",\"lastTransitionTime\":\"2023-11-15T18:45:23Z\",\"reason\":\"MinimumReplicasAvailable\",\"message\":\"Deployment has minimum availability.\"}]}"
+        "argocd-server": "{\"observedGeneration\":1,\"replicas\":1,\"updatedReplicas\":1,\"unavailableReplicas\":1,\"conditions\":[{\"type\":\"Progressing\",\"status\":\"True\",\"lastUpdateTime\":\"2023-09-26T09:57:06Z\",\"lastTransitionTime\":\"2023-09-26T09:56:36Z\",\"reason\":\"NewReplicaSetAvailable\",\"message\":\"ReplicaSet \\\"argocd-server-576cfb678d\\\" has successfully progressed.\"},{\"type\":\"Available\",\"status\":\"False\",\"lastUpdateTime\":\"2023-11-15T18:59:44Z\",\"lastTransitionTime\":\"2023-11-15T18:59:44Z\",\"reason\":\"MinimumReplicasUnavailable\",\"message\":\"Deployment does not have minimum availability.\"}]}"
       },
       "conditions": {
-        "lastTransitionTime": "2023-11-15T18:47:34Z",
+        "lastTransitionTime": "2023-11-15T19:42:54Z",
         "message": "argo operator monitored successfully",
         "reason": "OperatorRunning",
         "status": "True",
@@ -17,20 +17,20 @@ data:
     }
   status_b64: |-
     eyAiY1N0YXR1cyI6IHsgImFyZ29jZC1zZXJ2ZXIiOiAie1wib2JzZXJ2ZWRHZW5lcmF0aW9uXCI6MSxc
-    InJlcGxpY2FzXCI6MSxcInVwZGF0ZWRSZXBsaWNhc1wiOjEsXCJyZWFkeVJlcGxpY2FzXCI6MSxcImF2
-    YWlsYWJsZVJlcGxpY2FzXCI6MSxcImNvbmRpdGlvbnNcIjpbe1widHlwZVwiOlwiUHJvZ3Jlc3Npbmdc
-    IixcInN0YXR1c1wiOlwiVHJ1ZVwiLFwibGFzdFVwZGF0ZVRpbWVcIjpcIjIwMjMtMDktMjZUMDk6NTc6
-    MDZaXCIsXCJsYXN0VHJhbnNpdGlvblRpbWVcIjpcIjIwMjMtMDktMjZUMDk6NTY6MzZaXCIsXCJyZWFz
-    b25cIjpcIk5ld1JlcGxpY2FTZXRBdmFpbGFibGVcIixcIm1lc3NhZ2VcIjpcIlJlcGxpY2FTZXQgXFxc
-    ImFyZ29jZC1zZXJ2ZXItNTc2Y2ZiNjc4ZFxcXCIgaGFzIHN1Y2Nlc3NmdWxseSBwcm9ncmVzc2VkLlwi
-    fSx7XCJ0eXBlXCI6XCJBdmFpbGFibGVcIixcInN0YXR1c1wiOlwiVHJ1ZVwiLFwibGFzdFVwZGF0ZVRp
-    bWVcIjpcIjIwMjMtMTEtMTVUMTg6NDU6MjNaXCIsXCJsYXN0VHJhbnNpdGlvblRpbWVcIjpcIjIwMjMt
-    MTEtMTVUMTg6NDU6MjNaXCIsXCJyZWFzb25cIjpcIk1pbmltdW1SZXBsaWNhc0F2YWlsYWJsZVwiLFwi
-    bWVzc2FnZVwiOlwiRGVwbG95bWVudCBoYXMgbWluaW11bSBhdmFpbGFiaWxpdHkuXCJ9XX0iIH0sICJj
-    b25kaXRpb25zIjogeyAibGFzdFRyYW5zaXRpb25UaW1lIjogIjIwMjMtMTEtMTVUMTg6NDc6MzRaIiwg
-    Im1lc3NhZ2UiOiAiYXJnbyBvcGVyYXRvciBtb25pdG9yZWQgc3VjY2Vzc2Z1bGx5IiwgInJlYXNvbiI6
-    ICJPcGVyYXRvclJ1bm5pbmciLCAic3RhdHVzIjogIlRydWUiLCAidHlwZSI6ICJBdmFpbGFibGUiIH0s
-    ICJvYnNlcnZlZEdlbmVyYXRpb24iOiAxLCAic3RhdGUiOiAiUnVubmluZyIgfQo=
+    InJlcGxpY2FzXCI6MSxcInVwZGF0ZWRSZXBsaWNhc1wiOjEsXCJ1bmF2YWlsYWJsZVJlcGxpY2FzXCI6
+    MSxcImNvbmRpdGlvbnNcIjpbe1widHlwZVwiOlwiUHJvZ3Jlc3NpbmdcIixcInN0YXR1c1wiOlwiVHJ1
+    ZVwiLFwibGFzdFVwZGF0ZVRpbWVcIjpcIjIwMjMtMDktMjZUMDk6NTc6MDZaXCIsXCJsYXN0VHJhbnNp
+    dGlvblRpbWVcIjpcIjIwMjMtMDktMjZUMDk6NTY6MzZaXCIsXCJyZWFzb25cIjpcIk5ld1JlcGxpY2FT
+    ZXRBdmFpbGFibGVcIixcIm1lc3NhZ2VcIjpcIlJlcGxpY2FTZXQgXFxcImFyZ29jZC1zZXJ2ZXItNTc2
+    Y2ZiNjc4ZFxcXCIgaGFzIHN1Y2Nlc3NmdWxseSBwcm9ncmVzc2VkLlwifSx7XCJ0eXBlXCI6XCJBdmFp
+    bGFibGVcIixcInN0YXR1c1wiOlwiRmFsc2VcIixcImxhc3RVcGRhdGVUaW1lXCI6XCIyMDIzLTExLTE1
+    VDE4OjU5OjQ0WlwiLFwibGFzdFRyYW5zaXRpb25UaW1lXCI6XCIyMDIzLTExLTE1VDE4OjU5OjQ0Wlwi
+    LFwicmVhc29uXCI6XCJNaW5pbXVtUmVwbGljYXNVbmF2YWlsYWJsZVwiLFwibWVzc2FnZVwiOlwiRGVw
+    bG95bWVudCBkb2VzIG5vdCBoYXZlIG1pbmltdW0gYXZhaWxhYmlsaXR5LlwifV19IiB9LCAiY29uZGl0
+    aW9ucyI6IHsgImxhc3RUcmFuc2l0aW9uVGltZSI6ICIyMDIzLTExLTE1VDE5OjQyOjU0WiIsICJtZXNz
+    YWdlIjogImFyZ28gb3BlcmF0b3IgbW9uaXRvcmVkIHN1Y2Nlc3NmdWxseSIsICJyZWFzb24iOiAiT3Bl
+    cmF0b3JSdW5uaW5nIiwgInN0YXR1cyI6ICJUcnVlIiwgInR5cGUiOiAiQXZhaWxhYmxlIiB9LCAib2Jz
+    ZXJ2ZWRHZW5lcmF0aW9uIjogMSwgInN0YXRlIjogIlJ1bm5pbmciIH0K
 kind: ConfigMap
 metadata:
   labels:
