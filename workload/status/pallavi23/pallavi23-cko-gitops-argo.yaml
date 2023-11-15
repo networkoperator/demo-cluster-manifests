@@ -3,10 +3,10 @@ data:
   status: |-
     {
       "cStatus": {
-        "argocd-server": "{\"observedGeneration\":1,\"replicas\":1,\"updatedReplicas\":1,\"readyReplicas\":1,\"availableReplicas\":1,\"conditions\":[{\"type\":\"Progressing\",\"status\":\"True\",\"lastUpdateTime\":\"2023-09-26T09:57:06Z\",\"lastTransitionTime\":\"2023-09-26T09:56:36Z\",\"reason\":\"NewReplicaSetAvailable\",\"message\":\"ReplicaSet \\\"argocd-server-576cfb678d\\\" has successfully progressed.\"},{\"type\":\"Available\",\"status\":\"True\",\"lastUpdateTime\":\"2023-11-15T05:47:21Z\",\"lastTransitionTime\":\"2023-11-15T05:47:21Z\",\"reason\":\"MinimumReplicasAvailable\",\"message\":\"Deployment has minimum availability.\"}]}"
+        "argocd-server": "{\"observedGeneration\":1,\"replicas\":1,\"updatedReplicas\":1,\"readyReplicas\":1,\"availableReplicas\":1,\"conditions\":[{\"type\":\"Progressing\",\"status\":\"True\",\"lastUpdateTime\":\"2023-09-26T09:57:06Z\",\"lastTransitionTime\":\"2023-09-26T09:56:36Z\",\"reason\":\"NewReplicaSetAvailable\",\"message\":\"ReplicaSet \\\"argocd-server-576cfb678d\\\" has successfully progressed.\"},{\"type\":\"Available\",\"status\":\"True\",\"lastUpdateTime\":\"2023-11-15T08:39:57Z\",\"lastTransitionTime\":\"2023-11-15T08:39:57Z\",\"reason\":\"MinimumReplicasAvailable\",\"message\":\"Deployment has minimum availability.\"}]}"
       },
       "conditions": {
-        "lastTransitionTime": "2023-11-15T08:14:05Z",
+        "lastTransitionTime": "2023-11-15T08:45:56Z",
         "message": "argo operator monitored successfully",
         "reason": "OperatorRunning",
         "status": "True",
@@ -24,10 +24,10 @@ data:
     b25cIjpcIk5ld1JlcGxpY2FTZXRBdmFpbGFibGVcIixcIm1lc3NhZ2VcIjpcIlJlcGxpY2FTZXQgXFxc
     ImFyZ29jZC1zZXJ2ZXItNTc2Y2ZiNjc4ZFxcXCIgaGFzIHN1Y2Nlc3NmdWxseSBwcm9ncmVzc2VkLlwi
     fSx7XCJ0eXBlXCI6XCJBdmFpbGFibGVcIixcInN0YXR1c1wiOlwiVHJ1ZVwiLFwibGFzdFVwZGF0ZVRp
-    bWVcIjpcIjIwMjMtMTEtMTVUMDU6NDc6MjFaXCIsXCJsYXN0VHJhbnNpdGlvblRpbWVcIjpcIjIwMjMt
-    MTEtMTVUMDU6NDc6MjFaXCIsXCJyZWFzb25cIjpcIk1pbmltdW1SZXBsaWNhc0F2YWlsYWJsZVwiLFwi
+    bWVcIjpcIjIwMjMtMTEtMTVUMDg6Mzk6NTdaXCIsXCJsYXN0VHJhbnNpdGlvblRpbWVcIjpcIjIwMjMt
+    MTEtMTVUMDg6Mzk6NTdaXCIsXCJyZWFzb25cIjpcIk1pbmltdW1SZXBsaWNhc0F2YWlsYWJsZVwiLFwi
     bWVzc2FnZVwiOlwiRGVwbG95bWVudCBoYXMgbWluaW11bSBhdmFpbGFiaWxpdHkuXCJ9XX0iIH0sICJj
-    b25kaXRpb25zIjogeyAibGFzdFRyYW5zaXRpb25UaW1lIjogIjIwMjMtMTEtMTVUMDg6MTQ6MDVaIiwg
+    b25kaXRpb25zIjogeyAibGFzdFRyYW5zaXRpb25UaW1lIjogIjIwMjMtMTEtMTVUMDg6NDU6NTZaIiwg
     Im1lc3NhZ2UiOiAiYXJnbyBvcGVyYXRvciBtb25pdG9yZWQgc3VjY2Vzc2Z1bGx5IiwgInJlYXNvbiI6
     ICJPcGVyYXRvclJ1bm5pbmciLCAic3RhdHVzIjogIlRydWUiLCAidHlwZSI6ICJBdmFpbGFibGUiIH0s
     ICJvYnNlcnZlZEdlbmVyYXRpb24iOiAxLCAic3RhdGUiOiAiUnVubmluZyIgfQo=
