@@ -6,7 +6,7 @@ data:
         "argocd-server": "{\"observedGeneration\":1,\"replicas\":1,\"updatedReplicas\":1,\"readyReplicas\":1,\"availableReplicas\":1,\"conditions\":[{\"type\":\"Progressing\",\"status\":\"True\",\"lastUpdateTime\":\"2023-09-26T09:57:06Z\",\"lastTransitionTime\":\"2023-09-26T09:56:36Z\",\"reason\":\"NewReplicaSetAvailable\",\"message\":\"ReplicaSet \\\"argocd-server-576cfb678d\\\" has successfully progressed.\"},{\"type\":\"Available\",\"status\":\"True\",\"lastUpdateTime\":\"2023-11-15T10:36:49Z\",\"lastTransitionTime\":\"2023-11-15T10:36:49Z\",\"reason\":\"MinimumReplicasAvailable\",\"message\":\"Deployment has minimum availability.\"}]}"
       },
       "conditions": {
-        "lastTransitionTime": "2023-11-15T10:37:33Z",
+        "lastTransitionTime": "2023-11-15T10:43:48Z",
         "message": "argo operator monitored successfully",
         "reason": "OperatorRunning",
         "status": "True",
@@ -27,7 +27,7 @@ data:
     bWVcIjpcIjIwMjMtMTEtMTVUMTA6MzY6NDlaXCIsXCJsYXN0VHJhbnNpdGlvblRpbWVcIjpcIjIwMjMt
     MTEtMTVUMTA6MzY6NDlaXCIsXCJyZWFzb25cIjpcIk1pbmltdW1SZXBsaWNhc0F2YWlsYWJsZVwiLFwi
     bWVzc2FnZVwiOlwiRGVwbG95bWVudCBoYXMgbWluaW11bSBhdmFpbGFiaWxpdHkuXCJ9XX0iIH0sICJj
-    b25kaXRpb25zIjogeyAibGFzdFRyYW5zaXRpb25UaW1lIjogIjIwMjMtMTEtMTVUMTA6Mzc6MzNaIiwg
+    b25kaXRpb25zIjogeyAibGFzdFRyYW5zaXRpb25UaW1lIjogIjIwMjMtMTEtMTVUMTA6NDM6NDhaIiwg
     Im1lc3NhZ2UiOiAiYXJnbyBvcGVyYXRvciBtb25pdG9yZWQgc3VjY2Vzc2Z1bGx5IiwgInJlYXNvbiI6
     ICJPcGVyYXRvclJ1bm5pbmciLCAic3RhdHVzIjogIlRydWUiLCAidHlwZSI6ICJBdmFpbGFibGUiIH0s
     ICJvYnNlcnZlZEdlbmVyYXRpb24iOiAxLCAic3RhdGUiOiAiUnVubmluZyIgfQo=
