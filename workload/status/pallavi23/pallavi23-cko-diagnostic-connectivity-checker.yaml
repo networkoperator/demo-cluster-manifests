@@ -6,7 +6,7 @@ data:
         "test-conn-check": "{UpdatedAt:2023-11-10 06:20:36.188360154 +0000 UTC Results:{PodToPod:Fail PodToNode:Fail PodToClusterIp:Pass PodToService:Pass PodToLbVip:Fail PodToNodePort:Fail PodToExternal:Fail NodeToNode:Pass NodeToPod:Pass NodeToClusterIp:Pass NodeToLbVip:Pass NodeToNodePort: NodeToExternal:} ResultCount:{Passed:6 Failed:5 Skipped:2}}"
       },
       "conditions": {
-        "lastTransitionTime": "2023-11-16T02:52:42Z",
+        "lastTransitionTime": "2023-11-16T02:59:00Z",
         "message": "diagnosticops tool monitored successfully",
         "reason": "OperatorRunning",
         "status": "True",
@@ -22,8 +22,8 @@ data:
     ZFRvTm9kZVBvcnQ6RmFpbCBQb2RUb0V4dGVybmFsOkZhaWwgTm9kZVRvTm9kZTpQYXNzIE5vZGVUb1Bv
     ZDpQYXNzIE5vZGVUb0NsdXN0ZXJJcDpQYXNzIE5vZGVUb0xiVmlwOlBhc3MgTm9kZVRvTm9kZVBvcnQ6
     IE5vZGVUb0V4dGVybmFsOn0gUmVzdWx0Q291bnQ6e1Bhc3NlZDo2IEZhaWxlZDo1IFNraXBwZWQ6Mn19
-    IiB9LCAiY29uZGl0aW9ucyI6IHsgImxhc3RUcmFuc2l0aW9uVGltZSI6ICIyMDIzLTExLTE2VDAyOjUy
-    OjQyWiIsICJtZXNzYWdlIjogImRpYWdub3N0aWNvcHMgdG9vbCBtb25pdG9yZWQgc3VjY2Vzc2Z1bGx5
+    IiB9LCAiY29uZGl0aW9ucyI6IHsgImxhc3RUcmFuc2l0aW9uVGltZSI6ICIyMDIzLTExLTE2VDAyOjU5
+    OjAwWiIsICJtZXNzYWdlIjogImRpYWdub3N0aWNvcHMgdG9vbCBtb25pdG9yZWQgc3VjY2Vzc2Z1bGx5
     IiwgInJlYXNvbiI6ICJPcGVyYXRvclJ1bm5pbmciLCAic3RhdHVzIjogIlRydWUiLCAidHlwZSI6ICJB
     dmFpbGFibGUiIH0sICJvYnNlcnZlZEdlbmVyYXRpb24iOiAxLCAic3RhdGUiOiAiUnVubmluZyIgfQo=
 kind: ConfigMap
